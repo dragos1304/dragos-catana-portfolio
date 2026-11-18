@@ -24,7 +24,7 @@ export function VerticalPage(p: VerticalProps) {
     <>
       <JsonLd data={[breadcrumb([{ name: "Acasă", path: "/" }, { name: "Servicii", path: "/servicii" }, { name: p.crumb, path: p.path }]),
         serviceSchema(p.schemaName, p.schemaDescription, p.path)]} />
-      <Section>
+      <Section id="intro">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: p.crumb }]} />
         <Eyebrow>{p.eyebrow}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">{p.h1}</h1>
@@ -35,7 +35,7 @@ export function VerticalPage(p: VerticalProps) {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="ce-cauta-clientii" tint>
         <H2>Ce caută clienții tăi înainte să te contacteze</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {p.needs.map((n) => (
@@ -44,7 +44,7 @@ export function VerticalPage(p: VerticalProps) {
         </div>
       </Section>
 
-      <Section>
+      <Section id="structura">
         <H2>Cum structurez site-ul</H2>
         <ol className="mt-8 grid gap-x-10 gap-y-6 md:grid-cols-2">
           {p.structure.map((n, i) => (
@@ -56,7 +56,7 @@ export function VerticalPage(p: VerticalProps) {
         </ol>
       </Section>
 
-      <Section tint>
+      <Section id="vizibilitate" tint>
         <H2>Vizibilitate în Google și în AI</H2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">
           Fiecare pagină are date structurate potrivite ({p.schemaTypes}), titluri formulate ca întrebări reale și răspunsuri scurte, ușor de citat. Informațiile de contact și identitatea rămân identice pe site, în profilul Google al afacerii și în directoare, ca asistenții AI să te poată verifica. Detalii în{" "}
@@ -64,14 +64,14 @@ export function VerticalPage(p: VerticalProps) {
         </p>
       </Section>
 
-      <Section>
+      <Section id="de-retinut">
         <div className="max-w-3xl rounded-2xl border border-brass bg-white p-7 ring-1 ring-brass">
           <h2 className="font-serif text-2xl font-semibold">{p.caution.title}</h2>
           <p className="mt-3 leading-relaxed text-slate-ink">{p.caution.text}</p>
         </div>
       </Section>
 
-      <Section tint><FAQ items={p.faq} /></Section>
+      <Section id="intrebari" tint><FAQ items={p.faq} /></Section>
       <CtaBand title={p.ctaTitle} />
     </>
   );

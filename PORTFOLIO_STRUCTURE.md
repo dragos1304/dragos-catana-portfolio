@@ -475,9 +475,9 @@ lib/
 ## 12. Design direction and tooling (v3)
 
 ### Awwwards MCP: what was installed
-- **MCP server:** `awwwards-mcp` pinned to **1.20.0** (MIT, 2 dependencies, no install scripts). Registered for this project in `.mcp.json` (`npx -y awwwards-mcp@1.20.0`). Auto-update is left **off** (`AWWWARDS_AUTO_UPDATE` not set), and the experimental Atlas tools are **off**.
-- **Skills:** the 9 skills from `INSANE0777/awwwards-skills` are copied into `.claude/skills/` (setup, inspiration, motion-study, section-loop, motion-authoring, design-md, atlas, doctor, recreate). Review them before use; they run with full agent permissions.
-- **Preferences** (README step "setup"): compact results, desktop + mobile, live captures on, no automatic index. Stored in `~/.awwwards-mcp/preferences.json` on the machine that runs the server.
+- **MCP server:** `awwwards-mcp` pinned to **1.20.0** (MIT, 2 dependencies, no install scripts). Registered for this project in `.mcp.json` as the **installed command** `awwwards-mcp`. This is the README's browser-enabled layout: `npm install -g awwwards-mcp@1.20.0 playwright ffmpeg-static` side by side, because `npx` cannot load Playwright, so browser tools would only return an install hint. Kept on 1.20.0 (1.21.0 exists) because the README's tested skills pairing is 1.20.0 + `skills-v2026.11.11`. Auto-update is left **off** (`AWWWARDS_AUTO_UPDATE` not set), and the experimental Atlas tools are **off**.
+- **Skills:** the 9 skills from `INSANE0777/awwwards-skills` are copied into `.claude/skills/`. Checked against tag `skills-v2026.11.11` on 18 Nov 2026: 5 identical, and 4 (atlas, motion-study, section-loop, recreate) are the newer 1.20-aware text, so they were kept (setup, inspiration, motion-study, section-loop, motion-authoring, design-md, atlas, doctor, recreate). Review them before use; they run with full agent permissions.
+- **Preferences** (README step "setup"): compact results, desktop + mobile, live captures on, local index **built** (`awwwards-index`, 3,024 sites, refreshes itself every 7 days). Stored in `~/.awwwards-mcp/preferences.json` on the machine that runs the server.
 - **Ethics, per the README:** personal design-inspiration use, public pages, polite rates. We use references to inform *direction*, never to copy a site, and we do not use `recreate` to clone anyone's site.
 
 ### Tools applied to this site (run against the local production build)
@@ -504,5 +504,19 @@ lib/
 /servicii/website-cabinete-avocatura
 ```
 
-### Pending (needs network access to awwwards.com)
-Inspiration search (`search_sites`, `get_site_details`, `create_design_brief`) is blocked in this session: the cloud proxy refuses `www.awwwards.com`. I created a personal environment `dragos-catana-portfolio` that allows that host; the proxy can take up to an hour to apply it. Once it works, run the `awwwards-inspiration` loop (for example `award: "businessServices"` and `"typography"`) and fold anything useful into `DESIGN.md`.
+### Round 2 (18 Nov 2026): inspiration loop + structure pass
+Network to `www.awwwards.com` now works. In cloud sessions, the environment's setup script installs the browser-enabled server (untested until a fresh session starts).
+
+**Inspiration:** `search_sites` (`businessServices`, `typography`) → `create_design_brief` from Wembi, MONOLOG, Dragonfly Redux. Findings are in `DESIGN.md`. `search_elements` returned nothing, because the elements gallery crawl is retired upstream. Browser captures of external reference sites are not possible from the cloud browser (proxy), so references are detail-level only.
+
+| Tool | Finding | Action taken |
+|------|---------|--------------|
+| `analyze_page_structure` | Home bands were anonymous (`.bg-mist`…), so `verify_build` could only match by height | Stable `id`s on every section of Home, the vertical pages, service pages, About and the case study (`#acasa`, `#servicii`, `#proces`, `#intrebari`, `#contact`…). They also work as anchor links |
+| Static HTML check (prompted by `analyze_scroll_map`) | `Reveal` (framer-motion) shipped `opacity:0` in the HTML, so that content was **invisible without JS** | Replaced with a CSS-only scroll-driven reveal (`animation-timeline: view()`, only with `prefers-reduced-motion: no-preference`). Removed framer-motion |
+| Manual no-JS test | Mobile menu needed JavaScript | Rebuilt on native `<details>`; verified open with JS on and off |
+| `analyze_page_structure` sweep, all 22 pages (mobile) | Consent checkbox 20×20 px, breadcrumb links 20 px tall | Checkbox 24 px, breadcrumbs `min-h-6`. Re-run: 0 issues on every page |
+| `analyze_images` | Case-study screenshots 1600 px wide shown at 350 px, no `srcset` | 640/960 px WebP variants + `srcset`. Re-run: 0 oversized |
+| `analyze_scroll_map` (normal + reduced motion) | 3 CSS view-timeline reveals; 0 with reduced motion | As intended |
+| `audit_url` | Static anti-pattern notes fell from 64 to 2 (informational) | None |
+| `verify_build` (new build vs previous build) | **PASS**, bands 100/100, all 10 home sections matched in order | Regression check passed |
+| Process section | Brief: numbered process section | Added a connector line and a "Începe cu auditul gratuit" CTA |

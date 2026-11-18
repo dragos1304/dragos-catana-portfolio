@@ -25,7 +25,7 @@ export default function Page() {
     <>
       <JsonLd data={[breadcrumb([{ name: "Acasă", path: "/" }, { name: "Servicii", path: "/servicii" }, { name: "Redesign de website", path }]),
         serviceSchema("Redesign de website", "Redesign modern de website, cu migrare sigură și conținut pregătit pentru motoare AI.", path)]} />
-      <Section>
+      <Section id="redesign-de-website">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "Redesign de website" }]} />
         <Eyebrow>Redesign de website</Eyebrow>
         <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
@@ -40,7 +40,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="semne-ca-site-ul" tint>
         <H2>Semne că site-ul tău e depășit</H2>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {["Nu arată bine pe telefon", "Se încarcă greu", "Nu e clar ce oferi sau cum te contactează cineva", "Designul pare vechi", "E greu de actualizat", "Nu are date structurate pentru Google și AI", "Nu respectă bazele accesibilității"].map((t) => (
@@ -50,7 +50,7 @@ export default function Page() {
         <p className="mt-6 text-slate-ink">Mai multe detalii în articolul <Link className="font-semibold text-brass-dark underline underline-offset-4" href="/articole/10-semne-ca-site-ul-tau-este-depasit">10 semne că site-ul tău e depășit</Link>.</p>
       </Section>
 
-      <Section>
+      <Section id="ce-include">
         <H2>Ce include</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {[
@@ -66,7 +66,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="fara-pierderi-seo" tint>
         <H2>Redesign fără să-ți pierzi SEO-ul</H2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">
           Cea mai mare teamă la un redesign e că pozițiile din Google dispar. Se întâmplă de obicei când adresele se schimbă fără redirecturi sau când conținutul care aducea trafic dispare.
@@ -75,7 +75,7 @@ export default function Page() {
         <p className="mt-4"><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/articole/redesign-site-fara-sa-pierzi-pozitiile-din-google">Citește ghidul complet →</Link></p>
       </Section>
 
-      <Section>
+      <Section id="un-exemplu-real">
         <H2>Un exemplu real</H2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">
           Am refăcut site-ul Cheesy Media, o agenție foto-video din Cluj-Napoca: de la o singură pagină lungă la un site cu pagini dedicate, pachete, FAQ și scor 100 în Lighthouse.
@@ -83,7 +83,7 @@ export default function Page() {
         <div className="mt-6"><Button href="/lucrari/cheesy-media" variant="ghost">Vezi înainte și după</Button></div>
       </Section>
 
-      <Section tint><FAQ items={faq} /></Section>
+      <Section id="intrebari" tint><FAQ items={faq} /></Section>
       <CtaBand title="Vrei să vezi ce se poate schimba la site-ul tău?" text="Începe cu un audit gratuit: îți spun ce ar aduce cel mai mult impact, fără obligații." />
     </>
   );

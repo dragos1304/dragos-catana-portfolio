@@ -22,7 +22,7 @@ export default function Despre() {
     <>
       <JsonLd data={[{ "@context": "https://schema.org", ...personSchema, "@type": "Person" },
         breadcrumb([{ name: "Acasă", path: "/" }, { name: "Despre", path: "/despre" }])]} />
-      <Section>
+      <Section id="despre-mine">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Despre" }]} />
         <Eyebrow>Despre mine</Eyebrow>
         <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
@@ -33,7 +33,7 @@ export default function Despre() {
         </p>
       </Section>
 
-      <Section tint>
+      <Section id="de-ce-fac-asta" tint>
         <Eyebrow>De ce fac asta</Eyebrow>
         <H2>Fiecare afacere pe care am atins-o avea nevoie să fie găsită.</H2>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-ink">
@@ -41,7 +41,7 @@ export default function Despre() {
         </p>
       </Section>
 
-      <Section>
+      <Section id="antreprenoriat">
         <Eyebrow>Antreprenoriat</Eyebrow>
         <H2>Peste 5 ani de execuție, începând cu 16 ani.</H2>
         <p className="mt-4 max-w-3xl text-slate-ink leading-relaxed">
@@ -54,7 +54,7 @@ export default function Despre() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="studii" tint>
         <Eyebrow>Studii</Eyebrow>
         <H2>Rigoare academică, la nivel internațional.</H2>
         <ul className="mt-8 space-y-6">
@@ -67,7 +67,7 @@ export default function Despre() {
         </ul>
       </Section>
 
-      <Section>
+      <Section id="cum-lucrez">
         <Eyebrow>Cum lucrez</Eyebrow>
         <H2>Gândesc ca un economist.</H2>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-ink">
@@ -75,7 +75,7 @@ export default function Despre() {
         </p>
       </Section>
 
-      <Section dark>
+      <Section id="incotro-merg" dark>
         <Eyebrow dark>Încotro merg</Eyebrow>
         <H2 dark>Business și predare.</H2>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/80">
@@ -83,7 +83,7 @@ export default function Despre() {
         </p>
       </Section>
 
-      <Section>
+      <Section id="dincolo-de-munca">
         <Eyebrow>Dincolo de muncă</Eyebrow>
         <H2>Comunitate și leadership.</H2>
         <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-lg leading-relaxed text-slate-ink">
@@ -93,7 +93,7 @@ export default function Despre() {
         </ul>
       </Section>
 
-      <Section tint>
+      <Section id="recomandare" tint>
         <Eyebrow>Recomandare</Eyebrow>
         <H2>Ce spune un profesor.</H2>
         <figure className="mt-8 max-w-3xl">

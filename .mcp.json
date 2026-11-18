@@ -2,11 +2,8 @@
   "mcpServers": {
     "awwwards": {
       "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "awwwards-mcp@1.20.0"
-      ],
+      "command": "awwwards-mcp",
+      "args": [],
       "env": {}
     }
   }

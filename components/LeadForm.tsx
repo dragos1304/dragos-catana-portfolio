@@ -93,7 +93,7 @@ export function LeadForm({ kind }: { kind: Kind }) {
         </>
       )}
       <label className="flex items-start gap-3 text-sm leading-relaxed text-slate-ink">
-        <input type="checkbox" name="consent" value="da" required className="mt-1 h-5 w-5 shrink-0 accent-brass-dark" />
+        <input type="checkbox" name="consent" value="da" required className="mt-0.5 h-6 w-6 shrink-0 accent-brass-dark" />
         <span>
           Sunt de acord ca datele mele să fie folosite pentru a-mi răspunde, conform{" "}
           <Link href="/confidentialitate" className="font-medium text-navy underline underline-offset-4">politicii de confidențialitate</Link>.

@@ -1,18 +1,10 @@
-"use client";
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
-export function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }) {
-  const reduce = useReducedMotion();
-  if (reduce) return <>{children}</>;
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
+/**
+ * CSS-only reveal (see .reveal in globals.css). Content is fully visible in the HTML,
+ * so it works without JS, for crawlers and with reduced motion. Browsers with
+ * scroll-driven animations fade and rise the block as it enters the viewport.
+ */
+export function Reveal({ children }: { children: ReactNode }) {
+  return <div className="reveal">{children}</div>;
 }

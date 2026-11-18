@@ -16,7 +16,7 @@ export default function Servicii() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "Acasă", path: "/" }, { name: "Servicii", path: "/servicii" }])} />
-      <Section>
+      <Section id="servicii">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii" }]} />
         <Eyebrow>Servicii</Eyebrow>
         <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
@@ -38,7 +38,7 @@ export default function Servicii() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="ce-ai-nevoie" tint>
         <H2>Ce ai nevoie?</H2>
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[520px] border-collapse text-left">

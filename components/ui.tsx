@@ -64,7 +64,7 @@ export function Breadcrumbs({ items }: { items: { name: string; href?: string }[
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((it, i) => (
           <li key={it.name} className="flex items-center gap-2">
-            {it.href ? <Link href={it.href} className="underline-offset-4 hover:underline">{it.name}</Link> : <span aria-current="page">{it.name}</span>}
+            {it.href ? <Link href={it.href} className="inline-flex min-h-6 items-center underline-offset-4 hover:underline">{it.name}</Link> : <span aria-current="page">{it.name}</span>}
             {i < items.length - 1 && <span aria-hidden>/</span>}
           </li>
         ))}
@@ -96,9 +96,10 @@ export function FAQ({ items, title = "Întrebări frecvente" }: { items: { q: st
 export function CtaBand({
   title = "Vrei să știi dacă AI-ul îți recomandă afacerea?",
   text = `Primești un audit manual gratuit, în maximum 24 de ore. Fără obligații.`,
-}: { title?: string; text?: string }) {
+  id = "cta",
+}: { title?: string; text?: string; id?: string }) {
   return (
-    <Section dark>
+    <Section dark id={id}>
       <div className="max-w-3xl">
         <H2 dark>{title}</H2>
         <p className="mt-4 text-lg text-white/80">{text}</p>

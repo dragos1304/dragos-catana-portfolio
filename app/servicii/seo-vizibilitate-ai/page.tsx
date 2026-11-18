@@ -49,7 +49,7 @@ export default function Page() {
         </div>
       </section>
 
-      <Section>
+      <Section id="ce-s-a-schimbat">
         <H2>Ce s-a schimbat</H2>
         <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-ink">
           <p>Până acum, un client căuta în Google și compara zece rezultate. Acum poate întreba direct ChatGPT, Gemini sau Perplexity și primi câteva nume, cu explicații. Dacă afacerea ta nu e înțeleasă și citată de acele sisteme, e invizibilă exact când se ia decizia.</p>
@@ -57,7 +57,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="seo-clasic-si-vizibilitate" tint>
         <H2>SEO clasic și vizibilitate în AI</H2>
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-left align-top">
@@ -73,7 +73,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section>
+      <Section id="ce-fac-concret">
         <H2>Ce fac concret</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {[
@@ -91,7 +91,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="asteptari-realiste" tint>
         <H2>Așteptări realiste</H2>
         <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-ink">
           <p>Răspunsurile AI nu sunt la fel pentru toată lumea și se pot schimba de la o zi la alta. Modelele se actualizează în ritmul lor, iar rezultatele apar în săptămâni sau luni. Nimeni serios nu poate garanta un loc anume.</p>
@@ -99,7 +99,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section>
+      <Section id="cum-putem-lucra-impreuna">
         <H2>Cum putem lucra împreună</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
@@ -113,7 +113,7 @@ export default function Page() {
         <p className="mt-6 text-slate-ink">Pentru implementare și colaborare lunară primești o ofertă clară, nu prețuri fixe. <Link className="font-semibold text-brass-dark underline underline-offset-4" href="/contact">Cere o ofertă</Link>.</p>
       </Section>
 
-      <Section tint>
+      <Section id="cum-arata-un-audit" tint>
         <H2>Cum arată un audit</H2>
         <p className="mt-3 max-w-3xl text-slate-ink">Format orientativ. Tabelul de mai jos este un <strong>exemplu ilustrativ</strong>, nu date reale despre vreo afacere.</p>
         <div className="mt-6 overflow-x-auto">
@@ -128,7 +128,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section>
+      <Section id="intrebari">
         <FAQ items={faq} />
         <p className="mt-8 text-slate-ink">Vrei să citești mai mult? <Link className="font-semibold text-brass-dark underline underline-offset-4" href="/articole/ce-este-geo-optimizare-pentru-motoare-ai">Ce este GEO și cum diferă de SEO</Link>.</p>
       </Section>

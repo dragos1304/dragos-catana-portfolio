@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
@@ -33,7 +32,7 @@ export default function Page() {
     <>
       <JsonLd data={[breadcrumb([{ name: "Acasă", path: "/" }, { name: "Lucrări", path: "/lucrari" }, { name: "Cheesy Media", path }]),
         { "@context": "https://schema.org", "@type": "Article", headline: "Studiu de caz: redesign website Cheesy Media", description: "Redesign pentru o agenție foto-video din Cluj-Napoca, cu rezultate măsurate în Lighthouse.", url: abs(path), inLanguage: "ro-RO", author: { "@id": `${site.url}/#person` }, datePublished: "2026-11-18", dateModified: "2026-11-18" }]} />
-      <Section>
+      <Section id="studiu-de-caz-redesign">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Lucrări", href: "/lucrari" }, { name: "Cheesy Media" }]} />
         <Eyebrow>Studiu de caz · Redesign</Eyebrow>
         <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">Cheesy Media: de la o pagină lungă la un site complet.</h1>
@@ -46,14 +45,14 @@ export default function Page() {
         </p>
       </Section>
 
-      <Section tint>
+      <Section id="problema" tint>
         <H2>Problema</H2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">
           Site-ul inițial funcționa, dar punea toată oferta pe o singură pagină lungă și nu avea pagini separate pentru servicii, portofoliu sau proces. Cererile personalizate treceau printr-un formular Google, iar imaginile erau fotografii stoc.
         </p>
       </Section>
 
-      <Section>
+      <Section id="ce-am-schimbat">
         <H2>Ce am schimbat</H2>
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[680px] border-collapse text-left align-top">
@@ -69,7 +68,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="rezultat-masurat" tint>
         <Eyebrow>Rezultat măsurat</Eyebrow>
         <H2>Scoruri Lighthouse pe mobil</H2>
         <p className="mt-3 max-w-3xl text-slate-ink">
@@ -89,11 +88,13 @@ export default function Page() {
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <figure>
-            <Image src="/lucrari/cheesy-media/lighthouse-inainte.webp" width={1600} height={980} alt="Raport Lighthouse pentru site-ul vechi: performanță 82, accesibilitate 96, bune practici 100, SEO 100" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" className="rounded-2xl border border-line" />
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export: explicit srcset instead of next/image */}
+            <img src="/lucrari/cheesy-media/lighthouse-inainte-960.webp" srcSet="/lucrari/cheesy-media/lighthouse-inainte-640.webp 640w, /lucrari/cheesy-media/lighthouse-inainte-960.webp 960w, /lucrari/cheesy-media/lighthouse-inainte.webp 1600w" width={1600} height={980} alt="Raport Lighthouse pentru site-ul vechi: performanță 82, accesibilitate 96, bune practici 100, SEO 100" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" loading="lazy" decoding="async" className="h-auto w-full rounded-2xl border border-line" />
             <figcaption className="mt-2 text-sm text-slate-ink">Înainte: performanță 82, accesibilitate 96.</figcaption>
           </figure>
           <figure>
-            <Image src="/lucrari/cheesy-media/lighthouse-dupa.webp" width={1600} height={953} alt="Raport Lighthouse pentru site-ul nou: 100 la performanță, accesibilitate, bune practici și SEO" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" className="rounded-2xl border border-line" />
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export: explicit srcset instead of next/image */}
+            <img src="/lucrari/cheesy-media/lighthouse-dupa-960.webp" srcSet="/lucrari/cheesy-media/lighthouse-dupa-640.webp 640w, /lucrari/cheesy-media/lighthouse-dupa-960.webp 960w, /lucrari/cheesy-media/lighthouse-dupa.webp 1600w" width={1600} height={953} alt="Raport Lighthouse pentru site-ul nou: 100 la performanță, accesibilitate, bune practici și SEO" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" loading="lazy" decoding="async" className="h-auto w-full rounded-2xl border border-line" />
             <figcaption className="mt-2 text-sm text-slate-ink">După: 100 la toate cele patru categorii.</figcaption>
           </figure>
         </div>
@@ -102,7 +103,7 @@ export default function Page() {
         </p>
       </Section>
 
-      <Section>
+      <Section id="stack">
         <H2>Stack</H2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">Next.js, găzduit pe Netlify.</p>
         <div className="mt-8 flex flex-wrap gap-3">

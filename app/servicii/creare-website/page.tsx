@@ -31,7 +31,7 @@ export default function Page() {
     <>
       <JsonLd data={[breadcrumb([{ name: "Acasă", path: "/" }, { name: "Servicii", path: "/servicii" }, { name: "Creare de website", path }]),
         serviceSchema("Creare de website", "Website nou, rapid și pregătit pentru Google și motoare AI, în Next.js, Webflow, Shopify sau Medusa.", path)]} />
-      <Section>
+      <Section id="creare-de-website">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "Creare de website" }]} />
         <Eyebrow>Creare de website</Eyebrow>
         <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
@@ -46,7 +46,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="ce-include" tint>
         <H2>Ce include</H2>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {["Strategie și structura paginilor", "Design și construire", "Responsive pe orice ecran", "Bazele SEO și date structurate (schema)", "Analiză (Google Tag Manager / GA4) cu consimțământ cookie", "Formulare de contact, programări, integrări", "Predare și instruire", "Opțional: versiuni în engleză, franceză, germană"].map((t) => (
@@ -55,7 +55,7 @@ export default function Page() {
         </ul>
       </Section>
 
-      <Section>
+      <Section id="platforme-ce-aleg-si">
         <H2>Platforme: ce aleg și când</H2>
         <p className="mt-4 max-w-3xl text-slate-ink leading-relaxed">Aleg platforma după afacerea ta, nu după ce îmi place mie.</p>
         <div className="mt-8 overflow-x-auto">
@@ -75,7 +75,7 @@ export default function Page() {
         </p>
       </Section>
 
-      <Section tint><FAQ items={faq} /></Section>
+      <Section id="intrebari" tint><FAQ items={faq} /></Section>
       <CtaBand title="Pornești un site nou?" text="Primești gratuit un audit al prezenței tale online actuale și o direcție clară, în maximum 24 de ore." />
     </>
   );

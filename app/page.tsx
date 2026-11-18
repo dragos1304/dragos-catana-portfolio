@@ -39,11 +39,11 @@ const faq = [
 export default function Home() {
   return (
     <>
-      <section className="bg-navy text-white">
+      <section id="acasa" aria-labelledby="acasa-titlu" className="bg-navy text-white">
         <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[1.15fr_1fr] lg:items-center">
           <div>
             <Eyebrow dark>Web design · SEO · Vizibilitate în AI</Eyebrow>
-            <h1 className="font-serif text-4xl font-semibold leading-[1.1] sm:text-6xl">
+            <h1 id="acasa-titlu" className="font-serif text-4xl font-semibold leading-[1.1] sm:text-6xl">
               Fii afacerea pe care o recomandă <span className="text-brass">AI-ul</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
@@ -60,7 +60,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section aria-label="Pe scurt" className="border-b border-line bg-white">
+      <section id="pe-scurt" aria-label="Pe scurt" className="border-b border-line bg-white">
         <Container>
           <dl className="grid grid-cols-2 gap-y-6 py-8 text-center md:grid-cols-4">
             {[
@@ -78,7 +78,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <Section>
+      <Section id="de-ce-acum">
         <div className="max-w-3xl">
           <Eyebrow>De ce acum</Eyebrow>
           <H2>Clienții tăi întreabă din ce în ce mai des un asistent AI, nu doar Google.</H2>
@@ -88,8 +88,8 @@ export default function Home() {
             ["Alegerea se face în răspuns", "Un pacient sau un client poate primi un singur nume, direct în conversație. Dacă nu ești acolo, nu ești luat în calcul."],
             ["AI-ul citează ce înțelege", "Asistenții se bazează pe pagini clare, date structurate și informații consecvente despre tine în mai multe locuri."],
             ["Majoritatea site-urilor nu sunt pregătite", "Multe site-uri locale sunt vechi, lente sau vagi. Acolo e avantajul tău, dacă acționezi primul."],
-          ].map(([t, d], i) => (
-            <Reveal key={t} delay={i * 0.08}>
+          ].map(([t, d]) => (
+            <Reveal key={t}>
               <h3 className="font-serif text-xl font-semibold">{t}</h3>
               <p className="mt-3 leading-relaxed text-slate-ink">{d}</p>
             </Reveal>
@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="servicii" tint>
         <Eyebrow>Servicii</Eyebrow>
         <H2>Trei servicii, o singură poveste: să fii găsit.</H2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -123,7 +123,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section>
+      <Section id="pentru-cine">
         <Eyebrow>Pentru cine lucrez</Eyebrow>
         <H2>Practici și afaceri locale unde încrederea decide.</H2>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
@@ -141,26 +141,27 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="proces" tint>
         <Eyebrow>Cum lucrăm</Eyebrow>
         <H2>Patru pași, fără surprize.</H2>
-        <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="relative mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:before:absolute lg:before:inset-x-0 lg:before:top-6 lg:before:h-px lg:before:bg-line lg:before:content-['']">
           {[
             ["01", "Audit", "Văd cum apari acum în Google și în răspunsurile AI. Gratuit, în 24 de ore."],
             ["02", "Plan", "Stabilim obiectivele și ce schimbăm, în ordinea impactului. Primești o ofertă clară."],
             ["03", "Construire / optimizare", "Design, cod, conținut și date structurate. Tu vezi progresul la fiecare etapă."],
             ["04", "Măsurare", "Retestez întrebările clienților tăi și îți arăt ce s-a schimbat, în limbaj simplu."],
           ].map(([n, t, d]) => (
-            <li key={n}>
-              <span className="font-serif text-4xl font-semibold text-brass-dark">{n}</span>
+            <li key={n} className="relative">
+              <span className="relative inline-block bg-mist pr-3 font-serif text-4xl font-semibold text-brass-dark">{n}</span>
               <h3 className="mt-2 text-lg font-semibold">{t}</h3>
               <p className="mt-2 text-slate-ink leading-relaxed">{d}</p>
             </li>
           ))}
         </ol>
+        <div className="mt-10"><Button href="/audit-gratuit-vizibilitate-ai">Începe cu auditul gratuit</Button></div>
       </Section>
 
-      <Section>
+      <Section id="lucrari">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <Eyebrow>Lucrare recentă</Eyebrow>
@@ -178,7 +179,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section tint>
+      <Section id="despre" tint>
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
             <Eyebrow>Cine e în spatele site-ului</Eyebrow>
@@ -194,8 +195,8 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section><FAQ items={faq} /></Section>
-      <CtaBand />
+      <Section id="intrebari"><FAQ items={faq} /></Section>
+      <CtaBand id="contact" />
     </>
   );
 }
