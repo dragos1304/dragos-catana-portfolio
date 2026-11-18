@@ -3,5 +3,8 @@
 return [
     'to' => 'you@example.com',                   // where form submissions are delivered
     'from' => 'no-reply@dragoscatana.com',       // must be an address on your own domain (SPF/DKIM)
+    // Authenticated SMTP (recommended: plain mail() from the web host is usually rejected by iCloud/Gmail).
+    // For iCloud: user = your Apple ID, pass = an app-specific password from appleid.apple.com.
+    'smtp' => ['host' => 'smtp.mail.me.com', 'port' => 587, 'user' => 'apple-id@example.com', 'pass' => 'app-specific-password'],
     'allowed_hosts' => ['dragoscatana.com', 'www.dragoscatana.com'],
 ];

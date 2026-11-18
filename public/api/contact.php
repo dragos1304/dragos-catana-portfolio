@@ -65,7 +65,7 @@ function clean(string $v, int $max): string {
 }
 
 $kind = ($_POST['form-name'] ?? '') === 'audit' ? 'audit' : 'contact';
-$name = clean((string)($_POST['name'] ?? ''), 120);
+$name = str_replace("\n", ' ', clean((string)($_POST['name'] ?? ''), 120)); // no newlines: header injection
 $email = clean((string)($_POST['email'] ?? ''), 160);
 if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || ($_POST['consent'] ?? '') !== 'da') {
     respond(422, ['ok' => false, 'error' => 'invalid']);
@@ -82,13 +82,85 @@ foreach ($fields as $key => $label) {
 $lines[] = 'Consimțământ: da (' . gmdate('Y-m-d H:i') . ' UTC)';
 
 $subject = $kind === 'audit' ? 'Cerere audit gratuit AI' : 'Mesaj nou din contact';
+$subjectEnc = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+$body = implode("\r\n", $lines);
 $headers = [
     'From: Site dragoscatana.com <' . $from . '>',
-    'Reply-To: ' . $name . ' <' . $email . '>',
+    'Reply-To: ' . str_replace(['<', '>', '"'], '', $name) . ' <' . $email . '>',
+    'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: base64',
     'X-Mailer: dragoscatana-form',
 ];
-$sent = mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', implode("\n", $lines), implode("\r\n", $headers));
+$smtp = (array)($config['smtp'] ?? []);
+if ($smtp) {
+    $sent = smtp_send($smtp, $from, $to, $subjectEnc, $headers, $body);
+} else {
+    $sent = mail($to, $subjectEnc, chunk_split(base64_encode($body)), implode("\r\n", $headers));
+}
+
+/** Minimal authenticated SMTP client (STARTTLS on 587, or implicit TLS on 465). */
+function smtp_send(array $c, string $from, string $to, string $subject, array $headers, string $body): bool {
+    $host = (string)($c['host'] ?? '');
+    $port = (int)($c['port'] ?? 587);
+    $user = (string)($c['user'] ?? '');
+    $pass = (string)($c['pass'] ?? '');
+    if ($host === '' || $user === '' || $pass === '') {
+        return false;
+    }
+    $implicit = $port === 465;
+    $fp = @stream_socket_client(($implicit ? 'ssl://' : 'tcp://') . $host . ':' . $port, $errno, $errstr, 15);
+    if (!$fp) {
+        return false;
+    }
+    stream_set_timeout($fp, 15);
+    $read = function () use ($fp): array {
+        $code = 0;
+        $text = '';
+        while (($line = fgets($fp, 1024)) !== false) {
+            $text .= $line;
+            $code = (int)substr($line, 0, 3);
+            if (isset($line[3]) && $line[3] === ' ') {
+                break;
+            }
+        }
+        return [$code, $text];
+    };
+    $cmd = function (string $line, array $ok) use ($fp, $read): bool {
+        fwrite($fp, $line . "\r\n");
+        [$code] = $read();
+        return in_array($code, $ok, true);
+    };
+    $ehlo = 'dragoscatana.com';
+    [$code] = $read();
+    if ($code !== 220 || !$cmd('EHLO ' . $ehlo, [250])) {
+        fclose($fp);
+        return false;
+    }
+    if (!$implicit) {
+        if (!$cmd('STARTTLS', [220]) || !@stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+            fclose($fp);
+            return false;
+        }
+        if (!$cmd('EHLO ' . $ehlo, [250])) {
+            fclose($fp);
+            return false;
+        }
+    }
+    $ok = $cmd('AUTH LOGIN', [334]) && $cmd(base64_encode($user), [334]) && $cmd(base64_encode($pass), [235])
+        && $cmd('MAIL FROM:<' . $from . '>', [250]) && $cmd('RCPT TO:<' . $to . '>', [250, 251]) && $cmd('DATA', [354]);
+    if ($ok) {
+        $msg = 'To: <' . $to . ">\r\nSubject: " . $subject . "\r\nDate: " . date('r') . "\r\nMessage-ID: <" . bin2hex(random_bytes(12)) . '@dragoscatana.com>' . "\r\n"
+            . implode("\r\n", $headers) . "\r\n\r\n" . chunk_split(base64_encode($body));
+        $msg = preg_replace('/^\./m', '..', $msg);
+        fwrite($fp, $msg . "\r\n.\r\n");
+        [$code] = $read();
+        $ok = $code === 250;
+    }
+    @fwrite($fp, "QUIT\r\n");
+    fclose($fp);
+    return $ok;
+}
 
 if (!$sent) {
     respond(502, ['ok' => false, 'error' => 'mail_failed']);
