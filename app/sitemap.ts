@@ -5,7 +5,7 @@ import { site } from "@/lib/site-config";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date("2026-11-18");
   const pages = [
-    "", "/servicii", "/servicii/redesign-website", "/servicii/creare-website", "/servicii/seo-vizibilitate-ai",
+    "", "/servicii", "/servicii/redesign-website", "/servicii/creare-website", "/servicii/seo-vizibilitate-ai", "/servicii/website-clinici-medicale", "/servicii/website-cabinete-avocatura",
     "/lucrari", "/lucrari/cheesy-media", "/audit-gratuit-vizibilitate-ai", "/articole", "/despre", "/contact",
     "/confidentialitate", "/cookie", "/termeni",
   ].map((p) => ({ url: `${site.url}${p}`, lastModified: now }));

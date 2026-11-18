@@ -18,6 +18,13 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [x] Sample audit table (labelled as an example) on the SEO page.
 - [x] Legal pages drafted (privacy, cookies, terms).
 
+## Awwwards MCP (installed, see plan §12)
+- [x] Installed `awwwards-mcp@1.20.0` (project `.mcp.json`) and the 9 skills in `.claude/skills/`.
+- [x] Ran the local-evidence tools on the site, fixed contrast, tap targets and image sizes, added two vertical pages and a proof strip.
+- [ ] **Run the inspiration loop** (search, design DNA, `create_design_brief`) once `www.awwwards.com` is reachable. In this session the proxy still refused it.
+- [ ] **On your own computer:** restart Claude Code so it loads the `awwwards` server from `.mcp.json`. For browser tools (captures, structure, motion), run `npm install -g awwwards-mcp@1.20.0 playwright ffmpeg-static` and `npm exec --global -- playwright install chromium`, then `claude mcp remove awwwards` and `claude mcp add awwwards -- awwwards-mcp`.
+- [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
+
 ## Needs you
 - [ ] **Deploy to Netlify.** My upload from this session failed with a network error. Easiest fix: in Netlify, open the `dragoscatana` project → *Link repository* → pick `dragos1304/dragos-catana-portfolio` and the branch to publish. Build command `npm run build` is already in `netlify.toml`.
 - [ ] **Netlify Forms notifications:** Forms → Submission notifications → add email notification to your address (must be an active member of your Netlify team). Then send a test submission from the live site and check the **Spam** tab too.

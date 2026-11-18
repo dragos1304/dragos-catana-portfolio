@@ -13,22 +13,22 @@ export function Footer() {
         </div>
         <nav aria-label="Subsol">
           <p className="text-sm font-semibold uppercase tracking-wider text-white">Pagini</p>
-          <ul className="mt-3 space-y-2 text-sm">
+          <ul className="mt-3 space-y-1 text-sm">
             {nav.map((n) => (
-              <li key={n.href}><Link href={n.href} className="hover:text-white">{n.label}</Link></li>
+              <li key={n.href}><Link href={n.href} className="inline-block py-1.5 hover:text-white">{n.label}</Link></li>
             ))}
-            <li><Link href="/audit-gratuit-vizibilitate-ai" className="hover:text-white">Audit gratuit AI</Link></li>
+            <li><Link href="/audit-gratuit-vizibilitate-ai" className="inline-block py-1.5 hover:text-white">Audit gratuit AI</Link></li>
           </ul>
         </nav>
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-white">Legal și contact</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/confidentialitate" className="hover:text-white">Politica de confidențialitate</Link></li>
-            <li><Link href="/cookie" className="hover:text-white">Politica de cookie-uri</Link></li>
-            <li><Link href="/termeni" className="hover:text-white">Termeni și condiții</Link></li>
+          <ul className="mt-3 space-y-1 text-sm">
+            <li><Link href="/confidentialitate" className="inline-block py-1.5 hover:text-white">Politica de confidențialitate</Link></li>
+            <li><Link href="/cookie" className="inline-block py-1.5 hover:text-white">Politica de cookie-uri</Link></li>
+            <li><Link href="/termeni" className="inline-block py-1.5 hover:text-white">Termeni și condiții</Link></li>
             <li><CookieSettingsButton /></li>
-            <li><a href={site.calendly} target="_blank" rel="noopener noreferrer" className="hover:text-white">Programează o discuție</a></li>
-            <li><a href={site.github} target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a></li>
+            <li><a href={site.calendly} target="_blank" rel="noopener noreferrer" className="inline-block py-1.5 hover:text-white">Programează o discuție</a></li>
+            <li><a href={site.github} target="_blank" rel="noopener noreferrer" className="inline-block py-1.5 hover:text-white">GitHub</a></li>
           </ul>
         </div>
       </div>

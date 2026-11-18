@@ -469,3 +469,40 @@ lib/
 | Cheesy Media before/after details | Live sites (`cheesymedia.netlify.app`, `cheesy-media.netlify.app`) |
 | Languages, platforms, offers, response time, Calendly, GTM ID | Your confirmation (this conversation) |
 | Prices, client results, third-party testimonials | **None. Do not publish until real.** |
+
+---
+
+## 12. Design direction and tooling (v3)
+
+### Awwwards MCP: what was installed
+- **MCP server:** `awwwards-mcp` pinned to **1.20.0** (MIT, 2 dependencies, no install scripts). Registered for this project in `.mcp.json` (`npx -y awwwards-mcp@1.20.0`). Auto-update is left **off** (`AWWWARDS_AUTO_UPDATE` not set), and the experimental Atlas tools are **off**.
+- **Skills:** the 9 skills from `INSANE0777/awwwards-skills` are copied into `.claude/skills/` (setup, inspiration, motion-study, section-loop, motion-authoring, design-md, atlas, doctor, recreate). Review them before use; they run with full agent permissions.
+- **Preferences** (README step "setup"): compact results, desktop + mobile, live captures on, no automatic index. Stored in `~/.awwwards-mcp/preferences.json` on the machine that runs the server.
+- **Ethics, per the README:** personal design-inspiration use, public pages, polite rates. We use references to inform *direction*, never to copy a site, and we do not use `recreate` to clone anyone's site.
+
+### Tools applied to this site (run against the local production build)
+| Tool | Finding | Action taken |
+|------|---------|--------------|
+| `analyze_stack` | Next.js + Tailwind detected | None |
+| `analyze_page_structure` (+ mobile compare) | 10 clear bands on Home; no horizontal overflow on mobile; **1 tap target under 24px** (footer cookie button) | Footer and cookie-settings links enlarged. Re-run: 0 small tap targets |
+| `analyze_accessibility` | Lowest text contrast **4.8:1** (brass on mist) | Darkened `brass-dark` to `#92400e`. Re-run: lowest **5.6:1** |
+| `analyze_images` | 2 case-study images **oversized** for their display size, no `sizes` | Added `sizes`. Re-run: 0 oversized |
+| `export_design_tokens` | Tight system: 6 colors, 2 type families | Documented in `DESIGN.md` |
+| `audit_url` | Only informational notes; frame-rate numbers from headless software rendering aren't meaningful | None |
+| `analyze_hover_census`, `analyze_scroll_map`, `get_motion_dna` | Almost no motion on the site, by design | Kept; see motion decision below |
+
+### Decisions taken (at my discretion)
+1. **Borrow principles, not looks.** From award-winning sites: strong typographic hierarchy, one idea per band, confident whitespace, and a proof strip. Not borrowed: heavy WebGL or scroll-hijacking motion.
+2. **Motion stays minimal.** The audience (clinics, law firms) values calm and trust, and heavy motion costs Core Web Vitals and crawlability, which are the point of this brand. Motion is limited to a fade/rise, transform and opacity only, with reduced-motion respected.
+3. **Structure upgrade: vertical landing pages.** Added `/servicii/website-clinici-medicale` and `/servicii/website-cabinete-avocatura` (see §4 sitemap). They convert the target audience and give AI assistants precise pages to cite. Keyword volume for these terms is small (see §7), so they are conversion pages, not traffic pages.
+4. **Home upgrade:** a proof strip right under the hero (24h audit, 24h reply, four languages, the measured Cheesy Media score) and the "who I work with" cards now link to their pages.
+5. **Design system documented** in `DESIGN.md`.
+
+### Sitemap additions
+```
+/servicii/website-clinici-medicale
+/servicii/website-cabinete-avocatura
+```
+
+### Pending (needs network access to awwwards.com)
+Inspiration search (`search_sites`, `get_site_details`, `create_design_brief`) is blocked in this session: the cloud proxy refuses `www.awwwards.com`. I created a personal environment `dragos-catana-portfolio` that allows that host; the proxy can take up to an hour to apply it. Once it works, run the `awwwards-inspiration` loop (for example `award: "businessServices"` and `"typography"`) and fold anything useful into `DESIGN.md`.

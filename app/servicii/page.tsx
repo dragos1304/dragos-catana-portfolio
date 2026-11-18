@@ -56,6 +56,11 @@ export default function Servicii() {
             </tbody>
           </table>
         </div>
+        <h3 className="mt-12 font-serif text-2xl font-semibold">Pentru domeniul tău</h3>
+        <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+          <li className="rounded-2xl border border-line bg-white p-6"><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/website-clinici-medicale">Website pentru clinici și cabinete medicale</Link><p className="mt-2 text-slate-ink">Pagini pe specialități, medici, programare și SEO local.</p></li>
+          <li className="rounded-2xl border border-line bg-white p-6"><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/website-cabinete-avocatura">Website pentru cabinete de avocatură</Link><p className="mt-2 text-slate-ink">Domenii de practică, avocați, articole și contact discret.</p></li>
+        </ul>
         <h3 className="mt-12 font-serif text-2xl font-semibold">Pachete combinate</h3>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">
           <li className="rounded-2xl border border-line bg-white p-6"><strong>Redesign + pregătit pentru AI.</strong> Site nou, migrare sigură, conținut și date structurate gândite pentru motoare AI.</li>

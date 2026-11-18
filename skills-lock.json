@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "skills": {
+    "awwwards-atlas": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/awwwards-atlas/SKILL.md",
+      "computedHash": "98b02437992baa8c28990cefbf091c75606f7e9ca090635ab30d5f0e85b68a28",
+      "installMode": "copy"
+    },
+    "awwwards-design-md": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/awwwards-design-md/SKILL.md",
+      "computedHash": "b1873aef44feca81b0970c643b21568605059fbdf6695859876af96c96421e7f",
+      "installMode": "copy"
+    },
+    "awwwards-doctor": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/awwwards-doctor/SKILL.md",
+      "computedHash": "ccfb1541054d4d9f50f7fd3e6374699fe80e99c1140871368d53f11c3d8d7366",
+      "installMode": "copy"
+    },
+    "awwwards-inspiration": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/awwwards-inspiration/SKILL.md",
+      "computedHash": "608980dbb7c540633f04eb4dbea7438ac51cafcd3e808273a472419c2eb4df5b",
+      "installMode": "copy"
+    },
+    "awwwards-motion-study": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/awwwards-motion-study/SKILL.md",
+      "computedHash": "b6dee9f7cac47936dd9a448da739292af002622fae83e045d25b2d2c6db55a16",
+      "installMode": "copy"
+    },
+    "awwwards-section-loop": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/awwwards-section-loop/SKILL.md",
+      "computedHash": "7e685e0ad45fd825b5a9701aa9acd7323ed33e38557b3598634d5978f36fbc28",
+      "installMode": "copy"
+    },
+    "awwwards-setup": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/awwwards-setup/SKILL.md",
+      "computedHash": "b7461ba5ad3b156f289aa3cf1d69f9a247e72e2f67c9e02c01623bcf18b6df5b",
+      "installMode": "copy"
+    },
+    "motion-authoring": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/motion-authoring/SKILL.md",
+      "computedHash": "71fce0e6ea55180e3affe44e7cae89399fd6d21f7e36295b1e4fc1994fb67d61",
+      "installMode": "copy"
+    },
+    "recreate": {
+      "source": "INSANE0777/awwwards-skills",
+      "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
+      "sourceType": "github",
+      "skillPath": "skills/recreate/SKILL.md",
+      "computedHash": "a7e6f3c065b3fdbb7648ffbaae7cd89fdea669944794c1527692b87e09d8d535",
+      "installMode": "copy"
+    }
+  }
+}

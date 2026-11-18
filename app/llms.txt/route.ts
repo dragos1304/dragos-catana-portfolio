@@ -15,6 +15,8 @@ ${site.name} (${site.legalName}) este web designer și specialist SEO din ${site
 - [Redesign de website](${site.url}/servicii/redesign-website): redesign modern cu migrare sigură, redirecturi 301 și conținut pregătit pentru AI
 - [Creare de website](${site.url}/servicii/creare-website): website nou în Next.js, Webflow, Shopify sau Medusa
 - [SEO și vizibilitate în AI](${site.url}/servicii/seo-vizibilitate-ai): audit, optimizare GEO/SEO, colaborare lunară
+- [Website pentru clinici și cabinete medicale](${site.url}/servicii/website-clinici-medicale): pagini pe specialități, medici, programare și SEO local
+- [Website pentru cabinete de avocatură](${site.url}/servicii/website-cabinete-avocatura): domenii de practică, avocați, articole, contact discret
 - [Audit gratuit de vizibilitate AI](${site.url}/audit-gratuit-vizibilitate-ai)
 
 ## Lucrări

@@ -64,7 +64,7 @@ export function CookieBanner() {
 
 export function CookieSettingsButton() {
   return (
-    <button type="button" className="text-left hover:text-white"
+    <button type="button" className="inline-block py-1.5 text-left hover:text-white"
       onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}>
       Setări cookie-uri
     </button>

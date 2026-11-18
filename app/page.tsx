@@ -60,6 +60,24 @@ export default function Home() {
         </Container>
       </section>
 
+      <section aria-label="Pe scurt" className="border-b border-line bg-white">
+        <Container>
+          <dl className="grid grid-cols-2 gap-y-6 py-8 text-center md:grid-cols-4">
+            {[
+              ["24 de ore", "audit gratuit, manual"],
+              ["24 de ore", "răspuns la orice mesaj"],
+              ["RO · EN · FR · DE", "limbi disponibile"],
+              ["82 → 100", "performanță mobil, Cheesy Media"],
+            ].map(([a, b]) => (
+              <div key={b}>
+                <dt className="font-serif text-2xl font-semibold text-navy sm:text-3xl">{a}</dt>
+                <dd className="mt-1 text-sm text-slate-ink">{b}</dd>
+              </div>
+            ))}
+          </dl>
+        </Container>
+      </section>
+
       <Section>
         <div className="max-w-3xl">
           <Eyebrow>De ce acum</Eyebrow>
@@ -110,14 +128,15 @@ export default function Home() {
         <H2>Practici și afaceri locale unde încrederea decide.</H2>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {[
-            ["Clinici și cabinete medicale", "Pacienții caută și compară înainte să sune. Site-ul și prezența ta trebuie să inspire calm și încredere."],
-            ["Cabinete de avocatură", "Clienții caută un specialist pe o problemă concretă. Paginile pe domenii de practică clare fac diferența."],
-            ["Afaceri locale de servicii", "Dacă oamenii te caută „în zona mea”, vizibilitatea locală în Google și în AI aduce direct clienți."],
-          ].map(([t, d]) => (
-            <div key={t} className="rounded-2xl border border-line p-6">
+            ["Clinici și cabinete medicale", "Pacienții caută și compară înainte să sune. Site-ul și prezența ta trebuie să inspire calm și încredere.", "/servicii/website-clinici-medicale"],
+            ["Cabinete de avocatură", "Clienții caută un specialist pe o problemă concretă. Paginile pe domenii de practică clare fac diferența.", "/servicii/website-cabinete-avocatura"],
+            ["Afaceri locale de servicii", "Dacă oamenii te caută „în zona mea”, vizibilitatea locală în Google și în AI aduce direct clienți.", "/servicii/seo-vizibilitate-ai"],
+          ].map(([t, d, href]) => (
+            <Link key={t} href={href} className="group rounded-2xl border border-line p-6 transition-shadow hover:shadow-lg">
               <h3 className="font-serif text-xl font-semibold">{t}</h3>
               <p className="mt-2 text-slate-ink leading-relaxed">{d}</p>
-            </div>
+              <span className="mt-4 inline-block font-semibold text-brass-dark">Vezi cum lucrez →</span>
+            </Link>
           ))}
         </div>
       </Section>
