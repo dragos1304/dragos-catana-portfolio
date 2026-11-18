@@ -20,8 +20,8 @@
 | **Audit** | Free, **manual**, delivered **within 24h**. |
 | **Response time** | **24h** for everything. |
 | **Booking** | Calendly: `https://calendly.com/dragoscatana/consultanta-1-la-1` |
-| **Hosting / domain** | Netlify, `dragoscatana.com`, DNS on Cloudflare. |
-| **Forms** | Netlify Forms (free tier) + spam protection. |
+| **Hosting / domain** | **Network Solutions** web hosting (static files), `dragoscatana.com`, **DNS on Cloudflare**. See `DEPLOY.md`. *(Changed from Netlify.)* |
+| **Forms** | PHP handler `api/contact.php` on the host (honeypot, time trap, rate limit, same-site check), emails you. Alternative if the plan has no PHP: a hosted form service. |
 | **Analytics** | Google Tag Manager container `GTM-K7RPGZSV` (GA4 runs inside it). |
 | **AI crawlers** | **Allow all reputable ones.** |
 | **Reference quote** | Prof. Lungescu's recommendation is cleared for public use. |
@@ -287,7 +287,7 @@ The portfolio is the best proof. Treat it as the first client.
 
 Bot names change over time; recheck them each quarter against each vendor's documentation.
 
-> ⚠️ **Cloudflare watch-out:** Cloudflare can block AI crawlers by default on some plans/settings (a "block AI bots" switch and a managed robots.txt). With Cloudflare as your DNS, keep Netlify records as **DNS-only** (grey cloud) if possible, and make sure no AI-bot blocking or bot-fight rule is turned on for this domain. Otherwise `robots.txt` says "welcome" while the firewall says "no".
+> ⚠️ **Cloudflare watch-out:** Cloudflare can block AI crawlers by default on some plans/settings (a "block AI bots" switch and a managed robots.txt). Keep the records **DNS-only** (grey cloud) to start, and if you turn the proxy on, make sure no AI-bot blocking or bot-fight rule is active for this domain. Also set SSL/TLS to **Full (strict)**, since "Flexible" loops with the HTTPS redirect. Otherwise `robots.txt` says "welcome" while the firewall says "no".
 
 **Structured data (JSON-LD)**
 | Page | Schema |
@@ -433,8 +433,8 @@ lib/
   site-config.ts         single source of truth: name, bio facts, links, Calendly URL
 ```
 
-- **Hosting:** Netlify, domain `dragoscatana.com`, **DNS on Cloudflare** (see watch-out in §7). Add the domain in Netlify, then set the Cloudflare records Netlify specifies. Redirect `www` ↔ apex and force HTTPS.
-- **Forms (my pick): Netlify Forms**, since you're already on Netlify and it's free to start. Notes: free-tier submission limits apply (check current limits); Next.js needs a static hidden form so Netlify detects it; add a honeypot field plus optional reCAPTCHA for spam; email notifications to you; a consent checkbox with a link to the privacy page. If limits become a problem, switch to a server action + email API.
+- **Hosting:** Network Solutions static hosting, domain `dragoscatana.com`, **DNS on Cloudflare** (see watch-out in §7). The site is a static export (`output: "export"`, `trailingSlash: true`) in `out/`. `.htaccess` handles HTTPS, `www` → apex, security headers, caching and the 404 page. Step-by-step in `DEPLOY.md`. Optional FTPS deploy via GitHub Actions (`.github/workflows/deploy.yml`).
+- **Forms:** `public/api/contact.php` (PHP). Honeypot, a 3-second time trap, 5-per-hour rate limit per IP, same-site origin check, consent required. Recipient and sender are set in a server-only `api/config.php` (never committed). Needs SPF for the sending domain so mail is not marked as spam. Without PHP, set `NEXT_PUBLIC_FORM_ENDPOINT` to a hosted form service.
 - **i18n:** Romanian at root; `/en` as phase 2 with `hreflang`. FR/DE are quoted add-ons, built per project.
 - **Verification (from `Gemini.md`):** produce a build log and Lighthouse (performance, accessibility, SEO) report before marking each milestone done.
 
@@ -447,7 +447,7 @@ lib/
 | **0 — Prep** | Clear the `TODO.md` blockers (photo, fonts, links, Cheesy Media permission); convert RTF files to text |
 | **1 — Foundation** | Next.js project, tokens, layout, nav/footer, `site-config`, SEO/JSON-LD helpers, consent banner + GTM |
 | **2 — Core pages (RO)** | Acasă, Servicii hub + 3 service pages, Despre, Contact |
-| **3 — Conversion** | Audit page + Netlify Form, Calendly, event tracking |
+| **3 — Conversion** | Audit page + PHP form handler, Calendly, event tracking |
 | **4 — Proof & content** | Cheesy Media case study (with measured Lighthouse before/after), first 5 articles, FAQ schema |
 | **5 — Launch QA** | Lighthouse, accessibility, sitemap/robots/llms.txt, Cloudflare/AI-bot check, Search Console + Bing Webmaster, baseline AI-prompt test |
 | **6 — Growth** | 2 articles/month, monthly AI-prompt tracking, Google Business Profile, directories, first client cases, `/en` version |

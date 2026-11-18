@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "SEO și optimizare pentru ChatGPT, Gemini și Perplexity (GEO)",
   description:
     "Fii găsit în Google și recomandat de asistenții AI. Audit gratuit în 24 de ore, apoi implementare sau colaborare lunară SEO/GEO pentru afaceri locale din România.",
-  alternates: { canonical: path },
+  alternates: { canonical: `${path}/` },
 };
 
 const faq = [

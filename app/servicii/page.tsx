@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Servicii: redesign, creare website și SEO pentru AI",
   description:
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Cere o ofertă sau un audit gratuit.",
-  alternates: { canonical: "/servicii" },
+  alternates: { canonical: "/servicii/" },
 };
 
 export default function Servicii() {

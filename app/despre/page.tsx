@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Despre Dragoș Cătană: economist, antreprenor, web designer",
   description:
     "Student la Economie (media 4.0) la UBB, cu schimburi la Paris și în SUA, antreprenor din adolescență. Povestea din spatele serviciilor de web design și SEO.",
-  alternates: { canonical: "/despre" },
+  alternates: { canonical: "/despre/" },
 };
 
 const ventures = [

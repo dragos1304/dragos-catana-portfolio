@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site-config";
 
+export const dynamic = "force-static";
+
 // Policy: allow all reputable search and AI crawlers. Keep in sync with PORTFOLIO_STRUCTURE.md §7.
 const aiBots = [
   "OAI-SearchBot", "GPTBot", "ChatGPT-User",

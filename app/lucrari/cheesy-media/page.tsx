@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Studiu de caz: redesign website Cheesy Media",
   description:
     "Redesign pentru o agenție foto-video din Cluj-Napoca: de la o pagină lungă la un site complet. Lighthouse mobil: performanță 82 → 100, accesibilitate 96 → 100.",
-  alternates: { canonical: path },
+  alternates: { canonical: `${path}/` },
 };
 
 const scores = [
@@ -89,11 +89,11 @@ export default function Page() {
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <figure>
-            <Image src="/lucrari/cheesy-media/lighthouse-inainte.png" width={1920} height={1176} alt="Raport Lighthouse pentru site-ul vechi: performanță 82, accesibilitate 96, bune practici 100, SEO 100" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" className="rounded-2xl border border-line" />
+            <Image src="/lucrari/cheesy-media/lighthouse-inainte.webp" width={1600} height={980} alt="Raport Lighthouse pentru site-ul vechi: performanță 82, accesibilitate 96, bune practici 100, SEO 100" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" className="rounded-2xl border border-line" />
             <figcaption className="mt-2 text-sm text-slate-ink">Înainte: performanță 82, accesibilitate 96.</figcaption>
           </figure>
           <figure>
-            <Image src="/lucrari/cheesy-media/lighthouse-dupa.png" width={1924} height={1146} alt="Raport Lighthouse pentru site-ul nou: 100 la performanță, accesibilitate, bune practici și SEO" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" className="rounded-2xl border border-line" />
+            <Image src="/lucrari/cheesy-media/lighthouse-dupa.webp" width={1600} height={953} alt="Raport Lighthouse pentru site-ul nou: 100 la performanță, accesibilitate, bune practici și SEO" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" className="rounded-2xl border border-line" />
             <figcaption className="mt-2 text-sm text-slate-ink">După: 100 la toate cele patru categorii.</figcaption>
           </figure>
         </div>

@@ -4,7 +4,7 @@ import { LegalPage } from "@/components/LegalPage";
 export const metadata: Metadata = {
   title: "Politica de cookie-uri",
   description: "Ce cookie-uri și date de browser folosește dragoscatana.com și cum îți poți schimba alegerea.",
-  alternates: { canonical: "/cookie" },
+  alternates: { canonical: "/cookie/" },
 };
 
 export default function Page() {

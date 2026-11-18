@@ -1,6 +1,6 @@
 import { site } from "./site-config";
 
-export const abs = (path: string) => `${site.url}${path}`;
+export const abs = (path: string) => `${site.url}${path === "/" ? "/" : path.replace(/\/?$/, "/")}`;
 
 export const personSchema = {
   "@type": "Person",

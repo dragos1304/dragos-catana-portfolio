@@ -1,5 +1,5 @@
 "use client";
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 
 type Kind = "audit" | "contact";
@@ -9,18 +9,21 @@ const inputCls =
 export function LeadForm({ kind }: { kind: Kind }) {
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   const isAudit = kind === "audit";
+  const openedAt = useRef(Date.now());
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setState("sending");
     const data = new FormData(e.currentTarget);
+    data.set("ts", String(openedAt.current));
     try {
-      const res = await fetch("/__forms.html", {
+      const res = await fetch(process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "/api/contact.php", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
         body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
       });
-      if (!res.ok) throw new Error(String(res.status));
+      const json = (await res.json().catch(() => null)) as { ok?: boolean } | null;
+      if (!res.ok || !json?.ok) throw new Error(String(res.status));
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: "generate_lead", form_name: kind });
       setState("done");
@@ -47,7 +50,6 @@ export function LeadForm({ kind }: { kind: Kind }) {
   return (
     <form name={kind} method="POST" onSubmit={onSubmit} className="space-y-5">
       <input type="hidden" name="form-name" value={kind} />
-      <input type="hidden" name="subject" value={isAudit ? "Cerere audit gratuit AI (%{submissionId})" : "Mesaj nou din contact (%{submissionId})"} />
       <p className="hidden"><label>Nu completa: <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium">Nume

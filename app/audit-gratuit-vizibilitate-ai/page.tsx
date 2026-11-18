@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Audit gratuit de vizibilitate în AI și SEO",
   description:
     "Află dacă ChatGPT, Gemini și Perplexity îți recomandă afacerea. Audit manual, gratuit, livrat în maximum 24 de ore.",
-  alternates: { canonical: path },
+  alternates: { canonical: `${path}/` },
 };
 
 export default function Page() {

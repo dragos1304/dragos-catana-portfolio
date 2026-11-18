@@ -6,7 +6,7 @@ import { site } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Politica de confidențialitate",
   description: "Cum sunt folosite datele personale transmise prin formularele de pe dragoscatana.com.",
-  alternates: { canonical: "/confidentialitate" },
+  alternates: { canonical: "/confidentialitate/" },
 };
 
 export default function Page() {

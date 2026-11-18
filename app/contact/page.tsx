@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact și cerere de ofertă",
   description: "Spune-mi despre proiectul tău. Răspund în maximum 24 de ore. Poți programa și o discuție pe Calendly.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact/" },
 };
 
 export default function Contact() {

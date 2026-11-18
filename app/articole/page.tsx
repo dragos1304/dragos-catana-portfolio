@@ -8,7 +8,7 @@ import { articles } from "@/lib/articles";
 export const metadata: Metadata = {
   title: "Articole: SEO, vizibilitate în AI și web design",
   description: "Ghiduri practice despre SEO, optimizare pentru ChatGPT, Gemini și Perplexity, redesign și date structurate, pe înțelesul proprietarilor de afaceri.",
-  alternates: { canonical: "/articole" },
+  alternates: { canonical: "/articole/" },
 };
 
 export default function Articole() {

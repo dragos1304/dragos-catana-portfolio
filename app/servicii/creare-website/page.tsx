@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Creare website pentru clinici, avocați și afaceri locale",
   description:
     "Website nou, rapid și clar, construit să fie găsit în Google și recomandat de AI: Next.js, Webflow, Shopify sau Medusa. Cere o ofertă.",
-  alternates: { canonical: path },
+  alternates: { canonical: `${path}/` },
 };
 
 const platforms = [

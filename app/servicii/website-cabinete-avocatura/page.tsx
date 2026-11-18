@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Website pentru cabinete de avocatură: creare și redesign",
   description:
     "Website sobru, rapid și clar pentru avocați și cabinete de avocatură: pagini pe domenii de practică, programare de consultații și vizibilitate în Google și în răspunsurile AI.",
-  alternates: { canonical: path },
+  alternates: { canonical: `${path}/` },
 };
 
 export default function Page() {

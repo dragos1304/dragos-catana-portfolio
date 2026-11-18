@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Website pentru clinici și cabinete medicale: creare și redesign",
   description:
     "Website clar, rapid și credibil pentru clinici și cabinete medicale, cu programare, pagini pe specialități și vizibilitate în Google și în răspunsurile AI. Cere o ofertă.",
-  alternates: { canonical: path },
+  alternates: { canonical: `${path}/` },
 };
 
 export default function Page() {
