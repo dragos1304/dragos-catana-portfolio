@@ -21,7 +21,7 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 ## Awwwards MCP (installed, see plan §12)
 - [x] Installed `awwwards-mcp@1.20.0` (project `.mcp.json`) and the 9 skills in `.claude/skills/`.
 - [x] Ran the local-evidence tools on the site, fixed contrast, tap targets and image sizes, added two vertical pages and a proof strip.
-- [ ] **Run the inspiration loop** (search, design DNA, `create_design_brief`) once `www.awwwards.com` is reachable. In this session the proxy still refused it.
+- [x] Inspiration loop run (18 Nov 2026): `search_sites` and `create_design_brief` work now. Findings are in `DESIGN.md`. Optional next step: apply the statement hero / process section ideas.
 - [ ] **On your own computer:** restart Claude Code so it loads the `awwwards` server from `.mcp.json`. For browser tools (captures, structure, motion), run `npm install -g awwwards-mcp@1.20.0 playwright ffmpeg-static` and `npm exec --global -- playwright install chromium`, then `claude mcp remove awwwards` and `claude mcp add awwwards -- awwwards-mcp`.
 - [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
 

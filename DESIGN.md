@@ -62,3 +62,14 @@ Rule: never use `brass` for small text on white. Use `brass-dark`.
 - Do label illustrative content as an example.
 - Don't invent numbers, reviews or testimonials.
 - Don't add heavy scroll-driven animation: it hurts Core Web Vitals and gives the audience nothing.
+
+## Awwwards reference study (18 Nov 2026)
+Direction only, nothing copied. References from `businessServices` and `typography` winners; brief built with `create_design_brief` from Wembi, MONOLOG and Dragonfly Redux. Motion evidence was unavailable for all three, so only detail/element evidence was used.
+
+Shared signals: GSAP-driven motion, "clean"/"minimal" styling, business-style layouts.
+Patterns worth adapting (cheap, no WebGL, work without JS):
+- **Statement-driven hero** (MONOLOG): one large typographic sentence instead of imagery. Fits the serif display face.
+- **Process section** (MONOLOG): numbered steps for "how an audit/project works".
+- **Quiet footer composition** (MONOLOG, Dragonfly): large contact CTA in the footer.
+- **Micro-interactions on hover** only (Wembi, Dragonfly), CSS transform/opacity.
+Deliberately skipped: WebGL/three.js, ASCII hover, scroll-jacking, dark all-black palettes. They conflict with the calm, trust-first audience and Lighthouse 100 goal.
