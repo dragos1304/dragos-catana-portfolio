@@ -10,7 +10,7 @@
 | Topic | Decision |
 |-------|----------|
 | **Market** | Romania only. Site is **Romanian-first**. |
-| **Languages** | RO (default). Services also offered in **EN, FR, DE** as an add-on. *(You wrote "GR"; I read it as German/Deutsch. Tell me if you meant Greek.)* |
+| **Languages** | RO (default). Services also offered in **EN, FR, DE** as an add-on. (German confirmed.) |
 | **Ideal clients** | Local service businesses, **medical clinics, law firms**, and similar professional practices. |
 | **Brand** | Personal brand, **Dragoș Cătană**. No studio name. |
 | **Pricing** | **Request a quote.** No prices shown anywhere. |
@@ -321,6 +321,38 @@ Honest premise: a new domain won't beat established agencies on broad terms like
 | **Avoid for now** | „creare website", „agenție SEO", „SEO România" | | Dominated by large agencies; slow payoff. |
 
 Notes: many Romanians search **without diacritics** ("dragos catana", "clinica"). Write naturally with diacritics but make sure titles/URLs and a few body mentions cover the plain forms. Never keyword-stuff.
+
+#### Validated with Semrush (Romania database, 18 Nov 2026)
+
+Monthly search volume and keyword difficulty (KD, 0-100). Terms not listed returned no data, meaning too little volume to measure.
+
+| Keyword | Volume | KD | Use on the site |
+|---------|-------:|---:|-----------------|
+| creare site web | 2,900 | 32 | Secondary term on the website-creation page (competitive) |
+| creare site | 2,900 | 8* | Same page; *Semrush shows a very low KD here, treat as unreliable |
+| realizare site / site web | 480 | 26–34 | Synonym for the creation page |
+| agenție seo | 2,400 | 41 | Skip (agencies own it) |
+| optimizare seo | 1,900 | 30 | Main term of the SEO page |
+| optimizare site | 880 | 19 | Main term of the SEO page, easier |
+| audit seo | 260 | 67 | Too hard |
+| **audit seo gratuit** | 140 | 21 | **Primary term of the free-audit page** |
+| consultant seo | 140 | 29 | Secondary on the SEO page |
+| seo local | 90 | 28 | Local SEO section / article |
+| seo ai | 140 | 71 | Too hard for now |
+| **aeo** | 260 | 15 | **Article and SEO page (GEO/AEO)** |
+| **geo seo** | 40 | 19 | **Article and SEO page** |
+| web design cluj | 110 | 32 | Local term, supports Home and creation page |
+| freelancer web design | 110 | 40 | Secondary |
+| seo cluj | 70 | 13 | Local term |
+| marketing medical | 50 | 11 | Clinics angle (article later) |
+| redesign website / site | 10–20 | 0 | Tiny volume, still the core service, keep the page |
+| site avocat / creare site avocat | 10–20 | 0 | Tiny volume |
+
+What this tells us:
+- **Romanian search volume for the niche is small.** Clinic and law-firm website terms barely register. That does not mean no demand: people ask AI and Google in full sentences, and the same people are high-value. Treat niche pages as **conversion and AI-citation pages**, not traffic pages.
+- **Best realistic traffic targets:** "audit seo gratuit" (140, KD 21), "optimizare site" (880, KD 19), "aeo" (260, KD 15), "geo seo" (40, KD 19), plus local terms ("seo cluj", "web design cluj").
+- **Broad terms** ("creare site web", "optimizare seo") have volume but strong competition. Use them naturally on service pages and win them through content and authority over time.
+- The site already includes these terms in titles, headings and article text. Re-run the check in 3 months.
 
 **Target prompts to test monthly** (before and after launch, across ChatGPT, Gemini, Claude, Perplexity):
 - „Cine face website-uri pentru clinici medicale în Cluj?"

@@ -1,41 +1,44 @@
 # TODO
 
-Things that still need an owner or a decision before or after launch. Source plan: `PORTFOLIO_STRUCTURE.md`.
+Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 
-## Blockers before build
-- [ ] **Confirm "GR"** means German (DE) rather than Greek. The plan assumes German.
-- [ ] **Cheesy Media**: get written OK to publish the case study, name and screenshots. Ask for a real quote if they're happy to give one.
-- [ ] **Cheesy Media**: run Lighthouse/PageSpeed on the old and new sites and save the scores (this is the only "result" we can show honestly right now).
-- [ ] **Professional photo** for Home and About.
-- [ ] **Fonts**: pick a serif display + sans body, and confirm Romanian diacritics (ă â î ș ț) render correctly.
-- [ ] **Contact details**: public email address, LinkedIn URL, GitHub URL, optional phone/WhatsApp.
-- [ ] **Convert** `Gemini.md` and `dragos_catana_profile.txt` from RTF to plain text.
-- [ ] **GTM**: use the standard GTM install (the pasted snippet is incomplete: no `gtm.start` push, no `<noscript>`, stray `gtag`). Configure GA4 inside container `GTM-K7RPGZSV`.
-- [ ] **Cookie consent**: choose a consent tool and set up Consent Mode (GDPR/ePrivacy).
-- [ ] **Legal pages** (privacy, terms, cookies): draft and have them reviewed. Check any wording about processing form data.
+## Done
+- [x] Confirmed "GR" = German (DE).
+- [x] Cheesy Media gave permission to publish the case study.
+- [x] Cheesy Media Lighthouse (mobile, PageSpeed Insights): performance 82 → 100, accessibility 96 → 100, best practices 100 → 100, SEO 100 → 100. Screenshots and the case-study page are in the site.
+- [x] `Gemini.md` and `dragos_catana_profile.txt` converted from RTF to plain text.
+- [x] Netlify project created: `dragoscatana` (`https://dragoscatana.netlify.app`), form detection enabled.
+- [x] Next.js 15 site built (Romanian): home, services hub + 3 service pages, work + Cheesy Media case study, free-audit page, 5 articles, about, contact, legal pages, 404.
+- [x] Cookie consent built in-house (no third-party tool): Consent Mode v2, everything denied by default, choice stored in the browser, reopen link in the footer.
+- [x] Google Tag Manager installed the standard way (`GTM-K7RPGZSV`) behind consent. GA4 itself must still be configured inside GTM (see below).
+- [x] `robots.txt` (allows all reputable search and AI crawlers), `sitemap.xml`, `llms.txt`, JSON-LD (Person, ProfessionalService, WebSite, Service, FAQPage, Article, BreadcrumbList).
+- [x] Netlify Forms wired (`audit` and `contact`, honeypot spam protection, GDPR consent checkbox).
+- [x] Keywords validated with Semrush (see §7 of the plan).
+- [x] Draft Romanian copy for services, About, audit page and first 5 articles.
+- [x] Sample audit table (labelled as an example) on the SEO page.
+- [x] Legal pages drafted (privacy, cookies, terms).
 
-## Domain & hosting
-- [ ] Add `dragoscatana.com` to Netlify; set records in Cloudflare.
-- [ ] Set Netlify-pointing records to **DNS-only** (grey cloud) if possible.
-- [ ] Check Cloudflare has **no AI-bot blocking** or bot-fight rules active for this domain.
-- [ ] Redirect `www` to apex (or the reverse); force HTTPS.
-- [ ] Set up a professional email on the domain.
+## Needs you
+- [ ] **Deploy to Netlify.** My upload from this session failed with a network error. Easiest fix: in Netlify, open the `dragoscatana` project → *Link repository* → pick `dragos1304/dragos-catana-portfolio` and the branch to publish. Build command `npm run build` is already in `netlify.toml`.
+- [ ] **Netlify Forms notifications:** Forms → Submission notifications → add email notification to your address (must be an active member of your Netlify team). Then send a test submission from the live site and check the **Spam** tab too.
+- [ ] **GA4 inside GTM:** in container `GTM-K7RPGZSV`, add a GA4 configuration tag (your `G-XXXXXXX` measurement ID) with consent type *analytics_storage*, and a GA4 event tag for the `generate_lead` event the forms already push. Publish the container.
+- [ ] **Legal review:** the privacy, cookie and terms pages are drafts. Add your legal identity (PFA/CUI if you have one), a contact email for data requests, and have them reviewed before collecting real leads.
+- [ ] **Professional photo** for Home and About (the layout works without one).
+- [ ] **Public contact details:** a contact email, LinkedIn URL, optional phone/WhatsApp. They are intentionally not on the site yet.
+- [ ] **Domain:** add `dragoscatana.com` to Netlify, set the Cloudflare records Netlify gives you, `www` ↔ apex redirect, HTTPS.
+- [ ] **Cloudflare:** keep Netlify records **DNS-only** (grey cloud) and make sure no AI-bot blocking or bot-fight rule is on, otherwise `robots.txt` says "welcome" while the firewall says "no".
+- [ ] Professional email on the domain.
+- [ ] **Google Business Profile** *(deferred)*. Keep name, address, phone and website identical to the site.
+- [ ] Register the site in **Google Search Console** and **Bing Webmaster Tools**, submit `sitemap.xml`.
+- [ ] **Baseline AI-prompt test** before launch (ChatGPT, Gemini, Claude, Perplexity), then monthly. See the DIY article on the site for the method. I can't query those assistants from here.
+- [ ] Directories and profiles with an identical name and bio (LinkedIn, GitHub, Romanian business directories).
+- [ ] Open Graph share image (not built yet).
+- [ ] Re-check AI crawler names in `robots.txt` every quarter. Re-run the keyword check in 3 months.
 
-## SEO / AI visibility
-- [ ] **Google Business Profile**: create and verify it *(deferred by Dragoș)*. Keep name, address, phone and website identical to the site.
-- [ ] Validate the target keywords with a keyword tool (volume, difficulty) before writing content. Semrush access is available in this workspace.
-- [ ] Register the site in Google Search Console and Bing Webmaster Tools; submit `sitemap.xml`.
-- [ ] Take a **baseline AI-prompt test** before launch (ChatGPT, Gemini, Claude, Perplexity), then repeat monthly.
-- [ ] Recheck the AI crawler bot names in `robots.txt` every quarter.
-- [ ] Create profiles/directories with identical name and bio (LinkedIn, GitHub, relevant Romanian business directories).
-
-## Content
-- [ ] Write the first 5 articles (see §8 of the plan).
-- [ ] Draft the Romanian copy for the three service pages and the About page.
-- [ ] Prepare a sample audit output (clearly labelled as an example).
-- [ ] Prepare an EN version after the RO site is live; scope FR/DE as add-ons per project.
-
-## Later / nice to have
+## Later
+- [ ] English version (`/en`, hreflang) after the Romanian site is live. FR/DE as per-project add-ons.
 - [ ] Ask each future client for a real review/quote and permission to publish a case study.
+- [ ] Cheesy Media: add real traffic or lead numbers if they share them.
 - [ ] Add the portfolio's own AI-visibility progress as a live case study.
-- [ ] Decide whether to publish a short public statement about availability next to the About page goals.
+- [ ] Publish more articles (2 per month): local SEO, clinic and law-firm website guides, Core Web Vitals.
+- [ ] Known dev note: `npm audit` reports a PostCSS advisory bundled inside Next 15 (build-time only). Upgrade Next when you want to move to a newer major.
