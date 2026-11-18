@@ -33,3 +33,9 @@ If your plan has no PHP, set `NEXT_PUBLIC_FORM_ENDPOINT` at build time to a host
 - Submit `https://dragoscatana.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 - Confirm `https://dragoscatana.com/robots.txt`, `/llms.txt` and the 404 page work.
 - Run PageSpeed Insights on the home page and the case study.
+
+## Notes from the first deploy (18 Nov 2026)
+- The SFTP account `claudedeploy` is rooted at `/htdocs`, which is already the web root. Mirror `out/` into `/`, not `/htdocs`, or you create `htdocs/htdocs/`:
+  `lftp -u "claudedeploy,$SFTP_PW" -e "set sftp:auto-confirm yes; mirror -R --parallel=4 out /; bye" sftp://ftp-a5349bf4.registeredsite.com`
+- The host answers **403 to the bare `curl` user agent**. Browsers, Googlebot, Bingbot, GPTBot, ClaudeBot and PerplexityBot get 200. When testing with curl, send a browser `-A` string.
+- Reset File Permissions was run once; it was not what fixed the 403 (the user agent was).

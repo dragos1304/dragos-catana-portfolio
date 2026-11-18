@@ -28,14 +28,15 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 
 ## Needs you
 - [ ] **Optional automatic deploys:** add GitHub secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_DIR` for `.github/workflows/deploy.yml` (untested, needs your credentials).
-- [ ] **Deploy to Network Solutions:** follow `DEPLOY.md` (build `out/`, upload its contents, create `api/config.php` from `config.example.php`). Tell me your plan type if it has no PHP or no FTP/SFTP, and I will adapt it.
+- [x] **Deploy to Network Solutions:** done 18 Nov 2026. Plan is Starter (Unix) with PHP and SFTP; `out/` is live at https://dragoscatana.com (verified with a browser user agent: pages, robots.txt, sitemap.xml, llms.txt, 404, http and www redirects).
+- [ ] **`api/config.php`:** not created yet, so both forms answer `not_configured`. Needs the receiving address and the sender mailbox.
 - [ ] **Form email:** create the sender mailbox/alias on the domain, add SPF (and DKIM if offered) in Cloudflare DNS, then send a test from each form and check spam.
 - [ ] **GA4 inside GTM:** in container `GTM-K7RPGZSV`, add a GA4 configuration tag (your `G-XXXXXXX` measurement ID) with consent type *analytics_storage*, and a GA4 event tag for the `generate_lead` event the forms already push. Publish the container.
 - [ ] **Legal review:** the privacy, cookie and terms pages are drafts. Add your legal identity (PFA/CUI if you have one), a contact email for data requests, and have them reviewed before collecting real leads.
 - [ ] **Professional photo** for Home and About (the layout works without one).
 - [ ] **Public contact details:** a contact email, LinkedIn URL, optional phone/WhatsApp. They are intentionally not on the site yet.
-- [ ] **Domain:** add `dragoscatana.com` to Cloudflare, switch the nameservers at the registrar, add the A/CNAME records from your hosting, SSL/TLS **Full (strict)**. HTTPS and `www` → apex are handled by `.htaccess`.
-- [ ] **Cloudflare:** keep records **DNS-only** (grey cloud) to start. If you proxy, make sure no AI-bot blocking or bot-fight rule is on, otherwise `robots.txt` says "welcome" while the firewall says "no".
+- [ ] **Domain (partly done):** the zone is already on Cloudflare (nameservers aisha/dion) and the site resolves. Still to check in the Cloudflare dashboard: SSL/TLS **Full (strict)** and the records' cloud colour (they currently resolve to Cloudflare IPs, so they are proxied).
+- [ ] **Cloudflare:** the records are currently proxied. Keep them **DNS-only** (grey cloud) to start. If you proxy, make sure no AI-bot blocking or bot-fight rule is on, otherwise `robots.txt` says "welcome" while the firewall says "no".
 - [ ] Professional email on the domain.
 - [ ] **Google Business Profile** *(deferred)*. Keep name, address, phone and website identical to the site.
 - [ ] Register the site in **Google Search Console** and **Bing Webmaster Tools**, submit `sitemap.xml`.
