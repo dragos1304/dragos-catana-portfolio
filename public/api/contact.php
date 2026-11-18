@@ -111,6 +111,7 @@ function smtp_send(array $c, string $from, string $to, string $subject, array $h
     $implicit = $port === 465;
     $fp = @stream_socket_client(($implicit ? 'ssl://' : 'tcp://') . $host . ':' . $port, $errno, $errstr, 15);
     if (!$fp) {
+        $GLOBALS['smtp_trace'] = 'connect:' . $errno . ' ' . $errstr;
         return false;
     }
     stream_set_timeout($fp, 15);
@@ -126,19 +127,22 @@ function smtp_send(array $c, string $from, string $to, string $subject, array $h
         }
         return [$code, $text];
     };
-    $cmd = function (string $line, array $ok) use ($fp, $read): bool {
+    $cmd = function (string $line, array $ok, string $label = '') use ($fp, $read): bool {
         fwrite($fp, $line . "\r\n");
-        [$code] = $read();
+        [$code, $text] = $read();
+        $GLOBALS['smtp_trace'] = ($label !== '' ? $label : strtok($line, ' ')) . ':' . $code . ' ' . substr(trim($text), 4, 80);
         return in_array($code, $ok, true);
     };
     $ehlo = 'dragoscatana.com';
-    [$code] = $read();
+    [$code, $greet] = $read();
+    $GLOBALS['smtp_trace'] = 'greeting:' . $code . ' ' . substr(trim($greet), 4, 80);
     if ($code !== 220 || !$cmd('EHLO ' . $ehlo, [250])) {
         fclose($fp);
         return false;
     }
     if (!$implicit) {
         if (!$cmd('STARTTLS', [220]) || !@stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+            $GLOBALS['smtp_trace'] = ($GLOBALS['smtp_trace'] ?? '') . ' (tls-handshake-failed?)';
             fclose($fp);
             return false;
         }
@@ -147,7 +151,7 @@ function smtp_send(array $c, string $from, string $to, string $subject, array $h
             return false;
         }
     }
-    $ok = $cmd('AUTH LOGIN', [334]) && $cmd(base64_encode($user), [334]) && $cmd(base64_encode($pass), [235])
+    $ok = $cmd('AUTH LOGIN', [334]) && $cmd(base64_encode($user), [334], 'AUTH-user') && $cmd(base64_encode($pass), [235], 'AUTH-pass')
         && $cmd('MAIL FROM:<' . $from . '>', [250]) && $cmd('RCPT TO:<' . $to . '>', [250, 251]) && $cmd('DATA', [354]);
     if ($ok) {
         $msg = 'To: <' . $to . ">\r\nSubject: " . $subject . "\r\nDate: " . date('r') . "\r\nMessage-ID: <" . bin2hex(random_bytes(12)) . '@dragoscatana.com>' . "\r\n"
@@ -163,7 +167,7 @@ function smtp_send(array $c, string $from, string $to, string $subject, array $h
 }
 
 if (!$sent) {
-    respond(502, ['ok' => false, 'error' => 'mail_failed']);
+    respond(502, ['ok' => false, 'error' => 'mail_failed', 'detail' => (string)($GLOBALS['smtp_trace'] ?? 'no-smtp')]);
 }
 $hits[] = time();
 @file_put_contents($rlFile, implode(',', $hits));
