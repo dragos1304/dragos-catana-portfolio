@@ -22,7 +22,7 @@ export default function Lucrari() {
           Public doar ce e real și măsurabil. Pe măsură ce apar proiecte noi, le adaug aici.
         </p>
         <div className="mt-10">
-          <Link href="/lucrari/cheesy-media" className="block max-w-2xl rounded-2xl border border-line p-7 hover:shadow-lg">
+          <Link href="/lucrari/cheesy-media" className="block max-w-2xl rounded-md border border-line p-7 hover:shadow-lg">
             <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">Redesign · Cluj-Napoca</p>
             <h2 className="mt-2 font-serif text-2xl font-semibold">Cheesy Media</h2>
             <p className="mt-3 leading-relaxed text-slate-ink">

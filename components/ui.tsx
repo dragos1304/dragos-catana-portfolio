@@ -21,7 +21,7 @@ export function Section({
 
 export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
   return (
-    <p className={`mb-3 text-sm font-semibold uppercase tracking-[0.14em] ${dark ? "text-brass" : "text-brass-dark"}`}>
+    <p className={`mb-3 text-sm font-semibold uppercase tracking-[0.14em] ${dark ? "text-[#e0a46b]" : "text-brass-dark"}`}>
       {children}
     </p>
   );
@@ -29,7 +29,7 @@ export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?
 
 export function H2({ children, dark = false, className = "" }: { children: ReactNode; dark?: boolean; className?: string }) {
   return (
-    <h2 className={`font-serif text-3xl font-semibold leading-tight sm:text-4xl ${dark ? "text-white" : "text-navy"} ${className}`}>
+    <h2 className={`font-serif text-4xl font-medium leading-[1.1] sm:text-5xl ${dark ? "text-white" : "text-navy"} ${className}`}>
       {children}
     </h2>
   );
@@ -38,11 +38,11 @@ export function H2({ children, dark = false, className = "" }: { children: React
 type BtnProps = { href: string; children: ReactNode; variant?: "primary" | "ghost" | "ghost-dark"; external?: boolean };
 export function Button({ href, children, variant = "primary", external }: BtnProps) {
   const base =
-    "inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition-colors";
+    "inline-flex min-h-12 items-center justify-center rounded-sm px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] transition-colors";
   const styles = {
-    primary: "bg-brass text-navy hover:bg-[#f59e0b]",
-    ghost: "border border-navy/25 text-navy hover:border-navy hover:bg-navy hover:text-white",
-    "ghost-dark": "border border-white/40 text-white hover:bg-white hover:text-navy",
+    primary: "bg-navy text-white hover:bg-brass-dark",
+    ghost: "border border-navy/40 text-navy hover:border-navy hover:bg-navy hover:text-white",
+    "ghost-dark": "border border-white/50 text-white hover:bg-white hover:text-navy",
   }[variant];
   const cls = `${base} ${styles}`;
   if (external)
@@ -99,13 +99,14 @@ export function CtaBand({
   id = "cta",
 }: { title?: string; text?: string; id?: string }) {
   return (
-    <Section dark id={id}>
+    <Section tint id={id} className="border-t border-line">
       <div className="max-w-3xl">
-        <H2 dark>{title}</H2>
-        <p className="mt-4 text-lg text-white/80">{text}</p>
+        <Eyebrow>Primul pas</Eyebrow>
+        <H2>{title}</H2>
+        <p className="mt-4 text-lg text-slate-ink">{text}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/audit-gratuit-vizibilitate-ai">Cere auditul gratuit</Button>
-          <Button href={site.calendly} variant="ghost-dark" external>Programează o discuție</Button>
+          <Button href={site.calendly} variant="ghost" external>Programează o discuție</Button>
         </div>
       </div>
     </Section>

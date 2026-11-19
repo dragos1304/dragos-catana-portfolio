@@ -32,19 +32,19 @@ export default function Page() {
       <JsonLd data={[breadcrumb([{ name: "Acasă", path: "/" }, { name: "Servicii", path: "/servicii" }, { name: "SEO și vizibilitate în AI", path }]),
         serviceSchema("SEO și optimizare pentru motoare AI", "Audit, optimizare tehnică și de conținut și colaborare lunară pentru vizibilitate în Google și în răspunsurile ChatGPT, Gemini, Claude și Perplexity.", path)]} />
 
-      <section className="bg-navy text-white">
+      <section className="border-b border-line bg-mist">
         <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
           <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "SEO și vizibilitate în AI" }]} />
-          <Eyebrow dark>Serviciul principal</Eyebrow>
-          <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-6xl">
-            Fii găsit pe Google. Fii recomandat de <span className="text-brass">AI</span>.
+          <Eyebrow>Serviciul principal</Eyebrow>
+          <h1 className="max-w-3xl font-serif text-5xl font-medium leading-[1.05] sm:text-7xl">
+            Fii găsit pe Google. Fii recomandat de <em className="text-brass-dark">AI</em>.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-ink">
             Tot mai mulți clienți întreabă un asistent AI „cui să mă adresez?”. Te ajut să apari în acele răspunsuri și în Google, cu un proces pe care îl poți măsura.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/audit-gratuit-vizibilitate-ai">Cere auditul gratuit</Button>
-            <Button href="/contact" variant="ghost-dark">Cere o ofertă</Button>
+            <Button href="/contact" variant="ghost">Cere o ofertă</Button>
           </div>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function Page() {
             ["SEO local", "Profil Google al afacerii, citări locale, proces pentru recenzii."],
             ["Monitorizare lunară", "Retestez întrebările și îți trimit un raport în limbaj simplu: ce s-a schimbat și ce urmează."],
           ].map(([t, d]) => (
-            <div key={t} className="rounded-2xl border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
           ))}
         </div>
       </Section>
@@ -107,7 +107,7 @@ export default function Page() {
             ["Proiect de implementare", "Aplic corecturile din audit, singur sau ca parte dintr-un redesign sau un site nou."],
             ["Colaborare lunară SEO/GEO", "Conținut, întreținere tehnică, monitorizare și raport lunar."],
           ].map(([t, d]) => (
-            <div key={t} className="rounded-2xl border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
           ))}
         </div>
         <p className="mt-6 text-slate-ink">Pentru implementare și colaborare lunară primești o ofertă clară, nu prețuri fixe. <Link className="font-semibold text-brass-dark underline underline-offset-4" href="/contact">Cere o ofertă</Link>.</p>

@@ -45,7 +45,7 @@ export function CookieBanner() {
   if (!visible) return null;
   return (
     <div role="dialog" aria-modal="false" aria-labelledby="cookie-title"
-      className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-2xl border border-line bg-white p-5 shadow-2xl sm:inset-x-6 sm:p-6">
+      className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-md border border-line bg-white p-5 shadow-2xl sm:inset-x-6 sm:p-6">
       <p id="cookie-title" className="font-serif text-lg font-semibold">Cookie-uri pentru statistici</p>
       <p className="mt-2 text-sm leading-relaxed text-slate-ink">
         Folosesc Google Analytics doar dacă ești de acord, ca să înțeleg ce pagini sunt utile. Nu folosesc cookie-uri de publicitate.
@@ -54,9 +54,9 @@ export function CookieBanner() {
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <button type="button" onClick={() => choose("granted")}
-          className="min-h-11 rounded-full bg-brass px-5 font-semibold text-navy hover:bg-[#f59e0b]">Accept statisticile</button>
+          className="min-h-11 rounded-sm bg-navy px-5 font-semibold text-white hover:bg-brass-dark">Accept statisticile</button>
         <button type="button" onClick={() => choose("denied")}
-          className="min-h-11 rounded-full border border-navy/30 px-5 font-semibold text-navy hover:bg-navy hover:text-white">Refuz</button>
+          className="min-h-11 rounded-sm border border-navy/40 px-5 font-semibold text-navy hover:bg-navy hover:text-white">Refuz</button>
       </div>
     </div>
   );

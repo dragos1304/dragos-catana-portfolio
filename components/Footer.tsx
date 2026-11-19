@@ -4,7 +4,7 @@ import { CookieSettingsButton } from "./CookieBanner";
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white/80">
+    <footer className="bg-navy text-white/80" aria-label="Subsol site">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-3">
         <div>
           <p className="font-serif text-xl font-semibold text-white">{site.name}</p>

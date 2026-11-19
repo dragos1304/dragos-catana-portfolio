@@ -22,7 +22,7 @@ export default function Articole() {
         <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {articles.map((a) => (
             <li key={a.slug}>
-              <Link href={`/articole/${a.slug}`} className="block h-full rounded-2xl border border-line p-6 hover:shadow-lg">
+              <Link href={`/articole/${a.slug}`} className="block h-full rounded-md border border-line p-6 hover:shadow-lg">
                 <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">{a.category} · {a.readMin} min</p>
                 <h2 className="mt-2 font-serif text-xl font-semibold leading-snug">{a.title}</h2>
                 <p className="mt-3 leading-relaxed text-slate-ink">{a.description}</p>

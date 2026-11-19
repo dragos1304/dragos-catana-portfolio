@@ -61,7 +61,7 @@ export default function Page() {
             ["Migrare sigură", "Redirecturi 301, verificarea titlurilor și monitorizare după lansare."],
             ["Predare și instruire", "Știi cum actualizezi site-ul și cui te adresezi dacă ai nevoie de ajutor."],
           ].map(([t, d]) => (
-            <div key={t} className="rounded-2xl border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
           ))}
         </div>
       </Section>

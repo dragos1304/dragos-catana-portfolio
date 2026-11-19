@@ -41,7 +41,7 @@ export default function Page() {
               <a className="font-semibold text-navy underline underline-offset-4" href={site.calendly} target="_blank" rel="noopener noreferrer">Programează o discuție</a>.
             </p>
           </div>
-          <div className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+          <div className="rounded-md border border-line bg-white p-6 shadow-sm sm:p-8">
             <LeadForm kind="audit" />
           </div>
         </div>

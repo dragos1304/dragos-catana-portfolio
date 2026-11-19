@@ -49,7 +49,7 @@ export default function Despre() {
         </p>
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
           {ventures.map(([t, d]) => (
-            <div key={t} className="rounded-2xl border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
           ))}
         </div>
       </Section>

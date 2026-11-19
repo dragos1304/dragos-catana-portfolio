@@ -89,12 +89,12 @@ export default function Page() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element -- static export: explicit srcset instead of next/image */}
-            <img src="/lucrari/cheesy-media/lighthouse-inainte-960.webp" srcSet="/lucrari/cheesy-media/lighthouse-inainte-640.webp 640w, /lucrari/cheesy-media/lighthouse-inainte-960.webp 960w, /lucrari/cheesy-media/lighthouse-inainte.webp 1600w" width={1600} height={980} alt="Raport Lighthouse pentru site-ul vechi: performanță 82, accesibilitate 96, bune practici 100, SEO 100" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" loading="lazy" decoding="async" className="h-auto w-full rounded-2xl border border-line" />
+            <img src="/lucrari/cheesy-media/lighthouse-inainte-960.webp" srcSet="/lucrari/cheesy-media/lighthouse-inainte-640.webp 640w, /lucrari/cheesy-media/lighthouse-inainte-960.webp 960w, /lucrari/cheesy-media/lighthouse-inainte.webp 1600w" width={1600} height={980} alt="Raport Lighthouse pentru site-ul vechi: performanță 82, accesibilitate 96, bune practici 100, SEO 100" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" loading="lazy" decoding="async" className="h-auto w-full rounded-md border border-line" />
             <figcaption className="mt-2 text-sm text-slate-ink">Înainte: performanță 82, accesibilitate 96.</figcaption>
           </figure>
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element -- static export: explicit srcset instead of next/image */}
-            <img src="/lucrari/cheesy-media/lighthouse-dupa-960.webp" srcSet="/lucrari/cheesy-media/lighthouse-dupa-640.webp 640w, /lucrari/cheesy-media/lighthouse-dupa-960.webp 960w, /lucrari/cheesy-media/lighthouse-dupa.webp 1600w" width={1600} height={953} alt="Raport Lighthouse pentru site-ul nou: 100 la performanță, accesibilitate, bune practici și SEO" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" loading="lazy" decoding="async" className="h-auto w-full rounded-2xl border border-line" />
+            <img src="/lucrari/cheesy-media/lighthouse-dupa-960.webp" srcSet="/lucrari/cheesy-media/lighthouse-dupa-640.webp 640w, /lucrari/cheesy-media/lighthouse-dupa-960.webp 960w, /lucrari/cheesy-media/lighthouse-dupa.webp 1600w" width={1600} height={953} alt="Raport Lighthouse pentru site-ul nou: 100 la performanță, accesibilitate, bune practici și SEO" sizes="(min-width: 1152px) 560px, (min-width: 768px) 45vw, 92vw" loading="lazy" decoding="async" className="h-auto w-full rounded-md border border-line" />
             <figcaption className="mt-2 text-sm text-slate-ink">După: 100 la toate cele patru categorii.</figcaption>
           </figure>
         </div>

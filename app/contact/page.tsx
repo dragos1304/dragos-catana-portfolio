@@ -34,7 +34,7 @@ export default function Contact() {
               <li><strong className="text-navy">Limbi:</strong> română. Engleză, franceză și germană ca opțiune suplimentară.</li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+          <div className="rounded-md border border-line bg-white p-6 shadow-sm sm:p-8">
             <LeadForm kind="contact" />
           </div>
         </div>

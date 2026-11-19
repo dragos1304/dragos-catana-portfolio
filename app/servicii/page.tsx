@@ -29,7 +29,7 @@ export default function Servicii() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {services.map((s) => (
             <Link key={s.slug} href={`/servicii/${s.slug}`}
-              className={`rounded-2xl border p-7 hover:shadow-lg ${"flagship" in s ? "border-brass ring-1 ring-brass" : "border-line"}`}>
+              className={`rounded-md border p-7 hover:shadow-lg ${"flagship" in s ? "border-brass-dark" : "border-line"}`}>
               <h2 className="font-serif text-2xl font-semibold">{s.title}</h2>
               <p className="mt-3 leading-relaxed text-slate-ink">{s.short}</p>
               <span className="mt-5 inline-block font-semibold text-brass-dark">Detalii →</span>
@@ -58,13 +58,13 @@ export default function Servicii() {
         </div>
         <h3 className="mt-12 font-serif text-2xl font-semibold">Pentru domeniul tău</h3>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">
-          <li className="rounded-2xl border border-line bg-white p-6"><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/website-clinici-medicale">Website pentru clinici și cabinete medicale</Link><p className="mt-2 text-slate-ink">Pagini pe specialități, medici, programare și SEO local.</p></li>
-          <li className="rounded-2xl border border-line bg-white p-6"><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/website-cabinete-avocatura">Website pentru cabinete de avocatură</Link><p className="mt-2 text-slate-ink">Domenii de practică, avocați, articole și contact discret.</p></li>
+          <li className="rounded-md border border-line bg-white p-6"><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/website-clinici-medicale">Website pentru clinici și cabinete medicale</Link><p className="mt-2 text-slate-ink">Pagini pe specialități, medici, programare și SEO local.</p></li>
+          <li className="rounded-md border border-line bg-white p-6"><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/website-cabinete-avocatura">Website pentru cabinete de avocatură</Link><p className="mt-2 text-slate-ink">Domenii de practică, avocați, articole și contact discret.</p></li>
         </ul>
         <h3 className="mt-12 font-serif text-2xl font-semibold">Pachete combinate</h3>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">
-          <li className="rounded-2xl border border-line bg-white p-6"><strong>Redesign + pregătit pentru AI.</strong> Site nou, migrare sigură, conținut și date structurate gândite pentru motoare AI.</li>
-          <li className="rounded-2xl border border-line bg-white p-6"><strong>Website nou + pregătit pentru AI.</strong> De la zero, cu SEO, schema și analiză încă din prima zi.</li>
+          <li className="rounded-md border border-line bg-white p-6"><strong>Redesign + pregătit pentru AI.</strong> Site nou, migrare sigură, conținut și date structurate gândite pentru motoare AI.</li>
+          <li className="rounded-md border border-line bg-white p-6"><strong>Website nou + pregătit pentru AI.</strong> De la zero, cu SEO, schema și analiză încă din prima zi.</li>
         </ul>
         <h3 className="mt-12 font-serif text-2xl font-semibold">Alte limbi</h3>
         <p className="mt-3 max-w-2xl text-slate-ink leading-relaxed">

@@ -34,7 +34,7 @@ export function LeadForm({ kind }: { kind: Kind }) {
 
   if (state === "done") {
     return (
-      <div role="status" className="rounded-2xl border border-line bg-mist p-6">
+      <div role="status" className="rounded-md border border-line bg-mist p-6">
         <p className="font-serif text-xl font-semibold">Mulțumesc, am primit mesajul.</p>
         <p className="mt-2 text-slate-ink">
           {isAudit
@@ -100,7 +100,7 @@ export function LeadForm({ kind }: { kind: Kind }) {
         </span>
       </label>
       <button type="submit" disabled={state === "sending"}
-        className="inline-flex min-h-12 items-center justify-center rounded-full bg-brass px-7 py-3 text-base font-semibold text-navy hover:bg-[#f59e0b] disabled:opacity-60">
+        className="inline-flex min-h-12 items-center justify-center rounded-sm bg-navy px-7 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white hover:bg-brass-dark disabled:opacity-60">
         {state === "sending" ? "Se trimite…" : isAudit ? "Trimite cererea de audit" : "Trimite mesajul"}
       </button>
       {state === "error" && (

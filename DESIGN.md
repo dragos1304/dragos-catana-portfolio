@@ -1,75 +1,97 @@
 ---
-version: alpha
+version: beta
 name: Dragoș Cătană
-description: Services portfolio for web design and AI-search optimization, Romanian-first. Editorial, calm, credible.
+description: Personal-brand services site for web design, SEO and AI-search visibility, Romanian-first. Warm, editorial, calm, credible.
 colors:
   canvas: "#ffffff"
-  navy: "#0f172a"
-  brass: "#d97706"
-  brass-dark: "#92400e"
-  mist: "#f8fafc"
-  line: "#e2e8f0"
-  slate-ink: "#475569"
+  paper: "#f4efe9"      # token name in code: mist
+  ink: "#1a1a1a"        # token name in code: navy
+  accent: "#c2702a"     # token name in code: brass (focus rings, dark-band accents)
+  accent-text: "#8a3f12" # token name in code: brass-dark (text and borders on light)
+  line: "#e4ddd3"
+  muted-ink: "#4a4a4a"  # token name in code: slate-ink
 typography:
   display:
-    fontFamily: Source Serif 4
-    fontWeight: 600
+    fontFamily: Cormorant Garamond
+    fontWeight: 500
+    sizeAdjust: 0.46
   body:
     fontFamily: Inter
     fontWeight: 400
 rounded:
-  card: 16px
-  pill: 9999px
+  button: 2px
+  card: 6px
 ---
 
-> Authored by hand from this project's own tokens (`app/globals.css`), not extracted from a third-party site. Source of truth is the code.
+> Authored by hand from this project's own tokens (`app/globals.css`). Direction came from Awwwards references (see below); nothing was copied. Token names in code are historical (`navy`, `mist`, `brass`) and hold the values above.
 
 ## Principles
-1. **Calm and credible over flashy.** The audience is clinics, law firms and local businesses. Motion is minimal (fade/rise on a few blocks, transform and opacity only, `prefers-reduced-motion` respected).
-2. **Structure first.** Alternating white / mist / navy bands give each section a clear job; one idea per band.
-3. **Content stays in the HTML.** No content depends on JavaScript to be readable by search engines and AI crawlers.
-4. **Performance and accessibility are features.** Targets: Lighthouse 100 on mobile, WCAG AA contrast, tap targets of at least 24px.
+1. **A real person, not an agency.** The homepage is a story: the client's trigger moment, the journey step by step with "you" and "me" in each step, real proof, and a personal letter (see `USER_JOURNEY.md`).
+2. **Calm and credible over flashy.** Warm paper and white bands alternate; one idea per band; generous white space.
+3. **Content stays in the HTML.** Key content (journey steps, the letter) is never behind an animation. The CSS reveal is only decoration.
+4. **Performance and accessibility are features.** Lighthouse 100 on mobile, WCAG AA contrast (worst measured pair 6.56:1), tap targets at least 24px.
 
 ## Colors
-| Token | Value | Use |
-|-------|-------|-----|
-| canvas | `#ffffff` | Page background |
-| navy | `#0f172a` | Text, hero and CTA bands, footer |
-| brass | `#d97706` | Buttons (with navy text, contrast 5.6:1), accents on navy |
-| brass-dark | `#92400e` | Brass text on light backgrounds (contrast at least 5.6:1) |
-| mist | `#f8fafc` | Alternating section background |
-| line | `#e2e8f0` | Borders and dividers |
-| slate-ink | `#475569` | Secondary text |
-
-Rule: never use `brass` for small text on white. Use `brass-dark`.
+| Token (code) | Value | Use |
+|---|---|---|
+| canvas | `#ffffff` | Content bands |
+| mist (paper) | `#f4efe9` | Hero, journey, letter and CTA bands, cards on white |
+| navy (ink) | `#1a1a1a` | Text, primary buttons, footer |
+| brass-dark | `#8a3f12` | Eyebrows, italic accent words, links, flagship borders (6.56:1 on paper, 7.5:1 on white) |
+| brass | `#c2702a` | Focus outline; accents on the dark footer |
+| line | `#e4ddd3` | Borders and dividers |
+| slate-ink | `#4a4a4a` | Secondary text (7.75:1 on paper) |
 
 ## Typography
-- Display: Source Serif 4, weight 600, headings from 24px to 60px.
-- Body and UI: Inter, 400/500/600/700, 14-18px. Both fonts are loaded with the `latin-ext` subset so Romanian diacritics (ă â î ș ț) render correctly.
-- Eyebrows: 14px, bold, uppercase, tracking 0.14em.
+- **Display:** Cormorant Garamond 500 (italic for one accent phrase per heading). `font-size-adjust: 0.46` scales its small x-height to read like a text serif. H1 40–60px, H2 36–48px.
+- **Body and UI:** Inter 400–600, 15–18px. Both fonts load the `latin-ext` subset for ă â î ș ț.
+- **Labels and buttons:** 14px, semibold, uppercase, tracking 0.08–0.14em.
 
 ## Components
-- **Button (primary):** pill, brass fill, navy text, min height 48px. Ghost variants for light and dark backgrounds.
-- **Section:** `py-16 sm:py-24`, max width 6xl, 20/32px gutters; `tint` (mist) and `dark` (navy) variants.
-- **Card:** 16px radius, 1px `line` border; the flagship card adds a brass ring.
-- **FAQ:** native `<details>`, with matching FAQPage JSON-LD.
-- **AnswerCard:** illustrative AI chat reply, always labelled as an example.
-- **Tables:** real `<table>` with caption (screen-reader only) and `scope` attributes.
-- **Cookie banner:** non-modal dialog, bottom of screen, two equal-weight choices.
+- **Button:** square (2px radius), ink fill, white tracked uppercase label, min height 48px; hover turns accent-text. A ghost variant is outlined in ink.
+- **Personal card (hero):** initials monogram (replace with a photo when available), name, city, three facts.
+- **Journey list:** numbered steps; each row shows when, step title, "Tu" and "Eu, Dragoș".
+- **Letter:** first-person serif paragraphs plus the professor quote with an accent rule.
+- **CTA band:** warm paper "Primul pas" band before the dark footer.
+- **AnswerCard:** an illustrative AI answer, always labelled as an example.
+- **FAQ:** native `<details>` plus FAQPage JSON-LD.
 
 ## Do / Don't
-- Do keep one primary CTA per band ("Audit gratuit AI").
+- Do keep one primary CTA ("Cere auditul gratuit").
 - Do label illustrative content as an example.
-- Don't invent numbers, reviews or testimonials.
-- Don't add heavy scroll-driven animation: it hurts Core Web Vitals and gives the audience nothing.
+- Don't invent numbers, reviews or testimonials. The reference used Google reviews; we only use real, sourced proof (Cheesy Media scores, the professor quote).
+- Don't put key content inside scroll-driven animation.
 
-## Awwwards reference study (18 Nov 2026)
-Direction only, nothing copied. References from `businessServices` and `typography` winners; brief built with `create_design_brief` from Wembi, MONOLOG and Dragonfly Redux. Motion evidence was unavailable for all three, so only detail/element evidence was used.
+## Awwwards evidence (18 Nov 2026, awwwards-mcp 1.20.0)
+Skills used, in their recommended order:
+1. `awwwards-setup`: preferences saved (compact results, desktop + mobile, captures on, index on).
+2. `awwwards-inspiration`: search, shortlist, design brief, live captures.
+3. `awwwards-motion-study`: motion recording before deciding motion.
+4. `awwwards-section-loop`: band map, accessibility, mobile compare, `verify_build`.
+5. `awwwards-design-md`: to run on the public URL once this version is deployed.
 
-Shared signals: GSAP-driven motion, "clean"/"minimal" styling, business-style layouts.
-Patterns worth adapting (cheap, no WebGL, work without JS):
-- **Statement-driven hero** (MONOLOG): one large typographic sentence instead of imagery. Fits the serif display face.
-- **Process section** (MONOLOG): numbered steps for "how an audit/project works".
-- **Quiet footer composition** (MONOLOG, Dragonfly): large contact CTA in the footer.
-- **Micro-interactions on hover** only (Wembi, Dragonfly), CSS transform/opacity.
-Deliberately skipped: WebGL/three.js, ASCII hover, scroll-jacking, dark all-black palettes. They conflict with the calm, trust-first audience and Lighthouse 100 goal.
+`awwwards-doctor`, `awwwards-atlas`, `recreate` and `motion-authoring` were not applicable: no tool failures, Atlas is opt-in, and we are not cloning or converting a site.
+
+- **Search:**
+  - `businessServices` winners, `#F3F2F2` + typography/clean, storytelling + business-corporate.
+  - Shortlist: **Dr Shabri** (practitioner personal brand), **DC Carpentry & Construction** (local business, projects "told stage by stage"), **Weiss & Lameraner** (calm black-and-white type), **Con.Creta Ceramics** (story-led craft), **MONOLOG** (statement hero, process, footer CTA).
+  - Rejected: art-directed WebGL and agency pieces (Santal, Obys, Why Zero).
+- **`create_design_brief`** (5 slugs, `includeStructure: true`): no shared signals and no motion or structure evidence for the nominees, so live captures were needed.
+- **Dr Shabri live evidence:**
+  - `export_design_tokens`: ink `#1a1a1a`/`#333`, muted `#4a4a4a`, paper `#f4efe9`; Cormorant Garamond display + DM Sans tracked labels; no button radii.
+  - `analyze_page_structure`: warm paper bands for hero, CTA and enquiry; white content bands between.
+  - `analyze_scroll_map`: 24 CSS keyframes, 0 GSAP, 0 scrub, 0 pin.
+  - `record_site_motion`: static entrance; the only motion is the nav mega-menu fade on hover.
+- **DC Carpentry:** behind a security-verification page, so it was not captured. Only its listing description was used (the stage-by-stage idea, which became the journey list).
+- **What we adapted:**
+  - Warm paper and white rhythm.
+  - Light editorial serif with an italic accent.
+  - Square ink buttons with tracked labels.
+  - "Begin a conversation" CTA band.
+  - Stage-by-stage storytelling.
+- **What is our own:** the accent colour, Inter for text, the journey ("Tu / Eu") structure, the letter, the content.
+- **Build checks (local static export):**
+  - `analyze_accessibility`: worst contrast 6.56:1, one H1, no skipped heading levels.
+  - `analyze_page_structure` with mobile compare: same section order on mobile.
+  - `audit_url` (mobile): 0 high or medium anti-patterns, 0 long tasks.
+  - `verify_build` against Dr Shabri: band score 9. That is expected and intended, because we took direction, not structure.

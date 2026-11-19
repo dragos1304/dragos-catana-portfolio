@@ -39,7 +39,7 @@ export function VerticalPage(p: VerticalProps) {
         <H2>Ce caută clienții tăi înainte să te contacteze</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {p.needs.map((n) => (
-            <div key={n.t} className="rounded-2xl border border-line bg-white p-6"><h3 className="font-serif text-xl font-semibold">{n.t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{n.d}</p></div>
+            <div key={n.t} className="rounded-md border border-line bg-white p-6"><h3 className="font-serif text-xl font-semibold">{n.t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{n.d}</p></div>
           ))}
         </div>
       </Section>
@@ -65,7 +65,7 @@ export function VerticalPage(p: VerticalProps) {
       </Section>
 
       <Section id="de-retinut">
-        <div className="max-w-3xl rounded-2xl border border-brass bg-white p-7 ring-1 ring-brass">
+        <div className="max-w-3xl rounded-md border border-brass-dark bg-canvas p-7">
           <h2 className="font-serif text-2xl font-semibold">{p.caution.title}</h2>
           <p className="mt-3 leading-relaxed text-slate-ink">{p.caution.text}</p>
         </div>

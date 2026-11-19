@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -10,7 +10,7 @@ import { siteSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
 
 const sans = Inter({ subsets: ["latin", "latin-ext"], variable: "--font-sans-src", display: "swap" });
-const serif = Source_Serif_4({ subsets: ["latin", "latin-ext"], variable: "--font-serif-src", display: "swap" });
+const serif = Cormorant_Garamond({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600"], style: ["normal", "italic"], variable: "--font-serif-src", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export const viewport: Viewport = { themeColor: "#0f172a", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#f4efe9", width: "device-width", initialScale: 1 };
 
 // Consent Mode v2: everything denied by default; restored from the visitor's earlier choice.
 const consentDefault = `
