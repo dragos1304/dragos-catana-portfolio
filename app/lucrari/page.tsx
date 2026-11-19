@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Lucrări și studii de caz",
+  title: "Portofoliu web design și studii de caz",
   description: "Proiecte de redesign și creare de website-uri, cu rezultate măsurate. Începe cu Cheesy Media, o agenție foto-video din Cluj-Napoca.",
   alternates: { canonical: "/lucrari/" },
 };

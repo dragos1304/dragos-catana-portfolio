@@ -17,10 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a = getArticle(slug);
   if (!a) return {};
   return {
-    title: a.title,
+    // Keep the full title under ~60 characters: drop the " | Dragoș Cătană" suffix when it would overflow.
+    title: a.title.length > 44 ? { absolute: a.title } : a.title,
     description: a.description,
     alternates: { canonical: `/articole/${a.slug}/` },
-    openGraph: { type: "article", title: a.title, description: a.description, publishedTime: a.date, authors: [site.legalName] },
+    openGraph: { type: "article", url: `/articole/${a.slug}/`, title: a.title, description: a.description, publishedTime: a.date, authors: [site.legalName], images: ["/og.png"] },
   };
 }
 

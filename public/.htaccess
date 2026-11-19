@@ -15,6 +15,12 @@ Options -Indexes
   # www -> apex
   RewriteCond %{HTTP_HOST} ^www\.dragoscatana\.com$ [NC]
   RewriteRule ^ https://dragoscatana.com%{REQUEST_URI} [L,R=301]
+
+  # Trailing slash on folders, straight to HTTPS in one hop. Without this, Apache's mod_dir adds the
+  # slash over plain HTTP behind Cloudflare (/servicii -> http://.../servicii/ -> https), a 2-hop chain.
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.*)$ https://dragoscatana.com/$1/ [L,R=301]
 </IfModule>
 
 ErrorDocument 404 /404.html

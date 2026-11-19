@@ -6,7 +6,7 @@ import { breadcrumb } from "@/lib/schema";
 import { services } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Servicii: redesign, creare website și SEO pentru AI",
+  title: "Servicii: creare site, redesign și optimizare SEO",
   description:
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Cere o ofertă sau un audit gratuit.",
   alternates: { canonical: "/servicii/" },

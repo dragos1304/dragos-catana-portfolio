@@ -3,9 +3,9 @@ import { VerticalPage } from "@/components/VerticalPage";
 
 const path = "/servicii/website-clinici-medicale";
 export const metadata: Metadata = {
-  title: "Website pentru clinici și cabinete medicale: creare și redesign",
+  title: "Site pentru clinici și cabinete medicale",
   description:
-    "Website clar, rapid și credibil pentru clinici și cabinete medicale, cu programare, pagini pe specialități și vizibilitate în Google și în răspunsurile AI. Cere o ofertă.",
+    "Site pentru clinici și cabinete medicale: rapid, credibil, cu programare online, pagini pe specialități și vizibilitate în Google și AI. Cere o ofertă.",
   alternates: { canonical: `${path}/` },
 };
 

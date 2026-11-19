@@ -6,7 +6,7 @@ import { breadcrumb } from "@/lib/schema";
 import { articles } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Articole: SEO, vizibilitate în AI și web design",
+  title: "Blog: SEO, AI și web design pentru afaceri locale",
   description: "Ghiduri practice despre SEO, optimizare pentru ChatGPT, Gemini și Perplexity, redesign și date structurate, pe înțelesul proprietarilor de afaceri.",
   alternates: { canonical: "/articole/" },
 };

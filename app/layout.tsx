@@ -29,8 +29,9 @@ export const metadata: Metadata = {
     url: site.url,
     title: `${site.name} | Web design și SEO pentru căutare AI`,
     description: site.description,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Dragoș Cătană: Clienții te caută. Fă-i să te găsească." }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
   alternates: { canonical: "./" },
   robots: { index: true, follow: true },
 };

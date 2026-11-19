@@ -7,7 +7,7 @@ import { site } from "@/lib/site-config";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact și cerere de ofertă",
+  title: "Contact: cere o ofertă pentru site sau SEO",
   description: "Spune-mi despre proiectul tău. Răspund în maximum 24 de ore. Poți programa și o discuție pe Calendly.",
   alternates: { canonical: "/contact/" },
 };

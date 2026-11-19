@@ -3,9 +3,9 @@ import { VerticalPage } from "@/components/VerticalPage";
 
 const path = "/servicii/website-cabinete-avocatura";
 export const metadata: Metadata = {
-  title: "Website pentru cabinete de avocatură: creare și redesign",
+  title: "Site pentru avocați și cabinete de avocatură",
   description:
-    "Website sobru, rapid și clar pentru avocați și cabinete de avocatură: pagini pe domenii de practică, programare de consultații și vizibilitate în Google și în răspunsurile AI.",
+    "Site pentru avocați și cabinete de avocatură: sobru, rapid, cu pagini pe domenii de practică și vizibilitate în Google și în răspunsurile AI. Cere o ofertă.",
   alternates: { canonical: `${path}/` },
 };
 
