@@ -27,6 +27,8 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
 
 ## Redesign, journey and SEO (18 Nov 2026)
+- [x] **Redesign v3 live (19 Nov 2026):** direction A "Clar și curajos" chosen from Awwwards mood boards; deployed via File Manager zip upload. See `DESIGN.md`.
+- [ ] Replace the "DC" monogram in the hero with a real professional photo (portrait, ideally black and white on the orange circle).
 - [x] Redesign from Awwwards evidence: warm paper and ink palette, Cormorant Garamond display, square buttons, journey-led homepage. Evidence and skills used are in `DESIGN.md`.
 - [x] User journey and personal story: `USER_JOURNEY.md`; homepage chapters (trigger, 5 steps with "Tu / Eu, Dragoș", letter).
 - [x] SEO pass on Romanian keywords (Semrush ro): `SEO_KEYWORDS.md`; home, creare-website, SEO and audit pages optimised.
