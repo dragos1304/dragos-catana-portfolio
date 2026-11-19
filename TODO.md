@@ -32,7 +32,7 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [x] SEO pass on Romanian keywords (Semrush ro): `SEO_KEYWORDS.md`; home, creare-website, SEO and audit pages optimised.
 - [x] **Deployed 19 Nov 2026** via File Manager (zip upload and extract; `config.php` untouched). All key pages return 200.
 - [x] Live checks done: `awwwards-design-md` output in `docs/design-evidence/` (validator PASS), `audit_url` mobile (0 high/medium), `analyze_images` on the case study (WebP, srcset, lazy, alt, dimensions all OK).
-- [ ] **Form confirmation email is live in test mode** (`confirm_to` = test@dragoscatana.com in the server `api/config.php`). Check that test@ got the "Am primit cererea ta de audit [TEST]" email and me@ got the lead; then remove the `confirm_to` line to send confirmations to real visitors.
+- [x] **Form emails verified (19 Nov 2026):** the lead reaches me@ and the visitor confirmation reached test@ in test mode. Test mode is now off (`confirm_to` removed from the server `api/config.php`), so real visitors get their confirmation.
 - [ ] **Cloudflare Browser Integrity Check is ON.** It intermittently served a challenge page to a headless browser during the audit. Bot Fight Mode, AI Labyrinth and all AI-crawler blocks are OFF (allowed). Decide whether to keep it on.
 - [ ] Add a professional photo to the hero card (it currently shows the initials "DC").
 - [ ] Validate `USER_JOURNEY.md` with 5 short calls with clinic, law-firm or local-business owners (interview guide inside).
