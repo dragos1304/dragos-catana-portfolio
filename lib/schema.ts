@@ -13,7 +13,7 @@ export const personSchema = {
   alumniOf: { "@type": "CollegeOrUniversity", name: "Universitatea Babeș-Bolyai" },
   knowsLanguage: ["ro", "en", "fr", "de"],
   knowsAbout: ["Web design", "Creare site web", "Optimizare SEO", "SEO local", "Generative Engine Optimization (GEO)", "Date structurate (schema.org)", "Next.js"],
-  sameAs: [site.github],
+  sameAs: [site.github, site.linkedin],
 };
 
 export const ogImage = `${site.url}/og.png`;
@@ -39,7 +39,7 @@ export const siteSchema = {
       address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "RO" },
       founder: { "@id": `${site.url}/#person` },
       knowsLanguage: ["ro", "en", "fr", "de"],
-      sameAs: [site.github],
+      sameAs: [site.github, site.linkedin],
     },
     { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, inLanguage: "ro-RO", publisher: { "@id": `${site.url}/#person` } },
   ],

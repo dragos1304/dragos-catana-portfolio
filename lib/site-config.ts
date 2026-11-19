@@ -8,6 +8,7 @@ export const site = {
   city: "Cluj-Napoca",
   calendly: "https://calendly.com/dragoscatana/consultanta-1-la-1",
   github: "https://github.com/dragos1304",
+  linkedin: "https://www.linkedin.com/in/dragos-catana/",
   gtmId: "GTM-K7RPGZSV",
   responseTime: "24 de ore",
 } as const;

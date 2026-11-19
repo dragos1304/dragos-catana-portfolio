@@ -26,7 +26,7 @@ All keyword data comes from Semrush, database `ro` unless stated. Volume is mont
   - **Crawling:** the sitemap lists every page, and robots allows all reputable search and AI crawlers.
 - **Fixed:** a URL without its trailing slash (for example `/servicii`) went `301 → http://…/servicii/ → https`, a two-hop chain through plain HTTP. `.htaccess` now sends it straight to `https://…/servicii/`.
 - **Open:**
-  - **Cloudflare SSL:** set SSL/TLS to Full (strict). The Apache slash redirect shows the origin is reached over HTTP.
+  - **Cloudflare SSL:** Full (strict) is blocked until the origin has a valid certificate for dragoscatana.com (it serves `*.hostingplatform.com`, expiring July 2026). See `TODO.md`.
   - **Security header:** a Content-Security-Policy header is optional and low priority.
 
 ## 2. The competitive reality
@@ -67,12 +67,12 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
 | 5 | Ce trebuie să conțină site-ul unei clinici | ce trebuie să conțină un site 30, site clinică | Commercial | Niche |
 | 6 | Site pentru avocați: ce permit regulile profesiei (verify UNBR rules before publishing) | site avocat | Commercial | Niche |
 | 7 | SEO local: cum apari „în zona mea” | seo local 90/28 | Info | Fill-in |
-| 8 | Mentenanță site: ce include și de ce contează | mentenanță site 260/22 | Commercial | Needs your decision |
-| 9 | Magazin online: Shopify, Medusa sau WooCommerce? | creare magazin online 1,300/40 | Commercial | Needs your decision |
+| 8 | ✅ Mentenanță site (service page `/servicii/mentenanta-site/`) | mentenanță site 260/22 | Commercial | Done |
+| 9 | Magazin online: Shopify, Medusa sau WooCommerce? | creare magazin online 1,300/40 | Commercial | Not now (your decision) |
 
 **Decisions for you:**
-- **Online stores:** do you want e-commerce clients? There is real demand: creare magazin online 1,300, magazin online 1,600, shopify romania 480.
-- **Maintenance:** do you offer site maintenance as a service (260/mo)?
+- **Online stores:** not now (decided 19 Nov 2026). Demand exists if you revisit: creare magazin online 1,300, magazin online 1,600, shopify romania 480.
+- **Maintenance:** yes, live as a service page (19 Nov 2026).
 - **City pages:** București, with creare site 480 / KD 10, web design 260 and seo 260. Build them only once you have a real client or local proof there.
 
 **Brief for #3 (content-brief):**
@@ -113,16 +113,16 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
 - **Not used:**
   - **HowTo:** Google retired the rich result.
   - **Review / AggregateRating:** there are no real reviews yet, and we never invent them.
-- **Next:** add LinkedIn and the Google Business Profile URL to `sameAs` once they exist.
+- **sameAs:** GitHub and LinkedIn (added 19 Nov 2026). Add the Google Business Profile Maps URL once it is verified and public.
 - **Testing:** use https://search.google.com/test/rich-results after deploy.
 
 ## 7. AI visibility (ai-visibility)
-- **Crawlers:** robots and Cloudflare allow GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and the rest.
+- **Crawlers:** robots and Cloudflare allow GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and the rest. Cloudflare (19 Nov 2026): Browser Integrity Check off, Crawler Hints (IndexNow) on, Bot Fight Mode and AI Labyrinth off.
 - **llms.txt:** lists the services, the case study (now with both Lighthouse results) and every article, generated from the site data.
 - **Entity consistency:** the same name, city, services and languages appear on the site, in schema and in llms.txt.
 - **Biggest gaps:** off-site signals.
-  - Create and verify a Google Business Profile.
-  - Add a LinkedIn profile with the same name, headline and bio.
+  - Google Business Profile: updated 19 Nov 2026, verification pending.
+  - LinkedIn: headline, About and website aligned with the site (19 Nov 2026).
   - Get listed in 2–3 Romanian business directories.
   - Ask Cheesy Media for a public mention or review.
 - **Tracking:** the Semrush AI prompt tracking needs an Enterprise subscription your account doesn't have, so test manually once a month. Use the method in `/articole/cum-verifici-daca-ai-iti-mentioneaza-afacerea`. Ask the same prompts in ChatGPT, Gemini, Claude and Perplexity, and log whether you're mentioned, where, how you're described, and which sources are cited. Baseline prompts:

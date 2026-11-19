@@ -28,8 +28,8 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 
 ## Redesign, journey and SEO (18 Nov 2026)
 - [x] **SEO strategy (19 Nov 2026):** all 17 searchfit-seo skills applied; see `SEO_STRATEGY.md`. Code changes (redirect fix, OG image, titles, 2 new guides, guide hubs, schema) were deployed 19 Nov 2026 and verified live (redirect fix: 1 hop; og.png; 23 URLs in the sitemap).
-- [ ] **SEO decisions:** online-store page? maintenance service? City pages only with real local proof.
-- [ ] **Off-site AI signals:** Google Business Profile, LinkedIn, 2-3 directories; then add them to `sameAs` in `lib/schema.ts`.
+- [x] **SEO decisions (19 Nov 2026):** maintenance is a service (`/servicii/mentenanta-site/`, live, in sitemap and llms.txt). Online stores: not now. City pages only with real local proof.
+- [~] **Off-site AI signals (19 Nov 2026):** LinkedIn updated (headline, About first paragraph, website dragoscatana.com, which previously pointed to dragoscatana.ro) and added to `sameAs`. Google Business Profile updated (see below); add its public Maps URL to `sameAs` once verified. Still open: 2-3 Romanian business directories.
 - [ ] **Monthly:** the 5-prompt AI mention test in `SEO_STRATEGY.md` §7; Search Console review.
 - [x] **Redesign v3 live (19 Nov 2026):** direction A "Clar și curajos" chosen from Awwwards mood boards; deployed via File Manager zip upload. See `DESIGN.md`.
 - [ ] Replace the "DC" monogram in the hero with a real professional photo (portrait, ideally black and white on the orange circle).
@@ -39,7 +39,7 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [x] **Deployed 19 Nov 2026** via File Manager (zip upload and extract; `config.php` untouched). All key pages return 200.
 - [x] Live checks done: `awwwards-design-md` output in `docs/design-evidence/` (validator PASS), `audit_url` mobile (0 high/medium), `analyze_images` on the case study (WebP, srcset, lazy, alt, dimensions all OK).
 - [x] **Form emails verified (19 Nov 2026):** the lead reaches me@ and the visitor confirmation reached test@ in test mode. Test mode is now off (`confirm_to` removed from the server `api/config.php`), so real visitors get their confirmation.
-- [ ] **Cloudflare Browser Integrity Check is ON.** It intermittently served a challenge page to a headless browser during the audit. Bot Fight Mode, AI Labyrinth and all AI-crawler blocks are OFF (allowed). Decide whether to keep it on.
+- [x] **Cloudflare for AI visibility (19 Nov 2026):** Browser Integrity Check OFF (it challenged headless clients), Email Address Obfuscation OFF, Crawler Hints (IndexNow) ON. Bot Fight Mode and AI Labyrinth OFF; every AI crawler in AI Crawl Control is Allow. DDoS protection and the managed ruleset stay on. The 404s in AI Crawl Control are vulnerability scanners probing `.env`/config paths, which is correct. Markdown for Agents needs the Pro plan (skipped).
 - [ ] Add a professional photo to the hero card (it currently shows the initials "DC").
 - [ ] Validate `USER_JOURNEY.md` with 5 short calls with clinic, law-firm or local-business owners (interview guide inside).
 - [ ] Awwwards MCP in Claude Code: start Claude Code from the `dragos-catana-portfolio` folder so `.mcp.json` loads the `awwwards` server natively (this session used a stdio client because it started one folder up).
@@ -54,15 +54,15 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] **GA4 inside GTM:** in container `GTM-K7RPGZSV`, add a GA4 configuration tag (your `G-XXXXXXX` measurement ID) with consent type *analytics_storage*, and a GA4 event tag for the `generate_lead` event the forms already push. Publish the container.
 - [ ] **Legal review:** the privacy, cookie and terms pages are drafts. Add your legal identity (PFA/CUI if you have one), a contact email for data requests, and have them reviewed before collecting real leads.
 - [ ] **Professional photo** for Home and About (the layout works without one).
-- [ ] **Public contact details:** a contact email, LinkedIn URL, optional phone/WhatsApp. They are intentionally not on the site yet.
-- [ ] **Domain (partly done):** the zone is already on Cloudflare (nameservers aisha/dion) and the site resolves. Still to check in the Cloudflare dashboard: SSL/TLS **Full (strict)** and the records' cloud colour (they currently resolve to Cloudflare IPs, so they are proxied).
+- [ ] **Public contact details:** a contact email, optional phone/WhatsApp. They are intentionally not on the site yet (LinkedIn is in the schema `sameAs` only).
+- [ ] **Cloudflare SSL Full (strict) is blocked:** the origin serves a `*.hostingplatform.com` certificate that does not match the domain and expires July 2026, so strict mode would return 526 errors. Left unchanged. First install a valid origin certificate (Cloudflare Origin CA, or the host's SSL for dragoscatana.com), then switch to Full (strict).
 - [ ] **Cloudflare:** the records are currently proxied. Keep them **DNS-only** (grey cloud) to start. If you proxy, make sure no AI-bot blocking or bot-fight rule is on, otherwise `robots.txt` says "welcome" while the firewall says "no".
 - [ ] Professional email on the domain.
-- [ ] **Google Business Profile** *(deferred)*. Keep name, address, phone and website identical to the site.
+- [~] **Google Business Profile (19 Nov 2026):** profile 15813883419230568247 "Dragos Catana", verification pending (Google says up to 5 days). Updated: description, primary category Website designer, additional Internet marketing service and Marketing consultant, services (Creare site web, Redesign website, Mentenanță site, Optimizare SEO, SEO local și Google Business Profile, Audit SEO gratuit; the existing Website Development and GEO entries were kept). A duplicate profile (05296844541703078520) is suspended; leave it. After verification: check it is public, add photos, add the Maps URL to `sameAs`.
 - [ ] Register the site in **Google Search Console** and **Bing Webmaster Tools**, submit `sitemap.xml`.
 - [ ] **Baseline AI-prompt test** before launch (ChatGPT, Gemini, Claude, Perplexity), then monthly. See the DIY article on the site for the method. I can't query those assistants from here.
 - [ ] Directories and profiles with an identical name and bio (LinkedIn, GitHub, Romanian business directories).
-- [ ] Open Graph share image (not built yet).
+- [x] Open Graph share image (`public/og.png`, 19 Nov 2026).
 - [ ] Re-check AI crawler names in `robots.txt` every quarter. Re-run the keyword check in 3 months.
 
 ## Later
