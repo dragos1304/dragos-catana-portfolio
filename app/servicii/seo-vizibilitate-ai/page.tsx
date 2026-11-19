@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
+import { Guides } from "@/components/Guides";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 
@@ -129,7 +130,11 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section id="intrebari">
+      <Section id="ghiduri">
+        <Guides title="Ghiduri SEO și vizibilitate în AI" slugs={["ce-este-seo", "google-business-profile-ghid", "ce-este-geo-optimizare-pentru-motoare-ai", "cum-verifici-daca-ai-iti-mentioneaza-afacerea", "schema-markup-pentru-clinici-si-cabinete"]} />
+      </Section>
+
+      <Section id="intrebari" tint>
         <FAQ items={faq} />
         <p className="mt-8 text-slate-ink">Vrei să citești mai mult? <Link className="font-semibold text-brass-dark underline underline-offset-4" href="/articole/ce-este-geo-optimizare-pentru-motoare-ai">Ce este GEO și cum diferă de SEO</Link>.</p>
       </Section>

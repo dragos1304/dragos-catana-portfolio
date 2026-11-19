@@ -20,7 +20,7 @@ ${site.name} (${site.legalName}) este web designer și specialist SEO din ${site
 - [Audit gratuit de vizibilitate AI](${site.url}/audit-gratuit-vizibilitate-ai/)
 
 ## Lucrări
-- [Studiu de caz Cheesy Media](${site.url}/lucrari/cheesy-media/): redesign cu scoruri Lighthouse mobil de la 82 la 100 (performanță)
+- [Studiu de caz Cheesy Media](${site.url}/lucrari/cheesy-media/): redesign cu scoruri Lighthouse pe mobil: performanță de la 82 la 100 și accesibilitate de la 96 la 100
 
 ## Articole
 ${articles.map((a) => `- [${a.title}](${site.url}/articole/${a.slug}/): ${a.description}`).join("\n")}

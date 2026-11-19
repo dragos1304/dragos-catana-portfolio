@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
+import { Guides } from "@/components/Guides";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 
@@ -83,6 +84,8 @@ export default function Page() {
           <p>Primești o ofertă clară după o discuție de 30 de minute. Dacă ai deja un site și vrei doar să-l modernizezi, vezi <a href="/servicii/redesign-website/" className="font-semibold text-brass-dark underline-offset-4 hover:underline">redesign de website</a>. Dacă vrei să știi întâi unde ești acum, începe cu <a href="/audit-gratuit-vizibilitate-ai/" className="font-semibold text-brass-dark underline-offset-4 hover:underline">auditul SEO gratuit</a>. Iar ca să vezi un proiect real, citește <a href="/lucrari/cheesy-media/" className="font-semibold text-brass-dark underline-offset-4 hover:underline">studiul de caz Cheesy Media</a>.</p>
         </div>
       </Section>
+
+      <Section id="ghiduri" tint><Guides slugs={["ce-este-seo", "10-semne-ca-site-ul-tau-este-depasit", "redesign-site-fara-sa-pierzi-pozitiile-din-google", "google-business-profile-ghid"]} /></Section>
 
       <Section id="intrebari"><FAQ items={faq} /></Section>
       <CtaBand title="Pornești un site nou?" text="Primești gratuit un audit al prezenței tale online actuale și o direcție clară, în maximum 24 de ore." />

@@ -1,4 +1,4 @@
-import { site } from "./site-config";
+import { site, services } from "./site-config";
 
 export const abs = (path: string) => `${site.url}${path === "/" ? "/" : path.replace(/\/?$/, "/")}`;
 
@@ -12,8 +12,11 @@ export const personSchema = {
   address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "RO" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "Universitatea Babeș-Bolyai" },
   knowsLanguage: ["ro", "en", "fr", "de"],
+  knowsAbout: ["Web design", "Creare site web", "Optimizare SEO", "SEO local", "Generative Engine Optimization (GEO)", "Date structurate (schema.org)", "Next.js"],
   sameAs: [site.github],
 };
+
+export const ogImage = `${site.url}/og.png`;
 
 export const siteSchema = {
   "@context": "https://schema.org",
@@ -25,13 +28,20 @@ export const siteSchema = {
       name: site.name,
       url: site.url,
       description: site.description,
+      image: `${site.url}/og.png`,
+      serviceType: ["Creare site web", "Redesign website", "Optimizare SEO", "SEO local", "Optimizare pentru motoare AI (GEO)"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Servicii",
+        itemListElement: services.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.title, url: `${site.url}/servicii/${s.slug}/` } })),
+      },
       areaServed: { "@type": "Country", name: "România" },
       address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "RO" },
       founder: { "@id": `${site.url}/#person` },
       knowsLanguage: ["ro", "en", "fr", "de"],
       sameAs: [site.github],
     },
-    { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, inLanguage: "ro-RO" },
+    { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, inLanguage: "ro-RO", publisher: { "@id": `${site.url}/#person` } },
   ],
 };
 
@@ -52,6 +62,7 @@ export const serviceSchema = (name: string, description: string, path: string) =
   name,
   description,
   url: abs(path),
+  serviceType: name,
   provider: { "@id": `${site.url}/#service` },
   areaServed: { "@type": "Country", name: "România" },
 });

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Breadcrumbs, CtaBand, FAQ, Section, Container } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
-import { abs, breadcrumb } from "@/lib/schema";
+import { abs, breadcrumb, ogImage } from "@/lib/schema";
 import { articles, getArticle, type Block } from "@/lib/articles";
 import { site } from "@/lib/site-config";
 
@@ -54,7 +54,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     <>
       <JsonLd data={[
         breadcrumb([{ name: "Acasă", path: "/" }, { name: "Articole", path: "/articole" }, { name: a.title, path }]),
-        { "@context": "https://schema.org", "@type": "Article", headline: a.title, description: a.description, url: abs(path), inLanguage: "ro-RO",
+        { "@context": "https://schema.org", "@type": "Article", headline: a.title, description: a.description, url: abs(path), inLanguage: "ro-RO", image: ogImage,
           datePublished: a.date, dateModified: a.date, author: { "@id": `${site.url}/#person` }, publisher: { "@id": `${site.url}/#service` }, mainEntityOfPage: abs(path) },
       ]} />
       <Section>

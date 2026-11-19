@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <VerticalPage
+      guides={["google-business-profile-ghid", "ce-este-seo", "ce-este-geo-optimizare-pentru-motoare-ai", "schema-markup-pentru-clinici-si-cabinete"]}
       path={path}
       crumb="Website pentru cabinete de avocatură"
       eyebrow="Cabinete de avocatură"

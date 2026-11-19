@@ -166,7 +166,7 @@ export default function Home() {
               <div className="rounded-2xl bg-paper/10 p-5"><dt className="text-[15px] text-paper/75">Performanță</dt><dd className="font-serif text-4xl font-extrabold text-paper">82 <span className="text-orange">→ 100</span></dd></div>
               <div className="rounded-2xl bg-paper/10 p-5"><dt className="text-[15px] text-paper/75">Accesibilitate</dt><dd className="font-serif text-4xl font-extrabold text-paper">96 <span className="text-orange">→ 100</span></dd></div>
             </dl>
-            <div className="mt-8"><Button href="/lucrari/cheesy-media" variant="light" arrow>Vezi studiul de caz</Button></div>
+            <div className="mt-8 flex flex-wrap gap-3"><Button href="/lucrari/cheesy-media" variant="light" arrow>Vezi studiul de caz</Button><Button href="/lucrari" variant="ghost-dark">Toate lucrările</Button></div>
           </div>
           <div className="relative pb-6 pl-4 sm:pl-8">
             <img

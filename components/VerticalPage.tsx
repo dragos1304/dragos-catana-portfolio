@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
+import { Guides } from "@/components/Guides";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 
 export type VerticalProps = {
@@ -17,6 +18,7 @@ export type VerticalProps = {
   caution: { title: string; text: string };
   faq: { q: string; a: string }[];
   ctaTitle: string;
+  guides?: string[];
 };
 
 export function VerticalPage(p: VerticalProps) {
@@ -71,6 +73,7 @@ export function VerticalPage(p: VerticalProps) {
         </div>
       </Section>
 
+      {p.guides && <Section id="ghiduri"><Guides slugs={p.guides} /></Section>}
       <Section id="intrebari" tint><FAQ items={p.faq} /></Section>
       <CtaBand title={p.ctaTitle} />
     </>
