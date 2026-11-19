@@ -88,10 +88,10 @@ export default function Home() {
         <Container>
           <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border-2 border-ink bg-ink md:grid-cols-4">
             {[
-              ["24 h", "audit gratuit, manual: site, Google și ChatGPT"],
-              ["82 → 100", "scor Lighthouse pe mobil după redesign-ul Cheesy Media"],
-              ["Cluj-Napoca", "clinici, avocați și afaceri locale din toată România"],
-              ["1 om", "Dragoș: audit, design, cod și SEO, fără intermediari"],
+              ["100 / 100", "la toate scorurile Lighthouse pe mobil, pe site-ul Cheesy Media"],
+              ["Înainte → după", "testez aceleași întrebări în Google și ChatGPT, ca să vezi diferența"],
+              ["24 h", "îți răspund personal la orice mesaj; auditul e gratuit"],
+              ["1 om", "Dragoș: te ascult, construiesc și rămân alături după lansare"],
             ].map(([a, b]) => (
               <div key={b} className="bg-paper px-5 py-5">
                 <dt className="font-serif text-2xl font-extrabold text-ink sm:text-3xl">{a}</dt>
