@@ -27,7 +27,7 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
 
 ## Redesign, journey and SEO (18 Nov 2026)
-- [x] **SEO strategy (19 Nov 2026):** all 17 searchfit-seo skills applied; see `SEO_STRATEGY.md`. Code changes (redirect fix, OG image, titles, 2 new guides, guide hubs, schema) are built and pushed but NOT deployed yet.
+- [x] **SEO strategy (19 Nov 2026):** all 17 searchfit-seo skills applied; see `SEO_STRATEGY.md`. Code changes (redirect fix, OG image, titles, 2 new guides, guide hubs, schema) were deployed 19 Nov 2026 and verified live (redirect fix: 1 hop; og.png; 23 URLs in the sitemap).
 - [ ] **SEO decisions:** online-store page? maintenance service? City pages only with real local proof.
 - [ ] **Off-site AI signals:** Google Business Profile, LinkedIn, 2-3 directories; then add them to `sameAs` in `lib/schema.ts`.
 - [ ] **Monthly:** the 5-prompt AI mention test in `SEO_STRATEGY.md` §7; Search Console review.
