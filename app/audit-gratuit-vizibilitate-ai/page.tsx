@@ -7,9 +7,9 @@ import { site } from "@/lib/site-config";
 
 const path = "/audit-gratuit-vizibilitate-ai";
 export const metadata: Metadata = {
-  title: "Audit gratuit de vizibilitate în AI și SEO",
+  title: "Audit SEO gratuit și audit de vizibilitate în AI",
   description:
-    "Află dacă ChatGPT, Gemini și Perplexity îți recomandă afacerea. Audit manual, gratuit, livrat în maximum 24 de ore.",
+    "Audit SEO gratuit, făcut manual: vezi cum apari în Google și dacă te recomandă ChatGPT, Gemini și Perplexity. Rezultatul îl primești în 24 de ore.",
   alternates: { canonical: `${path}/` },
 };
 
@@ -23,13 +23,13 @@ export default function Page() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <Eyebrow>Gratuit · Manual · În 24 de ore</Eyebrow>
-            <h1 className="font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-              Te recomandă ChatGPT, Gemini și Perplexity?
+            <h1 className="font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
+              Audit SEO gratuit: te recomandă Google și <em className="text-brass-dark">ChatGPT</em>?
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-ink">
               Îți arăt cum apare afacerea ta acum în Google și în răspunsurile asistenților AI, și ce poți face dacă nu apari.
             </p>
-            <H2 className="mt-10 !text-2xl">Ce primești</H2>
+            <H2 className="mt-10 !text-3xl">Ce primești în auditul gratuit</H2>
             <ul className="mt-4 space-y-3 text-slate-ink leading-relaxed">
               <li>✓ Testul întrebărilor reale ale clienților tăi, în mai multe asistente AI</li>
               <li>✓ Dacă ești menționat, pe ce loc și cum ești descris</li>

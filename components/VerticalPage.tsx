@@ -27,7 +27,7 @@ export function VerticalPage(p: VerticalProps) {
       <Section id="intro">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: p.crumb }]} />
         <Eyebrow>{p.eyebrow}</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">{p.h1}</h1>
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">{p.h1}</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{p.lead}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/audit-gratuit-vizibilitate-ai">Audit gratuit AI</Button>

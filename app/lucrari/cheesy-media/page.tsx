@@ -35,7 +35,7 @@ export default function Page() {
       <Section id="studiu-de-caz-redesign">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Lucrări", href: "/lucrari" }, { name: "Cheesy Media" }]} />
         <Eyebrow>Studiu de caz · Redesign</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">Cheesy Media: de la o pagină lungă la un site complet.</h1>
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">Cheesy Media: de la o pagină lungă la un site complet.</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">
           Cheesy Media este o agenție de foto, video și social media din Cluj-Napoca. Am refăcut site-ul ei, împreună cu proprietarii, pentru a explica mai clar ce oferă și a-i ajuta pe clienți să ceară o ofertă mai ușor.
         </p>

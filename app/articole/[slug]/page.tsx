@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <Section>
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Articole", href: "/articole" }, { name: a.category }]} />
         <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">{a.category} · {a.readMin} min de citit</p>
-        <h1 className="mt-3 max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">{a.title}</h1>
+        <h1 className="mt-3 max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">{a.title}</h1>
         <p className="mt-4 text-sm text-slate-ink">
           De <Link href="/despre" className="underline underline-offset-4">{site.name}</Link> · actualizat la{" "}
           <time dateTime={a.date}>{new Date(a.date).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" })}</time>

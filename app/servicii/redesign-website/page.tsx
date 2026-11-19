@@ -28,7 +28,7 @@ export default function Page() {
       <Section id="redesign-de-website">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "Redesign de website" }]} />
         <Eyebrow>Redesign de website</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
           Redesign de website pentru felul în care caută oamenii (și AI-ul) astăzi.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">
@@ -44,7 +44,7 @@ export default function Page() {
         <H2>Semne că site-ul tău e depășit</H2>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {["Nu arată bine pe telefon", "Se încarcă greu", "Nu e clar ce oferi sau cum te contactează cineva", "Designul pare vechi", "E greu de actualizat", "Nu are date structurate pentru Google și AI", "Nu respectă bazele accesibilității"].map((t) => (
-            <li key={t} className="flex gap-3 rounded-xl border border-line bg-white p-4"><span aria-hidden className="text-brass-dark">✓</span>{t}</li>
+            <li key={t} className="flex gap-3 rounded-md border border-line bg-white p-4"><span aria-hidden className="text-brass-dark">✓</span>{t}</li>
           ))}
         </ul>
         <p className="mt-6 text-slate-ink">Mai multe detalii în articolul <Link className="font-semibold text-brass-dark underline underline-offset-4" href="/articole/10-semne-ca-site-ul-tau-este-depasit">10 semne că site-ul tău e depășit</Link>.</p>

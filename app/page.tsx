@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Web designer freelancer din Cluj: site-uri și SEO | Dragoș Cătană" },
   description:
-    "Web designer freelancer din Cluj-Napoca. Creare site, redesign și optimizare SEO pentru clinici, cabinete de avocatură și afaceri locale din România. Audit SEO gratuit în 24 de ore.",
+    "Web designer freelancer din Cluj-Napoca: creare site și optimizare SEO pentru clinici, avocați și afaceri locale. Audit SEO gratuit în 24 de ore.",
   alternates: { canonical: "/" },
 };
 

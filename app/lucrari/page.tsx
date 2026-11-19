@@ -17,7 +17,7 @@ export default function Lucrari() {
       <Section>
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Lucrări" }]} />
         <Eyebrow>Lucrări</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">Proiecte, cu rezultate pe care le poți verifica.</h1>
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">Proiecte, cu rezultate pe care le poți verifica.</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">
           Public doar ce e real și măsurabil. Pe măsură ce apar proiecte noi, le adaug aici.
         </p>

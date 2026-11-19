@@ -18,7 +18,7 @@ export default function Articole() {
       <Section>
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Articole" }]} />
         <Eyebrow>Articole</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">Ghiduri practice despre SEO, AI și web design.</h1>
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">Ghiduri practice despre SEO, AI și web design.</h1>
         <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {articles.map((a) => (
             <li key={a.slug}>

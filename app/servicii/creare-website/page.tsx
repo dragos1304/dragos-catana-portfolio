@@ -5,9 +5,9 @@ import { breadcrumb, serviceSchema } from "@/lib/schema";
 
 const path = "/servicii/creare-website";
 export const metadata: Metadata = {
-  title: "Creare website pentru clinici, avocați și afaceri locale",
+  title: "Creare site web pentru clinici și afaceri locale",
   description:
-    "Website nou, rapid și clar, construit să fie găsit în Google și recomandat de AI: Next.js, Webflow, Shopify sau Medusa. Cere o ofertă.",
+    "Creare site web rapid pentru clinici, avocați și afaceri locale: site de prezentare sau magazin online, cu SEO inclus. Află cât costă un site.",
   alternates: { canonical: `${path}/` },
 };
 
@@ -23,22 +23,23 @@ const faq = [
   { q: "Site-ul va fi găsit în Google?", a: "Îl construiesc cu bazele SEO făcute corect: structură, titluri, viteză, date structurate și sitemap. Pozițiile depind apoi de concurență și de timp, iar pentru ele există colaborarea lunară de SEO." },
   { q: "Cine deține site-ul?", a: "Tu. Domeniul, conținutul și contul de găzduire sunt pe numele tău. Stabilim clar asta în ofertă." },
   { q: "Se poate în engleză, franceză sau germană?", a: "Da, ca opțiune suplimentară. Fiecare limbă primește conținut și SEO propriu, nu doar traducere automată." },
-  { q: "Cât costă?", a: "Depinde de număr de pagini, funcționalități și platformă. Nu afișez prețuri fixe: primești o ofertă clară după o discuție scurtă." },
+  { q: "Cât costă un site web?", a: "Prețul unui site depinde de numărul de pagini, de funcționalități (programări, formulare, magazin) și de platformă. Nu afișez prețuri fixe: după o discuție scurtă primești o ofertă clară, cu tot ce include." },
+  { q: "Cât durează realizarea unui site de prezentare?", a: "Depinde de câte pagini are și de cât de repede avem textele și imaginile. Îți dau un calendar pe etape în ofertă, iar tu vezi progresul la fiecare etapă." },
 ];
 
 export default function Page() {
   return (
     <>
       <JsonLd data={[breadcrumb([{ name: "Acasă", path: "/" }, { name: "Servicii", path: "/servicii" }, { name: "Creare de website", path }]),
-        serviceSchema("Creare de website", "Website nou, rapid și pregătit pentru Google și motoare AI, în Next.js, Webflow, Shopify sau Medusa.", path)]} />
+        serviceSchema("Creare site web", "Creare site de prezentare sau magazin online, rapid și pregătit pentru Google și motoare AI, în Next.js, Webflow, Shopify sau Medusa.", path)]} />
       <Section id="creare-de-website">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "Creare de website" }]} />
         <Eyebrow>Creare de website</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-          Un website rapid și clar, construit să fie găsit din prima zi.
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
+          Creare site web: rapid, clar și construit să fie <em className="text-brass-dark">găsit</em> din prima zi.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">
-          Pentru practici noi, clinici, cabinete de avocatură, servicii locale și magazine online. Fără șabloane generice.
+          Realizare site de prezentare sau magazin online pentru clinici, cabinete de avocatură și afaceri locale din România. Fără șabloane generice: îl construiesc eu, de la structură la SEO.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/contact">Cere o ofertă</Button>
@@ -47,10 +48,10 @@ export default function Page() {
       </Section>
 
       <Section id="ce-include" tint>
-        <H2>Ce include</H2>
+        <H2>Ce include crearea site-ului</H2>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {["Strategie și structura paginilor", "Design și construire", "Responsive pe orice ecran", "Bazele SEO și date structurate (schema)", "Analiză (Google Tag Manager / GA4) cu consimțământ cookie", "Formulare de contact, programări, integrări", "Predare și instruire", "Opțional: versiuni în engleză, franceză, germană"].map((t) => (
-            <li key={t} className="flex gap-3 rounded-xl border border-line bg-white p-4"><span aria-hidden className="text-brass-dark">✓</span>{t}</li>
+            <li key={t} className="flex gap-3 rounded-md border border-line bg-white p-4"><span aria-hidden className="text-brass-dark">✓</span>{t}</li>
           ))}
         </ul>
       </Section>
@@ -75,7 +76,15 @@ export default function Page() {
         </p>
       </Section>
 
-      <Section id="intrebari" tint><FAQ items={faq} /></Section>
+      <Section id="cat-costa-un-site" tint>
+        <H2>Cât costă un site? Ce influențează prețul</H2>
+        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-ink">
+          <p>Nu afișez un preț fix, pentru că un site de prezentare cu cinci pagini și un magazin online cu plăți și facturare sunt proiecte diferite. Prețul depinde de trei lucruri: numărul de pagini și cât conținut scriem împreună, funcționalitățile (programări online, formulare, mai multe limbi) și platforma aleasă.</p>
+          <p>Primești o ofertă clară după o discuție de 30 de minute. Dacă ai deja un site și vrei doar să-l modernizezi, vezi <a href="/servicii/redesign-website/" className="font-semibold text-brass-dark underline-offset-4 hover:underline">redesign de website</a>. Dacă vrei să știi întâi unde ești acum, începe cu <a href="/audit-gratuit-vizibilitate-ai/" className="font-semibold text-brass-dark underline-offset-4 hover:underline">auditul SEO gratuit</a>. Iar ca să vezi un proiect real, citește <a href="/lucrari/cheesy-media/" className="font-semibold text-brass-dark underline-offset-4 hover:underline">studiul de caz Cheesy Media</a>.</p>
+        </div>
+      </Section>
+
+      <Section id="intrebari"><FAQ items={faq} /></Section>
       <CtaBand title="Pornești un site nou?" text="Primești gratuit un audit al prezenței tale online actuale și o direcție clară, în maximum 24 de ore." />
     </>
   );

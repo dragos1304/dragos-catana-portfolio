@@ -6,13 +6,14 @@ import { breadcrumb, serviceSchema } from "@/lib/schema";
 
 const path = "/servicii/seo-vizibilitate-ai";
 export const metadata: Metadata = {
-  title: "SEO și optimizare pentru ChatGPT, Gemini și Perplexity (GEO)",
+  title: "Optimizare SEO și vizibilitate în ChatGPT (GEO)",
   description:
-    "Fii găsit în Google și recomandat de asistenții AI. Audit gratuit în 24 de ore, apoi implementare sau colaborare lunară SEO/GEO pentru afaceri locale din România.",
+    "Servicii SEO pentru afaceri locale din România: optimizare SEO, SEO local și vizibilitate în ChatGPT, Gemini și Perplexity. Audit SEO gratuit în 24 de ore.",
   alternates: { canonical: `${path}/` },
 };
 
 const faq = [
+  { q: "Ce face un consultant SEO, concret?", a: "Verific cum te găsesc oamenii acum, repar ce blochează site-ul tehnic, structurez paginile pe întrebările reale ale clienților, îngrijesc profilul Google și măsor lunar ce s-a schimbat. Totul explicat în limbaj simplu." },
   { q: "Ce este GEO sau AEO?", a: "Generative Engine Optimization (GEO) sau Answer Engine Optimization (AEO) înseamnă să faci o afacere ușor de înțeles și de citat pentru asistenții AI, ca ChatGPT, Gemini, Claude sau Perplexity. Se bazează pe SEO, dar pune accent pe răspunsuri clare, date structurate și informații consecvente în mai multe surse." },
   { q: "Poți garanta că ChatGPT mă va recomanda?", a: "Nu. Răspunsurile AI variază, iar modelele se actualizează în ritmul lor. Pot măsura unde ești acum, îmbunătăți ce influențează recomandările și arăta schimbarea în timp." },
   { q: "După cât timp se văd rezultatele?", a: "De obicei în săptămâni sau luni. Îmbunătățirile tehnice se văd mai repede, iar autoritatea (recenzii, mențiuni, conținut) se construiește în timp." },
@@ -36,11 +37,11 @@ export default function Page() {
         <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
           <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "SEO și vizibilitate în AI" }]} />
           <Eyebrow>Serviciul principal</Eyebrow>
-          <h1 className="max-w-3xl font-serif text-5xl font-medium leading-[1.05] sm:text-7xl">
-            Fii găsit pe Google. Fii recomandat de <em className="text-brass-dark">AI</em>.
+          <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
+            Optimizare SEO: fii găsit pe Google și recomandat de <em className="text-brass-dark">AI</em>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-ink">
-            Tot mai mulți clienți întreabă un asistent AI „cui să mă adresez?”. Te ajut să apari în acele răspunsuri și în Google, cu un proces pe care îl poți măsura.
+            Tot mai mulți clienți întreabă un asistent AI „cui să mă adresez?”. Ca consultant SEO, te ajut să apari în acele răspunsuri și în Google, cu un proces pe care îl poți măsura, de la optimizarea site-ului la SEO local.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/audit-gratuit-vizibilitate-ai">Cere auditul gratuit</Button>
@@ -74,16 +75,16 @@ export default function Page() {
       </Section>
 
       <Section id="ce-fac-concret">
-        <H2>Ce fac concret</H2>
+        <H2>Servicii SEO: ce fac concret</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {[
             ["Audit de vizibilitate AI", "Testez întrebările reale ale clienților tăi în ChatGPT, Gemini, Claude, Perplexity și răspunsurile AI din Google. Notez dacă ești menționat, pe ce loc, cum ești descris, dacă informațiile sunt corecte și ce concurenți apar."],
             ["Claritatea identității", "Același nume, descriere și date de contact pe site, în directoare, pe LinkedIn și pe profilul Google al afacerii."],
             ["Date structurate", "Schema pentru organizație, serviciu, FAQ, articole și persoană (JSON-LD), pentru ca motoarele să înțeleagă exact cine ești și ce faci."],
             ["Conținut care răspunde", "Pagini care răspund direct la întrebările pacienților sau clienților, în limbaj clar și ușor de citat."],
-            ["Bază tehnică", "Indexare, viteză, sitemap, robots.txt care permite crawlerele AI relevante și fișier llms.txt."],
+            ["Optimizare site (tehnic)", "Indexare, viteză, Core Web Vitals, sitemap, robots.txt care permite crawlerele AI relevante și fișier llms.txt."],
             ["Autoritate și mențiuni", "Recenzii, directoare, prezență în surse de încredere. Aici se câștigă pe termen lung."],
-            ["SEO local", "Profil Google al afacerii, citări locale, proces pentru recenzii."],
+            ["SEO local", "Profilul Google al afacerii (Google Business Profile), citări locale în directoare și un proces simplu pentru recenzii, ca să apari când oamenii caută „în zona mea”."],
             ["Monitorizare lunară", "Retestez întrebările și îți trimit un raport în limbaj simplu: ce s-a schimbat și ce urmează."],
           ].map(([t, d]) => (
             <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>

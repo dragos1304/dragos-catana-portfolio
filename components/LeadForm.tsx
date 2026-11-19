@@ -4,7 +4,7 @@ import Link from "next/link";
 
 type Kind = "audit" | "contact";
 const inputCls =
-  "mt-1.5 block w-full rounded-xl border border-navy/25 bg-white px-4 py-3 text-base text-navy placeholder:text-slate-ink/60 focus:border-navy";
+  "mt-1.5 block w-full rounded-md border border-navy/25 bg-white px-4 py-3 text-base text-navy placeholder:text-slate-ink/60 focus:border-navy";
 
 export function LeadForm({ kind }: { kind: Kind }) {
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");

@@ -26,6 +26,16 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] **On your own computer (required now):** `.mcp.json` uses the installed `awwwards-mcp` command. Run `npm install -g awwwards-mcp@1.20.0 playwright ffmpeg-static` and `npm exec --global -- playwright install chromium`, then restart Claude Code. Without the install, the `awwwards` server will not start on your machine. Cloud sessions install it through the environment's setup script.
 - [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
 
+## Redesign, journey and SEO (18 Nov 2026)
+- [x] Redesign from Awwwards evidence: warm paper and ink palette, Cormorant Garamond display, square buttons, journey-led homepage. Evidence and skills used are in `DESIGN.md`.
+- [x] User journey and personal story: `USER_JOURNEY.md`; homepage chapters (trigger, 5 steps with "Tu / Eu, Dragoș", letter).
+- [x] SEO pass on Romanian keywords (Semrush ro): `SEO_KEYWORDS.md`; home, creare-website, SEO and audit pages optimised.
+- [ ] **Deploy this version** (not live yet): `npm run build`, then upload `out/` with the lftp mirror command in `DEPLOY.md` (into `/`). Your SFTP password is needed.
+- [ ] After deploy: run the `awwwards-design-md` skill on https://dragoscatana.com and re-run `audit_url` / `analyze_accessibility` live.
+- [ ] Add a professional photo to the hero card (it currently shows the initials "DC").
+- [ ] Validate `USER_JOURNEY.md` with 5 short calls with clinic, law-firm or local-business owners (interview guide inside).
+- [ ] Awwwards MCP in Claude Code: start Claude Code from the `dragos-catana-portfolio` folder so `.mcp.json` loads the `awwwards` server natively (this session used a stdio client because it started one folder up).
+
 ## Needs you
 - [ ] **Optional automatic deploys:** add GitHub secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_DIR` for `.github/workflows/deploy.yml` (untested, needs your credentials).
 - [x] **Deploy to Network Solutions:** done 18 Nov 2026. Plan is Starter (Unix) with PHP and SFTP; `out/` is live at https://dragoscatana.com (verified with a browser user agent: pages, robots.txt, sitemap.xml, llms.txt, 404, http and www redirects).
