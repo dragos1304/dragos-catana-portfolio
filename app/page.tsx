@@ -134,8 +134,8 @@ export default function Home() {
       {/* 4. Services as colour tiles */}
       <Section id="servicii" white>
         <Eyebrow>Servicii</Eyebrow>
-        <H2>Trei servicii. Un singur scop: <span className="whitespace-nowrap"><Mark kind="underline">să fii ales</Mark>.</span></H2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <H2>Patru servicii. Un singur scop: <span className="whitespace-nowrap"><Mark kind="underline">să fii ales</Mark>.</span></H2>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
           {services.map((s, i) => (
             <Link key={s.slug} href={`/servicii/${s.slug}`}
               className={`group relative flex min-h-[340px] flex-col rounded-3xl p-7 transition-transform duration-200 hover:-translate-y-1 ${tileStyle[i % 3]}`}>

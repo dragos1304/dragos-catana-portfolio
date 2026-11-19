@@ -40,4 +40,10 @@ export const services = [
     points: ["Audit gratuit în 24 de ore", "Optimizare pentru motoare AI (GEO)", "Raport lunar în limbaj simplu"],
     flagship: true,
   },
+  {
+    slug: "mentenanta-site",
+    title: "Mentenanță site",
+    short: "Site-ul rămâne rapid, sigur și la zi după lansare: actualizări, backup, verificări lunare și modificări mici, fără să-ți bați capul.",
+    points: ["Actualizări și backup", "Verificare lunară: viteză, formulare, Google", "Modificări mici de conținut"],
+  },
 ] as const;

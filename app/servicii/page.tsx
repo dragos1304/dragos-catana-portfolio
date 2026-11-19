@@ -6,7 +6,7 @@ import { breadcrumb } from "@/lib/schema";
 import { services } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Servicii: creare site, redesign și optimizare SEO",
+  title: "Servicii: creare site, redesign, SEO și mentenanță",
   description:
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Cere o ofertă sau un audit gratuit.",
   alternates: { canonical: "/servicii/" },
@@ -26,7 +26,7 @@ export default function Servicii() {
           Fiecare redesign și fiecare website nou pe care îl livrez este „pregătit pentru AI” din start: conținut clar,
           date structurate și o bază tehnică curată. Prețurile depind de proiect, așa că primești o ofertă după o discuție scurtă.
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {services.map((s) => (
             <Link key={s.slug} href={`/servicii/${s.slug}`}
               className={`rounded-md border p-7 hover:shadow-lg ${"flagship" in s ? "border-brass-dark" : "border-line"}`}>
@@ -53,6 +53,7 @@ export default function Servicii() {
               <tr><th scope="row" className="py-4 pr-4 font-medium">Am un site, dar e vechi sau lent</th><td><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/redesign-website">Redesign de website</Link></td></tr>
               <tr><th scope="row" className="py-4 pr-4 font-medium">Nu am site sau am doar o pagină de social media</th><td><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/creare-website">Creare de website</Link></td></tr>
               <tr><th scope="row" className="py-4 pr-4 font-medium">Am site, dar nu mă găsește nimeni, nici AI-ul</th><td><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/seo-vizibilitate-ai">SEO și vizibilitate în AI</Link></td></tr>
+              <tr><th scope="row" className="py-4 pr-4 font-medium">Am un site bun, dar nu am timp să am grijă de el</th><td><Link className="font-semibold text-brass-dark underline underline-offset-4" href="/servicii/mentenanta-site">Mentenanță site</Link></td></tr>
             </tbody>
           </table>
         </div>

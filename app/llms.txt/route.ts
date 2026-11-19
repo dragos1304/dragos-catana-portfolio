@@ -17,6 +17,7 @@ ${site.name} (${site.legalName}) este web designer și specialist SEO din ${site
 - [SEO și vizibilitate în AI](${site.url}/servicii/seo-vizibilitate-ai/): audit, optimizare GEO/SEO, colaborare lunară
 - [Website pentru clinici și cabinete medicale](${site.url}/servicii/website-clinici-medicale/): pagini pe specialități, medici, programare și SEO local
 - [Website pentru cabinete de avocatură](${site.url}/servicii/website-cabinete-avocatura/): domenii de practică, avocați, articole, contact discret
+- [Mentenanță site](${site.url}/servicii/mentenanta-site/): actualizări, backup, verificări lunare (viteză, formulare, Google) și modificări mici de conținut
 - [Audit gratuit de vizibilitate AI](${site.url}/audit-gratuit-vizibilitate-ai/)
 
 ## Lucrări
