@@ -42,3 +42,4 @@ next-env.d.ts
 
 # server-only form config (never commit)
 /public/api/config.php
+site-deploy.zip

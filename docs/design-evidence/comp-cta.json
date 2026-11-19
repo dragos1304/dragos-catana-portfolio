@@ -1,0 +1,672 @@
+{
+ "capturedAt": 1795055493519,
+ "colors": [
+  "rgb(138, 63, 18)",
+  "rgb(244, 239, 233)",
+  "rgb(244, 239, 233) none repeat scroll 0% 0% / auto padding-box border-box",
+  "rgb(255, 255, 255)",
+  "rgb(26, 26, 26)",
+  "rgb(26, 26, 26) none repeat scroll 0% 0% / auto padding-box border-box",
+  "rgb(74, 74, 74)",
+  "rgba(0, 0, 0, 0)",
+  "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+ ],
+ "fonts": [
+  "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Georgia, serif",
+  "Inter, \"Inter Fallback\", system-ui, sans-serif"
+ ],
+ "id": "component-pack-v1",
+ "nodeCount": 9,
+ "paletteSummary": {
+  "colors": [
+   {
+    "count": 7,
+    "value": "rgb(26, 26, 26)"
+   },
+   {
+    "count": 1,
+    "value": "rgb(138, 63, 18)"
+   },
+   {
+    "count": 1,
+    "value": "rgb(244, 239, 233)"
+   },
+   {
+    "count": 1,
+    "value": "rgb(255, 255, 255)"
+   },
+   {
+    "count": 1,
+    "value": "rgb(74, 74, 74)"
+   }
+  ],
+  "junkFiltered": 11
+ },
+ "provenance": {
+  "capturedAt": 1795055493541,
+  "extractorVersion": 1,
+  "finalUrl": "https://dragoscatana.com/",
+  "requestedUrlHash": "2af01c47518b5c77aa31d46a771822fbd0fa68512053d0f39335ca18032e1e03",
+  "schemaVersion": "awwwards-capture-provenance-v1",
+  "settlePolicy": "load+3s+preScroll+500ms",
+  "viewport": "desktop"
+ },
+ "root": {
+  "anims": [],
+  "children": [
+   {
+    "anims": [],
+    "children": [
+     {
+      "anims": [],
+      "children": [
+       {
+        "anims": [],
+        "children": [],
+        "classes": [
+         "mb-3",
+         "text-sm",
+         "font-semibold",
+         "uppercase",
+         "tracking-[0.14em]",
+         "text-brass-dark"
+        ],
+        "rect": {
+         "h": 20,
+         "w": 768,
+         "x": 176,
+         "y": 6439.859375
+        },
+        "styles": {
+         "alignItems": "normal",
+         "aspectRatio": "auto",
+         "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+         "backgroundColor": "rgba(0, 0, 0, 0)",
+         "backgroundPosition": "0% 0%",
+         "backgroundSize": "auto",
+         "border": "0px solid rgb(138, 63, 18)",
+         "borderRadius": "0px",
+         "bottom": "auto",
+         "color": "rgb(138, 63, 18)",
+         "display": "block",
+         "flexDirection": "row",
+         "flexWrap": "nowrap",
+         "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+         "fontSize": "14px",
+         "fontWeight": "600",
+         "gap": "normal",
+         "height": "20px",
+         "justifyContent": "normal",
+         "left": "auto",
+         "letterSpacing": "1.96px",
+         "lineHeight": "20px",
+         "margin": "0px 0px 12px",
+         "minHeight": "0px",
+         "minWidth": "0px",
+         "objectFit": "fill",
+         "opacity": "1",
+         "overflow": "visible",
+         "padding": "0px",
+         "position": "static",
+         "right": "auto",
+         "textAlign": "start",
+         "textTransform": "uppercase",
+         "top": "auto",
+         "transition": "all",
+         "width": "768px",
+         "zIndex": "auto"
+        },
+        "tag": "p",
+        "text": "Primul pas"
+       },
+       {
+        "anims": [],
+        "children": [],
+        "classes": [
+         "font-serif",
+         "text-4xl",
+         "font-medium",
+         "leading-[1.1]",
+         "sm:text-5xl",
+         "text-navy"
+        ],
+        "rect": {
+         "h": 105.59375,
+         "w": 768,
+         "x": 176,
+         "y": 6471.859375
+        },
+        "styles": {
+         "alignItems": "normal",
+         "aspectRatio": "auto",
+         "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+         "backgroundColor": "rgba(0, 0, 0, 0)",
+         "backgroundPosition": "0% 0%",
+         "backgroundSize": "auto",
+         "border": "0px solid rgb(26, 26, 26)",
+         "borderRadius": "0px",
+         "bottom": "auto",
+         "color": "rgb(26, 26, 26)",
+         "display": "block",
+         "flexDirection": "row",
+         "flexWrap": "nowrap",
+         "fontFamily": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Georgia, serif",
+         "fontSize": "48px",
+         "fontWeight": "500",
+         "gap": "normal",
+         "height": "105.594px",
+         "justifyContent": "normal",
+         "left": "auto",
+         "letterSpacing": "normal",
+         "lineHeight": "52.8px",
+         "margin": "0px",
+         "minHeight": "0px",
+         "minWidth": "0px",
+         "objectFit": "fill",
+         "opacity": "1",
+         "overflow": "visible",
+         "padding": "0px",
+         "position": "static",
+         "right": "auto",
+         "textAlign": "start",
+         "top": "auto",
+         "transition": "all",
+         "width": "768px",
+         "zIndex": "auto"
+        },
+        "tag": "h2",
+        "text": "Vrei să știi dacă AI-ul îți recomandă afacerea?"
+       },
+       {
+        "anims": [],
+        "children": [],
+        "classes": [
+         "mt-4",
+         "text-lg",
+         "text-slate-ink"
+        ],
+        "rect": {
+         "h": 28,
+         "w": 768,
+         "x": 176,
+         "y": 6593.453125
+        },
+        "styles": {
+         "alignItems": "normal",
+         "aspectRatio": "auto",
+         "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+         "backgroundColor": "rgba(0, 0, 0, 0)",
+         "backgroundPosition": "0% 0%",
+         "backgroundSize": "auto",
+         "border": "0px solid rgb(74, 74, 74)",
+         "borderRadius": "0px",
+         "bottom": "auto",
+         "color": "rgb(74, 74, 74)",
+         "display": "block",
+         "flexDirection": "row",
+         "flexWrap": "nowrap",
+         "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+         "fontSize": "18px",
+         "fontWeight": "400",
+         "gap": "normal",
+         "height": "28px",
+         "justifyContent": "normal",
+         "left": "auto",
+         "letterSpacing": "normal",
+         "lineHeight": "28px",
+         "margin": "16px 0px 0px",
+         "minHeight": "0px",
+         "minWidth": "0px",
+         "objectFit": "fill",
+         "opacity": "1",
+         "overflow": "visible",
+         "padding": "0px",
+         "position": "static",
+         "right": "auto",
+         "textAlign": "start",
+         "top": "auto",
+         "transition": "all",
+         "width": "768px",
+         "zIndex": "auto"
+        },
+        "tag": "p",
+        "text": "Primești un audit manual gratuit, în maximum 24 de ore. Fără obligații."
+       },
+       {
+        "anims": [],
+        "children": [
+         {
+          "anims": [],
+          "children": [],
+          "classes": [
+           "inline-flex",
+           "min-h-12",
+           "items-center",
+           "justify-center",
+           "rounded-sm",
+           "px-6",
+           "py-3",
+           "text-sm",
+           "font-semibold",
+           "uppercase",
+           "tracking-[0.08em]",
+           "transition-colors",
+           "bg-navy",
+           "text-white",
+           "hover:bg-brass-dark"
+          ],
+          "rect": {
+           "h": 48,
+           "w": 236.765625,
+           "x": 176,
+           "y": 6653.453125
+          },
+          "styles": {
+           "alignItems": "center",
+           "aspectRatio": "auto",
+           "background": "rgb(26, 26, 26) none repeat scroll 0% 0% / auto padding-box border-box",
+           "backgroundColor": "rgb(26, 26, 26)",
+           "backgroundPosition": "0% 0%",
+           "backgroundSize": "auto",
+           "border": "0px solid rgb(255, 255, 255)",
+           "borderRadius": "4px",
+           "bottom": "auto",
+           "color": "rgb(255, 255, 255)",
+           "display": "flex",
+           "flexDirection": "row",
+           "flexWrap": "nowrap",
+           "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+           "fontSize": "14px",
+           "fontWeight": "600",
+           "gap": "normal",
+           "height": "48px",
+           "justifyContent": "center",
+           "left": "auto",
+           "letterSpacing": "1.12px",
+           "lineHeight": "20px",
+           "margin": "0px",
+           "minHeight": "48px",
+           "minWidth": "auto",
+           "objectFit": "fill",
+           "opacity": "1",
+           "overflow": "visible",
+           "padding": "12px 24px",
+           "position": "static",
+           "right": "auto",
+           "textAlign": "start",
+           "textTransform": "uppercase",
+           "top": "auto",
+           "transition": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+           "width": "236.766px",
+           "zIndex": "auto"
+          },
+          "tag": "a",
+          "text": "Cere auditul gratuit"
+         },
+         {
+          "anims": [],
+          "children": [],
+          "classes": [
+           "inline-flex",
+           "min-h-12",
+           "items-center",
+           "justify-center",
+           "rounded-sm",
+           "px-6",
+           "py-3",
+           "text-sm",
+           "font-semibold",
+           "uppercase",
+           "tracking-[0.08em]",
+           "transition-colors",
+           "border",
+           "border-navy/40",
+           "text-navy",
+           "hover:border-navy",
+           "hover:bg-navy",
+           "hover:text-white"
+          ],
+          "rect": {
+           "h": 48,
+           "w": 267.375,
+           "x": 424.765625,
+           "y": 6653.453125
+          },
+          "styles": {
+           "alignItems": "center",
+           "aspectRatio": "auto",
+           "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+           "backgroundColor": "rgba(0, 0, 0, 0)",
+           "backgroundPosition": "0% 0%",
+           "backgroundSize": "auto",
+           "border": "1px solid oklab(0.217785 0.00000996143 0.00000435114 / 0.4)",
+           "borderRadius": "4px",
+           "bottom": "auto",
+           "color": "rgb(26, 26, 26)",
+           "display": "flex",
+           "flexDirection": "row",
+           "flexWrap": "nowrap",
+           "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+           "fontSize": "14px",
+           "fontWeight": "600",
+           "gap": "normal",
+           "height": "48px",
+           "justifyContent": "center",
+           "left": "auto",
+           "letterSpacing": "1.12px",
+           "lineHeight": "20px",
+           "margin": "0px",
+           "minHeight": "48px",
+           "minWidth": "auto",
+           "objectFit": "fill",
+           "opacity": "1",
+           "overflow": "visible",
+           "padding": "12px 24px",
+           "position": "static",
+           "right": "auto",
+           "textAlign": "start",
+           "textTransform": "uppercase",
+           "top": "auto",
+           "transition": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+           "width": "267.375px",
+           "zIndex": "auto"
+          },
+          "tag": "a",
+          "text": "Programează o discuție"
+         }
+        ],
+        "classes": [
+         "mt-8",
+         "flex",
+         "flex-wrap",
+         "gap-3"
+        ],
+        "rect": {
+         "h": 48,
+         "w": 768,
+         "x": 176,
+         "y": 6653.453125
+        },
+        "styles": {
+         "alignItems": "normal",
+         "aspectRatio": "auto",
+         "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+         "backgroundColor": "rgba(0, 0, 0, 0)",
+         "backgroundPosition": "0% 0%",
+         "backgroundSize": "auto",
+         "border": "0px solid rgb(26, 26, 26)",
+         "borderRadius": "0px",
+         "bottom": "auto",
+         "color": "rgb(26, 26, 26)",
+         "display": "flex",
+         "flexDirection": "row",
+         "flexWrap": "wrap",
+         "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+         "fontSize": "16px",
+         "fontWeight": "400",
+         "gap": "12px",
+         "height": "48px",
+         "justifyContent": "normal",
+         "left": "auto",
+         "letterSpacing": "normal",
+         "lineHeight": "24px",
+         "margin": "32px 0px 0px",
+         "minHeight": "0px",
+         "minWidth": "0px",
+         "objectFit": "fill",
+         "opacity": "1",
+         "overflow": "visible",
+         "padding": "0px",
+         "position": "static",
+         "right": "auto",
+         "textAlign": "start",
+         "top": "auto",
+         "transition": "all",
+         "width": "768px",
+         "zIndex": "auto"
+        },
+        "tag": "div"
+       }
+      ],
+      "classes": [
+       "max-w-3xl"
+      ],
+      "rect": {
+       "h": 261.59375,
+       "w": 768,
+       "x": 176,
+       "y": 6439.859375
+      },
+      "styles": {
+       "alignItems": "normal",
+       "aspectRatio": "auto",
+       "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "backgroundPosition": "0% 0%",
+       "backgroundSize": "auto",
+       "border": "0px solid rgb(26, 26, 26)",
+       "borderRadius": "0px",
+       "bottom": "auto",
+       "color": "rgb(26, 26, 26)",
+       "display": "block",
+       "flexDirection": "row",
+       "flexWrap": "nowrap",
+       "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+       "fontSize": "16px",
+       "fontWeight": "400",
+       "gap": "normal",
+       "height": "261.594px",
+       "justifyContent": "normal",
+       "left": "auto",
+       "letterSpacing": "normal",
+       "lineHeight": "24px",
+       "margin": "0px",
+       "maxWidth": "768px",
+       "minHeight": "0px",
+       "minWidth": "0px",
+       "objectFit": "fill",
+       "opacity": "1",
+       "overflow": "visible",
+       "padding": "0px",
+       "position": "static",
+       "right": "auto",
+       "textAlign": "start",
+       "top": "auto",
+       "transition": "all",
+       "width": "768px",
+       "zIndex": "auto"
+      },
+      "tag": "div"
+     }
+    ],
+    "classes": [
+     "mx-auto",
+     "w-full",
+     "max-w-6xl",
+     "px-5",
+     "sm:px-8"
+    ],
+    "rect": {
+     "h": 261.59375,
+     "w": 1152,
+     "x": 144,
+     "y": 6439.859375
+    },
+    "styles": {
+     "alignItems": "normal",
+     "aspectRatio": "auto",
+     "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+     "backgroundColor": "rgba(0, 0, 0, 0)",
+     "backgroundPosition": "0% 0%",
+     "backgroundSize": "auto",
+     "border": "0px solid rgb(26, 26, 26)",
+     "borderRadius": "0px",
+     "bottom": "auto",
+     "color": "rgb(26, 26, 26)",
+     "display": "block",
+     "flexDirection": "row",
+     "flexWrap": "nowrap",
+     "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+     "fontSize": "16px",
+     "fontWeight": "400",
+     "gap": "normal",
+     "height": "261.594px",
+     "justifyContent": "normal",
+     "left": "auto",
+     "letterSpacing": "normal",
+     "lineHeight": "24px",
+     "margin": "0px 144px",
+     "maxWidth": "1152px",
+     "minHeight": "0px",
+     "minWidth": "0px",
+     "objectFit": "fill",
+     "opacity": "1",
+     "overflow": "visible",
+     "padding": "0px 32px",
+     "position": "static",
+     "right": "auto",
+     "textAlign": "start",
+     "top": "auto",
+     "transition": "all",
+     "width": "1152px",
+     "zIndex": "auto"
+    },
+    "tag": "div"
+   }
+  ],
+  "classes": [
+   "bg-mist",
+   "py-16",
+   "sm:py-24",
+   "border-t",
+   "border-line"
+  ],
+  "rect": {
+   "h": 454.59375,
+   "w": 1440,
+   "x": 0,
+   "y": 6342.859375
+  },
+  "styles": {
+   "alignItems": "normal",
+   "aspectRatio": "auto",
+   "background": "rgb(244, 239, 233) none repeat scroll 0% 0% / auto padding-box border-box",
+   "backgroundColor": "rgb(244, 239, 233)",
+   "backgroundPosition": "0% 0%",
+   "backgroundSize": "auto",
+   "borderRadius": "0px",
+   "bottom": "auto",
+   "color": "rgb(26, 26, 26)",
+   "display": "block",
+   "flexDirection": "row",
+   "flexWrap": "nowrap",
+   "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+   "fontSize": "16px",
+   "fontWeight": "400",
+   "gap": "normal",
+   "height": "454.594px",
+   "justifyContent": "normal",
+   "left": "auto",
+   "letterSpacing": "normal",
+   "lineHeight": "24px",
+   "margin": "0px",
+   "minHeight": "0px",
+   "minWidth": "0px",
+   "objectFit": "fill",
+   "opacity": "1",
+   "overflow": "visible",
+   "padding": "96px 0px",
+   "position": "static",
+   "right": "auto",
+   "textAlign": "start",
+   "top": "auto",
+   "transition": "all",
+   "width": "1440px",
+   "zIndex": "auto"
+  },
+  "tag": "section"
+ },
+ "selector": "#contact",
+ "typography": {
+  "families": [
+   {
+    "count": 8,
+    "value": "Inter, \"Inter Fallback\", system-ui, sans-serif"
+   },
+   {
+    "count": 1,
+    "value": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", Georgia, serif"
+   }
+  ],
+  "letterSpacings": [
+   {
+    "count": 6,
+    "value": "normal"
+   },
+   {
+    "count": 2,
+    "value": "1.12px"
+   },
+   {
+    "count": 1,
+    "value": "1.96px"
+   }
+  ],
+  "lineHeights": [
+   {
+    "count": 4,
+    "value": "24px"
+   },
+   {
+    "count": 3,
+    "value": "20px"
+   },
+   {
+    "count": 1,
+    "value": "28px"
+   },
+   {
+    "count": 1,
+    "value": "52.8px"
+   }
+  ],
+  "sampled": 9,
+  "sizes": [
+   {
+    "count": 4,
+    "value": "16px"
+   },
+   {
+    "count": 3,
+    "value": "14px"
+   },
+   {
+    "count": 1,
+    "value": "18px"
+   },
+   {
+    "count": 1,
+    "value": "48px"
+   }
+  ],
+  "weights": [
+   {
+    "count": 5,
+    "value": "400"
+   },
+   {
+    "count": 3,
+    "value": "600"
+   },
+   {
+    "count": 1,
+    "value": "500"
+   }
+  ]
+ },
+ "url": "https://dragoscatana.com/",
+ "viewport": {
+  "height": 900,
+  "width": 1440
+ }
+}

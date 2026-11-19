@@ -1,0 +1,115 @@
+{
+ "bands": [
+  {
+   "background": "rgb(255, 255, 255)",
+   "height": 72,
+   "index": 0,
+   "label": "body",
+   "offsetTop": 0,
+   "tag": "body",
+   "textStart": ""
+  },
+  {
+   "background": "rgb(244, 239, 233)",
+   "height": 616,
+   "index": 1,
+   "label": "#acasa.border-b",
+   "offsetTop": 72,
+   "tag": "section",
+   "textStart": "Web designer freelancer · SEO · Vizibilitate în AIClienții t"
+  },
+  {
+   "background": "rgb(255, 255, 255)",
+   "height": 680,
+   "index": 2,
+   "label": "#momentul.bg-canvas",
+   "offsetTop": 688,
+   "tag": "section",
+   "textStart": "Momentul în care îți dai seamaUn pacient îți spune că a într"
+  },
+  {
+   "background": "rgb(244, 239, 233)",
+   "height": 1488,
+   "index": 3,
+   "label": "#drumul.bg-mist",
+   "offsetTop": 1368,
+   "tag": "section",
+   "textStart": "Drumul nostru, pas cu pasDe la „nu mă găsește nimeni” la „m-"
+  },
+  {
+   "background": "rgb(255, 255, 255)",
+   "height": 704,
+   "index": 4,
+   "label": "#servicii.bg-canvas",
+   "offsetTop": 2856,
+   "tag": "section",
+   "textStart": "ServiciiTrei servicii, un singur scop: să fii găsit și ales."
+  },
+  {
+   "background": "rgb(244, 239, 233)",
+   "height": 600,
+   "index": 5,
+   "label": "#pentru-cine.bg-mist",
+   "offsetTop": 3560,
+   "tag": "section",
+   "textStart": "Pentru cine lucrezAntreprenori și practici locale unde încre"
+  },
+  {
+   "background": "rgb(255, 255, 255)",
+   "height": 560,
+   "index": 6,
+   "label": "#lucrari.bg-canvas",
+   "offsetTop": 4160,
+   "tag": "section",
+   "textStart": "Lucrare recentăCheesy Media: de la o pagină lungă la un site"
+  },
+  {
+   "background": "rgb(244, 239, 233)",
+   "height": 984,
+   "index": 7,
+   "label": "#despre.bg-mist",
+   "offsetTop": 4720,
+   "tag": "section",
+   "textStart": "O scrisoare de la mineDe ce fac asta.Am început să construie"
+  },
+  {
+   "background": "rgb(255, 255, 255)",
+   "height": 640,
+   "index": 8,
+   "label": "#intrebari.bg-canvas",
+   "offsetTop": 5704,
+   "tag": "section",
+   "textStart": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEnti"
+  },
+  {
+   "background": "rgb(244, 239, 233)",
+   "height": 456,
+   "index": 9,
+   "label": "#contact.bg-mist",
+   "offsetTop": 6344,
+   "tag": "section",
+   "textStart": "Primul pasVrei să știi dacă AI-ul îți recomandă afacerea?Pri"
+  },
+  {
+   "background": "rgb(26, 26, 26)",
+   "height": 410,
+   "index": 10,
+   "label": ".bg-navy",
+   "offsetTop": 6800,
+   "tag": "footer",
+   "textStart": "Dragoș CătanăWeb design și optimizare pentru căutare AI. Pen"
+  }
+ ],
+ "provenance": {
+  "capturedAt": 1795055466945,
+  "extractorVersion": 1,
+  "finalUrl": "https://dragoscatana.com/",
+  "requestedUrlHash": "2af01c47518b5c77aa31d46a771822fbd0fa68512053d0f39335ca18032e1e03",
+  "schemaVersion": "awwwards-capture-provenance-v1",
+  "settlePolicy": "structure:load",
+  "viewport": "desktop"
+ },
+ "title": "Web designer freelancer din Cluj: site-uri și SEO | Dragoș Cătană",
+ "totalHeight": 7210,
+ "url": "https://dragoscatana.com/"
+}
