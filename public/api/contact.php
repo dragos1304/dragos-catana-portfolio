@@ -169,6 +169,35 @@ function smtp_send(array $c, string $from, string $to, string $subject, array $h
 if (!$sent) {
     respond(502, ['ok' => false, 'error' => 'mail_failed', 'detail' => (string)($GLOBALS['smtp_trace'] ?? 'no-smtp')]);
 }
+// Confirmation to the visitor (best effort, SMTP only). config 'confirm_to' overrides the recipient: test mode.
+if ($smtp) {
+    $testTo = (string)($config['confirm_to'] ?? '');
+    $confirmTo = $testTo !== '' ? $testTo : $email;
+    if (filter_var($confirmTo, FILTER_VALIDATE_EMAIL)) {
+        $cSubject = ($kind === 'audit' ? 'Am primit cererea ta de audit' : 'Am primit mesajul tău') . ($testTo !== '' ? ' [TEST]' : '');
+        $cBody = implode("\r\n", [
+            'Bună, ' . $name . ',',
+            '',
+            $kind === 'audit'
+                ? 'Am primit cererea ta pentru auditul gratuit de vizibilitate AI. Îl pregătesc manual și ți-l trimit în maximum 24 de ore.'
+                : 'Am primit mesajul tău și îți răspund personal în maximum 24 de ore.',
+            '',
+            'Dacă nu ai trimis tu acest formular, poți ignora acest email.',
+            '',
+            'Dragoș Cătană',
+            'https://dragoscatana.com',
+        ]);
+        $cHeaders = [
+            'From: Dragos Catana <' . $from . '>',
+            'Reply-To: ' . $to,
+            'MIME-Version: 1.0',
+            'Content-Type: text/plain; charset=UTF-8',
+            'Content-Transfer-Encoding: base64',
+            'Auto-Submitted: auto-generated',
+        ];
+        @smtp_send($smtp, $from, $confirmTo, '=?UTF-8?B?' . base64_encode($cSubject) . '?=', $cHeaders, $cBody);
+    }
+}
 $hits[] = time();
 @file_put_contents($rlFile, implode(',', $hits));
 respond(200, ['ok' => true]);
