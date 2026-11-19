@@ -14,6 +14,34 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/** The fact strip under the hero: each fact is a real, checkable claim with an internal link. */
+const facts = [
+  {
+    label: "Cine lucrează",
+    value: "1 om",
+    text: "Eu, Dragoș Cătană, web designer din Cluj-Napoca. Fac auditul, designul, codul și SEO-ul. Vorbești direct cu mine, fără intermediari.",
+    links: [["Cine sunt", "/despre"]],
+  },
+  {
+    label: "Audit gratuit",
+    value: "24 h",
+    text: "Verific manual site-ul, Google și ce răspund ChatGPT, Gemini și Perplexity când clienții întreabă de afacerea ta.",
+    links: [["Cere auditul", "/audit-gratuit-vizibilitate-ai"]],
+  },
+  {
+    label: "Pentru cine",
+    value: "Local",
+    text: "Clinici, cabinete de avocatură și afaceri locale din Cluj-Napoca și din toată România, unde încrederea decide.",
+    links: [["Clinici", "/servicii/website-clinici-medicale"], ["Avocatură", "/servicii/website-cabinete-avocatura"]],
+  },
+  {
+    label: "Rezultat măsurat",
+    value: "82 → 100",
+    text: "Performanța pe mobil după redesign-ul Cheesy Media, plus un site pregătit pentru Google și asistenții AI.",
+    links: [["Studiul de caz", "/lucrari/cheesy-media"]],
+  },
+] as const;
+
 const faq = [
   {
     q: "Ce înseamnă să fii „recomandat de AI”?",
@@ -86,19 +114,32 @@ export default function Home() {
 
         {/* Fact strip */}
         <Container>
-          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border-2 border-ink bg-ink md:grid-cols-4">
-            {[
-              ["24 h", "audit gratuit, făcut manual"],
-              ["82 → 100", "performanță mobil, Cheesy Media"],
-              ["RO · EN · FR · DE", "limbi disponibile"],
-              ["1 om", "de la audit la site, fără intermediari"],
-            ].map(([a, b]) => (
-              <div key={b} className="bg-paper px-5 py-5">
-                <dt className="font-serif text-2xl font-extrabold text-ink sm:text-3xl">{a}</dt>
-                <dd className="mt-1 text-[15px] text-muted">{b}</dd>
-              </div>
-            ))}
-          </dl>
+          <section aria-label="Pe scurt despre cum lucrez" className="overflow-hidden rounded-3xl border-2 border-ink bg-ink">
+            <dl className="grid gap-px md:grid-cols-2 lg:grid-cols-4">
+              {facts.map((f, i) => (
+                <div key={f.label} className={`flex flex-col px-6 py-6 ${i === 0 ? "bg-orange" : "bg-paper"}`}>
+                  <dt className="order-2 mt-1 flex items-center gap-3 font-serif text-3xl font-extrabold leading-none text-ink sm:text-4xl">
+                    {i === 0 && <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-sm font-extrabold text-orange">DC</span>}
+                    {f.value}
+                  </dt>
+                  <dd className="order-1 text-xs font-semibold uppercase tracking-[0.12em] text-ink/70">{f.label}</dd>
+                  <dd className="order-3 mt-3 text-[16px] leading-relaxed text-ink">{f.text}</dd>
+                  <dd className="order-4 mt-auto flex flex-wrap gap-x-4 gap-y-1 pt-4">
+                    {f.links.map(([t, href]) => (
+                      <Link key={href} href={href} className="inline-flex items-center gap-1 font-semibold text-ink underline decoration-2 underline-offset-4 hover:decoration-orange-ink">
+                        {t} <ArrowUpRight aria-hidden className="h-4 w-4" />
+                      </Link>
+                    ))}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <ul className="flex flex-wrap gap-x-8 gap-y-2 border-t-2 border-ink bg-ink px-6 py-4 text-[15px] text-paper">
+              <li><span className="font-semibold">Site-uri în RO · EN · FR · DE</span><span className="text-paper/70"> (română inclusă, celelalte la cerere)</span></li>
+              <li><span className="font-semibold">Răspund în maximum {site.responseTime}</span></li>
+              <li><a href={site.calendly} target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-orange decoration-2 underline-offset-4">Discuție 1 la 1, online</a></li>
+            </ul>
+          </section>
         </Container>
         <div className="h-14 sm:h-20" />
       </section>
