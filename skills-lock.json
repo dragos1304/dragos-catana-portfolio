@@ -65,12 +65,28 @@
       "computedHash": "71fce0e6ea55180e3affe44e7cae89399fd6d21f7e36295b1e4fc1994fb67d61",
       "installMode": "copy"
     },
+    "product-marketing": {
+      "source": "coreyhaines31/marketingskills",
+      "commit": "333611b00585436536904ee31f5562e45d5feee0",
+      "sourceType": "github",
+      "skillPath": "skills/product-marketing/SKILL.md",
+      "computedHash": "2b7f80ab415280e3e0a0bcc112af8e24059169642c70fb36e18e44a79f80f505",
+      "installMode": "copy"
+    },
     "recreate": {
       "source": "INSANE0777/awwwards-skills",
       "commit": "3229e8b35b4e05216971ae5d8ea17871b3419362",
       "sourceType": "github",
       "skillPath": "skills/recreate/SKILL.md",
       "computedHash": "a7e6f3c065b3fdbb7648ffbaae7cd89fdea669944794c1527692b87e09d8d535",
+      "installMode": "copy"
+    },
+    "sales-enablement": {
+      "source": "coreyhaines31/marketingskills",
+      "commit": "333611b00585436536904ee31f5562e45d5feee0",
+      "sourceType": "github",
+      "skillPath": "skills/sales-enablement/SKILL.md",
+      "computedHash": "a097c96210ed88e19fdb3a43b4b9e53a4f394bf5942d96af3c1f2c1b3c8b93e8",
       "installMode": "copy"
     }
   }
