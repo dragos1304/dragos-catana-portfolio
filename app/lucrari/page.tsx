@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs, CtaBand, Eyebrow, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
+import { Shot } from "@/components/Shot";
 
 export const metadata: Metadata = {
   title: "Portofoliu web design și studii de caz",
@@ -22,13 +23,22 @@ export default function Lucrari() {
           Public doar ce e real și măsurabil. Pe măsură ce apar proiecte noi, le adaug aici.
         </p>
         <div className="mt-10">
-          <Link href="/lucrari/cheesy-media" className="block max-w-2xl rounded-md border border-line p-7 hover:shadow-lg">
-            <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">Redesign · Cluj-Napoca</p>
-            <h2 className="mt-2 font-serif text-2xl font-bold">Cheesy Media</h2>
-            <p className="mt-3 leading-relaxed text-slate-ink">
-              Agenție foto-video și social media. De la o pagină lungă la un site complet, cu performanță de 100 în Lighthouse pe mobil.
-            </p>
-            <span className="mt-4 inline-block font-semibold text-brass-dark">Vezi studiul de caz →</span>
+          <Link href="/lucrari/cheesy-media" className="group grid overflow-hidden rounded-3xl border-2 border-ink bg-canvas transition-shadow duration-200 hover:shadow-[8px_8px_0_0_var(--color-ink)] lg:grid-cols-[1.3fr_1fr]">
+            <div className="relative bg-ink p-5 pb-8 pl-10 sm:p-8 sm:pb-10 sm:pl-16">
+              <Shot name="site-desktop" alt="Noul site Cheesy Media pe desktop" sizes="(min-width: 1024px) 560px, 92vw" eager />
+              <Shot name="site-mobile" phone alt="Noul site Cheesy Media pe telefon" sizes="140px" className="absolute bottom-3 left-3 w-[24%] max-w-[140px]" />
+            </div>
+            <div className="flex flex-col p-7 sm:p-9">
+              <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">Redesign · Cluj-Napoca</p>
+              <h2 className="mt-2 font-serif text-3xl font-extrabold">Cheesy Media</h2>
+              <p className="mt-3 text-[17px] leading-relaxed text-slate-ink">
+                Agenție foto-video și social media. De la o pagină lungă la un site complet: design nou, o pagină pentru fiecare serviciu și bază tehnică pentru Google și AI.
+              </p>
+              <ul className="mt-5 flex flex-wrap gap-2 text-sm font-semibold">
+                {["Performanță 82 → 100", "11 pagini", "Date structurate", "Pregătit pentru AI"].map((t) => <li key={t} className="rounded-full bg-paper px-3 py-1">{t}</li>)}
+              </ul>
+              <span className="mt-auto inline-block pt-6 font-semibold text-ink underline decoration-orange decoration-2 underline-offset-4">Vezi studiul de caz →</span>
+            </div>
           </Link>
         </div>
       </Section>

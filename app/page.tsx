@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { ArrowUpRight, Scale, Stethoscope, Store } from "lucide-react";
 import { Accent, Button, Container, Eyebrow, FAQ, H2, Mark, Section, CtaBand } from "@/components/ui";
 import { AnswerCard } from "@/components/AnswerCard";
-import { Journey } from "@/components/Journey";
+import { Shot } from "@/components/Shot";
+import { Journey, JourneyEnds } from "@/components/Journey";
 import { services, site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -122,13 +123,16 @@ export default function Home() {
 
       {/* 3. The journey in five steps */}
       <Section id="drumul">
-        <div className="max-w-3xl">
-          <Eyebrow>Drumul nostru, pas cu pas</Eyebrow>
-          <H2>De la „nu mă găsește nimeni” la <Accent>„m-a recomandat ChatGPT”.</Accent></H2>
-          <p className="mt-5 text-lg leading-relaxed text-muted">Fără surprize și fără intermediari. La fiecare pas știi ce faci tu și ce fac eu.</p>
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <Eyebrow>Drumul nostru, pas cu pas</Eyebrow>
+            <H2>De la „nu mă găsește nimeni” la <Accent>„m-a recomandat ChatGPT”.</Accent></H2>
+            <p className="mt-5 text-lg leading-relaxed text-muted">Cinci pași, fără surprize și fără intermediari. La fiecare pas știi ce faci tu și ce fac eu.</p>
+            <JourneyEnds />
+            <div className="mt-8"><Button href="/audit-gratuit-vizibilitate-ai" arrow>Începe cu pasul 1</Button></div>
+          </div>
+          <Journey />
         </div>
-        <Journey />
-        <div className="mt-10"><Button href="/audit-gratuit-vizibilitate-ai" arrow>Începe cu pasul 1</Button></div>
       </Section>
 
       {/* 4. Services as colour tiles */}
@@ -160,32 +164,33 @@ export default function Home() {
             <Eyebrow dark>Lucrare recentă</Eyebrow>
             <H2 dark>Cheesy Media: de la o pagină lungă la un <Accent className="text-orange">site complet.</Accent></H2>
             <p className="mt-5 text-lg leading-relaxed text-paper/85">
-              Am refăcut site-ul unei agenții foto-video din Cluj-Napoca. Rezultatul măsurat pe mobil, în Lighthouse:
+              Am refăcut site-ul unei agenții foto-video din Cluj-Napoca: design nou, o pagină pentru fiecare serviciu și bază tehnică pentru Google și AI.
             </p>
             <dl className="mt-6 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-paper/10 p-5"><dt className="text-[15px] text-paper/75">Performanță</dt><dd className="font-serif text-4xl font-extrabold text-paper">82 <span className="text-orange">→ 100</span></dd></div>
-              <div className="rounded-2xl bg-paper/10 p-5"><dt className="text-[15px] text-paper/75">Accesibilitate</dt><dd className="font-serif text-4xl font-extrabold text-paper">96 <span className="text-orange">→ 100</span></dd></div>
+              <div className="rounded-2xl bg-paper/10 p-5"><dt className="text-[15px] text-paper/75">Performanță mobil</dt><dd className="font-serif text-4xl font-extrabold text-paper">82 <span className="text-orange">→ 100</span></dd></div>
+              <div className="rounded-2xl bg-paper/10 p-5"><dt className="text-[15px] text-paper/75">Adrese în sitemap</dt><dd className="font-serif text-4xl font-extrabold text-paper">0 <span className="text-orange">→ 11</span></dd></div>
             </dl>
             <div className="mt-8 flex flex-wrap gap-3"><Button href="/lucrari/cheesy-media" variant="light" arrow>Vezi studiul de caz</Button><Button href="/lucrari" variant="ghost-dark">Toate lucrările</Button></div>
           </div>
           <div className="relative pb-6 pl-4 sm:pl-8">
-            <img
-              src="/lucrari/cheesy-media/site-desktop-960.webp"
-              srcSet="/lucrari/cheesy-media/site-desktop-640.webp 640w, /lucrari/cheesy-media/site-desktop-960.webp 960w, /lucrari/cheesy-media/site-desktop-1440.webp 1440w"
-              sizes="(min-width: 1024px) 620px, 100vw"
-              width={960} height={600} loading="lazy" decoding="async"
-              alt="Pagina principală a noului site Cheesy Media pe desktop"
-              className="w-full rounded-2xl border-2 border-paper/20"
-            />
-            <img
-              src="/lucrari/cheesy-media/site-mobile-390.webp"
-              srcSet="/lucrari/cheesy-media/site-mobile-390.webp 390w, /lucrari/cheesy-media/site-mobile-780.webp 780w"
-              sizes="170px"
-              width={390} height={778} loading="lazy" decoding="async"
-              alt="Același site Cheesy Media pe telefon"
-              className="absolute bottom-0 left-0 w-[28%] max-w-[170px] rounded-2xl border-4 border-ink shadow-2xl"
-            />
+            <Shot name="site-desktop" alt="Pagina principală a noului site Cheesy Media pe desktop" sizes="(min-width: 1024px) 620px, 92vw" />
+            <Shot name="site-mobile" phone alt="Același site Cheesy Media pe telefon" sizes="170px" className="absolute bottom-0 left-0 w-[28%] max-w-[170px]" />
           </div>
+        </div>
+
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          <figure className="rounded-3xl bg-paper/5 p-4">
+            <Shot name="before-home" alt="Vechiul site Cheesy Media: o singură pagină violetă" sizes="(min-width: 768px) 340px, 92vw" />
+            <figcaption className="mt-4 px-1"><span className="text-xs font-bold uppercase tracking-wider text-paper/60">Înainte</span><p className="mt-1 text-[16px] text-paper/85">O singură pagină violetă, fără date structurate, declarată în engleză.</p></figcaption>
+          </figure>
+          <figure className="rounded-3xl bg-paper/5 p-4">
+            <Shot name="after-servicii" alt="Pagina Servicii a noului site Cheesy Media" sizes="(min-width: 768px) 340px, 92vw" />
+            <figcaption className="mt-4 px-1"><span className="text-xs font-bold uppercase tracking-wider text-orange">Design</span><p className="mt-1 text-[16px] text-paper/85">Titluri mari, negru, crem și galben. Mascota păstrată, „Cere ofertă” mereu vizibil.</p></figcaption>
+          </figure>
+          <figure className="rounded-3xl bg-paper/5 p-4">
+            <Shot name="after-proces" alt="Pagina Proces a noului site Cheesy Media" sizes="(min-width: 768px) 340px, 92vw" />
+            <figcaption className="mt-4 px-1"><span className="text-xs font-bold uppercase tracking-wider text-orange">Google și AI</span><p className="mt-1 text-[16px] text-paper/85">Limba română, date structurate pe fiecare pagină, FAQ, sitemap și acces pentru roboții AI.</p></figcaption>
+          </figure>
         </div>
       </Section>
 

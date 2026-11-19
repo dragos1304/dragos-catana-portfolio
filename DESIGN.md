@@ -62,9 +62,11 @@ Never put white text on orange (3.6:1). Ink text goes on orange and teal fills.
 - **Mark:** a hand-drawn orange circle or underline around a word (`<Mark>`). `draw` animates once.
 - **Eyebrow:** orange dot plus uppercase muted label.
 - **Fact strip:** a 4-cell grid with an ink border and big numbers.
-- **Journey cards:** 5 bordered cards ("Tu" / "Eu"); the last one is orange.
+- **Journey timeline (19 Nov 2026):** a sticky intro on the left (heading, "Punctul de plecare" dashed card, orange "Ținta" card, CTA) and a vertical numbered timeline on the right. Each step has a "Tu" card (white) and an "Eu, Dragoș" card (ink); the last number is orange. It replaced 5 cramped columns.
 - **Service tiles:** ink, teal and orange tiles that lift 4px on hover.
-- **Work band:** an ink band with real desktop and phone screenshots plus Lighthouse numbers.
+- **Work band:** an ink band with real desktop and phone screenshots, two stats (Lighthouse 82 → 100, sitemap 0 → 11), and three framed shots: before, design, Google and AI.
+- **Shot (`components/Shot.tsx`):** real project screenshots in a light browser frame with an offset ink shadow, or in a phone frame.
+- **Case study page:** before/after (desktop and phone), the design system measured on the live site (palette, type, 5 decisions), a page gallery, 8 verified Google/AI steps (before → after), then Lighthouse.
 - **Audience cards:** a bordered card with an orange icon disc and an offset ink shadow on hover.
 - **AnswerCard:** a bordered card with an offset ink shadow, always labelled as an example.
 - **FAQ:** rounded bordered `<details>` with an orange "+" button.

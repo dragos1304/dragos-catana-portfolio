@@ -27,6 +27,9 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
 
 ## Redesign, journey and SEO (18 Nov 2026)
+- [x] **Journey and work redesign (19 Nov 2026):** the homepage journey is now a timeline. The Cheesy Media case study has before/after screenshots, design decisions and 8 Google/AI steps, all checked on the live sites. Deployed and verified.
+- [ ] **Cheesy Media:** ask the client for Search Console data or permission to test AI prompts about them, so the case study can show results, not only steps.
+- [ ] **Cloudflare SSL:** keep "Full" (decided 19 Nov 2026; "Always Use HTTPS" is on). Move to Full (strict) only if the host offers a free certificate for dragoscatana.com.
 - [x] **SEO strategy (19 Nov 2026):** all 17 searchfit-seo skills applied; see `SEO_STRATEGY.md`. Code changes (redirect fix, OG image, titles, 2 new guides, guide hubs, schema) were deployed 19 Nov 2026 and verified live (redirect fix: 1 hop; og.png; 23 URLs in the sitemap).
 - [x] **SEO decisions (19 Nov 2026):** maintenance is a service (`/servicii/mentenanta-site/`, live, in sitemap and llms.txt). Online stores: not now. City pages only with real local proof.
 - [~] **Off-site AI signals (19 Nov 2026):** LinkedIn updated (headline, About first paragraph, website dragoscatana.com, which previously pointed to dragoscatana.ro) and added to `sameAs`. Google Business Profile updated (see below); add its public Maps URL to `sameAs` once verified. Still open: 2-3 Romanian business directories.
