@@ -25,7 +25,7 @@ export default function Despre() {
       <Section id="despre-mine">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Despre" }]} />
         <Eyebrow>Despre mine</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">
           Sunt Dragoș, un economist care construiește site-uri și te ajută să fii găsit.
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-ink">
@@ -49,7 +49,7 @@ export default function Despre() {
         </p>
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
           {ventures.map(([t, d]) => (
-            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
           ))}
         </div>
       </Section>
@@ -58,11 +58,11 @@ export default function Despre() {
         <Eyebrow>Studii</Eyebrow>
         <H2>Rigoare academică, la nivel internațional.</H2>
         <ul className="mt-8 space-y-6">
-          <li className="max-w-3xl"><h3 className="font-serif text-xl font-semibold">Universitatea Babeș-Bolyai, FSEGA, Cluj-Napoca</h3>
+          <li className="max-w-3xl"><h3 className="font-serif text-xl font-bold">Universitatea Babeș-Bolyai, FSEGA, Cluj-Napoca</h3>
             <p className="mt-2 leading-relaxed text-slate-ink">Licență în Economie, în limba engleză. Medie cumulată 4.0 / 4.0. Evaluări de top la Management și Management comparat.</p></li>
-          <li className="max-w-3xl"><h3 className="font-serif text-xl font-semibold">Alianța EUTOPIA / Ecotopia, Paris (anul 2)</h3>
+          <li className="max-w-3xl"><h3 className="font-serif text-xl font-bold">Alianța EUTOPIA / Ecotopia, Paris (anul 2)</h3>
             <p className="mt-2 leading-relaxed text-slate-ink">Un an de schimb internațional într-un consorțiu de 10 universități europene. Am promovat 84 de credite ECTS într-un singur an (norma europeană este de 60), păstrând media 4.0.</p></li>
-          <li className="max-w-3xl"><h3 className="font-serif text-xl font-semibold">State University of New York at Cortland, SUA (anul 3)</h3>
+          <li className="max-w-3xl"><h3 className="font-serif text-xl font-bold">State University of New York at Cortland, SUA (anul 3)</h3>
             <p className="mt-2 leading-relaxed text-slate-ink">Semestru de schimb, cu accent pe economie de business, management și piețele financiare din SUA.</p></li>
         </ul>
       </Section>

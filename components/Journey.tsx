@@ -39,21 +39,15 @@ export const journey = [
 
 export function Journey() {
   return (
-    <ol className="mt-12 border-t border-line">
-      {journey.map((s) => (
-        <li key={s.n} className="grid gap-4 border-b border-line py-8 md:grid-cols-[7rem_1fr_1fr_1fr] md:gap-8 md:py-10">
-          <span className="font-serif text-5xl font-medium leading-none text-brass-dark">{s.n}</span>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-ink">{s.when}</p>
-            <h3 className="mt-2 font-serif text-3xl font-medium leading-snug text-navy">{s.title}</h3>
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-navy">Tu</p>
-            <p className="mt-1 leading-relaxed text-slate-ink">{s.you}</p>
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-navy">Eu, Dragoș</p>
-            <p className="mt-1 leading-relaxed text-slate-ink">{s.me}</p>
+    <ol className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+      {journey.map((s, i) => (
+        <li key={s.n} className={`flex flex-col rounded-3xl border-2 border-ink p-6 ${i === 4 ? "bg-orange" : "bg-canvas"}`}>
+          <span className="font-serif text-5xl font-extrabold leading-none text-ink">{s.n}</span>
+          <p className={`mt-4 text-sm font-semibold uppercase tracking-[0.1em] ${i === 4 ? "text-ink" : "text-muted"}`}>{s.when}</p>
+          <h3 className="mt-1 font-serif text-2xl font-bold leading-[1.05] text-ink">{s.title}</h3>
+          <div className="mt-4 space-y-3 border-t border-ink/15 pt-4 text-[16px] leading-relaxed">
+            <p><span className="font-semibold text-ink">Tu: </span><span className="text-ink">{s.you}</span></p>
+            <p><span className="font-semibold text-ink">Eu: </span><span className="text-ink">{s.me}</span></p>
           </div>
         </li>
       ))}

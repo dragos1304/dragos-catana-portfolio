@@ -37,8 +37,8 @@ export default function Page() {
         <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
           <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "SEO și vizibilitate în AI" }]} />
           <Eyebrow>Serviciul principal</Eyebrow>
-          <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
-            Optimizare SEO: fii găsit pe Google și recomandat de <em className="text-brass-dark">AI</em>.
+          <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">
+            Optimizare SEO: fii găsit pe Google și recomandat de <em className="font-accent font-normal tracking-normal text-orange-ink">AI</em>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-ink">
             Tot mai mulți clienți întreabă un asistent AI „cui să mă adresez?”. Ca consultant SEO, te ajut să apari în acele răspunsuri și în Google, cu un proces pe care îl poți măsura, de la optimizarea site-ului la SEO local.
@@ -87,7 +87,7 @@ export default function Page() {
             ["SEO local", "Profilul Google al afacerii (Google Business Profile), citări locale în directoare și un proces simplu pentru recenzii, ca să apari când oamenii caută „în zona mea”."],
             ["Monitorizare lunară", "Retestez întrebările și îți trimit un raport în limbaj simplu: ce s-a schimbat și ce urmează."],
           ].map(([t, d]) => (
-            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
           ))}
         </div>
       </Section>
@@ -108,7 +108,7 @@ export default function Page() {
             ["Proiect de implementare", "Aplic corecturile din audit, singur sau ca parte dintr-un redesign sau un site nou."],
             ["Colaborare lunară SEO/GEO", "Conținut, întreținere tehnică, monitorizare și raport lunar."],
           ].map(([t, d]) => (
-            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
           ))}
         </div>
         <p className="mt-6 text-slate-ink">Pentru implementare și colaborare lunară primești o ofertă clară, nu prețuri fixe. <Link className="font-semibold text-brass-dark underline underline-offset-4" href="/contact">Cere o ofertă</Link>.</p>

@@ -1,51 +1,77 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/*
+ * Design system A, "Clar și curajos" (see DESIGN.md).
+ * Evidence: supereightstudio.com and altnota.com (export_design_tokens, 19 Nov 2026).
+ * Semantic tokens first; the old names (navy, mist, brass, brass-dark, slate-ink) are aliases
+ * so every existing page picks up the new system.
+ */
 @theme {
+  --color-paper: #f6f5f1;     /* warm off-white (Super 8 background) */
+  --color-ink: #131313;       /* text and dark bands (Super 8) */
+  --color-muted: #59594f;     /* secondary text, 6.5:1 on paper (Altnota) */
+  --color-orange: #f1501b;    /* signal accent for fills and marks; ink text on it (5.2:1) */
+  --color-orange-ink: #b93a0e;/* orange for small text and links on light (5.2:1) */
+  --color-teal: #07bcb4;      /* second accent for fills; ink text on it (7.8:1) */
   --color-canvas: #ffffff;
-  --color-navy: #1a1a1a;
-  --color-brass: #c2702a;
-  --color-brass-dark: #8a3f12;
-  --color-mist: #f4efe9;
-  --color-line: #e4ddd3;
-  --color-slate-ink: #4a4a4a;
-  --font-serif: var(--font-serif-src), Georgia, serif;
-  --font-sans: var(--font-sans-src), system-ui, sans-serif;
+  --color-line: #e2dfd6;
+
+  --color-navy: var(--color-ink);
+  --color-mist: var(--color-paper);
+  --color-brass: var(--color-orange);
+  --color-brass-dark: var(--color-orange-ink);
+  --color-slate-ink: var(--color-muted);
+
+  --font-serif: var(--font-display-src), system-ui, sans-serif; /* "display" role: Bricolage Grotesque */
+  --font-accent: var(--font-accent-src), Georgia, serif;        /* Instrument Serif italic accents */
+  --font-sans: var(--font-sans-src), system-ui, sans-serif;     /* Inter for reading */
 }
 
 html { scroll-behavior: smooth; }
-
-/* Cormorant Garamond has a small x-height; scale it to read like a text serif at every size. */
-.font-serif { font-size-adjust: 0.46; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
-  background: var(--color-canvas);
-  color: var(--color-navy);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17px base for readability */
   -webkit-font-smoothing: antialiased;
 }
 
-:focus-visible { outline: 3px solid var(--color-brass); outline-offset: 2px; }
+/* Display headings: heavy and tight, like the references. */
+.font-serif { letter-spacing: -0.025em; }
+
+:focus-visible { outline: 3px solid var(--color-orange); outline-offset: 3px; }
 
 .skip-link {
   position: absolute; left: 1rem; top: -4rem; z-index: 100;
-  background: var(--color-navy); color: #fff; padding: .75rem 1rem; border-radius: .5rem;
+  background: var(--color-ink); color: #fff; padding: .75rem 1rem; border-radius: 999px;
 }
 .skip-link:focus { top: 1rem; }
 
-/* Reveal: progressive enhancement only, transform + opacity, never hides content without support. */
+/*
+ * Hand-drawn mark (motion study: altnota.com draws SVG strokes with CSS keyframes, no library).
+ * Ours: one stroke, drawn once in 0.6s after 0.2s. Static when motion is reduced or unsupported.
+ */
+/* The dash pattern exists only while drawing (fill-mode: backwards); the finished mark is a plain solid stroke. */
+@media (prefers-reduced-motion: no-preference) {
+  .mark-draw path { animation: mark-draw .6s cubic-bezier(.65,0,.35,1) .2s backwards; }
+}
+@keyframes mark-draw { from { stroke-dasharray: 0 600; } to { stroke-dasharray: 600 0; } }
+
+/* Reveal: progressive enhancement only, short, never hides content without support. */
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal-rise linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 60%;
+      animation-range: entry 0% entry 40%;
     }
   }
 }
 @keyframes reveal-rise {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
 }
 

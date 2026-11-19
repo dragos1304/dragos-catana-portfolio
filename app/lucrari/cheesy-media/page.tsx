@@ -35,7 +35,7 @@ export default function Page() {
       <Section id="studiu-de-caz-redesign">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Lucrări", href: "/lucrari" }, { name: "Cheesy Media" }]} />
         <Eyebrow>Studiu de caz · Redesign</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">Cheesy Media: de la o pagină lungă la un site complet.</h1>
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">Cheesy Media: de la o pagină lungă la un site complet.</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">
           Cheesy Media este o agenție de foto, video și social media din Cluj-Napoca. Am refăcut site-ul ei, împreună cu proprietarii, pentru a explica mai clar ce oferă și a-i ajuta pe clienți să ceară o ofertă mai ușor.
         </p>
@@ -43,6 +43,25 @@ export default function Page() {
           Înainte: <a className="underline underline-offset-4" href="https://cheesymedia.netlify.app" target="_blank" rel="noopener noreferrer">cheesymedia.netlify.app</a> · După:{" "}
           <a className="underline underline-offset-4" href="https://cheesy-media.netlify.app" target="_blank" rel="noopener noreferrer">cheesy-media.netlify.app</a>
         </p>
+        <figure className="relative mt-12 rounded-3xl bg-ink p-4 pb-10 pl-10 sm:p-8 sm:pb-12 sm:pl-24">
+          <img
+            src="/lucrari/cheesy-media/site-desktop-1440.webp"
+            srcSet="/lucrari/cheesy-media/site-desktop-640.webp 640w, /lucrari/cheesy-media/site-desktop-960.webp 960w, /lucrari/cheesy-media/site-desktop-1440.webp 1440w"
+            sizes="(min-width: 1152px) 1000px, 100vw"
+            width={1440} height={900} decoding="async"
+            alt="Pagina principală a noului site Cheesy Media pe desktop"
+            className="w-full rounded-2xl"
+          />
+          <img
+            src="/lucrari/cheesy-media/site-mobile-390.webp"
+            srcSet="/lucrari/cheesy-media/site-mobile-390.webp 390w, /lucrari/cheesy-media/site-mobile-780.webp 780w"
+            sizes="200px"
+            width={390} height={778} loading="lazy" decoding="async"
+            alt="Același site Cheesy Media pe telefon"
+            className="absolute bottom-4 left-4 w-[26%] max-w-[200px] rounded-2xl border-4 border-ink shadow-2xl"
+          />
+          <figcaption className="sr-only">Noul site Cheesy Media, pe desktop și pe telefon</figcaption>
+        </figure>
       </Section>
 
       <Section id="problema" tint>

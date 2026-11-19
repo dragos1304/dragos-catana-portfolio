@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Bricolage_Grotesque, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -10,7 +10,8 @@ import { siteSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
 
 const sans = Inter({ subsets: ["latin", "latin-ext"], variable: "--font-sans-src", display: "swap" });
-const serif = Cormorant_Garamond({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600"], style: ["normal", "italic"], variable: "--font-serif-src", display: "swap" });
+const display = Bricolage_Grotesque({ subsets: ["latin", "latin-ext"], variable: "--font-display-src", display: "swap" });
+const accent = Instrument_Serif({ subsets: ["latin", "latin-ext"], weight: "400", style: ["normal", "italic"], variable: "--font-accent-src", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export const viewport: Viewport = { themeColor: "#f4efe9", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#f6f5f1", width: "device-width", initialScale: 1 };
 
 // Consent Mode v2: everything denied by default; restored from the visitor's earlier choice.
 const consentDefault = `
@@ -48,7 +49,7 @@ const gtmLoader = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ro" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="ro" className={`${sans.variable} ${display.variable} ${accent.variable}`}>
       <body>
         <Script id="consent-default" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: consentDefault }} />
         <Script id="gtm" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: gtmLoader }} />

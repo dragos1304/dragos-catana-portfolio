@@ -35,7 +35,7 @@ export function LeadForm({ kind }: { kind: Kind }) {
   if (state === "done") {
     return (
       <div role="status" className="rounded-md border border-line bg-mist p-6">
-        <p className="font-serif text-xl font-semibold">Mulțumesc, am primit mesajul.</p>
+        <p className="font-serif text-xl font-bold">Mulțumesc, am primit mesajul.</p>
         <p className="mt-2 text-slate-ink">
           {isAudit
             ? "Îți trimit auditul pe email în maximum 24 de ore."

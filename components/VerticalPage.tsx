@@ -27,7 +27,7 @@ export function VerticalPage(p: VerticalProps) {
       <Section id="intro">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: p.crumb }]} />
         <Eyebrow>{p.eyebrow}</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">{p.h1}</h1>
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{p.h1}</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{p.lead}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/audit-gratuit-vizibilitate-ai">Audit gratuit AI</Button>
@@ -39,7 +39,7 @@ export function VerticalPage(p: VerticalProps) {
         <H2>Ce caută clienții tăi înainte să te contacteze</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {p.needs.map((n) => (
-            <div key={n.t} className="rounded-md border border-line bg-white p-6"><h3 className="font-serif text-xl font-semibold">{n.t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{n.d}</p></div>
+            <div key={n.t} className="rounded-md border border-line bg-white p-6"><h3 className="font-serif text-xl font-bold">{n.t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{n.d}</p></div>
           ))}
         </div>
       </Section>
@@ -49,7 +49,7 @@ export function VerticalPage(p: VerticalProps) {
         <ol className="mt-8 grid gap-x-10 gap-y-6 md:grid-cols-2">
           {p.structure.map((n, i) => (
             <li key={n.t} className="flex gap-4">
-              <span className="font-serif text-3xl font-semibold text-brass-dark" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-serif text-3xl font-bold text-brass-dark" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
               <div><h3 className="text-lg font-semibold">{n.t}</h3><p className="mt-1 leading-relaxed text-slate-ink">{n.d}</p></div>
             </li>
           ))}
@@ -66,7 +66,7 @@ export function VerticalPage(p: VerticalProps) {
 
       <Section id="de-retinut">
         <div className="max-w-3xl rounded-md border border-brass-dark bg-canvas p-7">
-          <h2 className="font-serif text-2xl font-semibold">{p.caution.title}</h2>
+          <h2 className="font-serif text-2xl font-bold">{p.caution.title}</h2>
           <p className="mt-3 leading-relaxed text-slate-ink">{p.caution.text}</p>
         </div>
       </Section>

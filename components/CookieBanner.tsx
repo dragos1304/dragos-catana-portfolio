@@ -46,7 +46,7 @@ export function CookieBanner() {
   return (
     <div role="dialog" aria-modal="false" aria-labelledby="cookie-title"
       className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-md border border-line bg-white p-5 shadow-2xl sm:inset-x-6 sm:p-6">
-      <p id="cookie-title" className="font-serif text-lg font-semibold">Cookie-uri pentru statistici</p>
+      <p id="cookie-title" className="font-serif text-lg font-bold">Cookie-uri pentru statistici</p>
       <p className="mt-2 text-sm leading-relaxed text-slate-ink">
         Folosesc Google Analytics doar dacă ești de acord, ca să înțeleg ce pagini sunt utile. Nu folosesc cookie-uri de publicitate.
         Poți schimba alegerea oricând din subsol. Detalii în{" "}

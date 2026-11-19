@@ -21,7 +21,7 @@ export default function Contact() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <Eyebrow>Contact</Eyebrow>
-            <h1 className="font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">Hai să vorbim despre proiectul tău.</h1>
+            <h1 className="font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">Hai să vorbim despre proiectul tău.</h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-ink">
               Completează formularul sau programează direct o discuție. Răspund la orice mesaj în maximum {site.responseTime}.
             </p>

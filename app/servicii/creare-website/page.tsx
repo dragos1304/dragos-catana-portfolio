@@ -35,8 +35,8 @@ export default function Page() {
       <Section id="creare-de-website">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "Creare de website" }]} />
         <Eyebrow>Creare de website</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
-          Creare site web: rapid, clar și construit să fie <em className="text-brass-dark">găsit</em> din prima zi.
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">
+          Creare site web: rapid, clar și construit să fie <em className="font-accent font-normal tracking-normal text-orange-ink">găsit</em> din prima zi.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">
           Realizare site de prezentare sau magazin online pentru clinici, cabinete de avocatură și afaceri locale din România. Fără șabloane generice: îl construiesc eu, de la structură la SEO.

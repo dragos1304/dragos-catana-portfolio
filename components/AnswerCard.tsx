@@ -1,22 +1,22 @@
 export function AnswerCard() {
   return (
-    <figure className="rounded-md border border-line bg-mist p-5 sm:p-7" aria-label="Exemplu ilustrativ de răspuns AI">
-      <figcaption className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-ink">
+    <figure className="relative rounded-3xl border-2 border-ink bg-canvas p-5 shadow-[8px_8px_0_0_var(--color-ink)] sm:p-7" aria-label="Exemplu ilustrativ de răspuns AI">
+      <figcaption className="mb-5 inline-flex rounded-full bg-paper px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted">
         Exemplu ilustrativ, nu un răspuns real
       </figcaption>
-      <div className="space-y-4 text-[15px] leading-relaxed">
-        <p className="ml-auto max-w-[85%] rounded-md rounded-br-none bg-navy px-4 py-3 text-white">
+      <div className="space-y-4 text-[16px] leading-relaxed">
+        <p className="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-ink px-4 py-3 text-paper">
           Care e o clinică stomatologică bună în orașul meu, cu programări online?
         </p>
-        <div className="max-w-[92%] rounded-md rounded-bl-none border border-line bg-canvas px-4 py-3 text-navy">
+        <div className="max-w-[92%] rounded-2xl rounded-bl-sm bg-paper px-4 py-3 text-ink">
           <p>
-            Îți recomand <strong>Clinica Exemplu</strong>: site clar, program și prețuri orientative la vedere,
+            Îți recomand <strong className="bg-orange/25 px-1">Clinica Exemplu</strong>: site clar, program și prețuri orientative la vedere,
             recenzii recente și programare online.
           </p>
-          <p className="mt-2 text-sm text-slate-ink">Surse: site-ul clinicii, profilul Google, un articol de ghid local.</p>
+          <p className="mt-2 text-sm text-muted">Surse: site-ul clinicii, profilul Google, un articol de ghid local.</p>
         </div>
       </div>
-      <p className="mt-5 text-sm text-slate-ink">
+      <p className="mt-5 text-[15px] text-muted">
         AI-ul recomandă ce poate înțelege și verifica. Munca mea e să te fac ușor de înțeles și de verificat.
       </p>
     </figure>

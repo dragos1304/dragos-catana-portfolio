@@ -23,8 +23,8 @@ export default function Page() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <Eyebrow>Gratuit · Manual · În 24 de ore</Eyebrow>
-            <h1 className="font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
-              Audit SEO gratuit: te recomandă Google și <em className="text-brass-dark">ChatGPT</em>?
+            <h1 className="font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">
+              Audit SEO gratuit: te recomandă Google și <em className="font-accent font-normal tracking-normal text-orange-ink">ChatGPT</em>?
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-ink">
               Îți arăt cum apare afacerea ta acum în Google și în răspunsurile asistenților AI, și ce poți face dacă nu apari.

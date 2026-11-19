@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <Section>
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Articole", href: "/articole" }, { name: a.category }]} />
         <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">{a.category} · {a.readMin} min de citit</p>
-        <h1 className="mt-3 max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">{a.title}</h1>
+        <h1 className="mt-3 max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{a.title}</h1>
         <p className="mt-4 text-sm text-slate-ink">
           De <Link href="/despre" className="underline underline-offset-4">{site.name}</Link> · actualizat la{" "}
           <time dateTime={a.date}>{new Date(a.date).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" })}</time>
@@ -71,7 +71,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <Section tint>
         <Container className="!px-0"><FAQ items={a.faq} /></Container>
         <div className="mt-12">
-          <h2 className="font-serif text-2xl font-semibold">Citește și</h2>
+          <h2 className="font-serif text-2xl font-bold">Citește și</h2>
           <ul className="mt-4 space-y-2">
             {a.related.map((r) => (<li key={r.href}><Link href={r.href} className="font-semibold text-brass-dark underline underline-offset-4">{r.label}</Link></li>))}
           </ul>

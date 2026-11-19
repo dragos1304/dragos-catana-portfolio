@@ -28,7 +28,7 @@ export default function Page() {
       <Section id="redesign-de-website">
         <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Servicii", href: "/servicii" }, { name: "Redesign de website" }]} />
         <Eyebrow>Redesign de website</Eyebrow>
-        <h1 className="max-w-3xl font-serif text-[2.5rem] font-medium leading-[1.05] sm:text-6xl">
+        <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">
           Redesign de website pentru felul în care caută oamenii (și AI-ul) astăzi.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">
@@ -61,7 +61,7 @@ export default function Page() {
             ["Migrare sigură", "Redirecturi 301, verificarea titlurilor și monitorizare după lansare."],
             ["Predare și instruire", "Știi cum actualizezi site-ul și cui te adresezi dacă ai nevoie de ajutor."],
           ].map(([t, d]) => (
-            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-semibold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 text-slate-ink leading-relaxed">{d}</p></div>
           ))}
         </div>
       </Section>
