@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs, Eyebrow, H2, Section } from "@/components/ui";
+import { Breadcrumbs, Eyebrow, FAQ, H2, Section } from "@/components/ui";
+import { faqs } from "@/lib/faqs";
 import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { site } from "@/lib/site-config";
+import { phone, site, social } from "@/lib/site-config";
 import { alternates, href, pageName, type Lang } from "@/lib/site-map";
 
 /** The two pages that end in the lead form: Contact and the free audit. Once each, in either language. */
@@ -18,6 +19,7 @@ const contactCopy = {
     h1: "Hai să vorbim despre proiectul tău.",
     lead: `Completează formularul sau programează direct o discuție. Răspund la orice mesaj în maximum ${site.reply.ro}.`,
     book: "Programează o discuție:", auditQ: "Doar vrei un audit?", auditLink: "Cere auditul gratuit",
+    whatsapp: "WhatsApp:", profiles: "Mă găsești și pe:",
     where: "Unde:", whereText: `${site.city}, România. Lucrez online cu clienți din toată țara.`,
     langs: "Limbi:", langsText: "română. Engleză, franceză și germană ca opțiune suplimentară.",
   },
@@ -27,6 +29,7 @@ const contactCopy = {
     h1: "Let's talk about your project.",
     lead: `Fill in the form or book a call directly. I reply to every message within ${site.reply.en}.`,
     book: "Book a call:", auditQ: "Just want an audit?", auditLink: "Get the free audit",
+    whatsapp: "WhatsApp:", profiles: "Also find me on:",
     where: "Where:", whereText: `${site.city}, Romania. I work online with clients across the country.`,
     langs: "Languages:", langsText: "English and Romanian. French and German as an add-on.",
   },
@@ -54,6 +57,12 @@ export function ContactPage({ lang }: { lang: Lang }) {
                 <a className={linkCls} href={site.calendly} target="_blank" rel="noopener noreferrer">Calendly</a></li>
               <li><strong className="text-ink">{c.auditQ}</strong>{" "}
                 <Link className={linkCls} href={href("audit", lang)}>{c.auditLink}</Link></li>
+              <li><strong className="text-ink">{c.whatsapp}</strong>{" "}
+                <a className={linkCls} href={social.whatsapp.url} target="_blank" rel="noopener noreferrer">{phone.display}</a></li>
+              <li><strong className="text-ink">{c.profiles}</strong>{" "}
+                {Object.values(social).filter((p) => p.sameAs).map((p, i) => (
+                  <span key={p.name}>{i > 0 && " · "}<a className={linkCls} href={p.url} target="_blank" rel="me noopener noreferrer">{p.name}</a></span>
+                ))}</li>
               <li><strong className="text-ink">{c.where}</strong> {c.whereText}</li>
               <li><strong className="text-ink">{c.langs}</strong> {c.langsText}</li>
             </ul>
@@ -63,6 +72,7 @@ export function ContactPage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </Section>
+      <Section id="intrebari" tint><FAQ items={faqs.contact[lang]} lang={lang} /></Section>
     </>
   );
 }
@@ -130,6 +140,7 @@ export function AuditPage({ lang }: { lang: Lang }) {
           </div>
         </div>
       </Section>
+      <Section id="intrebari" tint><FAQ items={faqs.audit[lang]} lang={lang} /></Section>
     </>
   );
 }

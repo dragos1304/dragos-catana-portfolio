@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Breadcrumbs, CtaBand, Eyebrow, Section } from "@/components/ui";
+import { Breadcrumbs, CtaBand, Eyebrow, Section, FAQ } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 import { articles } from "@/lib/articles";
+import { faqsRo } from "@/lib/faqs";
 
 export const metadata: Metadata = {
   title: "Blog: SEO, AI și web design pentru afaceri locale",
@@ -31,6 +32,7 @@ export default function Articole() {
           ))}
         </ul>
       </Section>
+      <Section id="intrebari" tint><FAQ items={faqsRo.articles} /></Section>
       <CtaBand />
     </>
   );

@@ -163,3 +163,8 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
 - **Leads:** form submissions (the `generate_lead` event in GTM/GA4, once GA4 is set up) and calls.
 - **AI mentions:** the 5-prompt log above.
 - **Check-in:** re-run the Semrush keyword check every 3 months, and see `TODO.md` for the rest.
+
+## 10. AI visibility: FAQs and entity profiles (20 Nov 2026)
+- **FAQs:** every page has a FAQ (`lib/faqs.ts`) mixing real client questions with the prompts people type into ChatGPT, Gemini and Perplexity. Answers are short, factual and name Dragoș Cătană, Cluj-Napoca and Romania so assistants can quote them.
+- **Entity consistency:** one source for profiles (`social` in `lib/site-config.ts`) feeds the footer, contact page, llms.txt and the Person/ProfessionalService `sameAs`. AI models trust an entity more when the same name, description and links appear on several independent sites.
+- **Next profiles:** Google Business Profile, Facebook, Clutch, DesignRush/GoodFirms, Bing Places, YouTube, Behance/Dribbble, Crunchbase; plus genuine answers on Reddit and Quora. Add each one to `social` as it goes live.

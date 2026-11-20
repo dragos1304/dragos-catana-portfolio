@@ -1,5 +1,5 @@
 import { articles } from "@/lib/articles";
-import { proof, site } from "@/lib/site-config";
+import { phone, proof, site, social } from "@/lib/site-config";
 import { llmsLinks, type PageKey } from "@/lib/site-map";
 
 export const dynamic = "force-static";
@@ -28,6 +28,10 @@ ${articles.map((a) => `- [${a.title}](${site.url}/articole/${a.slug}/): ${a.desc
 ## Despre și contact
 ${list("ro", ["about", "contact"])}
 - [Programare discuție](${site.calendly})
+- WhatsApp: ${phone.display} (${social.whatsapp.url})
+
+## Profiluri
+${Object.values(social).filter((p) => p.sameAs).map((p) => `- [${p.name}](${p.url})`).join("\n")}
 
 ## English version
 The main pages are also available in English, for English-speaking business owners in Romania:

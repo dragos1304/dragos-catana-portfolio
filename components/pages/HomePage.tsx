@@ -9,6 +9,7 @@ import type { ImageName } from "@/lib/images";
 import { Journey, JourneyEnds } from "@/components/Journey";
 import { proof, site } from "@/lib/site-config";
 import { alternates, href, services, type Lang } from "@/lib/site-map";
+import { aiQuestions } from "@/lib/faqs";
 
 /** The home page, once, in either language. Route files only pick the language. */
 
@@ -449,7 +450,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         </div>
       </Section>
 
-      <Section id="intrebari"><FAQ items={c.faq} lang={lang} /></Section>
+      <Section id="intrebari"><FAQ items={[...c.faq, ...aiQuestions.home[lang]]} lang={lang} /></Section>
       <CtaBand id="contact" lang={lang} />
     </>
   );

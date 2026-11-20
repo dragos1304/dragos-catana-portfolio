@@ -6,12 +6,28 @@ export const site = {
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Pentru clinici, cabinete de avocatură și afaceri locale din România.",
   city: "Cluj-Napoca",
   calendly: "https://calendly.com/dragoscatana/consultanta-1-la-1",
-  github: "https://github.com/dragos1304",
-  linkedin: "https://www.linkedin.com/in/dragos-catana/",
   gtmId: "GTM-K7RPGZSV",
   /** The reply promise, phrased per language. Change it here and every page, email and band follows. */
   reply: { hours: 24, ro: "24 de ore", en: "24 hours" },
 } as const;
+
+/** Public phone (also on the Google Business Profile and LinkedIn). WhatsApp uses the same number. */
+export const phone = { e164: "+40740939472", display: "+40 740 939 472" } as const;
+
+/**
+ * Every social profile, in one place. Footer, contact pages and the schema `sameAs` read from here:
+ * change or add a link once and it updates everywhere. `sameAs: true` = the profile is the same entity
+ * (tells Google and AI assistants these accounts are you); WhatsApp is a contact channel, not a profile.
+ */
+export const social = {
+  linkedin: { name: "LinkedIn", url: "https://www.linkedin.com/in/dragos-catana/", sameAs: true },
+  instagram: { name: "Instagram", url: "https://www.instagram.com/dragos_catana", sameAs: true },
+  whatsapp: { name: "WhatsApp", url: `https://wa.me/${phone.e164.replace("+", "")}`, sameAs: false },
+  github: { name: "GitHub", url: "https://github.com/dragos1304", sameAs: true },
+} as const;
+
+/** Profile URLs for schema.org `sameAs`. */
+export const sameAs = Object.values(social).filter((s) => s.sameAs).map((s) => s.url);
 
 /** Measured proof. Only numbers we can show evidence for (Lighthouse reports in public/lucrari/cheesy-media). */
 export const proof = {

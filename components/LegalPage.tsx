@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
-import { Breadcrumbs, Section } from "./ui";
+import { Breadcrumbs, FAQ, Section } from "./ui";
+import type { Faq } from "@/lib/faqs";
 
-export function LegalPage({ title, children }: { title: string; children: ReactNode }) {
+export function LegalPage({ title, children, faq }: { title: string; children: ReactNode; faq?: Faq[] }) {
   return (
+    <>
     <Section>
       <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: title }]} />
       <h1 className="font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{title}</h1>
@@ -11,5 +13,7 @@ export function LegalPage({ title, children }: { title: string; children: ReactN
         {children}
       </div>
     </Section>
+    {faq && <Section id="intrebari" tint><FAQ items={faq} /></Section>}
+    </>
   );
 }

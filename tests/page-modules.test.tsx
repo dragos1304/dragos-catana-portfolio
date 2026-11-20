@@ -41,6 +41,8 @@ describe("page modules", () => {
       expect(en.match(/<h1/g)).toHaveLength(1);
       expect(skeleton(en)).toBe(skeleton(ro));
       expect(en).not.toMatch(/href="\/(servicii|lucrari|despre|contact|audit-gratuit)/);
+      // AI visibility: every page answers questions, with a FAQPage block for search engines and assistants.
+      for (const html of [ro, en]) expect(html.match(/"@type":"FAQPage"/g)).toHaveLength(1);
     });
   }
 });

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
-import { Breadcrumbs, Button, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
+import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
+import { faqs } from "@/lib/faqs";
 import { JsonLd } from "@/components/JsonLd";
 import { Shot } from "@/components/Shot";
 import type { ImageName } from "@/lib/images";
@@ -360,6 +361,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
           <Button href={href("audit", lang)} variant="ghost">{c.auditCta}</Button>
         </div>
       </Section>
+      <Section id="intrebari" white><FAQ items={faqs.cheesy[lang]} lang={lang} /></Section>
       <CtaBand lang={lang} />
     </>
   );

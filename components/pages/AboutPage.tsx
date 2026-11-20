@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Breadcrumbs, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
+import { Breadcrumbs, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
+import { faqs } from "@/lib/faqs";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, personSchema } from "@/lib/schema";
 import { alternates, href, pageName, type Lang } from "@/lib/site-map";
@@ -168,6 +169,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
           <figcaption className="mt-5 text-muted">{c.quoteBy}<span className="text-sm">{c.quoteNote}</span></figcaption>
         </figure>
       </Section>
+      <Section id="intrebari"><FAQ items={faqs.about[lang]} lang={lang} /></Section>
       <CtaBand lang={lang} title={c.cta} />
     </>
   );

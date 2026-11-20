@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
 import { alternates, href, pageName, type Lang, type PageKey } from "@/lib/site-map";
+import { aiQuestions } from "@/lib/faqs";
 
 /**
  * The four service pages (redesign, new website, SEO and AI visibility, maintenance), once each, in either language.
@@ -152,7 +153,7 @@ export function RedesignPage({ lang }: { lang: Lang }) {
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{c.example}</p>
         <div className="mt-6"><Button href={href("cheesy", lang)} variant="ghost">{c.exampleCta}</Button></div>
       </Section>
-      <Section id="intrebari" tint><FAQ items={c.faq} lang={lang} /></Section>
+      <Section id="intrebari" tint><FAQ items={[...c.faq, ...aiQuestions.redesign[lang]]} lang={lang} /></Section>
       <CtaBand lang={lang} title={c.ctaTitle} text={c.ctaText} />
     </>
   );
@@ -268,7 +269,7 @@ export function NewSitePage({ lang }: { lang: Lang }) {
         </div>
       </Section>
       {c.guides && <Section id="ghiduri" tint><Guides slugs={c.guides} /></Section>}
-      <Section id="intrebari"><FAQ items={c.faq} lang={lang} /></Section>
+      <Section id="intrebari"><FAQ items={[...c.faq, ...aiQuestions.newSite[lang]]} lang={lang} /></Section>
       <CtaBand lang={lang} title={c.ctaTitle} text={c.ctaText} />
     </>
   );
@@ -471,7 +472,7 @@ export function SeoPage({ lang }: { lang: Lang }) {
       {c.guides && <Section id="ghiduri"><Guides title={c.guidesTitle} slugs={c.guides} /></Section>}
 
       <Section id="intrebari" tint>
-        <FAQ items={c.faq} lang={lang} />
+        <FAQ items={[...c.faq, ...aiQuestions.seo[lang]]} lang={lang} />
         {c.faqMore && <p className="mt-8 text-muted">{c.faqMore}</p>}
       </Section>
       <CtaBand lang={lang} />
@@ -578,7 +579,7 @@ export function MaintenancePage({ lang }: { lang: Lang }) {
         </div>
       </Section>
       {c.guides && <Section id="ghiduri" tint><Guides slugs={c.guides} /></Section>}
-      <Section id="intrebari"><FAQ items={c.faq} lang={lang} /></Section>
+      <Section id="intrebari"><FAQ items={[...c.faq, ...aiQuestions.maintenance[lang]]} lang={lang} /></Section>
       <CtaBand lang={lang} title={c.ctaTitle} text={c.ctaText} />
     </>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
+import { faqsRo } from "@/lib/faqs";
 
 export const metadata: Metadata = {
   title: "Politica de cookie-uri",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <LegalPage title="Politica de cookie-uri">
+    <LegalPage title="Politica de cookie-uri" faq={faqsRo.cookies}>
       <p>Acest site folosește cât mai puține cookie-uri. Statisticile sunt pornite doar dacă ești de acord, iar alegerea ta poate fi schimbată oricând din linkul „Setări cookie-uri” din subsol.</p>
       <h2>Necesare</h2>
       <p>Site-ul reține în browser (stocare locală) alegerea ta privind cookie-urile, ca să nu te întrebe la fiecare vizită. Nu conține date personale și nu este folosită în scop publicitar.</p>

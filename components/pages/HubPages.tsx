@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Breadcrumbs, Button, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
+import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
+import { faqs } from "@/lib/faqs";
 import { JsonLd } from "@/components/JsonLd";
 import { Shot } from "@/components/Shot";
 import { breadcrumb } from "@/lib/schema";
@@ -73,6 +74,7 @@ export function WorkPage({ lang }: { lang: Lang }) {
           </Link>
         </div>
       </Section>
+      <Section id="intrebari" tint><FAQ items={faqs.work[lang]} lang={lang} /></Section>
       <CtaBand lang={lang} title={c.ctaTitle} text={c.ctaText} />
     </>
   );
@@ -206,6 +208,7 @@ export function ServicesPage({ lang }: { lang: Lang }) {
           <Button href={href("audit", lang)} variant="ghost">{c.audit}</Button>
         </div>
       </Section>
+      <Section id="intrebari"><FAQ items={faqs.services[lang]} lang={lang} /></Section>
       <CtaBand lang={lang} />
     </>
   );

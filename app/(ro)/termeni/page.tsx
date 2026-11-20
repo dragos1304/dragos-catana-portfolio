@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site-config";
+import { faqsRo } from "@/lib/faqs";
 
 export const metadata: Metadata = {
   title: "Termeni și condiții",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <LegalPage title="Termeni și condiții">
+    <LegalPage title="Termeni și condiții" faq={faqsRo.terms}>
       <h2>Scopul site-ului</h2>
       <p>Acest site prezintă serviciile oferite de {site.legalName} (web design, SEO și optimizare pentru motoare AI) și permite solicitarea unui audit sau a unei oferte. Informațiile au caracter general.</p>
       <h2>Fără garanții de rezultat</h2>

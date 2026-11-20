@@ -33,6 +33,13 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] **Core Web Vitals:** Google's PageSpeed API quota was used up on 19–20 Nov; re-run PageSpeed Insights on `/` and `/en/` now that HTML is cached.
 - [x] Section labels no longer have the orange dot.
 
+## AI visibility: FAQs and social profiles (20 Nov 2026)
+- [x] **FAQ on every page** (RO + EN, except the 404): `lib/faqs.ts`. Real client questions plus AI-style prompts ("Cine face site-uri pentru clinici în România?"). Each page emits exactly one FAQPage (tested).
+- [x] **Social links in one place:** `social` and `phone` in `lib/site-config.ts`. Footer, contact pages, llms.txt and schema `sameAs`/`telephone` all read from it. To add or change a profile, edit that one entry; `sameAs: true` puts it in the schema.
+- [x] Privacy page: processors corrected (Network Solutions, Cloudflare, iCloud Mail, Calendly, Google with consent). **Still needs the legal review.**
+- [ ] **Profiles to create, then add to `social`** (priority order): Google Business Profile Maps URL (after verification), Facebook page, Clutch, DesignRush/GoodFirms, Bing Places, YouTube (short audit walk-throughs), Behance or Dribbble, Crunchbase. Use the same name, photo and one-line description everywhere.
+- [ ] **Community presence:** answer real questions on Reddit (r/Romania, r/cluj, r/webdev) and Quora under your name, no link spam.
+
 ## Redesign, journey and SEO (18 Nov 2026)
 - [x] **English version (19 Nov 2026):** 13 pages under `/en/` with their own root layout (`<html lang="en">`), reciprocal hreflang (ro, en, x-default = ro), a RO/EN switch in the header, English sitemap entries and an English section in llms.txt. Articles and legal pages stay Romanian-only (linked as "(Romanian)"). The form sends `lang`, and `api/contact.php` sends an English confirmation for English forms. Page map: `lib/i18n.ts`.
 - [ ] **English copy review:** have a native English speaker read `/en/` once.

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Guides } from "@/components/Guides";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { alternates, href, pageName, type Lang } from "@/lib/site-map";
+import { aiQuestions } from "@/lib/faqs";
 
 /** The two vertical pages (clinics, law firms), once each, in either language. Guides are Romanian-only. */
 
@@ -226,7 +227,7 @@ export function VerticalPage({ k, lang }: { k: Vertical; lang: Lang }) {
       </Section>
 
       {p.guides && <Section id="ghiduri"><Guides slugs={p.guides} /></Section>}
-      <Section id="intrebari" tint><FAQ items={p.faq} lang={lang} /></Section>
+      <Section id="intrebari" tint><FAQ items={[...p.faq, ...aiQuestions[k][lang]]} lang={lang} /></Section>
       <CtaBand title={p.ctaTitle} lang={lang} />
     </>
   );
