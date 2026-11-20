@@ -69,33 +69,33 @@ The sitemap is live and valid. On 20 Nov 2026 it returned 200 with 37 URLs, it i
 | Profile photo | A real portrait (still on the TODO). Use the same photo everywhere. |
 | Cover / banner image | `public/lucrari/cheesy-media/site-desktop-1440.webp` (Cheesy Media redesign) |
 
-### Taglines (20 options, max. 50 characters)
-Pick one and use the same one everywhere. Romanian for Romanian sites, English for international directories (Clutch, GoodFirms, DesignRush, Crunchbase, Dribbble, Behance). The Romanian lines were checked with the `romana` skill; none promises a ranking or a recommendation.
+### Taglines (max. 50 characters)
+Pick one and use the same one everywhere: Romanian for Romanian sites, English for international directories (Clutch, GoodFirms, DesignRush, Crunchbase, Dribbble, Behance). Checked with the `romana` skill; none promises a ranking or a recommendation.
+
+**Shortlist (your picks)**
 
 | # | Română | Car. | English | Char. |
 |---|---|---|---|---|
 | 1 | `Site-uri și SEO ca să te găsească Google și AI-ul` | 49 | `Websites and SEO so Google and AI can find you` | 46 |
 | 2 | `Clienții te caută. Fă-i să te găsească.` | 39 | `Clients are searching. Make sure they find you.` | 47 |
-| 3 | `Web design și SEO pentru clinici și avocați` | 43 | `Web design and SEO for clinics and law firms` | 44 |
-| 4 | `Site-uri clare, ușor de găsit în Google și ChatGPT` | 50 | `Clear websites, easy to find on Google and ChatGPT` | 50 |
-| 5 | `Ușor de găsit în Google și în asistenții AI` | 43 | `Easy to find on Google and in AI assistants` | 43 |
-| 6 | `Web designer și specialist SEO din Cluj-Napoca` | 46 | `Web designer and SEO specialist in Cluj-Napoca` | 46 |
-| 7 | `Site-uri rapide pentru afaceri locale din România` | 49 | `Fast websites for local businesses in Romania` | 45 |
-| 8 | `Un singur om, de la audit la lansare` | 36 | `One person, from audit to launch` | 32 |
-| 9 | `Vorbești direct cu omul care face munca` | 39 | `You talk to the person who does the work` | 40 |
-| 10 | `Site-uri și SEO acolo unde încrederea decide` | 44 | `Websites and SEO where trust decides` | 36 |
-| 11 | `Îți fac afacerea ușor de găsit și de verificat` | 46 | `I make your business easy to find and verify` | 44 |
-| 12 | `Audit gratuit, făcut manual, în 24 de ore` | 41 | `A free manual audit within 24 hours` | 35 |
-| 13 | `SEO și vizibilitate în AI pentru afaceri locale` | 47 | `SEO and AI visibility for local businesses` | 42 |
-| 14 | `Redesign, site-uri noi și SEO pregătit pentru AI` | 48 | `Redesigns, new websites and AI-ready SEO` | 40 |
-| 15 | `Site-uri care spun clar ce faci și unde ești` | 44 | `Websites that say clearly what you do and where` | 47 |
-| 16 | `Ajut clinicile să fie găsite de pacienți` | 40 | `I help clinics get found by patients` | 36 |
-| 17 | `Ajut cabinetele de avocatură să fie găsite` | 42 | `I help law firms get found online` | 33 |
-| 18 | `Măsurat înainte și după, explicat pe înțeles` | 44 | `Measured before and after, explained plainly` | 44 |
-| 19 | `Design clar, cod curat, SEO făcut corect` | 40 | `Clear design, clean code, SEO done right` | 40 |
-| 20 | `Site-uri pe care AI-ul le poate înțelege și cita` | 48 | `Websites AI can understand and cite` | 35 |
+| 3 | `Site-uri și SEO pentru afaceri locale din România` | 49 | `Web design and SEO for local businesses in Romania` | 50 |
 
-**Suggested defaults:** #1 (Romanian sites) and #3's English line, „Web design and SEO for clinics and law firms”, for the directories, since it names who you work for.
+**Customer-facing, about AI and websites**
+
+| # | Română | Car. | English | Char. |
+|---|---|---|---|---|
+| 4 | `Fă-ți afacerea ușor de recomandat de AI` | 39 | `Make your business easy for AI to recommend` | 43 |
+| 5 | `Clienții întreabă ChatGPT. Ce află despre tine?` | 47 | `Clients ask ChatGPT. What do they hear about you?` | 49 |
+| 6 | `Când clienții întreabă AI-ul, fii în răspuns` | 44 | `When clients ask AI, be part of the answer` | 42 |
+| 7 | `Site-ul tău, pe înțelesul clienților și al AI-ului` | 50 | `A website clients and AI both understand` | 40 |
+| 8 | `Fii găsit de clienți, oriunde te caută` | 38 | `Get found by clients, wherever they search` | 42 |
+| 9 | `Site-ul tău, pregătit pentru căutarea cu AI` | 43 | `Your website, ready for AI search` | 33 |
+| 10 | `Clienții întreabă AI-ul. Site-ul tău este gata?` | 47 | `Clients ask AI. Is your website ready?` | 38 |
+| 11 | `Fii ușor de găsit în Google și în ChatGPT` | 41 | `Be easy to find on Google and in ChatGPT` | 40 |
+| 12 | `Un site clar, pe care AI-ul îl poate recomanda` | 46 | `A clear website that AI can recommend` | 37 |
+| 13 | `Fă-te cunoscut acolo unde clienții întreabă` | 43 | `Be known where your clients ask` | 31 |
+
+**Default for the directory forms:** #3 in English, „Web design and SEO for local businesses in Romania”.
 
 ### Short description, about 160 characters
 **EN**
