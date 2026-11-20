@@ -134,7 +134,7 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
 
 ## 8. International (content-translation, translate-content)
 - **Data:** inside Romania, English searches exist and are easy: seo romania 210/KD 38, web design romania 170/16, web designer romania 170/16, web design cluj 110/32. French and German searches are about 0, and UK demand is negligible.
-- **Decision support:** build `/en` later, as you planned, aimed at expats and foreign-owned firms in Romania. Keep FR/DE as client add-ons only, with no site versions.
+- **Decision support:** `/en` is now built (19 Nov 2026), aimed at expats and foreign-owned firms in Romania. Keep FR/DE as client add-ons only, with no site versions.
 - **Setup:**
   - **Structure:** subdirectory `/en/…`, with `<html lang="en">` on those pages.
   - **Canonicals:** each language is its own canonical.

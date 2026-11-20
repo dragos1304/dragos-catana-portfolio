@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true, // /servicii/ -> servicii/index.html works on any static host
   poweredByHeader: false,
   images: { unoptimized: true }, // no image server on static hosting; images are pre-optimised in /public
+  experimental: { globalNotFound: true }, // two root layouts (Romanian and /en/) share one 404 page
 };
 
 export default nextConfig;

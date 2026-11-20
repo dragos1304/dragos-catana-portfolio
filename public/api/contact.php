@@ -79,9 +79,11 @@ $lines = ["Nume: $name", "Email: $email"];
 foreach ($fields as $key => $label) {
     $lines[] = $label . ': ' . clean((string)($_POST[$key] ?? ''), 3000);
 }
+$lang = ($_POST['lang'] ?? '') === 'en' ? 'en' : 'ro';
+$lines[] = 'Limba formularului: ' . $lang;
 $lines[] = 'Consimțământ: da (' . gmdate('Y-m-d H:i') . ' UTC)';
 
-$subject = $kind === 'audit' ? 'Cerere audit gratuit AI' : 'Mesaj nou din contact';
+$subject = ($kind === 'audit' ? 'Cerere audit gratuit AI' : 'Mesaj nou din contact') . ($lang === 'en' ? ' [EN]' : '');
 $subjectEnc = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 $body = implode("\r\n", $lines);
 $headers = [
@@ -174,19 +176,35 @@ if ($smtp) {
     $testTo = (string)($config['confirm_to'] ?? '');
     $confirmTo = $testTo !== '' ? $testTo : $email;
     if (filter_var($confirmTo, FILTER_VALIDATE_EMAIL)) {
-        $cSubject = ($kind === 'audit' ? 'Am primit cererea ta de audit' : 'Am primit mesajul tău') . ($testTo !== '' ? ' [TEST]' : '');
-        $cBody = implode("\r\n", [
-            'Bună, ' . $name . ',',
-            '',
-            $kind === 'audit'
-                ? 'Am primit cererea ta pentru auditul gratuit de vizibilitate AI. Îl pregătesc manual și ți-l trimit în maximum 24 de ore.'
-                : 'Am primit mesajul tău și îți răspund personal în maximum 24 de ore.',
-            '',
-            'Dacă nu ai trimis tu acest formular, poți ignora acest email.',
-            '',
-            'Dragoș Cătană',
-            'https://dragoscatana.com',
-        ]);
+        if ($lang === 'en') {
+            $cSubject = ($kind === 'audit' ? 'I received your audit request' : 'I received your message') . ($testTo !== '' ? ' [TEST]' : '');
+            $cBody = implode("\r\n", [
+                'Hi ' . $name . ',',
+                '',
+                $kind === 'audit'
+                    ? 'I received your request for the free AI visibility audit. I am preparing it by hand and will send it within 24 hours.'
+                    : 'I received your message and will reply personally within 24 hours.',
+                '',
+                'If you did not send this form, you can ignore this email.',
+                '',
+                'Dragoș Cătană',
+                'https://dragoscatana.com/en/',
+            ]);
+        } else {
+            $cSubject = ($kind === 'audit' ? 'Am primit cererea ta de audit' : 'Am primit mesajul tău') . ($testTo !== '' ? ' [TEST]' : '');
+            $cBody = implode("\r\n", [
+                'Bună, ' . $name . ',',
+                '',
+                $kind === 'audit'
+                    ? 'Am primit cererea ta pentru auditul gratuit de vizibilitate AI. Îl pregătesc manual și ți-l trimit în maximum 24 de ore.'
+                    : 'Am primit mesajul tău și îți răspund personal în maximum 24 de ore.',
+                '',
+                'Dacă nu ai trimis tu acest formular, poți ignora acest email.',
+                '',
+                'Dragoș Cătană',
+                'https://dragoscatana.com',
+            ]);
+        }
         $cHeaders = [
             'From: Dragos Catana <' . $from . '>',
             'Reply-To: ' . $to,

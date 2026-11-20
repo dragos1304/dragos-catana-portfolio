@@ -26,6 +26,14 @@ ${site.name} (${site.legalName}) este web designer și specialist SEO din ${site
 ## Articole
 ${articles.map((a) => `- [${a.title}](${site.url}/articole/${a.slug}/): ${a.description}`).join("\n")}
 
+## English version
+The main pages are also available in English, for English-speaking business owners in Romania:
+- [Home (English)](${site.url}/en/)
+- [Services](${site.url}/en/services/): [Website redesign](${site.url}/en/services/website-redesign/), [New website](${site.url}/en/services/website-design/), [SEO and AI visibility](${site.url}/en/services/seo-ai-visibility/), [Website maintenance](${site.url}/en/services/website-maintenance/)
+- [Websites for clinics](${site.url}/en/services/clinic-websites/) and [for law firms](${site.url}/en/services/law-firm-websites/)
+- [Cheesy Media case study](${site.url}/en/work/cheesy-media/)
+- [About](${site.url}/en/about/), [Contact](${site.url}/en/contact/), [Free AI visibility audit](${site.url}/en/free-ai-visibility-audit/)
+
 ## Despre și contact
 - [Despre ${site.name}](${site.url}/despre/)
 - [Contact](${site.url}/contact/)

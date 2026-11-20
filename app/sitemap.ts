@@ -1,16 +1,19 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
 import { abs } from "@/lib/schema";
+import { pairs } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date("2026-11-18");
-  const pages = [
-    "", "/servicii", "/servicii/redesign-website", "/servicii/creare-website", "/servicii/seo-vizibilitate-ai", "/servicii/website-clinici-medicale", "/servicii/website-cabinete-avocatura", "/servicii/mentenanta-site",
-    "/lucrari", "/lucrari/cheesy-media", "/audit-gratuit-vizibilitate-ai", "/articole", "/despre", "/contact",
-    "/confidentialitate", "/cookie", "/termeni",
-  ].map((p) => ({ url: abs(p === "" ? "/" : p), lastModified: now }));
+  const now = new Date("2026-11-19");
+  const langs = (ro: string) => ({ languages: { ro: abs(ro), en: abs(pairs[ro]), "x-default": abs(ro) } });
+  // Romanian pages with an English twin, then the English twins, both with reciprocal hreflang.
+  const paired = Object.keys(pairs).flatMap((ro) => [
+    { url: abs(ro), lastModified: now, alternates: langs(ro) },
+    { url: abs(pairs[ro]), lastModified: now, alternates: langs(ro) },
+  ]);
+  const roOnly = ["/articole/", "/confidentialitate/", "/cookie/", "/termeni/"].map((p) => ({ url: abs(p), lastModified: now }));
   const posts = articles.map((a) => ({ url: abs(`/articole/${a.slug}`), lastModified: new Date(a.date) }));
-  return [...pages, ...posts];
+  return [...paired, ...roOnly, ...posts];
 }

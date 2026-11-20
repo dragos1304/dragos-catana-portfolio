@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { JsonLd } from "./JsonLd";
 import { faqSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
+import { ui, type Lang } from "@/lib/i18n";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>{children}</div>;
@@ -94,9 +95,9 @@ export function Button({ href, children, variant = "primary", external, arrow = 
   );
 }
 
-export function Breadcrumbs({ items }: { items: { name: string; href?: string }[] }) {
+export function Breadcrumbs({ items, lang = "ro" }: { items: { name: string; href?: string }[]; lang?: Lang }) {
   return (
-    <nav aria-label="Navigare" className="mb-6 text-sm text-muted">
+    <nav aria-label={ui[lang].breadcrumbs} className="mb-6 text-sm text-muted">
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((it, i) => (
           <li key={it.name} className="flex items-center gap-2">
@@ -109,11 +110,11 @@ export function Breadcrumbs({ items }: { items: { name: string; href?: string }[
   );
 }
 
-export function FAQ({ items, title = "Întrebări frecvente" }: { items: { q: string; a: string }[]; title?: string }) {
+export function FAQ({ items, title, lang = "ro" }: { items: { q: string; a: string }[]; title?: string; lang?: Lang }) {
   return (
     <>
       <JsonLd data={faqSchema(items)} />
-      <H2>{title}</H2>
+      <H2>{title ?? ui[lang].faqTitle}</H2>
       <div className="mt-8 space-y-3">
         {items.map((it) => (
           <details key={it.q} className="group rounded-2xl border border-line bg-canvas px-6 py-5 open:border-ink">
@@ -129,22 +130,19 @@ export function FAQ({ items, title = "Întrebări frecvente" }: { items: { q: st
   );
 }
 
-export function CtaBand({
-  title = "Vrei să știi dacă AI-ul îți recomandă afacerea?",
-  text = `Primești un audit manual gratuit, în maximum 24 de ore. Fără obligații.`,
-  id = "cta",
-}: { title?: string; text?: string; id?: string }) {
+export function CtaBand({ title, text, id = "cta", lang = "ro" }: { title?: string; text?: string; id?: string; lang?: Lang }) {
+  const t = ui[lang];
   return (
     <Section orange id={id}>
       <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
         <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-ink/80">Primul pas</p>
-          <h2 className="font-serif text-[2.3rem] font-extrabold leading-[1] text-ink sm:text-6xl">{title}</h2>
-          <p className="mt-5 max-w-xl text-lg text-ink/85">{text}</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-ink/80">{t.ctaEyebrow}</p>
+          <h2 className="font-serif text-[2.3rem] font-extrabold leading-[1] text-ink sm:text-6xl">{title ?? t.ctaTitle}</h2>
+          <p className="mt-5 max-w-xl text-lg text-ink/85">{text ?? t.ctaText}</p>
         </div>
         <div className="flex flex-wrap gap-3 lg:justify-end">
-          <Button href="/audit-gratuit-vizibilitate-ai" arrow>Cere auditul gratuit</Button>
-          <Button href={site.calendly} variant="ghost" external>Programează o discuție</Button>
+          <Button href={t.auditHref} arrow>{t.ctaPrimary}</Button>
+          <Button href={site.calendly} variant="ghost" external>{t.ctaSecondary}</Button>
         </div>
       </div>
     </Section>

@@ -27,6 +27,9 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
 
 ## Redesign, journey and SEO (18 Nov 2026)
+- [x] **English version (19 Nov 2026):** 13 pages under `/en/` with their own root layout (`<html lang="en">`), reciprocal hreflang (ro, en, x-default = ro), a RO/EN switch in the header, English sitemap entries and an English section in llms.txt. Articles and legal pages stay Romanian-only (linked as "(Romanian)"). The form sends `lang`, and `api/contact.php` sends an English confirmation for English forms. Page map: `lib/i18n.ts`.
+- [ ] **English copy review:** have a native English speaker read `/en/` once.
+- [x] **Homepage language (19 Nov 2026):** "Ce promit și ce nu promit" section from `BRAND.md` / `PROPOSAL.md`; hero label without the dot and "freelancer"; Cheesy Media screenshots replaced with the client-supplied ones.
 - [x] **Journey and work redesign (19 Nov 2026):** the homepage journey is now a timeline. The Cheesy Media case study has before/after screenshots, design decisions and 8 Google/AI steps, all checked on the live sites. Deployed and verified.
 - [ ] **Cheesy Media:** ask the client for Search Console data or permission to test AI prompts about them, so the case study can show results, not only steps.
 - [ ] **Cloudflare SSL:** keep "Full" (decided 19 Nov 2026; "Always Use HTTPS" is on). Move to Full (strict) only if the host offers a free certificate for dragoscatana.com.

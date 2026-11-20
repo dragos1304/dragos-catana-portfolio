@@ -1,15 +1,76 @@
 "use client";
 import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
+import type { Lang } from "@/lib/i18n";
 
 type Kind = "audit" | "contact";
 const inputCls =
   "mt-1.5 block w-full rounded-md border border-navy/25 bg-white px-4 py-3 text-base text-navy placeholder:text-slate-ink/60 focus:border-navy";
 
-export function LeadForm({ kind }: { kind: Kind }) {
+const text = {
+  ro: {
+    thanks: "Mulțumesc, am primit mesajul.",
+    auditDone: "Îți trimit auditul pe email în maximum 24 de ore.",
+    contactDone: "Îți răspund în maximum 24 de ore.",
+    orTalk: "Dacă preferi să vorbim direct, poți și",
+    book: "programa o discuție",
+    honeypot: "Nu completa:",
+    name: "Nume",
+    email: "Email",
+    website: "Adresa website-ului",
+    ifAny: "(dacă ai unul)",
+    business: "Tipul afacerii",
+    businessPh: "ex. clinică stomatologică",
+    city: "Orașul",
+    competitors: "2–3 concurenți (opțional)",
+    competitorsPh: "Adresele site-urilor sau numele lor",
+    need: "De ce ai nevoie?",
+    choose: "Alege o opțiune",
+    needs: ["Redesign de website", "Website nou", "SEO și vizibilitate în AI (colaborare lunară)", "Mentenanță site", "Altceva"],
+    message: "Spune-mi pe scurt despre proiect",
+    consentA: "Sunt de acord ca datele mele să fie folosite pentru a-mi răspunde, conform",
+    consentLink: "politicii de confidențialitate",
+    consentValue: "da",
+    sending: "Se trimite…",
+    sendAudit: "Trimite cererea de audit",
+    sendContact: "Trimite mesajul",
+    error: "Nu s-a trimis mesajul. Încearcă din nou sau programează direct o discuție pe Calendly.",
+  },
+  en: {
+    thanks: "Thank you, I've got your message.",
+    auditDone: "I'll email you the audit within 24 hours.",
+    contactDone: "I'll reply within 24 hours.",
+    orTalk: "If you'd rather talk directly, you can also",
+    book: "book a call",
+    honeypot: "Leave empty:",
+    name: "Name",
+    email: "Email",
+    website: "Website address",
+    ifAny: "(if you have one)",
+    business: "Type of business",
+    businessPh: "e.g. dental clinic",
+    city: "City",
+    competitors: "2–3 competitors (optional)",
+    competitorsPh: "Their websites or names",
+    need: "What do you need?",
+    choose: "Choose an option",
+    needs: ["Website redesign", "New website", "SEO and AI visibility (monthly)", "Website maintenance", "Something else"],
+    message: "Tell me briefly about the project",
+    consentA: "I agree that my data is used to reply to me, as described in the",
+    consentLink: "privacy policy (Romanian)",
+    consentValue: "da",
+    sending: "Sending…",
+    sendAudit: "Send the audit request",
+    sendContact: "Send the message",
+    error: "The message wasn't sent. Try again or book a call directly on Calendly.",
+  },
+} as const;
+
+export function LeadForm({ kind, lang = "ro" }: { kind: Kind; lang?: Lang }) {
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   const isAudit = kind === "audit";
   const openedAt = useRef(Date.now());
+  const t = text[lang];
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,7 +86,7 @@ export function LeadForm({ kind }: { kind: Kind }) {
       const json = (await res.json().catch(() => null)) as { ok?: boolean } | null;
       if (!res.ok || !json?.ok) throw new Error(String(res.status));
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "generate_lead", form_name: kind });
+      window.dataLayer.push({ event: "generate_lead", form_name: kind, form_lang: lang });
       setState("done");
     } catch {
       setState("error");
@@ -35,13 +96,11 @@ export function LeadForm({ kind }: { kind: Kind }) {
   if (state === "done") {
     return (
       <div role="status" className="rounded-md border border-line bg-mist p-6">
-        <p className="font-serif text-xl font-bold">Mulțumesc, am primit mesajul.</p>
+        <p className="font-serif text-xl font-bold">{t.thanks}</p>
         <p className="mt-2 text-slate-ink">
-          {isAudit
-            ? "Îți trimit auditul pe email în maximum 24 de ore."
-            : "Îți răspund în maximum 24 de ore."}{" "}
-          Dacă preferi să vorbim direct, poți și{" "}
-          <a className="font-medium underline underline-offset-4" href="https://calendly.com/dragoscatana/consultanta-1-la-1" target="_blank" rel="noopener noreferrer">programa o discuție</a>.
+          {isAudit ? t.auditDone : t.contactDone}{" "}
+          {t.orTalk}{" "}
+          <a className="font-medium underline underline-offset-4" href="https://calendly.com/dragoscatana/consultanta-1-la-1" target="_blank" rel="noopener noreferrer">{t.book}</a>.
         </p>
       </div>
     );
@@ -50,63 +109,59 @@ export function LeadForm({ kind }: { kind: Kind }) {
   return (
     <form name={kind} method="POST" onSubmit={onSubmit} className="space-y-5">
       <input type="hidden" name="form-name" value={kind} />
-      <p className="hidden"><label>Nu completa: <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
+      <input type="hidden" name="lang" value={lang} />
+      <p className="hidden"><label>{t.honeypot} <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm font-medium">Nume
+        <label className="block text-sm font-medium">{t.name}
           <input className={inputCls} name="name" type="text" autoComplete="name" required />
         </label>
-        <label className="block text-sm font-medium">Email
+        <label className="block text-sm font-medium">{t.email}
           <input className={inputCls} name="email" type="email" autoComplete="email" required />
         </label>
       </div>
-      <label className="block text-sm font-medium">Adresa website-ului {isAudit ? "" : "(dacă ai unul)"}
+      <label className="block text-sm font-medium">{t.website} {isAudit ? "" : t.ifAny}
         <input className={inputCls} name="website" type="url" inputMode="url" placeholder="https://" required={isAudit} />
       </label>
       {isAudit ? (
         <>
           <div className="grid gap-5 sm:grid-cols-2">
-            <label className="block text-sm font-medium">Tipul afacerii
-              <input className={inputCls} name="business" type="text" placeholder="ex. clinică stomatologică" required />
+            <label className="block text-sm font-medium">{t.business}
+              <input className={inputCls} name="business" type="text" placeholder={t.businessPh} required />
             </label>
-            <label className="block text-sm font-medium">Orașul
+            <label className="block text-sm font-medium">{t.city}
               <input className={inputCls} name="city" type="text" required />
             </label>
           </div>
-          <label className="block text-sm font-medium">2–3 concurenți (opțional)
-            <textarea className={inputCls} name="competitors" rows={3} placeholder="Adresele site-urilor sau numele lor" />
+          <label className="block text-sm font-medium">{t.competitors}
+            <textarea className={inputCls} name="competitors" rows={3} placeholder={t.competitorsPh} />
           </label>
         </>
       ) : (
         <>
-          <label className="block text-sm font-medium">De ce ai nevoie?
+          <label className="block text-sm font-medium">{t.need}
             <select className={inputCls} name="need" defaultValue="" required>
-              <option value="" disabled>Alege o opțiune</option>
-              <option>Redesign de website</option>
-              <option>Website nou</option>
-              <option>SEO și vizibilitate în AI (colaborare lunară)</option>
-              <option>Altceva</option>
+              <option value="" disabled>{t.choose}</option>
+              {t.needs.map((n) => <option key={n}>{n}</option>)}
             </select>
           </label>
-          <label className="block text-sm font-medium">Spune-mi pe scurt despre proiect
+          <label className="block text-sm font-medium">{t.message}
             <textarea className={inputCls} name="message" rows={5} required />
           </label>
         </>
       )}
       <label className="flex items-start gap-3 text-sm leading-relaxed text-slate-ink">
-        <input type="checkbox" name="consent" value="da" required className="mt-0.5 h-6 w-6 shrink-0 accent-brass-dark" />
+        <input type="checkbox" name="consent" value={t.consentValue} required className="mt-0.5 h-6 w-6 shrink-0 accent-brass-dark" />
         <span>
-          Sunt de acord ca datele mele să fie folosite pentru a-mi răspunde, conform{" "}
-          <Link href="/confidentialitate" className="font-medium text-navy underline underline-offset-4">politicii de confidențialitate</Link>.
+          {t.consentA}{" "}
+          <Link href="/confidentialitate" hrefLang="ro" className="font-medium text-navy underline underline-offset-4">{t.consentLink}</Link>.
         </span>
       </label>
       <button type="submit" disabled={state === "sending"}
         className="inline-flex min-h-12 items-center justify-center rounded-sm bg-navy px-7 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white hover:bg-brass-dark disabled:opacity-60">
-        {state === "sending" ? "Se trimite…" : isAudit ? "Trimite cererea de audit" : "Trimite mesajul"}
+        {state === "sending" ? t.sending : isAudit ? t.sendAudit : t.sendContact}
       </button>
       {state === "error" && (
-        <p role="alert" className="text-sm text-red-700">
-          Nu s-a trimis mesajul. Încearcă din nou sau programează direct o discuție pe Calendly.
-        </p>
+        <p role="alert" className="text-sm text-red-700">{t.error}</p>
       )}
     </form>
   );
