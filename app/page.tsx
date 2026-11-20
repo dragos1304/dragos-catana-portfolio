@@ -37,6 +37,14 @@ const faq = [
   },
 ];
 
+/* The four perceptions in BRAND.md §4, in the client's words. */
+const promises = [
+  { t: "Aproape", d: "Vorbești mereu cu omul care face munca. Fără vânzători, fără intermediari." },
+  { t: "Expert, pe limba ta", d: "Știu ce cer Google și asistenții AI și îți explic simplu, fără jargon. Tu decizi în cunoștință de cauză." },
+  { t: "Sincer", d: "Îți spun ce merge, ce lipsește și ce nu se poate garanta. Fără cifre umflate și fără recenzii inventate." },
+  { t: "Grijuliu", d: "Nu fac nimic ireversibil fără acordul tău. La redesign păstrez ce funcționa în Google, iar după lansare rămân alături." },
+];
+
 /* Service tiles: one colour each, like project cards (direction A). */
 const tileStyle = ["bg-ink text-paper", "bg-teal text-ink", "bg-orange text-ink"] as const;
 
@@ -53,7 +61,7 @@ export default function Home() {
       <section id="acasa" aria-labelledby="acasa-titlu" className="relative overflow-hidden bg-paper">
         <Container className="grid gap-12 pb-14 pt-12 sm:pb-20 sm:pt-20 lg:grid-cols-[1.7fr_1fr] lg:items-center">
           <div>
-            <Eyebrow>Web designer freelancer · Cluj-Napoca</Eyebrow>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-muted">Web designer · Cluj-Napoca</p>
             <h1 id="acasa-titlu" className="font-serif text-[2.9rem] font-extrabold leading-[0.95] text-ink sm:text-7xl lg:text-[5rem]">
               Clienții te caută.<br />
               Fă-i să te <span className="whitespace-nowrap"><Mark draw>găsească</Mark>.</span>
@@ -63,6 +71,7 @@ export default function Home() {
               <Link href="/servicii/creare-website" className="font-semibold underline decoration-orange decoration-2 underline-offset-4 hover:decoration-ink">creare de site-uri</Link> și{" "}
               <Link href="/servicii/seo-vizibilitate-ai" className="font-semibold underline decoration-orange decoration-2 underline-offset-4 hover:decoration-ink">optimizare SEO</Link>{" "}
               pentru clinici, cabinete de avocatură și afaceri locale, ca să apari în Google și în răspunsurile ChatGPT.
+              {" "}Lucrez singur: eu fac auditul, eu construiesc și tot eu îți răspund.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button href="/audit-gratuit-vizibilitate-ai" arrow>Cere auditul gratuit</Button>
@@ -209,7 +218,38 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 7. A personal letter */}
+      {/* 7. How I work with you: the four perceptions from BRAND.md and the promises from PROPOSAL.md */}
+      <Section id="promisiuni" white>
+        <Eyebrow>Cum lucrez cu tine</Eyebrow>
+        <H2>Ce promit. Și ce <Accent>nu promit.</Accent></H2>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {promises.map((p) => (
+            <div key={p.t} className="rounded-3xl border-2 border-ink bg-paper p-6">
+              <h3 className="font-serif text-2xl font-extrabold text-ink">{p.t}</h3>
+              <p className="mt-2 text-[17px] leading-relaxed text-ink">{p.d}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 grid gap-5 lg:grid-cols-2">
+          <div className="rounded-3xl bg-ink p-7 text-paper">
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-orange">Promit</p>
+            <ul className="mt-4 space-y-3 text-[17px] leading-relaxed">
+              <li>→ Răspund la orice mesaj în maximum {site.responseTime}.</li>
+              <li>→ Vezi fiecare etapă și nimic nu merge mai departe fără aprobarea ta.</li>
+              <li>→ Îți arăt rezultatele „înainte și după” pe aceleași întrebări din Google și ChatGPT.</li>
+            </ul>
+          </div>
+          <div className="rounded-3xl border-2 border-ink bg-canvas p-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-orange-ink">Nu promit</p>
+            <p className="mt-4 text-[17px] leading-relaxed text-ink">
+              Locul 1 în Google sau o recomandare garantată în ChatGPT. Nimeni nu poate garanta asta, iar cine o face nu spune adevărul.
+              Promit un proces măsurabil și transparent.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* 8. A personal letter */}
       <Section id="despre" white>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
           <div>
