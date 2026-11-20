@@ -7,6 +7,8 @@ export type Block =
 export type Article = {
   slug: string;
   title: string;
+  /** Shorter title for the <title> tag when the headline runs past ~60 characters. */
+  seoTitle?: string;
   description: string;
   category: "Căutare AI" | "Redesign" | "SEO tehnic" | "Ghid SEO" | "SEO local";
   date: string; // ISO
@@ -65,6 +67,7 @@ export const articles: Article[] = [
   {
     slug: "cum-verifici-daca-ai-iti-mentioneaza-afacerea",
     title: "Cum verifici dacă ChatGPT, Gemini sau Perplexity îți menționează afacerea",
+    seoTitle: "Cum verifici dacă ChatGPT îți menționează afacerea",
     description:
       "Un test simplu, în 30 de minute, ca să afli dacă asistenții AI îți recomandă afacerea. Ce întrebări să pui, cum notezi rezultatele și cum interpretezi răspunsurile.",
     category: "Căutare AI",
@@ -201,6 +204,7 @@ export const articles: Article[] = [
   {
     slug: "schema-markup-pentru-clinici-si-cabinete",
     title: "Date structurate (schema markup) pentru clinici și cabinete: ghid simplu",
+    seoTitle: "Schema markup pentru clinici și cabinete: ghid",
     description:
       "Ce este schema markup, ce tipuri se potrivesc unei clinici sau unui cabinet de avocatură, un exemplu JSON-LD și cum îl testezi.",
     category: "SEO tehnic",

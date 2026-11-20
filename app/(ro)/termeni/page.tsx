@@ -4,7 +4,7 @@ import { site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Termeni și condiții",
-  description: "Termenii de utilizare ai site-ului dragoscatana.com.",
+  description: "Termenii de utilizare ai site-ului dragoscatana.com: conținutul, formularele, auditul gratuit, ofertele și limitele de răspundere, explicate simplu.",
   alternates: { canonical: "/termeni/" },
 };
 
