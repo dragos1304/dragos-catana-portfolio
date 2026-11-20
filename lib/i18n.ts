@@ -1,4 +1,5 @@
-/** Interface strings for shared modules. Pages, paths and twins live in lib/site-map.ts. */
+/** Interface strings for shared modules. Pages, paths and twins live in lib/site-map.ts; facts in lib/site-config.ts. */
+import { site } from "./site-config";
 export type { Lang } from "./site-map";
 
 /** Strings used by shared components (header, footer, form, banner, bands). */
@@ -15,7 +16,7 @@ export const ui = {
     footerLine1: "Hai să te facem",
     footerLine2: "ușor de găsit.",
     footerAbout: "Web design și optimizare pentru căutare AI. Pentru clinici, cabinete de avocatură și afaceri locale din România.",
-    footerWhere: "Cluj-Napoca, România · răspuns în 24 de ore",
+    footerWhere: `${site.city}, România · răspuns în ${site.reply.ro}`,
     footerLabel: "Subsol site",
     footerNav: "Subsol",
     pages: "Pagini",
@@ -28,7 +29,7 @@ export const ui = {
     faqTitle: "Întrebări frecvente",
     ctaEyebrow: "Primul pas",
     ctaTitle: "Vrei să știi dacă AI-ul îți recomandă afacerea?",
-    ctaText: "Primești un audit manual gratuit, în maximum 24 de ore. Fără obligații.",
+    ctaText: `Primești un audit manual gratuit, în maximum ${site.reply.ro}. Fără obligații.`,
     ctaPrimary: "Cere auditul gratuit",
     ctaSecondary: "Programează o discuție",
   },
@@ -44,7 +45,7 @@ export const ui = {
     footerLine1: "Let's make you",
     footerLine2: "easy to find.",
     footerAbout: "Web design and AI search optimisation for clinics, law firms and local businesses in Romania.",
-    footerWhere: "Cluj-Napoca, Romania · reply within 24 hours",
+    footerWhere: `${site.city}, Romania · reply within ${site.reply.en}`,
     footerLabel: "Site footer",
     footerNav: "Footer",
     pages: "Pages",
@@ -57,7 +58,7 @@ export const ui = {
     faqTitle: "Frequently asked questions",
     ctaEyebrow: "First step",
     ctaTitle: "Want to know if AI recommends your business?",
-    ctaText: "Get a free manual audit within 24 hours. No obligation.",
+    ctaText: `Get a free manual audit within ${site.reply.en}. No obligation.`,
     ctaPrimary: "Get the free audit",
     ctaSecondary: "Book a call",
   },

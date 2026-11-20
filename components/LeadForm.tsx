@@ -2,6 +2,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { serviceOptions, type Lang } from "@/lib/site-map";
+import { site } from "@/lib/site-config";
 
 type Kind = "audit" | "contact";
 const inputCls =
@@ -10,8 +11,8 @@ const inputCls =
 const text = {
   ro: {
     thanks: "Mulțumesc, am primit mesajul.",
-    auditDone: "Îți trimit auditul pe email în maximum 24 de ore.",
-    contactDone: "Îți răspund în maximum 24 de ore.",
+    auditDone: `Îți trimit auditul pe email în maximum ${site.reply.ro}.`,
+    contactDone: `Îți răspund în maximum ${site.reply.ro}.`,
     orTalk: "Dacă preferi să vorbim direct, poți și",
     book: "programa o discuție",
     honeypot: "Nu completa:",
@@ -37,8 +38,8 @@ const text = {
   },
   en: {
     thanks: "Thank you, I've got your message.",
-    auditDone: "I'll email you the audit within 24 hours.",
-    contactDone: "I'll reply within 24 hours.",
+    auditDone: `I'll email you the audit within ${site.reply.en}.`,
+    contactDone: `I'll reply within ${site.reply.en}.`,
     orTalk: "If you'd rather talk directly, you can also",
     book: "book a call",
     honeypot: "Leave empty:",
@@ -98,7 +99,7 @@ export function LeadForm({ kind, lang = "ro" }: { kind: Kind; lang?: Lang }) {
         <p className="mt-2 text-slate-ink">
           {isAudit ? t.auditDone : t.contactDone}{" "}
           {t.orTalk}{" "}
-          <a className="font-medium underline underline-offset-4" href="https://calendly.com/dragoscatana/consultanta-1-la-1" target="_blank" rel="noopener noreferrer">{t.book}</a>.
+          <a className="font-medium underline underline-offset-4" href={site.calendly} target="_blank" rel="noopener noreferrer">{t.book}</a>.
         </p>
       </div>
     );

@@ -1,5 +1,6 @@
 import { User } from "lucide-react";
-import type { Lang } from "@/lib/i18n";
+import type { Lang } from "@/lib/site-map";
+import { site } from "@/lib/site-config";
 
 /** The client journey told stage by stage, with Dragoș's part in each step (see USER_JOURNEY.md). */
 export const journey = [
@@ -12,7 +13,7 @@ export const journey = [
   },
   {
     n: "02",
-    when: "În maximum 24 de ore",
+    when: `În maximum ${site.reply.ro}`,
     title: "Primești auditul, în limbaj simplu",
     you: "Citești ce merge, ce lipsește și cele trei lucruri care contează cel mai mult.",
     me: "Îl scriu eu, nu un program. Fără jargon și fără presiune să cumperi ceva.",
@@ -50,7 +51,7 @@ export const journeyEn = [
   },
   {
     n: "02",
-    when: "Within 24 hours",
+    when: `Within ${site.reply.en}`,
     title: "You get the audit, in plain words",
     you: "You read what works, what's missing and the three things that matter most.",
     me: "I write it myself, not a tool. No jargon and no pressure to buy anything.",
