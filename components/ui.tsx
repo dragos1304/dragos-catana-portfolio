@@ -25,8 +25,7 @@ export function Section({
 
 export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
   return (
-    <p className={`mb-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] ${dark ? "text-paper/80" : "text-muted"}`}>
-      <span aria-hidden className="h-2 w-2 rounded-full bg-orange" />
+    <p className={`mb-4 text-sm font-semibold uppercase tracking-[0.12em] ${dark ? "text-paper/80" : "text-muted"}`}>
       {children}
     </p>
   );
