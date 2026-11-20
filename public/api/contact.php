@@ -30,6 +30,14 @@ if (!filter_var($to, FILTER_VALIDATE_EMAIL) || !filter_var($from, FILTER_VALIDAT
     respond(500, ['ok' => false, 'error' => 'bad_config']);
 }
 
+// The lead form contract, generated at build time from lib/lead-form.ts (the form reads the same source).
+$contractFile = __DIR__ . '/form-contract.json';
+$contract = is_file($contractFile) ? json_decode((string)file_get_contents($contractFile), true) : null;
+if (!is_array($contract) || ($contract['version'] ?? 0) !== 1) {
+    respond(500, ['ok' => false, 'error' => 'contract_missing']);
+}
+$meta = $contract['meta'];
+
 // Same-site requests only.
 $origin = (string)($_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_REFERER'] ?? '');
 if ($allowedHosts && $origin !== '') {
@@ -40,11 +48,11 @@ if ($allowedHosts && $origin !== '') {
 }
 
 // Spam traps: honeypot must be empty; a human takes at least 3 seconds to fill the form.
-if (trim((string)($_POST['bot-field'] ?? '')) !== '') {
+if (trim((string)($_POST[$meta['honeypot']] ?? '')) !== '') {
     respond(200, ['ok' => true]); // pretend success to bots
 }
-$ts = (int)($_POST['ts'] ?? 0);
-if ($ts > 0 && (time() - intdiv($ts, 1000)) < 3) {
+$ts = (int)($_POST[$meta['openedAt']] ?? 0); // milliseconds
+if ($ts > 0 && (time() - intdiv($ts, 1000)) < (int)$contract['minSecondsToFill']) {
     respond(200, ['ok' => true]);
 }
 
@@ -64,26 +72,31 @@ function clean(string $v, int $max): string {
     return mb_substr($v, 0, $max);
 }
 
-$kind = ($_POST['form-name'] ?? '') === 'audit' ? 'audit' : 'contact';
+$kindName = (string)($_POST[$meta['kind']] ?? '');
+if (!isset($contract['kinds'][$kindName])) {
+    respond(422, ['ok' => false, 'error' => 'unknown_form']);
+}
+$kind = $kindName;
+$form = $contract['kinds'][$kind];
 $name = str_replace("\n", ' ', clean((string)($_POST['name'] ?? ''), 120)); // no newlines: header injection
 $email = clean((string)($_POST['email'] ?? ''), 160);
-if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || ($_POST['consent'] ?? '') !== 'da') {
+if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || ($_POST[$meta['consent']] ?? '') !== $contract['consentToken']) {
     respond(422, ['ok' => false, 'error' => 'invalid']);
 }
 
-$fields = $kind === 'audit'
-    ? ['website' => 'Website', 'business' => 'Tip afacere', 'city' => 'Oraș', 'competitors' => 'Concurenți']
-    : ['website' => 'Website', 'need' => 'Nevoie', 'message' => 'Mesaj'];
-
-$lines = ["Nume: $name", "Email: $email"];
-foreach ($fields as $key => $label) {
-    $lines[] = $label . ': ' . clean((string)($_POST[$key] ?? ''), 3000);
+$lines = [];
+foreach ($form['fields'] as $field) {
+    $value = $field['name'] === 'name' ? $name : clean((string)($_POST[$field['name']] ?? ''), (int)$field['max']);
+    if (isset($field['options'][$value])) {
+        $value = $field['options'][$value]; // stable option value -> Romanian label
+    }
+    $lines[] = $field['label'] . ': ' . $value;
 }
-$lang = ($_POST['lang'] ?? '') === 'en' ? 'en' : 'ro';
+$lang = in_array($_POST[$meta['lang']] ?? '', $contract['langs'], true) ? (string)$_POST[$meta['lang']] : 'ro';
 $lines[] = 'Limba formularului: ' . $lang;
 $lines[] = 'Consimțământ: da (' . gmdate('Y-m-d H:i') . ' UTC)';
 
-$subject = ($kind === 'audit' ? 'Cerere audit gratuit AI' : 'Mesaj nou din contact') . ($lang === 'en' ? ' [EN]' : '');
+$subject = $form['subject'] . ($lang === 'en' ? ' [EN]' : '');
 $subjectEnc = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 $body = implode("\r\n", $lines);
 $headers = [
@@ -182,8 +195,8 @@ if ($smtp) {
                 'Hi ' . $name . ',',
                 '',
                 $kind === 'audit'
-                    ? 'I received your request for the free AI visibility audit. I am preparing it by hand and will send it within 24 hours.'
-                    : 'I received your message and will reply personally within 24 hours.',
+                    ? 'I received your request for the free AI visibility audit. I am preparing it by hand and will send it within ' . $contract['replyHours'] . ' hours.'
+                    : 'I received your message and will reply personally within ' . $contract['replyHours'] . ' hours.',
                 '',
                 'If you did not send this form, you can ignore this email.',
                 '',
@@ -196,8 +209,8 @@ if ($smtp) {
                 'Bună, ' . $name . ',',
                 '',
                 $kind === 'audit'
-                    ? 'Am primit cererea ta pentru auditul gratuit de vizibilitate AI. Îl pregătesc manual și ți-l trimit în maximum 24 de ore.'
-                    : 'Am primit mesajul tău și îți răspund personal în maximum 24 de ore.',
+                    ? 'Am primit cererea ta pentru auditul gratuit de vizibilitate AI. Îl pregătesc manual și ți-l trimit în maximum ' . $contract['replyHours'] . ' de ore.'
+                    : 'Am primit mesajul tău și îți răspund personal în maximum ' . $contract['replyHours'] . ' de ore.',
                 '',
                 'Dacă nu ai trimis tu acest formular, poți ignora acest email.',
                 '',

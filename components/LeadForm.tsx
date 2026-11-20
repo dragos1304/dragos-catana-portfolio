@@ -2,9 +2,9 @@
 import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { serviceOptions, type Lang } from "@/lib/site-map";
+import { leadForm, type LeadKind } from "@/lib/lead-form";
 import { site } from "@/lib/site-config";
 
-type Kind = "audit" | "contact";
 const inputCls =
   "mt-1.5 block w-full rounded-md border border-navy/25 bg-white px-4 py-3 text-base text-navy placeholder:text-slate-ink/60 focus:border-navy";
 
@@ -30,7 +30,6 @@ const text = {
     message: "Spune-mi pe scurt despre proiect",
     consentA: "Sunt de acord ca datele mele să fie folosite pentru a-mi răspunde, conform",
     consentLink: "politicii de confidențialitate",
-    consentValue: "da",
     sending: "Se trimite…",
     sendAudit: "Trimite cererea de audit",
     sendContact: "Trimite mesajul",
@@ -57,7 +56,6 @@ const text = {
     message: "Tell me briefly about the project",
     consentA: "I agree that my data is used to reply to me, as described in the",
     consentLink: "privacy policy (Romanian)",
-    consentValue: "da",
     sending: "Sending…",
     sendAudit: "Send the audit request",
     sendContact: "Send the message",
@@ -65,7 +63,7 @@ const text = {
   },
 } as const;
 
-export function LeadForm({ kind, lang = "ro" }: { kind: Kind; lang?: Lang }) {
+export function LeadForm({ kind, lang = "ro" }: { kind: LeadKind; lang?: Lang }) {
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   const isAudit = kind === "audit";
   const openedAt = useRef(Date.now());
@@ -75,7 +73,7 @@ export function LeadForm({ kind, lang = "ro" }: { kind: Kind; lang?: Lang }) {
     e.preventDefault();
     setState("sending");
     const data = new FormData(e.currentTarget);
-    data.set("ts", String(openedAt.current));
+    data.set(leadForm.meta.openedAt, String(openedAt.current)); // milliseconds, see lib/lead-form.ts
     try {
       const res = await fetch(process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "/api/contact.php", {
         method: "POST",
@@ -107,9 +105,9 @@ export function LeadForm({ kind, lang = "ro" }: { kind: Kind; lang?: Lang }) {
 
   return (
     <form name={kind} method="POST" onSubmit={onSubmit} className="space-y-5">
-      <input type="hidden" name="form-name" value={kind} />
-      <input type="hidden" name="lang" value={lang} />
-      <p className="hidden"><label>{t.honeypot} <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
+      <input type="hidden" name={leadForm.meta.kind} value={kind} />
+      <input type="hidden" name={leadForm.meta.lang} value={lang} />
+      <p className="hidden"><label>{t.honeypot} <input name={leadForm.meta.honeypot} tabIndex={-1} autoComplete="off" /></label></p>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium">{t.name}
           <input className={inputCls} name="name" type="text" autoComplete="name" required />
@@ -149,7 +147,7 @@ export function LeadForm({ kind, lang = "ro" }: { kind: Kind; lang?: Lang }) {
         </>
       )}
       <label className="flex items-start gap-3 text-sm leading-relaxed text-slate-ink">
-        <input type="checkbox" name="consent" value={t.consentValue} required className="mt-0.5 h-6 w-6 shrink-0 accent-brass-dark" />
+        <input type="checkbox" name={leadForm.meta.consent} value={leadForm.consentToken} required className="mt-0.5 h-6 w-6 shrink-0 accent-brass-dark" />
         <span>
           {t.consentA}{" "}
           <Link href="/confidentialitate" hrefLang="ro" className="font-medium text-navy underline underline-offset-4">{t.consentLink}</Link>.
