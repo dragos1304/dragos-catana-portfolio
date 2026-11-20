@@ -5,6 +5,7 @@ import { ArrowUpRight, Scale, Stethoscope, Store } from "lucide-react";
 import { Accent, Button, Container, Eyebrow, FAQ, H2, Mark, Section, CtaBand } from "@/components/ui";
 import { AnswerCard } from "@/components/AnswerCard";
 import { Shot } from "@/components/Shot";
+import type { ImageName } from "@/lib/images";
 import { Journey, JourneyEnds } from "@/components/Journey";
 import { proof, site } from "@/lib/site-config";
 import { alternates, href, services, type Lang } from "@/lib/site-map";
@@ -45,7 +46,7 @@ type Copy = {
   workAllCta: string;
   shotDesktopAlt: string;
   shotPhoneAlt: string;
-  workCards: { shot: string; alt: string; tag: string; accent: boolean; text: string }[];
+  workCards: { shot: ImageName; alt: string; tag: string; accent: boolean; text: string }[];
   whoEyebrow: string;
   whoH2: ReactNode;
   audiences: { icon: "clinic" | "law" | "local"; t: string; d: string; page: "clinics" | "lawFirms" | "seo" }[];

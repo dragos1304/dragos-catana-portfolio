@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { Shot } from "@/components/Shot";
+import type { ImageName } from "@/lib/images";
 import { LighthouseReport } from "@/components/LighthouseReport";
 import { abs, breadcrumb } from "@/lib/schema";
 import { proof, site } from "@/lib/site-config";
@@ -21,8 +22,8 @@ type Copy = {
   headlinesLabel: string; headlinesNote: string; textLabel: string; textSample: string; textNote: string;
   design: [string, string][];
   pagesEyebrow: string; pagesH2: string; pagesLead: string;
-  pages: { name: string; label: string; alt: string }[];
-  phones: { name: string; label: string; alt: string }[];
+  pages: { name: ImageName; label: string; alt: string }[];
+  phones: { name: ImageName; label: string; alt: string }[];
   aiEyebrow: string; aiH2: string; aiLead: string;
   aiSteps: { t: string; before: string; after: string }[];
   dontClaimLabel: string; dontClaim: string;

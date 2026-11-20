@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prebuild": "node scripts/image-manifest.mjs",
+    "pretest": "node scripts/image-manifest.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.75.0",

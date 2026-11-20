@@ -1,0 +1,222 @@
+{
+  "after-foto": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/after-foto-640.webp",
+        "w": 640,
+        "h": 400
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-foto-960.webp",
+        "w": 960,
+        "h": 600
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-foto-1440.webp",
+        "w": 1440,
+        "h": 900
+      }
+    ]
+  },
+  "after-portofoliu": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/after-portofoliu-640.webp",
+        "w": 640,
+        "h": 400
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-portofoliu-960.webp",
+        "w": 960,
+        "h": 600
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-portofoliu-1440.webp",
+        "w": 1440,
+        "h": 900
+      }
+    ]
+  },
+  "after-proces": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/after-proces-640.webp",
+        "w": 640,
+        "h": 400
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-proces-960.webp",
+        "w": 960,
+        "h": 600
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-proces-1440.webp",
+        "w": 1440,
+        "h": 900
+      }
+    ]
+  },
+  "after-servicii": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/after-servicii-640.webp",
+        "w": 640,
+        "h": 400
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-servicii-960.webp",
+        "w": 960,
+        "h": 600
+      },
+      {
+        "src": "/lucrari/cheesy-media/after-servicii-1440.webp",
+        "w": 1440,
+        "h": 900
+      }
+    ]
+  },
+  "before-home": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/before-home-640.webp",
+        "w": 640,
+        "h": 400
+      },
+      {
+        "src": "/lucrari/cheesy-media/before-home-960.webp",
+        "w": 960,
+        "h": 600
+      },
+      {
+        "src": "/lucrari/cheesy-media/before-home-1440.webp",
+        "w": 1440,
+        "h": 900
+      }
+    ]
+  },
+  "lighthouse-dupa": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/lighthouse-dupa-640.webp",
+        "w": 640,
+        "h": 381
+      },
+      {
+        "src": "/lucrari/cheesy-media/lighthouse-dupa-960.webp",
+        "w": 960,
+        "h": 572
+      },
+      {
+        "src": "/lucrari/cheesy-media/lighthouse-dupa.webp",
+        "w": 1600,
+        "h": 953
+      }
+    ]
+  },
+  "lighthouse-inainte": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/lighthouse-inainte-640.webp",
+        "w": 640,
+        "h": 392
+      },
+      {
+        "src": "/lucrari/cheesy-media/lighthouse-inainte-960.webp",
+        "w": 960,
+        "h": 588
+      },
+      {
+        "src": "/lucrari/cheesy-media/lighthouse-inainte.webp",
+        "w": 1600,
+        "h": 980
+      }
+    ]
+  },
+  "m-after-proces": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/m-after-proces-390.webp",
+        "w": 390,
+        "h": 778
+      },
+      {
+        "src": "/lucrari/cheesy-media/m-after-proces-780.webp",
+        "w": 780,
+        "h": 1556
+      }
+    ]
+  },
+  "m-after-servicii": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/m-after-servicii-390.webp",
+        "w": 390,
+        "h": 778
+      },
+      {
+        "src": "/lucrari/cheesy-media/m-after-servicii-780.webp",
+        "w": 780,
+        "h": 1556
+      }
+    ]
+  },
+  "m-before-home": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/m-before-home-390.webp",
+        "w": 390,
+        "h": 778
+      },
+      {
+        "src": "/lucrari/cheesy-media/m-before-home-780.webp",
+        "w": 780,
+        "h": 1556
+      }
+    ]
+  },
+  "site-desktop": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/site-desktop-640.webp",
+        "w": 640,
+        "h": 400
+      },
+      {
+        "src": "/lucrari/cheesy-media/site-desktop-960.webp",
+        "w": 960,
+        "h": 600
+      },
+      {
+        "src": "/lucrari/cheesy-media/site-desktop-1440.webp",
+        "w": 1440,
+        "h": 900
+      }
+    ]
+  },
+  "site-mobile": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/site-mobile-390.webp",
+        "w": 390,
+        "h": 706
+      },
+      {
+        "src": "/lucrari/cheesy-media/site-mobile-780.webp",
+        "w": 780,
+        "h": 1412
+      }
+    ]
+  }
+}
