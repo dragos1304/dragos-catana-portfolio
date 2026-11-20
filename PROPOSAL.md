@@ -19,7 +19,7 @@ The rules from the skill that matter most here:
 ---8<---
 
 # Propunere pentru [Numele afacerii]
-**Pregătită de:** Dragoș Cătană · dragoscatana.com · [telefon] · [email]
+**Pregătită de:** Dragoș Catană · dragoscatana.com · [telefon] · [email]
 **Pentru:** [Nume, rol] · **Data:** [zz.ll.aaaa] · **Valabilă până la:** [data, de obicei +14 zile]
 
 ## 1. Pe scurt
@@ -120,7 +120,7 @@ Vezi progresul la fiecare etapă și nimic nu merge mai departe fără aprobarea
 Dacă ai întrebări, sună-mă sau scrie-mi direct: [telefon] · [email]. Îți răspund eu.
 
 Mulțumesc pentru încredere,
-**Dragoș Cătană**
+**Dragoș Catană**
 dragoscatana.com
 
 ---8<---

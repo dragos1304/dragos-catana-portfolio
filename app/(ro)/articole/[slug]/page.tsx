@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a = getArticle(slug);
   if (!a) return {};
   return {
-    // Keep the full title under ~60 characters: drop the " | Dragoș Cătană" suffix when it would overflow.
+    // Keep the full title under ~60 characters: drop the " | Dragoș Catană" suffix when it would overflow.
     title: (a.seoTitle ?? a.title).length > 44 ? { absolute: a.seoTitle ?? a.title } : (a.seoTitle ?? a.title),
     description: a.description,
     alternates: { canonical: `/articole/${a.slug}/` },

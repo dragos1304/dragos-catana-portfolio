@@ -1,6 +1,6 @@
 ---
 version: gamma
-name: Dragoș Cătană
+name: Dragoș Catană
 description: Personal-brand services site for web design, SEO and AI-search visibility, Romanian-first. Direction A, "Clar și curajos" (bold and clear).
 colors:
   paper: "#f6f5f1"

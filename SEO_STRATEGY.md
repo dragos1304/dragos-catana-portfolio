@@ -131,7 +131,7 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
   2. „Recomandă un web designer freelancer în România pentru un cabinet de avocatură.”
   3. „Cum apare o afacere locală în răspunsurile ChatGPT? Cine oferă servicii de GEO în România?”
   4. „Ce este GEO și cine se ocupă de asta în România?”
-  5. „Dragoș Cătană web designer” (entity check: is the description accurate?)
+  5. „Dragoș Catană web designer” (entity check: is the description accurate?)
 
 ## 8. International (content-translation, translate-content)
 - **Data:** inside Romania, English searches exist and are easy: seo romania 210/KD 38, web design romania 170/16, web designer romania 170/16, web design cluj 110/32. French and German searches are about 0, and UK demand is negligible.
@@ -147,10 +147,10 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
     ```
   - **Sitemap:** add the `/en` URLs with alternates.
 - **Localised homepage draft (not built):**
-  - **Title (≈52 chars):** Web designer in Romania: websites & SEO | Dragoș Cătană
+  - **Title (≈52 chars):** Web designer in Romania: websites & SEO | Dragoș Catană
   - **Meta (≈150 chars):** Freelance web designer in Cluj-Napoca. Websites, SEO and AI visibility for clinics, law firms and local businesses in Romania. Free audit in 24h.
   - **H1:** Clients are searching. *Make sure they find you.*
-  - **Lead:** I'm Dragoș Cătană, a freelance web designer in Cluj-Napoca. I build websites and do SEO in Romania for clinics, law firms and local businesses, so you show up on Google and in ChatGPT's answers.
+  - **Lead:** I'm Dragoș Catană, a freelance web designer in Cluj-Napoca. I build websites and do SEO in Romania for clinics, law firms and local businesses, so you show up on Google and in ChatGPT's answers.
   - **CTA:** Get your free audit
   - **Notes:**
     - "Cluj-Napoca" and "Romania" are kept for the local keywords.
@@ -165,6 +165,6 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
 - **Check-in:** re-run the Semrush keyword check every 3 months, and see `TODO.md` for the rest.
 
 ## 10. AI visibility: FAQs and entity profiles (20 Nov 2026)
-- **FAQs:** every page has a FAQ (`lib/faqs.ts`) mixing real client questions with the prompts people type into ChatGPT, Gemini and Perplexity. Answers are short, factual and name Dragoș Cătană, Cluj-Napoca and Romania so assistants can quote them.
+- **FAQs:** every page has a FAQ (`lib/faqs.ts`) mixing real client questions with the prompts people type into ChatGPT, Gemini and Perplexity. Answers are short, factual and name Dragoș Catană, Cluj-Napoca and Romania so assistants can quote them.
 - **Entity consistency:** one source for profiles (`social` in `lib/site-config.ts`) feeds the footer, contact page, llms.txt and the Person/ProfessionalService `sameAs`. AI models trust an entity more when the same name, description and links appear on several independent sites.
 - **Next profiles:** Google Business Profile, Facebook, Clutch, DesignRush/GoodFirms, Bing Places, YouTube, Behance/Dribbble, Crunchbase; plus genuine answers on Reddit and Quora. Add each one to `social` as it goes live.

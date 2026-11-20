@@ -14,21 +14,21 @@ type Bilingual = Record<Lang, Faq[]>;
 const [perf, a11y] = proof.cheesy.lighthouse;
 const pages = proof.cheesy.sitemapPages.after;
 const who = {
-  ro: `Dragoș Cătană, web designer și specialist SEO din ${site.city}`,
-  en: `Dragoș Cătană, a web designer and SEO specialist in ${site.city}, Romania`,
+  ro: `Dragoș Catană, web designer și specialist SEO din ${site.city}`,
+  en: `Dragoș Catană, a web designer and SEO specialist in ${site.city}, Romania`,
 };
 
 export const faqs = {
   services: {
     ro: [
-      { q: "Ce servicii oferă Dragoș Cătană?", a: "Creare de website, redesign, SEO și vizibilitate în asistenții AI (GEO) și mentenanță site, pentru clinici, cabinete de avocatură și afaceri locale din România." },
+      { q: "Ce servicii oferă Dragoș Catană?", a: "Creare de website, redesign, SEO și vizibilitate în asistenții AI (GEO) și mentenanță site, pentru clinici, cabinete de avocatură și afaceri locale din România." },
       { q: "Ce serviciu mi se potrivește?", a: "Dacă ai un site vechi sau lent, redesign. Dacă nu ai site, creare de website. Dacă ai site, dar nu te găsește nimeni, SEO și vizibilitate în AI. Dacă ai un site bun, dar nu ai timp de el, mentenanță. Auditul gratuit te ajută să alegi." },
       { q: "Cât costă serviciile?", a: "Nu public prețuri fixe, pentru că fiecare proiect e diferit. Primești o ofertă clară după o discuție scurtă, iar auditul inițial e gratuit." },
       { q: "Ce înseamnă un site „pregătit pentru AI”?", a: "Un site pe care asistenții AI îl pot înțelege și cita: conținut clar care răspunde la întrebări reale, date structurate, aceleași informații despre tine peste tot și acces deschis pentru roboții AI." },
       { q: "Pot combina serviciile?", a: "Da. Cel mai des: redesign plus SEO și vizibilitate în AI, sau site nou plus mentenanță după lansare." },
     ],
     en: [
-      { q: "What services does Dragoș Cătană offer?", a: "New websites, website redesign, SEO and visibility in AI assistants (GEO), and website maintenance, for clinics, law firms and local businesses in Romania." },
+      { q: "What services does Dragoș Catană offer?", a: "New websites, website redesign, SEO and visibility in AI assistants (GEO), and website maintenance, for clinics, law firms and local businesses in Romania." },
       { q: "Which service is right for me?", a: "If your site is old or slow, a redesign. If you have no site, a new website. If you have a site but nobody finds you, SEO and AI visibility. If your site is good but you have no time for it, maintenance. The free audit helps you choose." },
       { q: "How much do the services cost?", a: "I don't publish fixed prices, because every project is different. You get a clear offer after a short call, and the first audit is free." },
       { q: "What does an “AI-ready” website mean?", a: "A site AI assistants can understand and quote: clear content that answers real questions, structured data, the same information about you everywhere, and open access for AI crawlers." },
@@ -37,13 +37,13 @@ export const faqs = {
   },
   work: {
     ro: [
-      { q: "Ce proiecte a realizat Dragoș Cătană?", a: `Cel mai recent proiect publicat este redesignul site-ului Cheesy Media, o agenție foto-video din Cluj-Napoca: design nou, ${pages} pagini, date structurate și performanță ${perf.after} în Lighthouse pe mobil. Public aici doar proiecte cu rezultate pe care le poți verifica.` },
+      { q: "Ce proiecte a realizat Dragoș Catană?", a: `Cel mai recent proiect publicat este redesignul site-ului Cheesy Media, o agenție foto-video din Cluj-Napoca: design nou, ${pages} pagini, date structurate și performanță ${perf.after} în Lighthouse pe mobil. Public aici doar proiecte cu rezultate pe care le poți verifica.` },
       { q: "Pot vedea site-urile live?", a: "Da. Atât site-ul vechi, cât și cel nou al Cheesy Media sunt online, iar linkurile sunt în studiul de caz, alături de rapoartele Lighthouse înainte și după." },
       { q: "De ce sunt puține proiecte în portofoliu?", a: "Public doar lucrări reale, cu acordul clientului și cu rezultate măsurate. Nu adaug proiecte de test prezentate drept lucrări pentru clienți." },
       { q: "Cum îmi dau seama dacă te potrivești pentru afacerea mea?", a: `Cel mai simplu e auditul gratuit: îți arăt, pe site-ul tău, ce aș schimba și de ce, în maximum ${site.reply.ro}. Așa vezi cum lucrez înainte să decizi.` },
     ],
     en: [
-      { q: "What projects has Dragoș Cătană done?", a: `The latest published project is the redesign of Cheesy Media, a photo and video agency in Cluj-Napoca: a new design, ${pages} pages, structured data and a mobile Lighthouse performance score of ${perf.after}. I only publish projects with results you can check.` },
+      { q: "What projects has Dragoș Catană done?", a: `The latest published project is the redesign of Cheesy Media, a photo and video agency in Cluj-Napoca: a new design, ${pages} pages, structured data and a mobile Lighthouse performance score of ${perf.after}. I only publish projects with results you can check.` },
       { q: "Can I see the websites live?", a: "Yes. Both the old and the new Cheesy Media sites are online; the links are in the case study, next to the before and after Lighthouse reports." },
       { q: "Why are there only a few projects?", a: "I only publish real work, with the client's agreement and measured results. I don't add test projects dressed up as client work." },
       { q: "How do I know if you're a fit for my business?", a: `The simplest way is the free audit: I show you, on your own site, what I'd change and why, within ${site.reply.en}. You see how I work before you decide.` },
@@ -67,15 +67,15 @@ export const faqs = {
   },
   about: {
     ro: [
-      { q: "Cine este Dragoș Cătană?", a: `${who.ro}. Face creare și redesign de site-uri, SEO și optimizare pentru asistenții AI pentru clinici, cabinete de avocatură și afaceri locale din România, prin dragoscatana.com.` },
-      { q: "Ce pregătire are Dragoș Cătană?", a: "Studiază Economia la Universitatea Babeș-Bolyai din Cluj-Napoca, în limba engleză, cu media 4.0, cu un an de schimb la Paris și un semestru la SUNY Cortland, în SUA. Construiește afaceri de la 16 ani." },
+      { q: "Cine este Dragoș Catană?", a: `${who.ro}. Face creare și redesign de site-uri, SEO și optimizare pentru asistenții AI pentru clinici, cabinete de avocatură și afaceri locale din România, prin dragoscatana.com.` },
+      { q: "Ce pregătire are Dragoș Catană?", a: "Studiază Economia la Universitatea Babeș-Bolyai din Cluj-Napoca, în limba engleză, cu media 4.0, cu un an de schimb la Paris și un semestru la SUNY Cortland, în SUA. Construiește afaceri de la 16 ani." },
       { q: "Cine se ocupă de proiectul meu?", a: "Eu, personal, de la audit la lansare. Pentru tine asta înseamnă un singur om care îți cunoaște afacerea, răspunsuri rapide și atenție la fiecare detaliu." },
       { q: "De ce să aleg un web designer independent în loc de o agenție?", a: "Vorbești direct cu omul care face munca, fără intermediari, iar deciziile se iau repede. Proiectul rămâne clar, discutat direct cu cel care îl construiește." },
       { q: "În ce limbi lucrezi?", a: "Română și engleză; franceză și germană ca opțiune suplimentară pentru site-uri în mai multe limbi." },
     ],
     en: [
-      { q: "Who is Dragoș Cătană?", a: `${who.en}. He builds and redesigns websites and does SEO and AI-assistant optimisation for clinics, law firms and local businesses in Romania, at dragoscatana.com.` },
-      { q: "What is Dragoș Cătană's background?", a: "He studies Economics at Babeș-Bolyai University in Cluj-Napoca, taught in English, with a 4.0 GPA, a year of exchange in Paris and a semester at SUNY Cortland in the US. He has been building businesses since he was 16." },
+      { q: "Who is Dragoș Catană?", a: `${who.en}. He builds and redesigns websites and does SEO and AI-assistant optimisation for clinics, law firms and local businesses in Romania, at dragoscatana.com.` },
+      { q: "What is Dragoș Catană's background?", a: "He studies Economics at Babeș-Bolyai University in Cluj-Napoca, taught in English, with a 4.0 GPA, a year of exchange in Paris and a semester at SUNY Cortland in the US. He has been building businesses since he was 16." },
       { q: "Who works on my project?", a: "I do, personally, from the audit to launch. For you that means one person who knows your business, quick replies and attention to every detail." },
       { q: "Why choose an independent web designer over an agency?", a: "You talk directly to the person doing the work, with no middlemen, and decisions are made quickly. The project stays clear, discussed directly with the person building it." },
       { q: "Which languages do you work in?", a: "Romanian and English; French and German as an add-on for multilingual sites." },
@@ -83,13 +83,13 @@ export const faqs = {
   },
   contact: {
     ro: [
-      { q: "Cum îl pot contacta pe Dragoș Cătană?", a: `Prin formularul de pe această pagină, pe WhatsApp la ${phone.display} sau programând o discuție pe Calendly. Răspund personal în maximum ${site.reply.ro}.` },
+      { q: "Cum îl pot contacta pe Dragoș Catană?", a: `Prin formularul de pe această pagină, pe WhatsApp la ${phone.display} sau programând o discuție pe Calendly. Răspund personal în maximum ${site.reply.ro}.` },
       { q: "Ce informații să pregătesc înainte de discuție?", a: "Adresa site-ului (dacă ai unul), ce vrei să obții (mai multe programări, cereri, un site nou), 2–3 concurenți și, dacă există, un termen. Restul le clarificăm împreună." },
       { q: "Discuția inițială costă ceva?", a: "Nu. Discuția de 30 de minute și auditul inițial sunt gratuite și nu te obligă la nimic." },
       { q: "Lucrezi cu clienți din afara Clujului?", a: "Da. Lucrez online cu afaceri din toată România; discuțiile au loc prin apel video." },
     ],
     en: [
-      { q: "How can I contact Dragoș Cătană?", a: `Through the form on this page, on WhatsApp at ${phone.display}, or by booking a call on Calendly. I reply personally within ${site.reply.en}.` },
+      { q: "How can I contact Dragoș Catană?", a: `Through the form on this page, on WhatsApp at ${phone.display}, or by booking a call on Calendly. I reply personally within ${site.reply.en}.` },
       { q: "What should I prepare before the call?", a: "Your website address (if you have one), what you want to achieve (more bookings, more enquiries, a new site), 2–3 competitors and, if there is one, a deadline. We clarify the rest together." },
       { q: "Does the first call cost anything?", a: "No. The 30-minute call and the first audit are free and don't commit you to anything." },
       { q: "Do you work with clients outside Cluj?", a: "Yes. I work online with businesses across Romania; calls happen by video." },

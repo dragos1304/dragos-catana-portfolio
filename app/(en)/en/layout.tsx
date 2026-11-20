@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: `${site.url}/en/`,
     title: `${site.name} | Web design and SEO for AI search`,
     description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Dragoș Cătană, web designer in Cluj-Napoca" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Dragoș Catană, web designer in Cluj-Napoca" }],
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
   robots: { index: true, follow: true },

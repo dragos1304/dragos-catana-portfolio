@@ -3,17 +3,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/after-foto-640.webp",
+        "src": "/lucrari/cheesy-media/after-foto-640.webp?v=1068815c",
         "w": 640,
         "h": 400
       },
       {
-        "src": "/lucrari/cheesy-media/after-foto-960.webp",
+        "src": "/lucrari/cheesy-media/after-foto-960.webp?v=6ae1c9b2",
         "w": 960,
         "h": 600
       },
       {
-        "src": "/lucrari/cheesy-media/after-foto-1440.webp",
+        "src": "/lucrari/cheesy-media/after-foto-1440.webp?v=a54ece7a",
         "w": 1440,
         "h": 900
       }
@@ -23,17 +23,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/after-portofoliu-640.webp",
+        "src": "/lucrari/cheesy-media/after-portofoliu-640.webp?v=9c90dedd",
         "w": 640,
         "h": 400
       },
       {
-        "src": "/lucrari/cheesy-media/after-portofoliu-960.webp",
+        "src": "/lucrari/cheesy-media/after-portofoliu-960.webp?v=e1cd5203",
         "w": 960,
         "h": 600
       },
       {
-        "src": "/lucrari/cheesy-media/after-portofoliu-1440.webp",
+        "src": "/lucrari/cheesy-media/after-portofoliu-1440.webp?v=0d47d55c",
         "w": 1440,
         "h": 900
       }
@@ -43,17 +43,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/after-proces-640.webp",
+        "src": "/lucrari/cheesy-media/after-proces-640.webp?v=86acc8e6",
         "w": 640,
         "h": 400
       },
       {
-        "src": "/lucrari/cheesy-media/after-proces-960.webp",
+        "src": "/lucrari/cheesy-media/after-proces-960.webp?v=011e7b6e",
         "w": 960,
         "h": 600
       },
       {
-        "src": "/lucrari/cheesy-media/after-proces-1440.webp",
+        "src": "/lucrari/cheesy-media/after-proces-1440.webp?v=943ce929",
         "w": 1440,
         "h": 900
       }
@@ -63,17 +63,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/after-servicii-640.webp",
+        "src": "/lucrari/cheesy-media/after-servicii-640.webp?v=0d535d50",
         "w": 640,
         "h": 400
       },
       {
-        "src": "/lucrari/cheesy-media/after-servicii-960.webp",
+        "src": "/lucrari/cheesy-media/after-servicii-960.webp?v=67688e22",
         "w": 960,
         "h": 600
       },
       {
-        "src": "/lucrari/cheesy-media/after-servicii-1440.webp",
+        "src": "/lucrari/cheesy-media/after-servicii-1440.webp?v=35b3da1f",
         "w": 1440,
         "h": 900
       }
@@ -83,17 +83,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/before-home-640.webp",
+        "src": "/lucrari/cheesy-media/before-home-640.webp?v=2725d00d",
         "w": 640,
         "h": 400
       },
       {
-        "src": "/lucrari/cheesy-media/before-home-960.webp",
+        "src": "/lucrari/cheesy-media/before-home-960.webp?v=99c4b255",
         "w": 960,
         "h": 600
       },
       {
-        "src": "/lucrari/cheesy-media/before-home-1440.webp",
+        "src": "/lucrari/cheesy-media/before-home-1440.webp?v=861172af",
         "w": 1440,
         "h": 900
       }
@@ -103,17 +103,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/lighthouse-dupa-640.webp",
+        "src": "/lucrari/cheesy-media/lighthouse-dupa-640.webp?v=f357aa6f",
         "w": 640,
         "h": 381
       },
       {
-        "src": "/lucrari/cheesy-media/lighthouse-dupa-960.webp",
+        "src": "/lucrari/cheesy-media/lighthouse-dupa-960.webp?v=f646ad11",
         "w": 960,
         "h": 572
       },
       {
-        "src": "/lucrari/cheesy-media/lighthouse-dupa.webp",
+        "src": "/lucrari/cheesy-media/lighthouse-dupa.webp?v=1b243059",
         "w": 1600,
         "h": 953
       }
@@ -123,17 +123,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/lighthouse-inainte-640.webp",
+        "src": "/lucrari/cheesy-media/lighthouse-inainte-640.webp?v=4f740851",
         "w": 640,
         "h": 392
       },
       {
-        "src": "/lucrari/cheesy-media/lighthouse-inainte-960.webp",
+        "src": "/lucrari/cheesy-media/lighthouse-inainte-960.webp?v=0dbf7171",
         "w": 960,
         "h": 588
       },
       {
-        "src": "/lucrari/cheesy-media/lighthouse-inainte.webp",
+        "src": "/lucrari/cheesy-media/lighthouse-inainte.webp?v=55eea13b",
         "w": 1600,
         "h": 980
       }
@@ -143,12 +143,12 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/m-after-proces-390.webp",
+        "src": "/lucrari/cheesy-media/m-after-proces-390.webp?v=b7a5a735",
         "w": 390,
         "h": 778
       },
       {
-        "src": "/lucrari/cheesy-media/m-after-proces-780.webp",
+        "src": "/lucrari/cheesy-media/m-after-proces-780.webp?v=228bd281",
         "w": 780,
         "h": 1556
       }
@@ -158,12 +158,12 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/m-after-servicii-390.webp",
+        "src": "/lucrari/cheesy-media/m-after-servicii-390.webp?v=067eadbc",
         "w": 390,
         "h": 778
       },
       {
-        "src": "/lucrari/cheesy-media/m-after-servicii-780.webp",
+        "src": "/lucrari/cheesy-media/m-after-servicii-780.webp?v=d47b033c",
         "w": 780,
         "h": 1556
       }
@@ -173,12 +173,12 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/m-before-home-390.webp",
+        "src": "/lucrari/cheesy-media/m-before-home-390.webp?v=ff9f8d97",
         "w": 390,
         "h": 778
       },
       {
-        "src": "/lucrari/cheesy-media/m-before-home-780.webp",
+        "src": "/lucrari/cheesy-media/m-before-home-780.webp?v=d84eaec4",
         "w": 780,
         "h": 1556
       }
@@ -188,17 +188,17 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/site-desktop-640.webp",
+        "src": "/lucrari/cheesy-media/site-desktop-640.webp?v=2c322650",
         "w": 640,
         "h": 400
       },
       {
-        "src": "/lucrari/cheesy-media/site-desktop-960.webp",
+        "src": "/lucrari/cheesy-media/site-desktop-960.webp?v=3a46fac6",
         "w": 960,
         "h": 600
       },
       {
-        "src": "/lucrari/cheesy-media/site-desktop-1440.webp",
+        "src": "/lucrari/cheesy-media/site-desktop-1440.webp?v=2fd0ac3c",
         "w": 1440,
         "h": 900
       }
@@ -208,12 +208,12 @@
     "dir": "/lucrari/cheesy-media",
     "variants": [
       {
-        "src": "/lucrari/cheesy-media/site-mobile-390.webp",
+        "src": "/lucrari/cheesy-media/site-mobile-390.webp?v=f37fccc9",
         "w": 390,
         "h": 706
       },
       {
-        "src": "/lucrari/cheesy-media/site-mobile-780.webp",
+        "src": "/lucrari/cheesy-media/site-mobile-780.webp?v=b53c8396",
         "w": 780,
         "h": 1412
       }

@@ -1,4 +1,4 @@
-# Dragoș Cătană: Services Portfolio — Structure & Branding Blueprint
+# Dragoș Catană: Services Portfolio — Structure & Branding Blueprint
 
 > Status: planning document, v2 (decisions locked). Replaces the earlier "academic journey" concept (see `Gemini.md`) with a **services-first** site.
 > Source of truth for biography: `dragos_catana_profile.txt`. Nothing here invents metrics, clients, prices or testimonials. Items still missing live in `TODO.md`.
@@ -12,7 +12,7 @@
 | **Market** | Romania only. Site is **Romanian-first**. |
 | **Languages** | RO (default). Services also offered in **EN, FR, DE** as an add-on. (German confirmed.) |
 | **Ideal clients** | Local service businesses, **medical clinics, law firms**, and similar professional practices. |
-| **Brand** | Personal brand, **Dragoș Cătană**. No studio name. |
+| **Brand** | Personal brand, **Dragoș Catană**. No studio name. |
 | **Pricing** | **Request a quote.** No prices shown anywhere. |
 | **Offers** | 1) **Free** one-off AI visibility audit · 2) One-off website design / redesign · 3) Monthly collaboration for SEO/GEO. |
 | **Platforms** | Custom Next.js (default), Webflow, Shopify, Medusa (see §5.4). |
@@ -33,7 +33,7 @@
 ## 1. What I learned from the repo
 
 ### Who Dragoș is (from `dragos_catana_profile.txt`)
-- **Dragoș-Mihai Cătană**, BSc Economics (English-taught), Babeș-Bolyai University (UBB FSEGA), Cluj-Napoca. 4.0/4.0 GPA; ranked top student across all English-taught programs (per Prof. Dan C. Lungescu, PhD).
+- **Dragoș-Mihai Catană**, BSc Economics (English-taught), Babeș-Bolyai University (UBB FSEGA), Cluj-Napoca. 4.0/4.0 GPA; ranked top student across all English-taught programs (per Prof. Dan C. Lungescu, PhD).
 - **International track:** EUTOPIA Alliance / Ecotopia (Paris, Year 2) with 84 ECTS passed in one year at a 4.0 GPA; SUNY Cortland exchange (USA, Year 3).
 - **Builder since 16:** 5+ years of venture building across two incubators. Ventures: apparel and DTC e-commerce, **digital marketing & agency work** (growth campaigns, client acquisition), solar feasibility consulting, Web3 advisory. 2nd place, UBB i-Lab Startup Competition.
 - **Other:** peer mentor who runs study cohorts, organized the FSEGA International Week concert, First Ascent Business Edition applicant.
@@ -78,7 +78,7 @@ People increasingly ask ChatGPT, Gemini, Perplexity, Claude and Google's AI answ
 ## 3. Brand
 
 ### Name & identity
-- **Brand:** `Dragoș Cătană`. Descriptor: *Web Design & AI Search Optimization* / RO: *Web design și optimizare pentru căutare AI*.
+- **Brand:** `Dragoș Catană`. Descriptor: *Web Design & AI Search Optimization* / RO: *Web design și optimizare pentru căutare AI*.
 - Keep diacritics in display text; ASCII in URLs and the domain (`dragoscatana.com`). Use **one consistent spelling everywhere** (site, LinkedIn, GitHub, directories). Entity consistency matters for AI systems.
 
 ### Voice
@@ -314,7 +314,7 @@ Honest premise: a new domain won't beat established agencies on broad terms like
 
 | Tier | Target (Romanian) | Intent | Why it's realistic |
 |------|-------------------|--------|--------------------|
-| **1. Brand/entity** | „Dragoș Cătană web design", „Dragoș Cătană SEO" | Navigational | Nobody competes; this is how AI and Google learn who you are. Rank #1 fast. |
+| **1. Brand/entity** | „Dragoș Catană web design", „Dragoș Catană SEO" | Navigational | Nobody competes; this is how AI and Google learn who you are. Rank #1 fast. |
 | **2. Niche + service** | „creare website clinică medicală", „redesign site cabinet medical", „website pentru avocați / cabinet de avocatură", „SEO pentru clinici medicale", „SEO pentru avocați" | Commercial | Specific audience, lower competition, high-value buyers. Main revenue targets. |
 | **3. AI/GEO topic (low competition in Romanian)** | „optimizare pentru ChatGPT", „cum apar în ChatGPT", „GEO optimizare motoare de căutare AI", „vizibilitate în răspunsuri AI" | Informational → commercial | Few Romanian pages cover this well. Chance to become the reference. |
 | **4. Local** | „freelancer web design Cluj-Napoca", „creare site Cluj-Napoca", „SEO Cluj-Napoca" | Commercial | Local intent, moderate competition. Strengthens with Google Business Profile and reviews. |

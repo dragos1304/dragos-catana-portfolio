@@ -44,10 +44,10 @@ The sitemap is live and valid. On 20 Nov 2026 it returned 200 with 37 URLs, it i
 
 | Field | Value |
 |---|---|
-| Name (person) | Dragoș Cătană |
+| Name (person) | Dragoș Catană |
 | Name without diacritics (if the form rejects ș/ă) | Dragos Catana |
-| Legal name | Dragoș-Mihai Cătană |
-| Business / profile name | Dragoș Cătană – Web Design & SEO |
+| Legal name | Dragoș-Mihai Catană |
+| Business / profile name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
 | English site | https://dragoscatana.com/en/ |
 | Location | Cluj-Napoca, Cluj County, Romania |
@@ -87,16 +87,16 @@ Web designer în Cluj-Napoca. Site-uri, SEO și vizibilitate în AI pentru clini
 ### Medium description, about 400 characters
 **EN**
 ```
-I'm Dragoș Cătană, a freelance web designer and SEO specialist in Cluj-Napoca, Romania. I redesign and build websites for clinics, law firms and local businesses, and I make them easy to find on Google and in AI assistants like ChatGPT, Gemini and Perplexity. You work with me directly, from the free audit to launch and maintenance. Every offer is custom; the first audit is free and done by hand within 24 hours.
+I'm Dragoș Catană, a freelance web designer and SEO specialist in Cluj-Napoca, Romania. I redesign and build websites for clinics, law firms and local businesses, and I make them easy to find on Google and in AI assistants like ChatGPT, Gemini and Perplexity. You work with me directly, from the free audit to launch and maintenance. Every offer is custom; the first audit is free and done by hand within 24 hours.
 ```
 **RO**
 ```
-Sunt Dragoș Cătană, web designer și specialist SEO din Cluj-Napoca. Fac redesign și site-uri noi pentru clinici, cabinete de avocatură și afaceri locale, și am grijă să fie ușor de găsit în Google și în asistenții AI precum ChatGPT, Gemini și Perplexity. Lucrezi direct cu mine, de la auditul gratuit până la lansare și mentenanță. Fiecare ofertă este personalizată; primul audit este gratuit, făcut manual, în 24 de ore.
+Sunt Dragoș Catană, web designer și specialist SEO din Cluj-Napoca. Fac redesign și site-uri noi pentru clinici, cabinete de avocatură și afaceri locale, și am grijă să fie ușor de găsit în Google și în asistenții AI precum ChatGPT, Gemini și Perplexity. Lucrezi direct cu mine, de la auditul gratuit până la lansare și mentenanță. Fiecare ofertă este personalizată; primul audit este gratuit, făcut manual, în 24 de ore.
 ```
 
 ### Long description, about 1,200 characters (EN)
 ```
-I'm Dragoș Cătană, a freelance web designer and SEO specialist based in Cluj-Napoca, Romania. I help clinics, law firms and local businesses get found: on Google, and in the answers of AI assistants like ChatGPT, Gemini and Perplexity.
+I'm Dragoș Catană, a freelance web designer and SEO specialist based in Cluj-Napoca, Romania. I help clinics, law firms and local businesses get found: on Google, and in the answers of AI assistants like ChatGPT, Gemini and Perplexity.
 
 What I do:
 • Website redesign: a faster, clearer site that keeps your existing Google rankings (301 redirects, clean URLs).
@@ -141,9 +141,9 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 
 | Field | Paste |
 |---|---|
-| Name | Dragoș Cătană |
+| Name | Dragoș Catană |
 | Primary job title | Web Designer & SEO Specialist |
-| Primary organization | Dragoș Cătană – Web Design & SEO (or "Self-employed") |
+| Primary organization | Dragoș Catană – Web Design & SEO (or "Self-employed") |
 | Location | Cluj-Napoca, Cluj, Romania |
 | Short description | EN short description (§1) |
 | Full description / bio | EN long description (§1) |
@@ -155,7 +155,7 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 **If you also add the Organization:**
 | Field | Paste |
 |---|---|
-| Organization name | Dragoș Cătană – Web Design & SEO |
+| Organization name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
 | Short description | `Websites, SEO and AI visibility for clinics, law firms and local businesses in Romania.` |
 | Industries | Web Design · Web Development · SEO · Digital Marketing |
@@ -164,7 +164,7 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 | Company type | For profit |
 | Operating status | Active |
 | Number of employees | 1–10 |
-| Founder | Dragoș Cătană |
+| Founder | Dragoș Catană |
 | Contact phone | +40 740 939 472 |
 
 ---
@@ -175,7 +175,7 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 
 | Field | Paste |
 |---|---|
-| Name | Dragoș Cătană |
+| Name | Dragoș Catană |
 | Location | Cluj-Napoca, Romania |
 | Bio | EN medium description (§1) |
 | Personal website | https://dragoscatana.com |
@@ -199,7 +199,7 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 
 | Field | Paste |
 |---|---|
-| First / last name | Dragoș / Cătană |
+| First / last name | Dragoș / Catană |
 | Occupation | Web Designer & SEO Specialist |
 | Company | Freelance |
 | Location | Cluj-Napoca, Romania |
@@ -227,7 +227,7 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 
 | Field | Paste |
 |---|---|
-| Company name | Dragoș Cătană – Web Design & SEO |
+| Company name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
 | Tagline | EN tagline (§1) |
 | Description | EN long description (§1) |
@@ -269,7 +269,7 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 
 | Field | Paste |
 |---|---|
-| Agency name | Dragoș Cătană – Web Design & SEO |
+| Agency name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
 | Tagline | EN tagline (§1) |
 | Overview | EN long description (§1) |
@@ -292,7 +292,7 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 
 | Field | Paste |
 |---|---|
-| Company name | Dragoș Cătană – Web Design & SEO |
+| Company name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
 | Tagline | EN tagline (§1) |
 | Summary | EN medium description (§1) |
@@ -315,4 +315,4 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 - [ ] Send me each profile URL. I'll add it to `social` in `lib/site-config.ts` and redeploy.
 - [ ] Ask Cheesy Media for one review on Clutch and one on GoodFirms, and on Google once the Business Profile is verified.
 - [ ] Use the same portrait on every profile once you have it.
-- [ ] Re-check in 4–6 weeks. Ask ChatGPT, Gemini and Perplexity: "Cine face site-uri pentru clinici în Cluj?" and "Who is Dragoș Cătană?". Note whether the profiles are cited.
+- [ ] Re-check in 4–6 weeks. Ask ChatGPT, Gemini and Perplexity: "Cine face site-uri pentru clinici în Cluj?" and "Who is Dragoș Catană?". Note whether the profiles are cited.

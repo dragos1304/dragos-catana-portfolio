@@ -200,7 +200,7 @@ if ($smtp) {
                 '',
                 'If you did not send this form, you can ignore this email.',
                 '',
-                'Dragoș Cătană',
+                'Dragoș Catană',
                 'https://dragoscatana.com/en/',
             ]);
         } else {
@@ -214,7 +214,7 @@ if ($smtp) {
                 '',
                 'Dacă nu ai trimis tu acest formular, poți ignora acest email.',
                 '',
-                'Dragoș Cătană',
+                'Dragoș Catană',
                 'https://dragoscatana.com',
             ]);
         }

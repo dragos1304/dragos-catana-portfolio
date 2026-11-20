@@ -1,4 +1,4 @@
-# Brand image: Dragoș Cătană
+# Brand image: Dragoș Catană
 
 **Document version:** v1
 **Last updated:** 2026-11-19

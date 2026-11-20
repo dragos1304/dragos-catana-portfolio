@@ -1,6 +1,7 @@
 // Builds lib/image-manifest.json from the WebP files in public/lucrari: for every image name,
 // the available widths and the real proportions. Shot and LighthouseReport read it, so a new
 // screenshot (any size, any ratio) needs no code change. Runs before every build (npm "prebuild").
+import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
@@ -28,7 +29,10 @@ for (const file of walk(root).filter((f) => f.endsWith(".webp")).sort()) {
   const name = m ? m[1] : base;
   const { w, h } = webpSize(file);
   const entry = (manifest[name] ??= { dir, variants: [] });
-  entry.variants.push({ src: `/${rel}`, w, h });
+  // Images are served with a one-year immutable cache, so the URL carries a content hash:
+  // replacing a screenshot under the same file name still reaches every browser.
+  const v = createHash("md5").update(readFileSync(file)).digest("hex").slice(0, 8);
+  entry.variants.push({ src: `/${rel}?v=${v}`, w, h });
 }
 for (const e of Object.values(manifest)) e.variants.sort((a, b) => a.w - b.w);
 writeFileSync("lib/image-manifest.json", JSON.stringify(manifest, null, 2) + "\n");

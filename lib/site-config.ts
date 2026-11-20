@@ -1,6 +1,6 @@
 export const site = {
-  name: "Dragoș Cătană",
-  legalName: "Dragoș-Mihai Cătană",
+  name: "Dragoș Catană",
+  legalName: "Dragoș-Mihai Catană",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dragoscatana.com",
   description:
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Pentru clinici, cabinete de avocatură și afaceri locale din România.",

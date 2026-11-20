@@ -73,13 +73,13 @@ const pages = proof.cheesy.sitemapPages;
 
 const copy: Record<Lang, Copy> = {
   ro: {
-    title: "Web designer freelancer din Cluj: site-uri și SEO | Dragoș Cătană",
+    title: "Web designer freelancer din Cluj: site-uri și SEO | Dragoș Catană",
     description: `Web designer freelancer din Cluj-Napoca: creare site și optimizare SEO pentru clinici, avocați și afaceri locale. Audit SEO gratuit în ${site.reply.ro}.`,
     label: "Web designer · Cluj-Napoca",
     h1: <>Clienții te caută.<br />Fă-i să te <span className="whitespace-nowrap"><Mark draw>găsească</Mark>.</span></>,
     lead: (l) => (
       <>
-        Sunt Dragoș Cătană. Fac <Link href={href("newSite", l)} className={linkCls}>creare de site-uri</Link> și{" "}
+        Sunt Dragoș Catană. Fac <Link href={href("newSite", l)} className={linkCls}>creare de site-uri</Link> și{" "}
         <Link href={href("seo", l)} className={linkCls}>optimizare SEO</Link> pentru clinici, cabinete de avocatură și afaceri locale, ca să apari în Google și în răspunsurile ChatGPT.
         {" "}Mă ocup personal de fiecare proiect: înțeleg ce caută clienții tăi și am grijă de fiecare detaliu.
       </>
@@ -162,13 +162,13 @@ const copy: Record<Lang, Copy> = {
     ],
   },
   en: {
-    title: "Web designer in Romania: websites & SEO | Dragoș Cătană",
+    title: "Web designer in Romania: websites & SEO | Dragoș Catană",
     description: `Web designer in Cluj-Napoca, Romania: websites, redesign and SEO for clinics, law firms and local businesses, so ChatGPT and Google can find you. Free audit in ${site.reply.hours}h.`,
     label: "Web designer · Cluj-Napoca",
     h1: <>Clients are searching.<br />Make sure they <span className="whitespace-nowrap"><Mark draw>find you</Mark>.</span></>,
     lead: (l) => (
       <>
-        I&apos;m Dragoș Cătană. I build <Link href={href("newSite", l)} className={linkCls}>websites</Link> and do{" "}
+        I&apos;m Dragoș Catană. I build <Link href={href("newSite", l)} className={linkCls}>websites</Link> and do{" "}
         <Link href={href("seo", l)} className={linkCls}>SEO</Link> for clinics, law firms and local businesses in Romania, so you show up on Google and in ChatGPT&apos;s answers.
         {" "}I look after every project personally: I learn what your clients are looking for and take care of every detail.
       </>

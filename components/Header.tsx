@@ -30,7 +30,7 @@ export function Header({ lang }: { lang: Lang }) {
     <header className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link href={href("home", lang)} className="font-serif text-xl font-extrabold text-ink" onClick={close}>
-          Dragoș Cătană<span aria-hidden className="text-orange">.</span>
+          Dragoș Catană<span aria-hidden className="text-orange">.</span>
         </Link>
         <nav aria-label={t.navLabel} className="hidden items-center gap-7 md:flex">
           {links.map((n) => (
