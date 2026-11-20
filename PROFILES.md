@@ -11,6 +11,32 @@ Everything you need to fill in Google Search Console, Bing Webmaster Tools and s
 
 ---
 
+## Which language where
+
+Your clients are mostly in Romania, so **everything they see is in Romanian**. Platforms that only work in English get English, and still name Cluj-Napoca and Romania so AI assistants connect them to Romanian searches. Language matters less than consistency: the same name, city, services and tagline everywhere.
+
+| Platform | Language | Why |
+|---|---|---|
+| Google Business Profile | Română | Where Romanian clients find you on Maps and in local search. |
+| Bing Places | Română | Import it from Google Business Profile; ChatGPT's web search uses Bing. |
+| Facebook page | Română | Romanian clients check it and leave reviews there. |
+| Instagram bio | Română | Your followers are local. |
+| WhatsApp Business profile | Română | Clients write to you directly. |
+| Romanian business directories (e.g. Cylex.ro, PaginiAurii.ro) | Română | Local listings AI assistants cite for "in Cluj" questions. |
+| YouTube | Română | Same language as the videos. |
+| LinkedIn | Română + English | Romanian as the main profile; add an English version with "Add profile in another language" for international contacts. |
+| Clutch | English | English-only platform; reviews are in English. |
+| GoodFirms | English | English-only platform. |
+| DesignRush | English | English-only platform. |
+| Crunchbase | English | International database; English is the norm. |
+| Dribbble | English | Global design community. |
+| Behance | English | Global design community. |
+| GitHub | English | Developer audience. |
+
+On the English profiles, link to https://dragoscatana.com/en/ only where the form allows a second link; the main website field stays https://dragoscatana.com.
+
+---
+
 ## 0. Sitemap: Google Search Console and Bing
 
 The sitemap is live and valid. On 20 Nov 2026 it returned 200 with 37 URLs, it is listed in `robots.txt`, and Googlebot and Bingbot can reach it. It only shows up in these tools after you submit it once.
@@ -69,33 +95,18 @@ The sitemap is live and valid. On 20 Nov 2026 it returned 200 with 37 URLs, it i
 | Profile photo | A real portrait (still on the TODO). Use the same photo everywhere. |
 | Cover / banner image | `public/lucrari/cheesy-media/site-desktop-1440.webp` (Cheesy Media redesign) |
 
-### Taglines (max. 50 characters)
-Pick one and use the same one everywhere: Romanian for Romanian sites, English for international directories (Clutch, GoodFirms, DesignRush, Crunchbase, Dribbble, Behance). Checked with the `romana` skill; none promises a ranking or a recommendation.
+### Tagline (use this one everywhere)
+| Language | Tagline | Characters |
+|---|---|---|
+| Română | `Fă-ți afacerea ușor de recomandat de AI` | 39 |
+| English | `Make your business easy for AI to recommend` | 43 |
 
-**Shortlist (your picks)**
+Same words on every profile, in the language of that profile (see "Which language where" above). Checked with the `romana` skill; it does not promise a recommendation.
 
-| # | Română | Car. | English | Char. |
-|---|---|---|---|---|
-| 1 | `Site-uri și SEO ca să te găsească Google și AI-ul` | 49 | `Websites and SEO so Google and AI can find you` | 46 |
-| 2 | `Clienții te caută. Fă-i să te găsească.` | 39 | `Clients are searching. Make sure they find you.` | 47 |
-| 3 | `Site-uri și SEO pentru afaceri locale din România` | 49 | `Web design and SEO for local businesses in Romania` | 50 |
+<details><summary>Other options considered</summary>
 
-**Customer-facing, about AI and websites**
-
-| # | Română | Car. | English | Char. |
-|---|---|---|---|---|
-| 4 | `Fă-ți afacerea ușor de recomandat de AI` | 39 | `Make your business easy for AI to recommend` | 43 |
-| 5 | `Clienții întreabă ChatGPT. Ce află despre tine?` | 47 | `Clients ask ChatGPT. What do they hear about you?` | 49 |
-| 6 | `Când clienții întreabă AI-ul, fii în răspuns` | 44 | `When clients ask AI, be part of the answer` | 42 |
-| 7 | `Site-ul tău, pe înțelesul clienților și al AI-ului` | 50 | `A website clients and AI both understand` | 40 |
-| 8 | `Fii găsit de clienți, oriunde te caută` | 38 | `Get found by clients, wherever they search` | 42 |
-| 9 | `Site-ul tău, pregătit pentru căutarea cu AI` | 43 | `Your website, ready for AI search` | 33 |
-| 10 | `Clienții întreabă AI-ul. Site-ul tău este gata?` | 47 | `Clients ask AI. Is your website ready?` | 38 |
-| 11 | `Fii ușor de găsit în Google și în ChatGPT` | 41 | `Be easy to find on Google and in ChatGPT` | 40 |
-| 12 | `Un site clar, pe care AI-ul îl poate recomanda` | 46 | `A clear website that AI can recommend` | 37 |
-| 13 | `Fă-te cunoscut acolo unde clienții întreabă` | 43 | `Be known where your clients ask` | 31 |
-
-**Default for the directory forms:** #3 in English, „Web design and SEO for local businesses in Romania”.
+Site-uri și SEO ca să te găsească Google și AI-ul · Clienții te caută. Fă-i să te găsească. · Site-uri și SEO pentru afaceri locale din România · Clienții întreabă ChatGPT. Ce află despre tine? · Când clienții întreabă AI-ul, fii în răspuns · Site-ul tău, pe înțelesul clienților și al AI-ului · Fii găsit de clienți, oriunde te caută · Site-ul tău, pregătit pentru căutarea cu AI · Clienții întreabă AI-ul. Site-ul tău este gata? · Fii ușor de găsit în Google și în ChatGPT · Un site clar, pe care AI-ul îl poate recomanda · Fă-te cunoscut acolo unde clienții întreabă
+</details>
 
 ### Short description, about 160 characters
 **EN**
@@ -252,7 +263,7 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 |---|---|
 | Company name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
-| Tagline | English tagline from §1 (default: #3) |
+| Tagline | `Make your business easy for AI to recommend` |
 | Description | EN long description (§1) |
 | Founded | `[year]` |
 | Employees | 1 (or "2–9" if 1 isn't offered) |
@@ -294,7 +305,7 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 |---|---|
 | Agency name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
-| Tagline | English tagline from §1 (default: #3) |
+| Tagline | `Make your business easy for AI to recommend` |
 | Overview | EN long description (§1) |
 | Founded | `[year]` |
 | Team size | 1–10 |
@@ -317,7 +328,7 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 |---|---|
 | Company name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
-| Tagline | English tagline from §1 (default: #3) |
+| Tagline | `Make your business easy for AI to recommend` |
 | Summary | EN medium description (§1) |
 | Detailed description | EN long description (§1) |
 | Founded | `[year]` |
