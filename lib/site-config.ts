@@ -25,6 +25,8 @@ export const social = {
   instagram: { name: "Instagram", url: "https://www.instagram.com/dragos_catana", sameAs: true },
   whatsapp: { name: "WhatsApp", url: `https://wa.me/${phone.e164.replace("+", "")}`, sameAs: false },
   github: { name: "GitHub", url: "https://github.com/dragos1304", sameAs: true },
+  behance: { name: "Behance", url: "https://www.behance.net/dragoscatana", sameAs: true },
+  dribbble: { name: "Dribbble", url: "https://dribbble.com/DragosCatana", sameAs: true },
 } as const;
 
 /** Profile URLs for schema.org `sameAs`. */
