@@ -32,7 +32,7 @@ If your plan has no PHP, set `NEXT_PUBLIC_FORM_ENDPOINT` at build time to a host
 - **After every deploy, purge the cache:** Cloudflare → dragoscatana.com → Caching → Configuration → **Purge Everything**. Otherwise visitors can see the previous version for up to 2 hours.
 
 ## 3c. Manual deploy through the File Manager (the method used so far)
-1. `npm run build`, then from `out/`: `zip -qr ../site-deploy-<date>.zip . -x "api/config.php"`.
+1. `npm run build`, then from `out/`: `zip -qr ../site-deploy-<date>.zip . -x "api/config.php" "*.DS_Store"`.
 2. Use a **new zip name every time**: the File Manager does not overwrite an existing file, so an old zip with the same name would be unpacked instead.
 3. Network Solutions → hosting details → File Manager → upload to `htdocs` → open the zip → **UnZip** → delete the zip.
 4. Purge the Cloudflare cache (3b), then check the site with a browser user agent.
