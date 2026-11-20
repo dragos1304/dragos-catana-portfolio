@@ -22,7 +22,7 @@ const workCopy = {
     lead: "Public doar ce e real și măsurabil. Pe măsură ce apar proiecte noi, le adaug aici.",
     desktopAlt: "Noul site Cheesy Media pe desktop", phoneAlt: "Noul site Cheesy Media pe telefon",
     kicker: "Redesign · Cluj-Napoca",
-    text: "Agenție foto-video și social media. De la o pagină lungă la un site complet: design nou, o pagină pentru fiecare serviciu și bază tehnică pentru Google și AI.",
+    text: "Agenție foto-video și social media. De la o pagină lungă la un site complet: design nou, o pagină pentru fiecare serviciu și o bază tehnică pregătită pentru Google și AI.",
     chips: [`Performanță ${perf.before} → ${perf.after}`, `${pagesAfter} pagini`, "Date structurate", "Pregătit pentru AI"],
     more: "Vezi studiul de caz →",
     ctaTitle: "Vrei să fii următorul proiect?", ctaText: `Începe cu un audit gratuit al site-ului tău, livrat în maximum ${site.reply.ro}.`,

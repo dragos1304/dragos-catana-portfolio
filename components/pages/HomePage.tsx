@@ -62,8 +62,6 @@ type Copy = {
   letterEyebrow: string;
   letterH2: ReactNode;
   letter: string[];
-  quote: string;
-  quoteBy: string;
   storyCta: string;
   faq: { q: string; a: string }[];
 };
@@ -79,9 +77,9 @@ const copy: Record<Lang, Copy> = {
     h1: <>Clienții te caută.<br />Fă-i să te <span className="whitespace-nowrap"><Mark draw>găsească</Mark>.</span></>,
     lead: (l) => (
       <>
-        Sunt Dragoș Catană. Fac <Link href={href("newSite", l)} className={linkCls}>creare de site-uri</Link> și{" "}
-        <Link href={href("seo", l)} className={linkCls}>optimizare SEO</Link> pentru clinici, cabinete de avocatură și afaceri locale, ca să apari în Google și în răspunsurile ChatGPT.
-        {" "}Mă ocup personal de fiecare proiect: înțeleg ce caută clienții tăi și am grijă de fiecare detaliu.
+        Sunt Dragoș Catană. <Link href={href("newSite", l)} className={linkCls}>Creez site-uri</Link> și fac{" "}
+        <Link href={href("seo", l)} className={linkCls}>optimizare SEO</Link> pentru clinici, cabinete de avocatură și afaceri locale, ca afacerea ta să apară în Google și în răspunsurile ChatGPT.
+        {" "}Mă ocup personal de fiecare proiect: înțeleg ce caută clienții tăi și am grijă de toate detaliile.
       </>
     ),
     heroPrimary: "Cere auditul gratuit",
@@ -95,8 +93,8 @@ const copy: Record<Lang, Copy> = {
     ],
     momentEyebrow: "Momentul în care îți dai seama",
     momentH2: <>Un pacient îți spune că a întrebat ChatGPT. Și i-a recomandat <span className="whitespace-nowrap"><Mark kind="underline">pe altcineva</Mark>.</span></>,
-    moment1: "Clienții tăi nu mai caută doar în Google. Întreabă un asistent AI și primesc un singur nume, direct în conversație. Asistentul alege afacerile pe care le înțelege și le poate verifica.",
-    moment2: "Majoritatea site-urilor locale nu sunt pregătite pentru asta. Acolo e avantajul tău, dacă acționezi primul.",
+    moment1: "Clienții tăi nu mai caută doar în Google. Întreabă un asistent AI și primesc câteva nume, direct în conversație. Asistentul alege afacerile pe care le înțelege și le poate verifica.",
+    moment2: "Multe site-uri locale nu sunt încă pregătite pentru asta. Aici este avantajul tău, dacă acționezi primul.",
     journeyEyebrow: "Drumul nostru, pas cu pas",
     journeyH2: <>De la „nu mă găsește nimeni” la <Accent>„m-a recomandat ChatGPT”.</Accent></>,
     journeyLead: "Cinci pași, fără surprize și fără intermediari. La fiecare pas știi ce faci tu și ce fac eu.",
@@ -107,7 +105,7 @@ const copy: Record<Lang, Copy> = {
     learnMore: "Află mai multe",
     workEyebrow: "Lucrare recentă",
     workH2: <>Cheesy Media: de la o pagină lungă la un <Accent className="text-orange">site complet.</Accent></>,
-    workLead: "Am refăcut site-ul unei agenții foto-video din Cluj-Napoca: design nou, o pagină pentru fiecare serviciu și bază tehnică pentru Google și AI.",
+    workLead: "Am refăcut site-ul unei agenții foto-video din Cluj-Napoca: design nou, o pagină pentru fiecare serviciu și o bază tehnică pregătită pentru Google și AI.",
     statPerformance: "Performanță pe mobil",
     statSitemap: "Adrese în sitemap",
     workCaseCta: "Vezi studiul de caz",
@@ -115,16 +113,16 @@ const copy: Record<Lang, Copy> = {
     shotDesktopAlt: "Pagina principală a noului site Cheesy Media pe desktop",
     shotPhoneAlt: "Același site Cheesy Media pe telefon",
     workCards: [
-      { shot: "before-home", alt: "Vechiul site Cheesy Media: o singură pagină violetă", tag: "Înainte", accent: false, text: "O singură pagină violetă, fără date structurate, declarată în engleză." },
-      { shot: "after-servicii", alt: "Pagina Servicii a noului site Cheesy Media", tag: "Design", accent: true, text: "Titluri mari, negru, crem și galben. Mascota păstrată, „Cere ofertă” mereu vizibil." },
-      { shot: "after-proces", alt: "Pagina Proces a noului site Cheesy Media", tag: "Google și AI", accent: true, text: "Limba română, date structurate pe fiecare pagină, întrebări frecvente, sitemap și acces pentru roboții AI." },
+      { shot: "before-home", alt: "Vechiul site Cheesy Media: o singură pagină violetă", tag: "Înainte", accent: false, text: "O singură pagină violetă, fără date structurate, cu limba setată greșit pe engleză." },
+      { shot: "after-servicii", alt: "Pagina Servicii a noului site Cheesy Media", tag: "Design", accent: true, text: "Titluri mari, în negru, crem și galben. Mascota a rămas, iar butonul „Cere ofertă” este mereu vizibil." },
+      { shot: "after-proces", alt: "Pagina Proces a noului site Cheesy Media", tag: "Google și AI", accent: true, text: "Limba română setată corect, date structurate pe fiecare pagină, întrebări frecvente, sitemap și acces pentru roboții AI." },
     ],
     whoEyebrow: "Pentru cine lucrez",
     whoH2: <>Antreprenori și cabinete locale, unde <Accent>încrederea decide.</Accent></>,
     audiences: [
       { icon: "clinic", t: "Clinici și cabinete medicale", d: "Pacienții compară înainte să sune. Site-ul trebuie să inspire calm, să arate echipa și să facă programarea ușoară.", page: "clinics" },
-      { icon: "law", t: "Cabinete de avocatură", d: "Clienții caută un specialist pe o problemă concretă. Pagini clare pe domenii de practică și un profil Google complet fac diferența.", page: "lawFirms" },
-      { icon: "local", t: "Afaceri locale de servicii", d: "Dacă oamenii te caută „în zona mea”, SEO local și vizibilitatea în AI aduc direct clienți.", page: "seo" },
+      { icon: "law", t: "Cabinete de avocatură", d: "Clienții caută un specialist pentru o problemă concretă. Pagini clare pe domenii de practică și un profil Google complet fac diferența.", page: "lawFirms" },
+      { icon: "local", t: "Afaceri locale de servicii", d: "Dacă oamenii te caută „în zona mea”, SEO-ul local și vizibilitatea în AI îți aduc clienți direct.", page: "seo" },
     ],
     seeHow: "Vezi cum lucrez",
     promisesEyebrow: "Cum lucrez cu tine",
@@ -133,31 +131,29 @@ const copy: Record<Lang, Copy> = {
       { t: "Aproape", d: "Vorbești mereu cu omul care face munca. Fără vânzători, fără intermediari." },
       { t: "Expert, pe limba ta", d: "Știu ce cer Google și asistenții AI și îți explic simplu, fără jargon. Tu decizi în cunoștință de cauză." },
       { t: "Sincer", d: "Îți spun ce merge, ce lipsește și ce nu se poate garanta. Fără cifre umflate și fără recenzii inventate." },
-      { t: "Grijuliu", d: "Nu fac nimic ireversibil fără acordul tău. La redesign păstrez ce funcționa în Google, iar după lansare rămân alături." },
+      { t: "Grijuliu", d: "Nu fac nimic ireversibil fără acordul tău. La redesign păstrez ce funcționa în Google, iar după lansare rămân alături de tine." },
     ],
     promiseLabel: "Promit",
     promiseItems: [
       `Răspund la orice mesaj în maximum ${site.reply.ro}.`,
       "Vezi fiecare etapă și nimic nu merge mai departe fără aprobarea ta.",
-      "Îți arăt rezultatele „înainte și după” pe aceleași întrebări din Google și ChatGPT.",
+      "Îți arăt rezultatele „înainte și după”, pentru aceleași întrebări puse în Google și în ChatGPT.",
     ],
     noPromiseLabel: "Nu promit",
     noPromise: "Locul 1 în Google sau o recomandare garantată în ChatGPT. Nimeni nu poate garanta asta, iar cine o face nu spune adevărul. Promit un proces măsurabil și transparent.",
     letterEyebrow: "O scrisoare de la mine",
     letterH2: <>De ce <Mark kind="underline">fac asta.</Mark></>,
     letter: [
-      "Am început să construiesc afaceri la 16 ani: magazine online, apoi marketing pentru alții. Am învățat repede un lucru incomod: un produs bun nu ajunge nicăieri dacă oamenii nu îl găsesc și nu au încredere în el.",
-      "Studiez Economia la Universitatea Babeș-Bolyai din Cluj, cu schimburi la Paris și în statul New York. Gândesc în costuri, riscuri și rezultate, așa că judec un site după ce aduce afacerii tale, nu după cât de spectaculos arată.",
+      "Am pus pe picioare primele afaceri la 16 ani: magazine online, apoi campanii de marketing pentru alții. Am învățat repede un lucru incomod: un produs bun nu ajunge nicăieri dacă oamenii nu îl găsesc și nu au încredere în el.",
+      "Studiez economie la Universitatea Babeș-Bolyai din Cluj, cu schimburi la Paris și în statul New York. Mă gândesc la costuri, riscuri și rezultate, așa că judec un site după ce îi aduce afacerii tale, nu după cât de spectaculos arată.",
       "Lucrez direct cu fiecare client. Omul cu care vorbești la prima discuție este cel care îți face auditul, îți construiește site-ul și îți răspunde la mesaje, așa că nimic din ce mi-ai spus nu se pierde pe drum.",
     ],
-    quote: "„He was one of the few students I have worked with who managed to engage the majority of the audience… making him the person his peers would turn to when they felt stuck.”",
-    quoteBy: "Lect. univ. dr. Dan C. Lungescu, Universitatea Babeș-Bolyai (citat original în engleză)",
     storyCta: "Citește povestea completă",
     faq: [
-      { q: "Ce înseamnă să fii „recomandat de AI”?", a: "Mulți clienți întreabă acum ChatGPT, Gemini sau Perplexity „cine e un bun avocat sau o bună clinică în orașul meu?”. Asistentul alege dintre sursele pe care le înțelege și în care are încredere. Optimizarea pentru AI (GEO) înseamnă că site-ul și prezența ta online sunt clare, consecvente și ușor de citat." },
+      { q: "Ce înseamnă să fii „recomandat de AI”?", a: "Mulți clienți întreabă acum ChatGPT, Gemini sau Perplexity „ce avocat bun sau ce clinică bună îmi recomanzi în orașul meu?”. Asistentul alege dintre sursele pe care le înțelege și în care are încredere. Optimizarea pentru AI (GEO) înseamnă să-ți faci site-ul și prezența online clare, consecvente și ușor de citat." },
       { q: "Poți garanta locul 1 în Google sau în ChatGPT?", a: "Nu, și nimeni nu poate. Rezultatele variază, iar modelele se actualizează în ritmul lor. Promit un proces măsurabil: testez întrebările reale ale clienților tăi înainte și după, iar tu vezi exact ce s-a schimbat." },
-      { q: "Cât costă un site sau optimizarea SEO?", a: "Depinde de proiect, așa că nu afișez prețuri fixe. Auditul inițial e gratuit. Pentru creare site, redesign sau o colaborare lunară de SEO, îți trimit o ofertă clară după o discuție scurtă." },
-      { q: "Lucrezi doar în Cluj-Napoca?", a: "Locuiesc în Cluj-Napoca, dar lucrez online cu antreprenori din toată România. Serviciile pot fi oferite și în engleză, franceză sau germană, ca opțiune suplimentară." },
+      { q: "Cât costă un site sau optimizarea SEO?", a: "Depinde de proiect, așa că nu afișez prețuri fixe. Auditul inițial este gratuit. Pentru un site nou, un redesign sau o colaborare lunară de SEO, îți trimit o ofertă clară după o discuție scurtă." },
+      { q: "Lucrezi doar în Cluj-Napoca?", a: "Locuiesc în Cluj-Napoca, dar lucrez online cu antreprenori din toată România. Pot livra site-ul și în engleză, franceză sau germană, ca opțiune suplimentară." },
       { q: "Cu cine vorbesc, de fapt?", a: `Cu mine, Dragoș. Nu sunt o agenție: eu fac auditul, eu construiesc site-ul și tot eu îți răspund la mesaje, în maximum ${site.reply.ro}.` },
     ],
   },
@@ -239,8 +235,6 @@ const copy: Record<Lang, Copy> = {
       "I study Economics at Babeș-Bolyai University in Cluj, with exchanges in Paris and New York State. I think in costs, risk and results, so I judge a website by what it brings your business, not by how flashy it looks.",
       "I work directly with every client. The person you speak to on the first call is the one who does your audit, builds your site and answers your messages, so nothing you tell me gets lost along the way.",
     ],
-    quote: "“He was one of the few students I have worked with who managed to engage the majority of the audience… making him the person his peers would turn to when they felt stuck.”",
-    quoteBy: "Dan C. Lungescu, PhD, lecturer, Babeș-Bolyai University",
     storyCta: "Read the full story",
     faq: [
       { q: "What does it mean to be “recommended by AI”?", a: "Many clients now ask ChatGPT, Gemini or Perplexity “who is a good lawyer or clinic in my city?”. The assistant picks from sources it understands and trusts. Optimising for AI (GEO) means your website and your presence online are clear, consistent and easy to quote." },
@@ -441,10 +435,6 @@ export function HomePage({ lang }: { lang: Lang }) {
               {c.letter.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
               <p className="font-accent text-3xl italic">— Dragoș</p>
             </div>
-            <figure className="mt-10 rounded-3xl bg-paper p-6 sm:p-8">
-              <blockquote lang="en" className="font-serif text-xl font-bold leading-snug text-ink">{c.quote}</blockquote>
-              <figcaption className="mt-3 text-[15px] text-muted">{c.quoteBy}</figcaption>
-            </figure>
             <div className="mt-8"><Button href={href("about", lang)} variant="ghost">{c.storyCta}</Button></div>
           </div>
         </div>

@@ -9,7 +9,7 @@ export const journey = [
     when: "Ziua 1 · 2 minute",
     title: "Ceri auditul gratuit",
     you: "Completezi un formular scurt: site-ul, orașul și ce fel de afacere ai.",
-    me: "Îți verific manual site-ul, Google și ce răspund ChatGPT, Gemini și Perplexity la întrebările clienților tăi.",
+    me: "Îți verific manual site-ul, cum apari în Google și ce răspund ChatGPT, Gemini și Perplexity la întrebările clienților tăi.",
   },
   {
     n: "02",
@@ -23,13 +23,13 @@ export const journey = [
     when: "O discuție de 30 de minute",
     title: "Stabilim planul împreună",
     you: "Îmi spui ce vrei: mai multe programări, mai multe cereri, un site care nu te mai jenează.",
-    me: "Îți propun pașii în ordinea impactului și o ofertă clară. Vorbești cu omul care face munca.",
+    me: "Îți propun pașii, în ordinea importanței, și o ofertă clară. Vorbești cu omul care face munca.",
   },
   {
     n: "04",
     when: "Construire și optimizare",
     title: "Construiesc, iar tu vezi fiecare etapă",
-    you: "Primești progresul pe etape și aprobi ce contează: texte, pagini, imagini.",
+    you: "Vezi progresul la fiecare etapă și aprobi ce contează: texte, pagini, imagini.",
     me: "Design, cod, conținut, date structurate și profilul Google. Rapid, clar și ușor de citat de AI.",
   },
   {
@@ -37,7 +37,7 @@ export const journey = [
     when: "Măsurare",
     title: "Vedem ce s-a schimbat",
     you: "Primești un raport scurt: unde apari acum în Google și în răspunsurile AI.",
-    me: "Retestez aceleași întrebări de la început, ca să vezi diferența, nu doar să o auzi de la mine.",
+    me: "Testez din nou întrebările de la început, ca să vezi singur diferența, nu doar să afli de la mine.",
   },
 ] as const;
 

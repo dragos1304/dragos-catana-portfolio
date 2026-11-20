@@ -30,7 +30,7 @@ export const ui = {
     faqTitle: "Întrebări frecvente",
     ctaEyebrow: "Primul pas",
     ctaTitle: "Vrei să știi dacă AI-ul îți recomandă afacerea?",
-    ctaText: `Primești un audit manual gratuit, în maximum ${site.reply.ro}. Fără obligații.`,
+    ctaText: `Primești un audit gratuit, făcut manual, în maximum ${site.reply.ro}. Fără obligații.`,
     ctaPrimary: "Cere auditul gratuit",
     ctaSecondary: "Programează o discuție",
   },

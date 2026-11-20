@@ -30,7 +30,7 @@ export const articles: Article[] = [
     blocks: [
       { t: "p", text: "GEO (Generative Engine Optimization) sau AEO (Answer Engine Optimization) înseamnă să-ți faci afacerea ușor de înțeles și de citat pentru asistenții AI, precum ChatGPT, Gemini, Claude sau Perplexity. Scopul nu mai e doar un loc în lista de rezultate, ci să fii menționat, corect, în răspunsul pe care îl primește omul." },
       { t: "h2", text: "De ce contează pentru o afacere locală" },
-      { t: "p", text: "Un pacient sau un client poate întreba direct un asistent: „care e o clinică bună în orașul meu?” sau „ce avocat se ocupă de dreptul muncii?”. Răspunsul conține câteva nume, uneori cu surse. Dacă ești în acel răspuns, ești luat în calcul. Dacă nu, concurentul tău poate câștiga clientul fără ca tu să afli vreodată că a existat căutarea." },
+      { t: "p", text: "Un pacient sau un client poate întreba direct un asistent: „care este o clinică bună din orașul meu?” sau „ce avocat se ocupă de dreptul muncii?”. Răspunsul conține câteva nume, uneori cu surse. Dacă ești în acel răspuns, ești luat în calcul. Dacă nu, concurentul tău poate câștiga clientul fără ca tu să afli vreodată că a existat căutarea." },
       { t: "h2", text: "Cum ajung asistenții AI să recomande o afacere" },
       { t: "p", text: "Nu există o formulă publică și fixă. Totuși, în practică, asistenții se bazează pe două lucruri: ce au învățat în timpul antrenării și, la mulți dintre ei, pe căutări web în timp real, din care citează surse. De aceea contează să fii clar, consecvent și ușor de verificat în mai multe locuri, nu doar pe site." },
       { t: "h2", text: "SEO clasic și GEO: ce se schimbă" },
@@ -78,7 +78,7 @@ export const articles: Article[] = [
       { t: "h2", text: "Pasul 1: alege 6–10 întrebări reale" },
       { t: "p", text: "Gândește-te cum ar întreba un client care nu te cunoaște. Amestecă tipurile de întrebări:" },
       { t: "ul", items: [
-        "Căutare generală: „care e o clinică stomatologică bună în Cluj-Napoca?”",
+        "Căutare generală: „care este o clinică stomatologică bună din Cluj-Napoca?”",
         "Problemă concretă: „la cine merg pentru un litigiu de muncă în Cluj?”",
         "Comparație: „[numele tău] sau [concurent], ce să aleg?”",
         "Nume direct: „ce părere ai despre [numele afacerii tale]?”",
@@ -177,7 +177,7 @@ export const articles: Article[] = [
       { t: "h2", text: "5. Testează înainte de lansare" },
       { t: "ul", items: [
         "Lucrează pe o versiune de test, blocată pentru motoarele de căutare.",
-        "Înainte de lansare, scoate blocajul de indexare. Uitarea unui „noindex” e o greșeală frecventă.",
+        "Înainte de lansare, scoate blocajul de indexare. Uitarea unui „noindex” este o greșeală frecventă.",
         "Verifică redirecționările, titlurile, descrierile, linkurile și datele structurate.",
       ] },
       { t: "h2", text: "6. Lansează și trimite sitemapul" },

@@ -1,7 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 
 const text = {
-  ro: { aria: "Exemplu ilustrativ de răspuns AI", caption: "Exemplu ilustrativ, nu un răspuns real", q: "Care e o clinică stomatologică bună în orașul meu, cu programări online?", a1: "Îți recomand", name: "Clinica Exemplu", a2: ": site clar, program și prețuri orientative la vedere, recenzii recente și programare online.", src: "Surse: site-ul clinicii, profilul Google, un articol de ghid local.", foot: "AI-ul recomandă ce poate înțelege și verifica. Munca mea e să te fac ușor de înțeles și de verificat." },
+  ro: { aria: "Exemplu ilustrativ de răspuns AI", caption: "Exemplu ilustrativ", q: "Care este o clinică stomatologică bună din orașul meu, cu programări online?", a1: "Îți recomand", name: "Clinica Exemplu", a2: ": site clar, program și prețuri orientative la vedere, recenzii recente și programare online.", src: "Surse: site-ul clinicii, profilul Google, un articol de ghid local.", foot: "AI-ul recomandă ce poate înțelege și verifica. Munca mea este să te fac ușor de înțeles și de verificat." },
   en: { aria: "Illustrative example of an AI answer", caption: "Illustrative example, not a real answer", q: "What's a good dental clinic in my city with online booking?", a1: "I'd recommend", name: "Example Clinic", a2: ": a clear website, opening hours and price ranges on show, recent reviews and online booking.", src: "Sources: the clinic's website, its Google profile, a local guide article.", foot: "AI recommends what it can understand and verify. My job is to make you easy to understand and to verify." },
 } as const;
 

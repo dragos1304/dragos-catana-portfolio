@@ -87,7 +87,7 @@ const auditCopy = {
     h1a: "Audit SEO gratuit: te recomandă Google și ", h1b: "ChatGPT", h1c: "?",
     lead: "Îți arăt cum apare afacerea ta acum în Google și în răspunsurile asistenților AI, și ce poți face dacă nu apari.",
     h2: "Ce primești în auditul gratuit",
-    items: ["Testul întrebărilor reale ale clienților tăi, în mai mulți asistenți AI", "Dacă ești menționat, pe ce loc și cum ești descris", "Ce concurenți apar în locul tău", "O listă scurtă de pași, în ordinea impactului"],
+    items: ["Testul întrebărilor reale ale clienților tăi, în mai mulți asistenți AI", "Dacă ești menționat, pe ce loc și cum ești descris", "Ce concurenți apar în locul tău", "O listă scurtă de pași, în ordinea importanței"],
     note: `Răspund în maximum ${site.reply.ro}. Nu trebuie să continui cu mine după audit. Preferi să vorbim direct?`,
     book: "Programează o discuție",
   },

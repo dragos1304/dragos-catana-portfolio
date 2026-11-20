@@ -93,13 +93,13 @@ type ServiceCopy = { title: string; short: string; points: readonly string[] };
 const SERVICES: readonly { key: PageKey; flagship?: boolean; ro: ServiceCopy; en: ServiceCopy; formLabel: { ro: string; en: string } }[] = [
   {
     key: "redesign",
-    ro: { title: "Redesign de website", short: "Site-ul tău arată ca în 2015? Îl reconstruiesc modern, rapid și fără să pierzi pozițiile din Google.", points: ["Design nou și coerent", "Migrare sigură, cu redirecționări 301", "Conținut structurat ca AI-ul să te citeze"] },
+    ro: { title: "Redesign de website", short: "Site-ul tău arată ca în 2015? Îl reconstruiesc modern, rapid și fără să pierzi pozițiile din Google.", points: ["Design nou și coerent", "Migrare sigură, cu redirecționări 301", "Conținut structurat, ca AI-ul să te poată cita"] },
     en: { title: "Website redesign", short: "Does your site look and feel like 2015? I rebuild it modern and fast, without losing your Google rankings.", points: ["A new, consistent design", "Safe migration with 301 redirects", "Content structured so AI can cite you"] },
     formLabel: { ro: "Redesign de website", en: "Website redesign" },
   },
   {
     key: "newSite",
-    ro: { title: "Creare de website", short: "Un website rapid și clar, construit să fie găsit din prima zi, în cod propriu, Webflow sau Shopify.", points: ["Next.js, Webflow, Shopify sau Medusa", "SEO și date structurate incluse", "Formulare, programări, analiză"] },
+    ro: { title: "Creare de website", short: "Un website rapid și clar, construit ca să fie găsit din prima zi, în cod propriu, Webflow sau Shopify.", points: ["Next.js, Webflow, Shopify sau Medusa", "SEO și date structurate incluse", "Formulare, programări, analiză"] },
     en: { title: "New website", short: "A fast, clear website built to be found from day one, in custom code, Webflow or Shopify.", points: ["Next.js, Webflow, Shopify or Medusa", "SEO and structured data included", "Forms, bookings, analytics"] },
     formLabel: { ro: "Website nou", en: "New website" },
   },

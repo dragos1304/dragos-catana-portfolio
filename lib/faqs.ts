@@ -97,7 +97,7 @@ export const faqs = {
   },
   audit: {
     ro: [
-      { q: "Ce conține auditul gratuit?", a: "Testez întrebările reale ale clienților tăi în ChatGPT, Gemini și Perplexity, verific cum apari în Google și ce concurenți apar în locul tău, apoi îți trimit o listă scurtă de pași, în ordinea impactului." },
+      { q: "Ce conține auditul gratuit?", a: "Testez întrebările reale ale clienților tăi în ChatGPT, Gemini și Perplexity, verific cum apari în Google și ce concurenți apar în locul tău, apoi îți trimit o listă scurtă de pași, în ordinea importanței." },
       { q: "Auditul chiar e gratuit?", a: `Da. E făcut manual, livrat în maximum ${site.reply.ro}, și nu te obligă să continui cu mine.` },
       { q: "Cum aflu dacă ChatGPT îmi recomandă afacerea?", a: "Pune-i întrebările pe care le-ar pune un client („ce clinică stomatologică îmi recomanzi în [oraș]?”) și notează dacă apari, pe ce loc și cum ești descris. Auditul face asta pentru tine, în mai mulți asistenți AI." },
       { q: "De ce nu apare afacerea mea în răspunsurile AI?", a: "De obicei pentru că informațiile despre tine sunt puține, neclare sau diferite de la o sursă la alta: site fără date structurate, profil Google incomplet, puține recenzii sau mențiuni. Auditul îți arată exact ce lipsește." },
@@ -117,8 +117,8 @@ export const faqs = {
 export const aiQuestions = {
   home: {
     ro: [
-      { q: "Cine face site-uri și SEO pentru clinici și cabinete de avocatură în Cluj-Napoca?", a: `${who.ro}, face creare și redesign de site-uri, SEO și optimizare pentru ChatGPT, Gemini și Perplexity pentru clinici, cabinete de avocatură și afaceri locale din toată România. Primul pas este un audit gratuit, livrat în maximum ${site.reply.ro}.` },
-      { q: "Cum fac ca ChatGPT să-mi recomande afacerea?", a: "Nu există un buton pentru asta. Asistenții AI recomandă afacerile pe care le înțeleg și le pot verifica: un site clar, cu date structurate și răspunsuri la întrebările clienților, un profil Google complet, recenzii reale și aceleași informații peste tot. Acolo te ajut, măsurând înainte și după." },
+      { q: "Cine face site-uri și SEO pentru clinici și cabinete de avocatură în Cluj-Napoca?", a: `${who.ro}, creează și reface site-uri și face SEO și optimizare pentru ChatGPT, Gemini și Perplexity pentru clinici, cabinete de avocatură și afaceri locale din toată România. Primul pas este un audit gratuit, livrat în maximum ${site.reply.ro}.` },
+      { q: "Cum fac ca ChatGPT să-mi recomande afacerea?", a: "Nu există un buton pentru asta. Asistenții AI recomandă afacerile pe care le înțeleg și le pot verifica: un site clar, cu date structurate și răspunsuri la întrebările clienților, un profil Google complet, recenzii reale și aceleași informații peste tot. Te ajut cu toate acestea și măsor rezultatul înainte și după." },
     ],
     en: [
       { q: "Who builds websites and does SEO for clinics and law firms in Romania?", a: `${who.en}, builds and redesigns websites and does SEO and optimisation for ChatGPT, Gemini and Perplexity for clinics, law firms and local businesses across Romania. The first step is a free audit, delivered within ${site.reply.en}.` },
