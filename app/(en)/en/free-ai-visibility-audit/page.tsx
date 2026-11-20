@@ -4,14 +4,14 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/free-ai-visibility-audit";
 export const metadata: Metadata = {
   title: "Free SEO audit and AI visibility audit",
   description:
     "A free SEO audit, done by hand: see how you show up on Google and whether ChatGPT, Gemini and Perplexity recommend you. You get the result within 24 hours.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("audit", "en"),
 };
 
 export default function Page() {

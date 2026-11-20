@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
-import type { Lang } from "@/lib/i18n";
+import { serviceOptions, type Lang } from "@/lib/site-map";
 
 type Kind = "audit" | "contact";
 const inputCls =
@@ -26,7 +26,6 @@ const text = {
     competitorsPh: "Adresele site-urilor sau numele lor",
     need: "De ce ai nevoie?",
     choose: "Alege o opțiune",
-    needs: ["Redesign de website", "Website nou", "SEO și vizibilitate în AI (colaborare lunară)", "Mentenanță site", "Altceva"],
     message: "Spune-mi pe scurt despre proiect",
     consentA: "Sunt de acord ca datele mele să fie folosite pentru a-mi răspunde, conform",
     consentLink: "politicii de confidențialitate",
@@ -54,7 +53,6 @@ const text = {
     competitorsPh: "Their websites or names",
     need: "What do you need?",
     choose: "Choose an option",
-    needs: ["Website redesign", "New website", "SEO and AI visibility (monthly)", "Website maintenance", "Something else"],
     message: "Tell me briefly about the project",
     consentA: "I agree that my data is used to reply to me, as described in the",
     consentLink: "privacy policy (Romanian)",
@@ -141,7 +139,7 @@ export function LeadForm({ kind, lang = "ro" }: { kind: Kind; lang?: Lang }) {
           <label className="block text-sm font-medium">{t.need}
             <select className={inputCls} name="need" defaultValue="" required>
               <option value="" disabled>{t.choose}</option>
-              {t.needs.map((n) => <option key={n}>{n}</option>)}
+              {serviceOptions(lang).map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
           </label>
           <label className="block text-sm font-medium">{t.message}

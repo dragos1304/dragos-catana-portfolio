@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { VerticalPage } from "@/components/VerticalPage";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/services/clinic-websites";
 export const metadata: Metadata = {
   title: "Websites for clinics in Romania",
   description:
     "Websites for clinics and medical practices: fast, credible, with online booking, specialty pages and visibility on Google and in AI. Get a quote.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("clinics", "en"),
 };
 
 export default function Page() {

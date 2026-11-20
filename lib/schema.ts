@@ -1,4 +1,5 @@
-import { site, services } from "./site-config";
+import { site } from "./site-config";
+import { services } from "./site-map";
 
 export const abs = (path: string) => `${site.url}${path === "/" ? "/" : path.replace(/\/?$/, "/")}`;
 
@@ -33,7 +34,7 @@ export const siteSchema = {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Servicii",
-        itemListElement: services.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.title, url: `${site.url}/servicii/${s.slug}/` } })),
+        itemListElement: services("ro").map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.title, url: `${site.url}${s.href}` } })),
       },
       areaServed: { "@type": "Country", name: "România" },
       address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "RO" },

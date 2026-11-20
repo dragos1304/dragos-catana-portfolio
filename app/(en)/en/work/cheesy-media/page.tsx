@@ -5,14 +5,14 @@ import { JsonLd } from "@/components/JsonLd";
 import { Shot } from "@/components/Shot";
 import { abs, breadcrumb } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/work/cheesy-media";
 export const metadata: Metadata = {
   title: "Case study: Cheesy Media website redesign",
   description:
     "Redesign for a photo and video agency in Cluj: new design, 11 pages, structured data, ready for Google and AI. Mobile performance 82 → 100.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("cheesy", "en"),
 };
 
 const scores = [

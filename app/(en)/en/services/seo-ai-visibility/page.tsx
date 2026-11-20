@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/services/seo-ai-visibility";
 export const metadata: Metadata = {
   title: "SEO in Romania and visibility in ChatGPT (GEO)",
   description:
     "SEO for local businesses in Romania: search optimisation, local SEO and visibility in ChatGPT, Gemini and Perplexity. Free SEO audit within 24 hours.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("seo", "en"),
 };
 
 const faq = [

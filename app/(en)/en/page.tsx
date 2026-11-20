@@ -6,14 +6,13 @@ import { AnswerCard } from "@/components/AnswerCard";
 import { Shot } from "@/components/Shot";
 import { Journey, JourneyEnds } from "@/components/Journey";
 import { site } from "@/lib/site-config";
-import { servicesEn } from "@/lib/site-config-en";
-import { alternates } from "@/lib/i18n";
+import { alternates, services } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: { absolute: "Web designer in Romania: websites & SEO | Dragoș Cătană" },
   description:
     "Web designer in Cluj-Napoca, Romania: websites, redesign and SEO for clinics, law firms and local businesses, so ChatGPT and Google can find you. Free audit in 24h.",
-  alternates: alternates("/en/", "en"),
+  alternates: alternates("home", "en"),
 };
 
 const faq = [
@@ -142,8 +141,8 @@ export default function HomeEn() {
         <Eyebrow>Services</Eyebrow>
         <H2>Four services. One goal: <span className="whitespace-nowrap"><Mark kind="underline">being chosen</Mark>.</span></H2>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {servicesEn.map((s, i) => (
-            <Link key={s.slug} href={`/en/services/${s.slug}`}
+          {services("en").map((s, i) => (
+            <Link key={s.key} href={s.href}
               className={`group relative flex min-h-[340px] flex-col rounded-3xl p-7 transition-transform duration-200 hover:-translate-y-1 ${tileStyle[i % 3]}`}>
               {s.flagship && <span className="mb-4 w-fit rounded-full bg-ink px-3 py-1 text-xs font-semibold uppercase tracking-wider text-paper">Main service</span>}
               <h3 className="font-serif text-3xl font-extrabold leading-[1.05]">{s.title}</h3>

@@ -1,58 +1,14 @@
-/** Romanian is the main language; English lives under /en/. Only pages with a twin get hreflang. */
-export type Lang = "ro" | "en";
-
-/** Romanian path → English path. Paths end with a slash (trailingSlash: true). */
-export const pairs: Record<string, string> = {
-  "/": "/en/",
-  "/servicii/": "/en/services/",
-  "/servicii/redesign-website/": "/en/services/website-redesign/",
-  "/servicii/creare-website/": "/en/services/website-design/",
-  "/servicii/seo-vizibilitate-ai/": "/en/services/seo-ai-visibility/",
-  "/servicii/mentenanta-site/": "/en/services/website-maintenance/",
-  "/servicii/website-clinici-medicale/": "/en/services/clinic-websites/",
-  "/servicii/website-cabinete-avocatura/": "/en/services/law-firm-websites/",
-  "/lucrari/": "/en/work/",
-  "/lucrari/cheesy-media/": "/en/work/cheesy-media/",
-  "/despre/": "/en/about/",
-  "/contact/": "/en/contact/",
-  "/audit-gratuit-vizibilitate-ai/": "/en/free-ai-visibility-audit/",
-};
-const reverse = Object.fromEntries(Object.entries(pairs).map(([ro, en]) => [en, ro]));
-
-const slash = (p: string) => (p.endsWith("/") ? p : `${p}/`);
-
-/** The same page in the other language, or that language's home page when there is no twin. */
-export function otherLangPath(path: string, from: Lang): string {
-  const p = slash(path);
-  return from === "ro" ? pairs[p] ?? "/en/" : reverse[p] ?? "/";
-}
-
-/** Next metadata `alternates` for a page: canonical plus reciprocal hreflang (ro, en, x-default = ro). */
-export function alternates(path: string, lang: Lang) {
-  const p = slash(path);
-  const ro = lang === "ro" ? p : reverse[p];
-  const en = lang === "en" ? p : pairs[p];
-  if (!ro || !en) return { canonical: p };
-  return { canonical: p, languages: { ro, en, "x-default": ro } };
-}
+/** Interface strings for shared modules. Pages, paths and twins live in lib/site-map.ts. */
+export type { Lang } from "./site-map";
 
 /** Strings used by shared components (header, footer, form, banner, bands). */
 export const ui = {
   ro: {
-    home: "/",
     homeLabel: "Acasă",
     skip: "Sari la conținut",
-    nav: [
-      { href: "/servicii", label: "Servicii" },
-      { href: "/lucrari", label: "Lucrări" },
-      { href: "/articole", label: "Articole" },
-      { href: "/despre", label: "Despre" },
-      { href: "/contact", label: "Contact" },
-    ],
     navLabel: "Principal",
     navMobileLabel: "Principal mobil",
     menu: "Meniu",
-    auditHref: "/audit-gratuit-vizibilitate-ai",
     auditCta: "Audit gratuit AI",
     switchLabel: "English",
     switchShort: "EN",
@@ -77,19 +33,11 @@ export const ui = {
     ctaSecondary: "Programează o discuție",
   },
   en: {
-    home: "/en/",
     homeLabel: "Home",
     skip: "Skip to content",
-    nav: [
-      { href: "/en/services", label: "Services" },
-      { href: "/en/work", label: "Work" },
-      { href: "/en/about", label: "About" },
-      { href: "/en/contact", label: "Contact" },
-    ],
     navLabel: "Main",
     navMobileLabel: "Main mobile",
     menu: "Menu",
-    auditHref: "/en/free-ai-visibility-audit",
     auditCta: "Free AI audit",
     switchLabel: "Română",
     switchShort: "RO",

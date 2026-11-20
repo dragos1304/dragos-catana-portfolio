@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Breadcrumbs, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, personSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: "About me: economist and web designer",
   description:
     "Economics student (4.0 GPA) at Babeș-Bolyai University, with exchanges in Paris and the US, building businesses since 16. The story behind my work.",
-  alternates: alternates("/en/about/", "en"),
+  alternates: alternates("about", "en"),
 };
 
 const ventures = [

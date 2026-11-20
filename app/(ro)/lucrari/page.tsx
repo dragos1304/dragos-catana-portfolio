@@ -4,12 +4,12 @@ import { Breadcrumbs, CtaBand, Eyebrow, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 import { Shot } from "@/components/Shot";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: "Portofoliu web design și studii de caz",
   description: "Proiecte de redesign și creare de website-uri, cu rezultate măsurate. Începe cu Cheesy Media, o agenție foto-video din Cluj-Napoca.",
-  alternates: alternates("/lucrari/", "ro"),
+  alternates: alternates("work", "ro"),
 };
 
 export default function Lucrari() {

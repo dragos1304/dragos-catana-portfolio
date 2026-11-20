@@ -4,14 +4,14 @@ import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/compo
 import { Guides } from "@/components/Guides";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/servicii/seo-vizibilitate-ai";
 export const metadata: Metadata = {
   title: "Optimizare SEO și vizibilitate în ChatGPT (GEO)",
   description:
     "Servicii SEO pentru afaceri locale din România: optimizare SEO, SEO local și vizibilitate în ChatGPT, Gemini și Perplexity. Audit SEO gratuit în 24 de ore.",
-  alternates: alternates(`${path}/`, "ro"),
+  alternates: alternates("seo", "ro"),
 };
 
 const faq = [

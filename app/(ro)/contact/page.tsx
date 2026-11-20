@@ -5,12 +5,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 import { site } from "@/lib/site-config";
 import Link from "next/link";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: "Contact: cere o ofertă pentru site sau SEO",
   description: "Spune-mi despre proiectul tău. Răspund în maximum 24 de ore. Poți programa și o discuție pe Calendly.",
-  alternates: alternates("/contact/", "ro"),
+  alternates: alternates("contact", "ro"),
 };
 
 export default function Contact() {

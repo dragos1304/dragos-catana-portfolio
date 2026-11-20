@@ -3,14 +3,14 @@ import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/compo
 import { Guides } from "@/components/Guides";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/servicii/creare-website";
 export const metadata: Metadata = {
   title: "Creare site web pentru clinici și afaceri locale",
   description:
     "Creare site web rapid pentru clinici, avocați și afaceri locale: site de prezentare sau magazin online, cu SEO inclus. Află cât costă un site.",
-  alternates: alternates(`${path}/`, "ro"),
+  alternates: alternates("newSite", "ro"),
 };
 
 const platforms = [

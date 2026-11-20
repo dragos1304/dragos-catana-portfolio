@@ -3,14 +3,13 @@ import type { Metadata } from "next";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
-import { servicesEn } from "@/lib/site-config-en";
-import { alternates } from "@/lib/i18n";
+import { alternates, services } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: "Services: websites, redesign and SEO",
   description:
     "Website redesign, new websites and SEO focused on visibility in ChatGPT, Gemini and Perplexity, for businesses in Romania. Get a quote or a free audit.",
-  alternates: alternates("/en/services/", "en"),
+  alternates: alternates("services", "en"),
 };
 
 const link = "font-semibold text-brass-dark underline underline-offset-4";
@@ -30,8 +29,8 @@ export default function Services() {
           technical base. Prices depend on the project, so you get an offer after a short call.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {servicesEn.map((s) => (
-            <Link key={s.slug} href={`/en/services/${s.slug}`}
+          {services("en").map((s) => (
+            <Link key={s.key} href={s.href}
               className={`rounded-md border p-7 hover:shadow-lg ${s.flagship ? "border-brass-dark" : "border-line"}`}>
               <h2 className="font-serif text-2xl font-bold">{s.title}</h2>
               <p className="mt-3 leading-relaxed text-slate-ink">{s.short}</p>

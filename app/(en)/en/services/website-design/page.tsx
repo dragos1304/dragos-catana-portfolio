@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/services/website-design";
 export const metadata: Metadata = {
   title: "Website design for businesses in Romania",
   description:
     "A fast new website for clinics, law firms and local businesses in Romania: brochure site or online shop, with SEO built in. See what shapes the price.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("newSite", "en"),
 };
 
 const platforms = [

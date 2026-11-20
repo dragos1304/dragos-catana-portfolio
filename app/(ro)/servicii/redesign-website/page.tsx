@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/servicii/redesign-website";
 export const metadata: Metadata = {
   title: "Redesign website fără pierderi în Google",
   description:
     "Redesign modern pentru clinici, cabinete și afaceri locale: design nou, viteză, migrare sigură cu redirecturi 301 și conținut pregătit pentru AI. Cere o ofertă.",
-  alternates: alternates(`${path}/`, "ro"),
+  alternates: alternates("redesign", "ro"),
 };
 
 const faq = [

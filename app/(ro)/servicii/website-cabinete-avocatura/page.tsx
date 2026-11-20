@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { VerticalPage } from "@/components/VerticalPage";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/servicii/website-cabinete-avocatura";
 export const metadata: Metadata = {
   title: "Site pentru avocați și cabinete de avocatură",
   description:
     "Site pentru avocați și cabinete de avocatură: sobru, rapid, cu pagini pe domenii de practică și vizibilitate în Google și în răspunsurile AI. Cere o ofertă.",
-  alternates: alternates(`${path}/`, "ro"),
+  alternates: alternates("lawFirms", "ro"),
 };
 
 export default function Page() {

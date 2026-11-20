@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/services/website-redesign";
 export const metadata: Metadata = {
   title: "Website redesign without losing rankings",
   description:
     "Modern redesign for clinics, law firms and local businesses in Romania: new design, speed, safe migration with 301 redirects and AI-ready content. Get a quote.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("redesign", "en"),
 };
 
 const faq = [

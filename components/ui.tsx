@@ -4,7 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { JsonLd } from "./JsonLd";
 import { faqSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { ui, type Lang } from "@/lib/i18n";
+import { ui } from "@/lib/i18n";
+import { href, type Lang } from "@/lib/site-map";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>{children}</div>;
@@ -141,7 +142,7 @@ export function CtaBand({ title, text, id = "cta", lang = "ro" }: { title?: stri
           <p className="mt-5 max-w-xl text-lg text-ink/85">{text ?? t.ctaText}</p>
         </div>
         <div className="flex flex-wrap gap-3 lg:justify-end">
-          <Button href={t.auditHref} arrow>{t.ctaPrimary}</Button>
+          <Button href={href("audit", lang)} arrow>{t.ctaPrimary}</Button>
           <Button href={site.calendly} variant="ghost" external>{t.ctaSecondary}</Button>
         </div>
       </div>

@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
-import { services } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { services } from "@/lib/site-map";
+import { alternates } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: "Servicii: creare site, redesign și SEO",
   description:
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Cere o ofertă sau un audit gratuit.",
-  alternates: alternates("/servicii/", "ro"),
+  alternates: alternates("services", "ro"),
 };
 
 export default function Servicii() {
@@ -28,9 +28,9 @@ export default function Servicii() {
           date structurate și o bază tehnică curată. Prețurile depind de proiect, așa că primești o ofertă după o discuție scurtă.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {services.map((s) => (
-            <Link key={s.slug} href={`/servicii/${s.slug}`}
-              className={`rounded-md border p-7 hover:shadow-lg ${"flagship" in s ? "border-brass-dark" : "border-line"}`}>
+          {services("ro").map((s) => (
+            <Link key={s.key} href={s.href}
+              className={`rounded-md border p-7 hover:shadow-lg ${s.flagship ? "border-brass-dark" : "border-line"}`}>
               <h2 className="font-serif text-2xl font-bold">{s.title}</h2>
               <p className="mt-3 leading-relaxed text-slate-ink">{s.short}</p>
               <span className="mt-5 inline-block font-semibold text-brass-dark">Detalii →</span>

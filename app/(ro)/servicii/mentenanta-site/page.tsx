@@ -5,14 +5,14 @@ import { Guides } from "@/components/Guides";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/servicii/mentenanta-site";
 export const metadata: Metadata = {
   title: "Mentenanță site pentru afaceri locale",
   description:
     "Mentenanță site pentru clinici, cabinete și afaceri locale: actualizări, backup, securitate, verificări lunare și modificări de conținut. Cere o ofertă.",
-  alternates: alternates(`${path}/`, "ro"),
+  alternates: alternates("maintenance", "ro"),
 };
 
 const includes = [

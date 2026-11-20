@@ -5,14 +5,15 @@ import { Accent, Button, Container, Eyebrow, FAQ, H2, Mark, Section, CtaBand } f
 import { AnswerCard } from "@/components/AnswerCard";
 import { Shot } from "@/components/Shot";
 import { Journey, JourneyEnds } from "@/components/Journey";
-import { services, site } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { site } from "@/lib/site-config";
+import { services } from "@/lib/site-map";
+import { alternates } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: { absolute: "Web designer freelancer din Cluj: site-uri și SEO | Dragoș Cătană" },
   description:
     "Web designer freelancer din Cluj-Napoca: creare site și optimizare SEO pentru clinici, avocați și afaceri locale. Audit SEO gratuit în 24 de ore.",
-  alternates: alternates("/", "ro"),
+  alternates: alternates("home", "ro"),
 };
 
 const faq = [
@@ -149,10 +150,10 @@ export default function Home() {
         <Eyebrow>Servicii</Eyebrow>
         <H2>Patru servicii. Un singur scop: <span className="whitespace-nowrap"><Mark kind="underline">să fii ales</Mark>.</span></H2>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {services.map((s, i) => (
-            <Link key={s.slug} href={`/servicii/${s.slug}`}
+          {services("ro").map((s, i) => (
+            <Link key={s.key} href={s.href}
               className={`group relative flex min-h-[340px] flex-col rounded-3xl p-7 transition-transform duration-200 hover:-translate-y-1 ${tileStyle[i % 3]}`}>
-              {"flagship" in s && <span className="mb-4 w-fit rounded-full bg-ink px-3 py-1 text-xs font-semibold uppercase tracking-wider text-paper">Serviciul principal</span>}
+              {s.flagship && <span className="mb-4 w-fit rounded-full bg-ink px-3 py-1 text-xs font-semibold uppercase tracking-wider text-paper">Serviciul principal</span>}
               <h3 className="font-serif text-3xl font-extrabold leading-[1.05]">{s.title}</h3>
               <p className="mt-3 text-[17px] leading-relaxed">{s.short}</p>
               <ul className="mt-5 space-y-1.5 text-[15px] font-medium">

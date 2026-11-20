@@ -3,11 +3,11 @@ import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/compo
 import { JsonLd } from "@/components/JsonLd";
 import { Guides } from "@/components/Guides";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import type { Lang } from "@/lib/i18n";
+import { href, type Lang } from "@/lib/site-map";
 
 const text = {
-  ro: { home: "Acasă", homeHref: "/", services: "Servicii", servicesHref: "/servicii", audit: "Audit gratuit AI", auditHref: "/audit-gratuit-vizibilitate-ai", quote: "Cere o ofertă", contactHref: "/contact", needs: "Ce caută clienții tăi înainte să te contacteze", structure: "Cum structurez site-ul", vis: "Vizibilitate în Google și în AI", visA: "Fiecare pagină are date structurate potrivite", visB: "titluri formulate ca întrebări reale și răspunsuri scurte, ușor de citat. Informațiile de contact și identitatea rămân identice pe site, în profilul Google al afacerii și în directoare, ca asistenții AI să te poată verifica. Detalii în", visLink: "serviciul de SEO și vizibilitate în AI", seoHref: "/servicii/seo-vizibilitate-ai" },
-  en: { home: "Home", homeHref: "/en/", services: "Services", servicesHref: "/en/services", audit: "Free AI audit", auditHref: "/en/free-ai-visibility-audit", quote: "Get a quote", contactHref: "/en/contact", needs: "What your clients look for before they contact you", structure: "How I structure the site", vis: "Visibility on Google and in AI", visA: "Every page has the right structured data", visB: "headings phrased as real questions and short answers that are easy to quote. Your contact details and identity stay identical on the site, in your Google Business Profile and in directories, so AI assistants can verify you. More in the", visLink: "SEO and AI visibility service", seoHref: "/en/services/seo-ai-visibility" },
+  ro: { home: "Acasă", services: "Servicii", audit: "Audit gratuit AI", quote: "Cere o ofertă", needs: "Ce caută clienții tăi înainte să te contacteze", structure: "Cum structurez site-ul", vis: "Vizibilitate în Google și în AI", visA: "Fiecare pagină are date structurate potrivite", visB: "titluri formulate ca întrebări reale și răspunsuri scurte, ușor de citat. Informațiile de contact și identitatea rămân identice pe site, în profilul Google al afacerii și în directoare, ca asistenții AI să te poată verifica. Detalii în", visLink: "serviciul de SEO și vizibilitate în AI" },
+  en: { home: "Home", services: "Services", audit: "Free AI audit", quote: "Get a quote", needs: "What your clients look for before they contact you", structure: "How I structure the site", vis: "Visibility on Google and in AI", visA: "Every page has the right structured data", visB: "headings phrased as real questions and short answers that are easy to quote. Your contact details and identity stay identical on the site, in your Google Business Profile and in directories, so AI assistants can verify you. More in the", visLink: "SEO and AI visibility service" },
 } as const;
 
 export type VerticalProps = {
@@ -33,16 +33,16 @@ export function VerticalPage(p: VerticalProps) {
   const t = text[lang];
   return (
     <>
-      <JsonLd data={[breadcrumb([{ name: t.home, path: t.homeHref }, { name: t.services, path: t.servicesHref }, { name: p.crumb, path: p.path }]),
+      <JsonLd data={[breadcrumb([{ name: t.home, path: href("home", lang) }, { name: t.services, path: href("services", lang) }, { name: p.crumb, path: p.path }]),
         serviceSchema(p.schemaName, p.schemaDescription, p.path)]} />
       <Section id="intro">
-        <Breadcrumbs lang={lang} items={[{ name: t.home, href: t.homeHref }, { name: t.services, href: t.servicesHref }, { name: p.crumb }]} />
+        <Breadcrumbs lang={lang} items={[{ name: t.home, href: href("home", lang) }, { name: t.services, href: href("services", lang) }, { name: p.crumb }]} />
         <Eyebrow>{p.eyebrow}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{p.h1}</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{p.lead}</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Button href={t.auditHref}>{t.audit}</Button>
-          <Button href={t.contactHref} variant="ghost">{t.quote}</Button>
+          <Button href={href("audit", lang)}>{t.audit}</Button>
+          <Button href={href("contact", lang)} variant="ghost">{t.quote}</Button>
         </div>
       </Section>
 
@@ -71,7 +71,7 @@ export function VerticalPage(p: VerticalProps) {
         <H2>{t.vis}</H2>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">
           {t.visA} ({p.schemaTypes}), {t.visB}{" "}
-          <Link className="font-semibold text-brass-dark underline underline-offset-4" href={t.seoHref}>{t.visLink}</Link>.
+          <Link className="font-semibold text-brass-dark underline underline-offset-4" href={href("seo", lang)}>{t.visLink}</Link>.
         </p>
       </Section>
 

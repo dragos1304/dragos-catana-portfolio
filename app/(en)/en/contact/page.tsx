@@ -5,12 +5,12 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: "Contact: get a quote for a website or SEO",
   description: "Tell me about your project. I reply within 24 hours. You can also book a call on Calendly.",
-  alternates: alternates("/en/contact/", "en"),
+  alternates: alternates("contact", "en"),
 };
 
 export default function Contact() {

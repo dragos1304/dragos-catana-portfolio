@@ -4,12 +4,12 @@ import { Breadcrumbs, CtaBand, Eyebrow, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { Shot } from "@/components/Shot";
 import { breadcrumb } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 export const metadata: Metadata = {
   title: "Web design portfolio and case studies",
   description: "Website redesign and new-website projects with measured results. Starting with Cheesy Media, a photo and video agency in Cluj-Napoca.",
-  alternates: alternates("/en/work/", "en"),
+  alternates: alternates("work", "en"),
 };
 
 export default function Work() {

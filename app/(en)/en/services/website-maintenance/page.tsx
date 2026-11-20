@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/services/website-maintenance";
 export const metadata: Metadata = {
   title: "Website maintenance for local businesses",
   description:
     "Website maintenance for clinics, law firms and local businesses in Romania: updates, backups, security, monthly checks and content edits. Get a quote.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("maintenance", "en"),
 };
 
 const includes = [

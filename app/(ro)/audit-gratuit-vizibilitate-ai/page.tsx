@@ -4,14 +4,14 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/audit-gratuit-vizibilitate-ai";
 export const metadata: Metadata = {
   title: "Audit SEO gratuit și audit de vizibilitate în AI",
   description:
     "Audit SEO gratuit, făcut manual: vezi cum apari în Google și dacă te recomandă ChatGPT, Gemini și Perplexity. Rezultatul îl primești în 24 de ore.",
-  alternates: alternates(`${path}/`, "ro"),
+  alternates: alternates("audit", "ro"),
 };
 
 export default function Page() {

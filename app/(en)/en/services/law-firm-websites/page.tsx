@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { VerticalPage } from "@/components/VerticalPage";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/en/services/law-firm-websites";
 export const metadata: Metadata = {
   title: "Websites for law firms and lawyers in Romania",
   description:
     "Websites for law firms: practice-area pages, lawyer profiles, useful articles and discreet contact, built to be found on Google and cited by AI. Get a quote.",
-  alternates: alternates(`${path}/`, "en"),
+  alternates: alternates("lawFirms", "en"),
 };
 
 export default function Page() {

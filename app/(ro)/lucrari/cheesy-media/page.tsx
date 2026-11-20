@@ -5,14 +5,14 @@ import { JsonLd } from "@/components/JsonLd";
 import { Shot } from "@/components/Shot";
 import { abs, breadcrumb } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { alternates } from "@/lib/i18n";
+import { alternates } from "@/lib/site-map";
 
 const path = "/lucrari/cheesy-media";
 export const metadata: Metadata = {
   title: "Studiu de caz: redesign website Cheesy Media",
   description:
     "Redesign pentru o agenție foto-video din Cluj: design nou, 11 pagini, date structurate, pregătit pentru Google și AI. Performanță mobil 82 → 100.",
-  alternates: alternates(`${path}/`, "ro"),
+  alternates: alternates("cheesy", "ro"),
 };
 
 const scores = [

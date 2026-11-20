@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site-config";
-import { ui, type Lang } from "@/lib/i18n";
+import { ui } from "@/lib/i18n";
+import { href, nav, type Lang } from "@/lib/site-map";
 import { CookieSettingsButton } from "./CookieBanner";
 
 export function Footer({ lang }: { lang: Lang }) {
@@ -22,18 +23,18 @@ export function Footer({ lang }: { lang: Lang }) {
         <nav aria-label={t.footerNav}>
           <p className="text-sm font-semibold uppercase tracking-wider text-paper">{t.pages}</p>
           <ul className="mt-3 space-y-1 text-[15px]">
-            {t.nav.map((n) => (
+            {nav(lang).map((n) => (
               <li key={n.href}><Link href={n.href} className="inline-block py-1.5 hover:text-paper hover:underline">{n.label}</Link></li>
             ))}
-            <li><Link href={t.auditHref} className="inline-block py-1.5 hover:text-paper hover:underline">{t.auditCta}</Link></li>
+            <li><Link href={href("audit", lang)} className="inline-block py-1.5 hover:text-paper hover:underline">{t.auditCta}</Link></li>
           </ul>
         </nav>
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-paper">{t.legal}</p>
           <ul className="mt-3 space-y-1 text-[15px]">
-            <li><Link href="/confidentialitate" hrefLang="ro" className="inline-block py-1.5 hover:text-paper hover:underline">{t.privacy}</Link></li>
-            <li><Link href="/cookie" hrefLang="ro" className="inline-block py-1.5 hover:text-paper hover:underline">{t.cookiesPolicy}</Link></li>
-            <li><Link href="/termeni" hrefLang="ro" className="inline-block py-1.5 hover:text-paper hover:underline">{t.terms}</Link></li>
+            <li><Link href={href("privacy")} hrefLang="ro" className="inline-block py-1.5 hover:text-paper hover:underline">{t.privacy}</Link></li>
+            <li><Link href={href("cookies")} hrefLang="ro" className="inline-block py-1.5 hover:text-paper hover:underline">{t.cookiesPolicy}</Link></li>
+            <li><Link href={href("terms")} hrefLang="ro" className="inline-block py-1.5 hover:text-paper hover:underline">{t.terms}</Link></li>
             <li><CookieSettingsButton label={t.cookieSettings} /></li>
             <li><a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="inline-block py-1.5 hover:text-paper hover:underline">LinkedIn</a></li>
             <li><a href={site.github} target="_blank" rel="noopener noreferrer" className="inline-block py-1.5 hover:text-paper hover:underline">GitHub</a></li>

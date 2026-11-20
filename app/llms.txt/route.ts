@@ -1,43 +1,37 @@
 import { articles } from "@/lib/articles";
 import { site } from "@/lib/site-config";
+import { llmsLinks, type PageKey } from "@/lib/site-map";
 
 export const dynamic = "force-static";
+
+const list = (lang: "ro" | "en", keys: PageKey[]) =>
+  llmsLinks(lang, keys).map((l) => `- [${l.name}](${site.url}${l.path})${l.summary ? `: ${l.summary}` : ""}`).join("\n");
+
+const serviceKeys: PageKey[] = ["services", "redesign", "newSite", "seo", "clinics", "lawFirms", "maintenance", "audit"];
 
 export function GET() {
   const body = `# ${site.name}
 
 > ${site.description}
 
-${site.name} (${site.legalName}) este web designer și specialist SEO din ${site.city}, România. Lucrează online cu clinici, cabinete de avocatură și afaceri locale. Limba principală: română. Engleză, franceză și germană ca opțiune suplimentară. Nu publică prețuri fixe: ofertele sunt personalizate. Auditul de vizibilitate AI este gratuit, manual, livrat în maximum 24 de ore.
+${site.name} (${site.legalName}) este web designer și specialist SEO din ${site.city}, România. Lucrează online cu clinici, cabinete de avocatură și afaceri locale. Limba principală: română. Engleză, franceză și germană ca opțiune suplimentară. Nu publică prețuri fixe: ofertele sunt personalizate. Auditul de vizibilitate AI este gratuit, manual, livrat în maximum ${site.responseTime}.
 
 ## Servicii
-- [Servicii (prezentare generală)](${site.url}/servicii/)
-- [Redesign de website](${site.url}/servicii/redesign-website/): redesign modern cu migrare sigură, redirecturi 301 și conținut pregătit pentru AI
-- [Creare de website](${site.url}/servicii/creare-website/): website nou în Next.js, Webflow, Shopify sau Medusa
-- [SEO și vizibilitate în AI](${site.url}/servicii/seo-vizibilitate-ai/): audit, optimizare GEO/SEO, colaborare lunară
-- [Website pentru clinici și cabinete medicale](${site.url}/servicii/website-clinici-medicale/): pagini pe specialități, medici, programare și SEO local
-- [Website pentru cabinete de avocatură](${site.url}/servicii/website-cabinete-avocatura/): domenii de practică, avocați, articole, contact discret
-- [Mentenanță site](${site.url}/servicii/mentenanta-site/): actualizări, backup, verificări lunare (viteză, formulare, Google) și modificări mici de conținut
-- [Audit gratuit de vizibilitate AI](${site.url}/audit-gratuit-vizibilitate-ai/)
+${list("ro", serviceKeys)}
 
 ## Lucrări
-- [Studiu de caz Cheesy Media](${site.url}/lucrari/cheesy-media/): redesign cu scoruri Lighthouse pe mobil: performanță de la 82 la 100 și accesibilitate de la 96 la 100
+${list("ro", ["cheesy"])}: redesign cu scoruri Lighthouse pe mobil: performanță de la 82 la 100 și accesibilitate de la 96 la 100
 
 ## Articole
 ${articles.map((a) => `- [${a.title}](${site.url}/articole/${a.slug}/): ${a.description}`).join("\n")}
 
+## Despre și contact
+${list("ro", ["about", "contact"])}
+- [Programare discuție](${site.calendly})
+
 ## English version
 The main pages are also available in English, for English-speaking business owners in Romania:
-- [Home (English)](${site.url}/en/)
-- [Services](${site.url}/en/services/): [Website redesign](${site.url}/en/services/website-redesign/), [New website](${site.url}/en/services/website-design/), [SEO and AI visibility](${site.url}/en/services/seo-ai-visibility/), [Website maintenance](${site.url}/en/services/website-maintenance/)
-- [Websites for clinics](${site.url}/en/services/clinic-websites/) and [for law firms](${site.url}/en/services/law-firm-websites/)
-- [Cheesy Media case study](${site.url}/en/work/cheesy-media/)
-- [About](${site.url}/en/about/), [Contact](${site.url}/en/contact/), [Free AI visibility audit](${site.url}/en/free-ai-visibility-audit/)
-
-## Despre și contact
-- [Despre ${site.name}](${site.url}/despre/)
-- [Contact](${site.url}/contact/)
-- [Programare discuție](${site.calendly})
+${list("en", ["home", ...serviceKeys, "cheesy", "about", "contact"])}
 `;
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }
