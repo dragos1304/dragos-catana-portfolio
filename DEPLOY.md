@@ -26,6 +26,18 @@ If your plan has no PHP, set `NEXT_PUBLIC_FORM_ENDPOINT` at build time to a host
 4. **AI crawlers:** keep the records **DNS-only** (grey cloud) to start. If you turn the proxy on, make sure "Block AI bots" / bot-fight rules are **off** and the managed `robots.txt` does not override ours, otherwise ChatGPT, Claude, Gemini and Perplexity could be blocked.
 5. Add a Cloudflare redirect rule only if you prefer redirecting there instead of in `.htaccess`.
 
+## 3b. Cloudflare HTML cache (since 20 Nov 2026)
+- A Cache Rule **"Cache HTML pages (not /api)"** caches every page at Cloudflare's edge for **2 hours** (expression: host is dragoscatana.com and path does not contain `/api/`; Edge TTL: ignore cache-control, 2 hours; Browser TTL: respect origin). Pages now load in about 0.1–0.2 s instead of 0.3–6 s from the host.
+- Browsers still revalidate pages every visit (`max-age=0`); hashed assets keep their one-year cache. `/api/` (the form) is never cached.
+- **After every deploy, purge the cache:** Cloudflare → dragoscatana.com → Caching → Configuration → **Purge Everything**. Otherwise visitors can see the previous version for up to 2 hours.
+
+## 3c. Manual deploy through the File Manager (the method used so far)
+1. `npm run build`, then from `out/`: `zip -qr ../site-deploy-<date>.zip . -x "api/config.php"`.
+2. Use a **new zip name every time**: the File Manager does not overwrite an existing file, so an old zip with the same name would be unpacked instead.
+3. Network Solutions → hosting details → File Manager → upload to `htdocs` → open the zip → **UnZip** → delete the zip.
+4. Purge the Cloudflare cache (3b), then check the site with a browser user agent.
+5. The build also writes `api/form-contract.json`, which `api/contact.php` needs. Never upload `api/config.php`.
+
 ## 4. Automatic deploys (optional)
 `.github/workflows/deploy.yml` builds and uploads `out/` over FTPS. Add these repository secrets in GitHub (Settings → Secrets and variables → Actions): `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_DIR`. It runs on pushes to `main` and manually. Not tested yet, because it needs your hosting credentials.
 

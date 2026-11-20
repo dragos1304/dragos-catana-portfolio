@@ -26,6 +26,13 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [ ] **On your own computer (required now):** `.mcp.json` uses the installed `awwwards-mcp` command. Run `npm install -g awwwards-mcp@1.20.0 playwright ffmpeg-static` and `npm exec --global -- playwright install chromium`, then restart Claude Code. Without the install, the `awwwards` server will not start on your machine. Cloud sessions install it through the environment's setup script.
 - [ ] After the site is live: run the `awwwards-design-md` skill on the public URL, and `verify_build` / `audit_url` for evidence.
 
+## Architecture and technical SEO (20 Nov 2026)
+- [x] **Architecture review, all 6 candidates done:** site map module (`lib/site-map.ts`), site facts (`lib/site-config.ts`), one page module per bilingual page (`components/pages/`), lead form contract (`lib/lead-form.ts` → `api/form-contract.json`, read by `contact.php`), image manifest (`scripts/image-manifest.mjs`), leftovers deleted (colour aliases, `Reveal`). 28 tests (`npm test`).
+- [x] **Technical SEO:** shorter titles and descriptions, `/index.html` → `/` redirect, WebSite schema in RO + EN, short title tags for two long articles, referrer meta tag, Cloudflare HTML cache rule (TTFB 0.1–0.2 s). See `DEPLOY.md` §3b: purge the cache after every deploy.
+- [ ] **Form end-to-end:** `contact.php` now reads the contract; verified live with requests that send no email. Send one real test from each form (RO and EN) and check both emails arrive.
+- [ ] **Core Web Vitals:** Google's PageSpeed API quota was used up on 19–20 Nov; re-run PageSpeed Insights on `/` and `/en/` now that HTML is cached.
+- [x] Section labels no longer have the orange dot.
+
 ## Redesign, journey and SEO (18 Nov 2026)
 - [x] **English version (19 Nov 2026):** 13 pages under `/en/` with their own root layout (`<html lang="en">`), reciprocal hreflang (ro, en, x-default = ro), a RO/EN switch in the header, English sitemap entries and an English section in llms.txt. Articles and legal pages stay Romanian-only (linked as "(Romanian)"). The form sends `lang`, and `api/contact.php` sends an English confirmation for English forms. Page map: `lib/i18n.ts`.
 - [ ] **English copy review:** have a native English speaker read `/en/` once.

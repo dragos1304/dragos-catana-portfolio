@@ -25,6 +25,7 @@ All keyword data comes from Semrush, database `ro` unless stated. Volume is mont
   - **Delivery:** assets are gzipped and cached for a year (immutable); HTML is never stale; HTTP/3 is on.
   - **Crawling:** the sitemap lists every page, and robots allows all reputable search and AI crawlers.
 - **Fixed:** a URL without its trailing slash (for example `/servicii`) went `301 → http://…/servicii/ → https`, a two-hop chain through plain HTTP. `.htaccess` now sends it straight to `https://…/servicii/`.
+- **Fixed 20 Nov 2026:** HTML is now cached at Cloudflare (time to first byte 0.1–0.2 s, was 0.3–6 s); all titles under ~65 characters and descriptions 70–165; `/index.html` redirects to the clean URL; referrer policy set by meta tag.
 - **Open:**
   - **Cloudflare SSL:** Full (strict) is blocked until the origin has a valid certificate for dragoscatana.com (it serves `*.hostingplatform.com`, expiring July 2026). See `TODO.md`.
   - **Security header:** a Content-Security-Policy header is optional and low priority.

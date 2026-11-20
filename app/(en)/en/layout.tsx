@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
   robots: { index: true, follow: true },
+  // The host overrides the Referrer-Policy header from .htaccess; the meta tag sets the policy browsers use.
+  referrer: "strict-origin-when-cross-origin",
 };
 
 export const viewport: Viewport = { themeColor: "#f6f5f1", width: "device-width", initialScale: 1 };
