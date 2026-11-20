@@ -28,7 +28,7 @@ export const articles: Article[] = [
     date: "2026-11-18",
     readMin: 6,
     blocks: [
-      { t: "p", text: "GEO (Generative Engine Optimization) sau AEO (Answer Engine Optimization) înseamnă să-ți faci afacerea ușor de înțeles și de citat pentru asistenții AI, precum ChatGPT, Gemini, Claude sau Perplexity. Scopul nu mai e doar un loc în lista de rezultate, ci să fii menționat, corect, în răspunsul pe care îl primește omul." },
+      { t: "p", text: "GEO (Generative Engine Optimization) sau AEO (Answer Engine Optimization) înseamnă să-ți faci afacerea ușor de înțeles și de citat pentru asistenții AI, precum ChatGPT, Gemini, Claude sau Perplexity. Scopul nu mai este doar un loc în lista de rezultate, ci să fii menționat, corect, în răspunsul pe care îl primește omul." },
       { t: "h2", text: "De ce contează pentru o afacere locală" },
       { t: "p", text: "Un pacient sau un client poate întreba direct un asistent: „care este o clinică bună din orașul meu?” sau „ce avocat se ocupă de dreptul muncii?”. Răspunsul conține câteva nume, uneori cu surse. Dacă ești în acel răspuns, ești luat în calcul. Dacă nu, concurentul tău poate câștiga clientul fără ca tu să afli vreodată că a existat căutarea." },
       { t: "h2", text: "Cum ajung asistenții AI să recomande o afacere" },
@@ -51,7 +51,7 @@ export const articles: Article[] = [
         "Testează lunar întrebările reale ale clienților și notează ce se schimbă.",
       ] },
       { t: "h2", text: "Ce nu poate promite nimeni" },
-      { t: "p", text: "Răspunsurile AI variază de la o încercare la alta și de la un utilizator la altul, iar modelele se actualizează în ritmul lor. De aceea orice garanție de tip „locul 1 în ChatGPT” e un semn de alarmă. Ce se poate promite este un proces: măsurare, îmbunătățiri concrete și rapoarte clare." },
+      { t: "p", text: "Răspunsurile AI variază de la o încercare la alta și de la un utilizator la altul, iar modelele se actualizează în ritmul lor. De aceea orice garanție de tip „locul 1 în ChatGPT” este un semn de alarmă. Ce se poate promite este un proces: măsurare, îmbunătățiri concrete și rapoarte clare." },
     ],
     faq: [
       { q: "GEO și AEO sunt același lucru?", a: "În practică, da. Ambele descriu optimizarea pentru răspunsurile generate de AI. Termenii nu sunt standardizați și se folosesc des interschimbabil." },
@@ -92,15 +92,15 @@ export const articles: Article[] = [
       ] },
       { t: "h2", text: "Pasul 4: citește răspunsul critic" },
       { t: "ul", items: [
-        "Ești menționat deloc? Dacă nu, problema e de prezență.",
-        "Informațiile (adresă, servicii, program) sunt corecte? Dacă nu, problema e de consecvență.",
+        "Ești menționat deloc? Dacă nu, problema este de prezență.",
+        "Informațiile (adresă, servicii, program) sunt corecte? Dacă nu, problema este de consecvență.",
         "Ce surse sunt citate? Dacă apar cataloage online sau articole în locul site-ului tău, acolo trebuie să fii bine prezentat.",
         "Cine apare în locul tău? Concurenții din răspuns îți arată ce surse și ce formulări funcționează.",
       ] },
       { t: "h2", text: "Cât de des să repeți" },
-      { t: "p", text: "O dată pe lună e suficient pentru o afacere locală. Păstrează aceleași întrebări, ca să poți compara în timp. Primul test e punctul tău de pornire." },
+      { t: "p", text: "O dată pe lună este suficient pentru o afacere locală. Păstrează aceleași întrebări, ca să poți compara în timp. Primul test este punctul tău de pornire." },
       { t: "h2", text: "Limitele testului" },
-      { t: "p", text: "Un test manual e un indiciu, nu o statistică. Locația, istoricul contului și momentul pot schimba răspunsul. Folosește-l ca să vezi direcția, nu ca să tragi concluzii dintr-o singură încercare." },
+      { t: "p", text: "Un test manual este un indiciu, nu o statistică. Locația, istoricul contului și momentul pot schimba răspunsul. Folosește-l ca să vezi direcția, nu ca să tragi concluzii dintr-o singură încercare." },
       { t: "p", text: "Dacă preferi să nu o faci singur, îți fac eu un audit manual, gratuit, în maximum 24 de ore." },
     ],
     faq: [
@@ -114,25 +114,25 @@ export const articles: Article[] = [
   },
   {
     slug: "10-semne-ca-site-ul-tau-este-depasit",
-    title: "10 semne că site-ul tău e depășit (și ce să faci)",
+    title: "10 semne că site-ul tău este depășit (și ce să faci)",
     description:
-      "Un site vechi costă încredere și clienți. Iată 10 semne clare că e timpul pentru un redesign și ce poți verifica singur, în 15 minute.",
+      "Un site vechi costă încredere și clienți. Iată 10 semne clare că este timpul pentru un redesign și ce poți verifica singur, în 15 minute.",
     category: "Redesign",
     date: "2026-11-18",
     readMin: 5,
     blocks: [
-      { t: "p", text: "Un site nu „expiră” într-o zi, dar se învechește treptat: designul, viteza, conținutul și felul în care e citit de Google și de AI. Iată zece semne că e momentul să-l refaci." },
+      { t: "p", text: "Un site nu „expiră” într-o zi, dar se învechește treptat: designul, viteza, conținutul și felul în care este citit de Google și de AI. Iată zece semne că este momentul să-l refaci." },
       { t: "ol", items: [
         "Nu arată bine pe telefon. Dacă trebuie să mărești textul sau să derulezi lateral, pierzi vizitatori.",
         "Se încarcă greu. Testează-l pe telefon, cu date mobile, nu doar pe Wi-Fi.",
-        "Nu e clar ce oferi în primele secunde. Un vizitator trebuie să înțeleagă rapid cine ești, ce faci și ce să facă mai departe.",
-        "Nu e clar cum te contactează cineva. Telefonul, formularul sau programarea trebuie să se poată folosi dintr-o singură atingere.",
+        "Nu este clar ce oferi în primele secunde. Un vizitator trebuie să înțeleagă rapid cine ești, ce faci și ce să facă mai departe.",
+        "Nu este clar cum te contactează cineva. Telefonul, formularul sau programarea trebuie să se poată folosi dintr-o singură atingere.",
         "Designul pare din altă epocă: fonturi mici, culori obosite, imagini generice din bănci de imagini.",
         "Îl actualizezi greu sau depinzi de cineva ca să schimbi un text.",
         "Nu apari bine în Google sau nu ești menționat deloc în răspunsurile AI.",
         "Nu are date structurate (schema) care să spună motoarelor cine ești și ce servicii ai.",
         "Probleme de accesibilitate: contrast slab, imagini fără descriere, navigare imposibilă de la tastatură.",
-        "Conținutul e vechi sau lipsesc răspunsurile la întrebările pe care le pun clienții.",
+        "Conținutul este vechi sau lipsesc răspunsurile la întrebările pe care le pun clienții.",
       ] },
       { t: "h2", text: "Cum verifici în 15 minute" },
       { t: "ul", items: [
@@ -141,10 +141,10 @@ export const articles: Article[] = [
         "Caută-ți afacerea în Google și într-un asistent AI și vezi ce apare.",
       ] },
       { t: "h2", text: "Redesign sau doar actualizare?" },
-      { t: "p", text: "Dacă ai 1–2 probleme punctuale, de obicei ajung corecturi. Dacă ai mai multe dintre cele de mai sus, un redesign complet iese de regulă mai eficient. Important e să-l faci fără să pierzi pozițiile câștigate în Google. Vezi ghidul despre cum faci asta." },
+      { t: "p", text: "Dacă ai 1–2 probleme punctuale, de obicei ajung corecturi. Dacă ai mai multe dintre cele de mai sus, un redesign complet iese de regulă mai eficient. Important este să-l faci fără să pierzi pozițiile câștigate în Google. Vezi ghidul despre cum faci asta." },
     ],
     faq: [
-      { q: "Cât de des ar trebui refăcut un site?", a: "Nu există o regulă fixă. Mai important e să verifici periodic viteza, claritatea ofertei, accesibilitatea și cum apari în Google și în AI. Când problemele se adună, e timpul pentru redesign." },
+      { q: "Cât de des ar trebui refăcut un site?", a: "Nu există o regulă fixă. Mai important este să verifici periodic viteza, claritatea ofertei, accesibilitatea și cum apari în Google și în AI. Când problemele se adună, este timpul pentru redesign." },
       { q: "Pot face un redesign fără să-mi pierd clienții actuali?", a: "Da. Cu o migrare atentă, adresele importante se păstrează sau se redirecționează, iar clienții găsesc aceleași informații, mai clar prezentate." },
     ],
     related: [
@@ -168,7 +168,7 @@ export const articles: Article[] = [
       { t: "p", text: "Salvează pozițiile, clickurile și traficul din Search Console și Analytics, plus scorurile de viteză. Fără ele nu poți demonstra ce s-a schimbat după lansare." },
       { t: "h2", text: "3. Păstrează ce funcționează" },
       { t: "ul", items: [
-        "Păstrează adresele (URL-urile) care aduc trafic, când e posibil.",
+        "Păstrează adresele (URL-urile) care aduc trafic, când este posibil.",
         "Păstrează titlurile, titlurile de secțiune și conținutul paginilor care se clasează bine, îmbunătățindu-le, nu ștergându-le.",
         "Păstrează legăturile interne importante.",
       ] },
@@ -194,11 +194,11 @@ export const articles: Article[] = [
     ],
     faq: [
       { q: "Pot pierde poziții chiar dacă fac totul corect?", a: "Mici fluctuații pot apărea, pentru că Google reprocesează site-ul. Cu o migrare atentă, de obicei se stabilizează. Dacă scăderea persistă, se investighează cauza." },
-      { q: "Trebuie să-mi păstrez exact aceleași adrese?", a: "Nu neapărat, dar e mai sigur. Când le schimbi, folosește redirecționări 301 către paginile corespunzătoare." },
+      { q: "Trebuie să-mi păstrez exact aceleași adrese?", a: "Nu neapărat, dar este mai sigur. Când le schimbi, folosește redirecționări 301 către paginile corespunzătoare." },
     ],
     related: [
       { href: "/servicii/redesign-website", label: "Redesign de website" },
-      { href: "/articole/10-semne-ca-site-ul-tau-este-depasit", label: "10 semne că site-ul tău e depășit" },
+      { href: "/articole/10-semne-ca-site-ul-tau-este-depasit", label: "10 semne că site-ul tău este depășit" },
     ],
   },
   {
@@ -276,7 +276,7 @@ export const articles: Article[] = [
       { t: "p", text: "Scriu acest ghid pentru proprietari de clinici, cabinete și afaceri locale care nu vor să devină specialiști, dar vor să înțeleagă pe ce dau bani și ce pot cere de la cine le face site-ul." },
       { t: "h2", text: "Ce este SEO, pe înțelesul tuturor" },
       { t: "p", text: "Google are un singur obiectiv: să-i arate fiecărui om cel mai util rezultat pentru întrebarea lui. Optimizarea SEO înseamnă să-l ajuți pe Google să înțeleagă trei lucruri despre tine: ce faci, pentru cine și de ce ești o alegere de încredere." },
-      { t: "p", text: "Nu e un truc și nici un buton secret. E o combinație de site bine construit, conținut clar și o reputație vizibilă în afara site-ului." },
+      { t: "p", text: "Nu este un truc și nici un buton secret. Este o combinație de site bine construit, conținut clar și o reputație vizibilă în afara site-ului." },
       { t: "h2", text: "Cum funcționează Google, în trei pași" },
       { t: "ol", items: [
         "Descoperire (crawling): roboții Google parcurg internetul și îți găsesc paginile, de obicei urmând linkuri și sitemapul.",
@@ -292,7 +292,7 @@ export const articles: Article[] = [
       { t: "h3", text: "3. Autoritate și încredere" },
       { t: "p", text: "Semnale din afara site-ului: alte site-uri care te menționează sau trimit un link spre tine, cataloage de profil, articole în presa locală, recenzii. Google le citește ca pe niște recomandări." },
       { t: "h3", text: "4. SEO local" },
-      { t: "p", text: "Pentru o afacere cu clienți dintr-un oraș sau o zonă, SEO local e de multe ori cel mai rapid câștig: profilul Google al afacerii (Google Business Profile), recenzii, același nume, adresă și telefon peste tot și pagini care menționează clar orașul. Am scris un ghid separat despre Google Business Profile, pas cu pas." },
+      { t: "p", text: "Pentru o afacere cu clienți dintr-un oraș sau o zonă, SEO local este de multe ori cel mai rapid câștig: profilul Google al afacerii (Google Business Profile), recenzii, același nume, adresă și telefon peste tot și pagini care menționează clar orașul. Am scris un ghid separat despre Google Business Profile, pas cu pas." },
       { t: "h2", text: "SEO sau reclame plătite?" },
       { t: "table", head: ["", "SEO", "Reclame Google"], rows: [
         ["Cost", "Muncă și timp, fără plată per click", "Plătești fiecare click"],
@@ -305,7 +305,7 @@ export const articles: Article[] = [
       { t: "p", text: "Tot mai mulți oameni întreabă ChatGPT, Gemini sau Perplexity în loc să caute în Google. Vestea bună: aceleași lucruri care te ajută în Google (site clar, informații consecvente, reputație vizibilă) te ajută și să fii recomandat de AI. Optimizarea pentru asistenții AI se numește GEO și se construiește peste un SEO sănătos." },
       { t: "h2", text: "Ce poți face chiar de mâine" },
       { t: "ul", items: [
-        "Caută-ți afacerea în Google pe telefon, ca un client nou. Ce vezi primul? E corect?",
+        "Caută-ți afacerea în Google pe telefon, ca un client nou. Ce vezi primul? Este corect?",
         "Revendică sau verifică profilul Google al afacerii și completează-l până la capăt.",
         "Asigură-te că fiecare serviciu important are propria pagină, cu un titlu clar care conține serviciul și orașul.",
         "Verifică dacă numele, adresa și telefonul sunt identice pe site, pe Google și în cataloagele online de firme.",
@@ -321,12 +321,12 @@ export const articles: Article[] = [
         "Redesign fără redirecționări de la adresele vechi, care șterge pozițiile câștigate în ani.",
       ] },
       { t: "h2", text: "Cât durează și cum măsori rezultatele" },
-      { t: "p", text: "Corecturile tehnice se pot vedea în câteva săptămâni, după ce Google recitește paginile. Pozițiile pe căutări cu concurență se construiesc de obicei în câteva luni. Măsori cu Google Search Console (gratuit): pe ce căutări apari, de câte ori, câte clickuri primești și pe ce poziție medie. Pentru o afacere, cifra care contează la final e alta: câte programări sau cereri vin din căutări." },
+      { t: "p", text: "Corecturile tehnice se pot vedea în câteva săptămâni, după ce Google recitește paginile. Pozițiile pe căutări cu concurență se construiesc de obicei în câteva luni. Măsori cu Google Search Console (gratuit): pe ce căutări apari, de câte ori, câte clickuri primești și pe ce poziție medie. Pentru o afacere, cifra care contează la final este alta: câte programări sau cereri vin din căutări." },
     ],
     faq: [
       { q: "Ce înseamnă SEO, pe scurt?", a: "Optimizarea pentru motoarele de căutare: tot ce faci ca site-ul tău să fie găsit în Google când oamenii caută serviciile tale. Include partea tehnică a site-ului, conținutul, reputația și, pentru afacerile locale, profilul Google al afacerii." },
       { q: "Pot face SEO singur?", a: "Bazele, da: profilul Google, pagini clare pe servicii, recenzii. Partea tehnică (viteză, indexare, date structurate, migrări) cere de obicei pe cineva care lucrează zilnic cu ele." },
-      { q: "Cât costă optimizarea SEO?", a: "Depinde de cât de mult e de reparat și de concurența din domeniul și orașul tău. Eu nu afișez prețuri fixe: încep cu un audit gratuit și trimit apoi o ofertă clară." },
+      { q: "Cât costă optimizarea SEO?", a: "Depinde de cât de mult este de reparat și de concurența din domeniul și orașul tău. Eu nu afișez prețuri fixe: încep cu un audit gratuit și trimit apoi o ofertă clară." },
       { q: "Poate cineva să-mi garanteze locul 1 în Google?", a: "Nu. Google își schimbă algoritmii și nimeni din afară nu controlează rezultatele. Un specialist serios promite un proces măsurabil, nu o poziție." },
     ],
     related: [
@@ -346,7 +346,7 @@ export const articles: Article[] = [
     date: "2026-11-19",
     readMin: 8,
     blocks: [
-      { t: "p", text: "Când cineva caută „clinică stomatologică lângă mine” sau „avocat Cluj”, primul lucru pe care îl vede de multe ori nu e un site, ci harta cu trei afaceri și profilurile lor Google. Profilul acela vine din Google Business Profile (fostul Google My Business): un instrument gratuit de la Google. Pentru multe afaceri locale e cea mai importantă pagină pe care o au, chiar înaintea site-ului." },
+      { t: "p", text: "Când cineva caută „clinică stomatologică lângă mine” sau „avocat Cluj”, primul lucru pe care îl vede de multe ori nu este un site, ci harta cu trei afaceri și profilurile lor Google. Profilul acela vine din Google Business Profile (fostul Google My Business): un instrument gratuit de la Google. Pentru multe afaceri locale este cea mai importantă pagină pe care o au, chiar înaintea site-ului." },
       { t: "h2", text: "De ce contează profilul Google al afacerii" },
       { t: "ul", items: [
         "Apari pe Google Maps și în harta din rezultatele de căutare locală.",
@@ -358,7 +358,7 @@ export const articles: Article[] = [
       { t: "p", text: "Intră pe google.com/business cu un cont Google pe care îl controlezi tu (nu contul personal al unui fost angajat sau al firmei care ți-a făcut site-ul). Caută numele afacerii: dacă există deja un profil, îl revendici; dacă nu, îl creezi." },
       { t: "p", text: "Dacă lucrezi la clienți acasă sau doar online, dar ai o zonă deservită, poți ascunde adresa și seta în schimb zona de servicii." },
       { t: "h2", text: "Pasul 2: verificarea" },
-      { t: "p", text: "Google trebuie să confirme că afacerea e reală și că tu o administrezi. Metoda o alege Google, în funcție de afacere: poate fi un telefon sau un SMS, un e-mail, o înregistrare video scurtă cu locația și semnele afacerii, sau, mai rar, o carte poștală cu un cod. Până la verificare, profilul nu apare complet în căutări." },
+      { t: "p", text: "Google trebuie să confirme că afacerea este reală și că tu o administrezi. Metoda o alege Google, în funcție de afacere: poate fi un telefon sau un SMS, un e-mail, o înregistrare video scurtă cu locația și semnele afacerii, sau, mai rar, o carte poștală cu un cod. Până la verificare, profilul nu apare complet în căutări." },
       { t: "h2", text: "Pasul 3: completezi profilul până la capăt" },
       { t: "ol", items: [
         "Numele afacerii: exact numele real, fără cuvinte-cheie adăugate („Clinica X”, nu „Clinica X stomatolog ieftin Cluj”). Adăugarea de cuvinte-cheie în nume încalcă regulile Google și poate duce la suspendarea profilului.",
@@ -383,7 +383,7 @@ export const articles: Article[] = [
         "Să oferi reduceri, cadouri sau bani în schimbul recenziilor.",
         "Să ceri recenzii doar clienților despre care știi că sunt mulțumiți (așa-numitul „review gating”).",
         "Să scrii recenzii pentru propria afacere sau să le ceri angajaților.",
-        "Să cumperi recenzii. Pe lângă riscul pe profil, e și înșelător pentru clienți.",
+        "Să cumperi recenzii. Pe lângă riscul pe profil, este și înșelător pentru clienți.",
       ] },
       { t: "p", text: "Pentru clinici și cabinete de avocatură: când răspunzi la o recenzie, nu confirma că persoana a fost pacientul sau clientul tău și nu discuta detalii despre caz. Verifică și regulile organismului tău profesional privind publicitatea." },
       { t: "h2", text: "Pasul 5: îl ții la zi" },
@@ -403,10 +403,10 @@ export const articles: Article[] = [
       ] },
     ],
     faq: [
-      { q: "Google Business Profile e gratuit?", a: "Da. Crearea și administrarea profilului sunt gratuite. Plătești doar dacă alegi separat reclame Google." },
+      { q: "Google Business Profile este gratuit?", a: "Da. Crearea și administrarea profilului sunt gratuite. Plătești doar dacă alegi separat reclame Google." },
       { q: "Cât durează verificarea?", a: "Depinde de metoda aleasă de Google: uneori câteva minute (telefon, e-mail, video), alteori câteva zile, dacă se trimite o carte poștală." },
-      { q: "Pot șterge o recenzie negativă?", a: "Nu poți șterge singur o recenzie. Poți raporta recenziile care încalcă regulile Google. Pentru celelalte, cel mai bun lucru e un răspuns calm și profesionist, pe care îl citesc și viitorii clienți." },
-      { q: "Ajută profilul Google și la ChatGPT sau Gemini?", a: "Informațiile publice, consecvente și verificabile despre afacerea ta te fac mai ușor de înțeles pentru asistenții AI. Profilul Google e una dintre cele mai importante astfel de surse, alături de site." },
+      { q: "Pot șterge o recenzie negativă?", a: "Nu poți șterge singur o recenzie. Poți raporta recenziile care încalcă regulile Google. Pentru celelalte, cel mai bun lucru este un răspuns calm și profesionist, pe care îl citesc și viitorii clienți." },
+      { q: "Ajută profilul Google și la ChatGPT sau Gemini?", a: "Informațiile publice, consecvente și verificabile despre afacerea ta te fac mai ușor de înțeles pentru asistenții AI. Profilul Google este una dintre cele mai importante astfel de surse, alături de site." },
     ],
     related: [
       { href: "/articole/ce-este-seo", label: "Ce este SEO? Ghid simplu" },

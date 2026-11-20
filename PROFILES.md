@@ -69,10 +69,33 @@ The sitemap is live and valid. On 20 Nov 2026 it returned 200 with 37 URLs, it i
 | Profile photo | A real portrait (still on the TODO). Use the same photo everywhere. |
 | Cover / banner image | `public/lucrari/cheesy-media/site-desktop-1440.webp` (Cheesy Media redesign) |
 
-### Taglines (pick one, use it everywhere)
-- **EN (49 chars):** `Websites and SEO that get you found by Google and AI`
-- **EN, shorter (38 chars):** `Web design & AI-ready SEO in Romania`
-- **RO:** `Site-uri și SEO ca să te găsească Google și AI-ul`
+### Taglines (20 options, max. 50 characters)
+Pick one and use the same one everywhere. Romanian for Romanian sites, English for international directories (Clutch, GoodFirms, DesignRush, Crunchbase, Dribbble, Behance). The Romanian lines were checked with the `romana` skill; none promises a ranking or a recommendation.
+
+| # | Română | Car. | English | Char. |
+|---|---|---|---|---|
+| 1 | `Site-uri și SEO ca să te găsească Google și AI-ul` | 49 | `Websites and SEO so Google and AI can find you` | 46 |
+| 2 | `Clienții te caută. Fă-i să te găsească.` | 39 | `Clients are searching. Make sure they find you.` | 47 |
+| 3 | `Web design și SEO pentru clinici și avocați` | 43 | `Web design and SEO for clinics and law firms` | 44 |
+| 4 | `Site-uri clare, ușor de găsit în Google și ChatGPT` | 50 | `Clear websites, easy to find on Google and ChatGPT` | 50 |
+| 5 | `Ușor de găsit în Google și în asistenții AI` | 43 | `Easy to find on Google and in AI assistants` | 43 |
+| 6 | `Web designer și specialist SEO din Cluj-Napoca` | 46 | `Web designer and SEO specialist in Cluj-Napoca` | 46 |
+| 7 | `Site-uri rapide pentru afaceri locale din România` | 49 | `Fast websites for local businesses in Romania` | 45 |
+| 8 | `Un singur om, de la audit la lansare` | 36 | `One person, from audit to launch` | 32 |
+| 9 | `Vorbești direct cu omul care face munca` | 39 | `You talk to the person who does the work` | 40 |
+| 10 | `Site-uri și SEO acolo unde încrederea decide` | 44 | `Websites and SEO where trust decides` | 36 |
+| 11 | `Îți fac afacerea ușor de găsit și de verificat` | 46 | `I make your business easy to find and verify` | 44 |
+| 12 | `Audit gratuit, făcut manual, în 24 de ore` | 41 | `A free manual audit within 24 hours` | 35 |
+| 13 | `SEO și vizibilitate în AI pentru afaceri locale` | 47 | `SEO and AI visibility for local businesses` | 42 |
+| 14 | `Redesign, site-uri noi și SEO pregătit pentru AI` | 48 | `Redesigns, new websites and AI-ready SEO` | 40 |
+| 15 | `Site-uri care spun clar ce faci și unde ești` | 44 | `Websites that say clearly what you do and where` | 47 |
+| 16 | `Ajut clinicile să fie găsite de pacienți` | 40 | `I help clinics get found by patients` | 36 |
+| 17 | `Ajut cabinetele de avocatură să fie găsite` | 42 | `I help law firms get found online` | 33 |
+| 18 | `Măsurat înainte și după, explicat pe înțeles` | 44 | `Measured before and after, explained plainly` | 44 |
+| 19 | `Design clar, cod curat, SEO făcut corect` | 40 | `Clear design, clean code, SEO done right` | 40 |
+| 20 | `Site-uri pe care AI-ul le poate înțelege și cita` | 48 | `Websites AI can understand and cite` | 35 |
+
+**Suggested defaults:** #1 (Romanian sites) and #3's English line, „Web design and SEO for clinics and law firms”, for the directories, since it names who you work for.
 
 ### Short description, about 160 characters
 **EN**
@@ -229,7 +252,7 @@ Measured with Lighthouse on mobile: performance 82 → 100, accessibility 96 →
 |---|---|
 | Company name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
-| Tagline | EN tagline (§1) |
+| Tagline | English tagline from §1 (default: #3) |
 | Description | EN long description (§1) |
 | Founded | `[year]` |
 | Employees | 1 (or "2–9" if 1 isn't offered) |
@@ -271,7 +294,7 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 |---|---|
 | Agency name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
-| Tagline | EN tagline (§1) |
+| Tagline | English tagline from §1 (default: #3) |
 | Overview | EN long description (§1) |
 | Founded | `[year]` |
 | Team size | 1–10 |
@@ -294,7 +317,7 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 |---|---|
 | Company name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
-| Tagline | EN tagline (§1) |
+| Tagline | English tagline from §1 (default: #3) |
 | Summary | EN medium description (§1) |
 | Detailed description | EN long description (§1) |
 | Founded | `[year]` |

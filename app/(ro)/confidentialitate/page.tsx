@@ -15,7 +15,7 @@ export default function Page() {
     <LegalPage title="Politica de confidențialitate" faq={faqsRo.privacy}>
       <p>Această politică explică ce date personale colectez prin acest site, de ce și ce drepturi ai, conform Regulamentului (UE) 2016/679 (GDPR).</p>
       <h2>Cine este operatorul datelor</h2>
-      <p>{site.legalName}, {site.city}, România. Pentru orice solicitare legată de datele tale, folosește <Link href="/contact">formularul de contact</Link> și menționează că e vorba de date personale.</p>
+      <p>{site.legalName}, {site.city}, România. Pentru orice solicitare legată de datele tale, folosește <Link href="/contact">formularul de contact</Link> și menționează că este vorba de date personale.</p>
       <h2>Ce date colectez și de ce</h2>
       <ul>
         <li><strong>Formularul de audit gratuit:</strong> nume, e-mail, adresa site-ului, tipul afacerii, orașul, eventualii concurenți. Scop: să realizez auditul și să ți-l trimit.</li>

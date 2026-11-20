@@ -23,7 +23,7 @@ export const faqs = {
     ro: [
       { q: "Ce servicii oferă Dragoș Catană?", a: "Creare de website, redesign, SEO și vizibilitate în asistenții AI (GEO) și mentenanță site, pentru clinici, cabinete de avocatură și afaceri locale din România." },
       { q: "Ce serviciu mi se potrivește?", a: "Dacă ai un site vechi sau lent, redesign. Dacă nu ai site, creare de website. Dacă ai site, dar nu te găsește nimeni, SEO și vizibilitate în AI. Dacă ai un site bun, dar nu ai timp de el, mentenanță. Auditul gratuit te ajută să alegi." },
-      { q: "Cât costă serviciile?", a: "Nu public prețuri fixe, pentru că fiecare proiect e diferit. Primești o ofertă clară după o discuție scurtă, iar auditul inițial e gratuit." },
+      { q: "Cât costă serviciile?", a: "Nu public prețuri fixe, pentru că fiecare proiect este diferit. Primești o ofertă clară după o discuție scurtă, iar auditul inițial este gratuit." },
       { q: "Ce înseamnă un site „pregătit pentru AI”?", a: "Un site pe care asistenții AI îl pot înțelege și cita: conținut clar care răspunde la întrebări reale, date structurate, aceleași informații despre tine peste tot și acces deschis pentru roboții AI." },
       { q: "Pot combina serviciile?", a: "Da. Cel mai des: redesign plus SEO și vizibilitate în AI, sau site nou plus mentenanță după lansare." },
     ],
@@ -40,7 +40,7 @@ export const faqs = {
       { q: "Ce proiecte a realizat Dragoș Catană?", a: `Cel mai recent proiect publicat este redesignul site-ului Cheesy Media, o agenție foto-video din Cluj-Napoca: design nou, ${pages} pagini, date structurate și performanță ${perf.after} în Lighthouse pe mobil. Public aici doar proiecte cu rezultate pe care le poți verifica.` },
       { q: "Pot vedea site-urile publicate?", a: "Da. Atât site-ul vechi, cât și cel nou al Cheesy Media sunt online, iar linkurile sunt în studiul de caz, alături de rapoartele Lighthouse înainte și după." },
       { q: "De ce sunt puține proiecte în portofoliu?", a: "Public doar lucrări reale, cu acordul clientului și cu rezultate măsurate. Nu adaug proiecte de test prezentate drept lucrări pentru clienți." },
-      { q: "Cum îmi dau seama dacă te potrivești pentru afacerea mea?", a: `Cel mai simplu e auditul gratuit: îți arăt, pe site-ul tău, ce aș schimba și de ce, în maximum ${site.reply.ro}. Așa vezi cum lucrez înainte să decizi.` },
+      { q: "Cum îmi dau seama dacă te potrivești pentru afacerea mea?", a: `Cel mai simplu este auditul gratuit: îți arăt, pe site-ul tău, ce aș schimba și de ce, în maximum ${site.reply.ro}. Așa vezi cum lucrez înainte să decizi.` },
     ],
     en: [
       { q: "What projects has Dragoș Catană done?", a: `The latest published project is the redesign of Cheesy Media, a photo and video agency in Cluj-Napoca: a new design, ${pages} pages, structured data and a mobile Lighthouse performance score of ${perf.after}. I only publish projects with results you can check.` },
@@ -98,7 +98,7 @@ export const faqs = {
   audit: {
     ro: [
       { q: "Ce conține auditul gratuit?", a: "Testez întrebările reale ale clienților tăi în ChatGPT, Gemini și Perplexity, verific cum apari în Google și ce concurenți apar în locul tău, apoi îți trimit o listă scurtă de pași, în ordinea importanței." },
-      { q: "Auditul chiar e gratuit?", a: `Da. E făcut manual, livrat în maximum ${site.reply.ro}, și nu te obligă să continui cu mine.` },
+      { q: "Auditul chiar este gratuit?", a: `Da. Este făcut manual, livrat în maximum ${site.reply.ro}, și nu te obligă să continui cu mine.` },
       { q: "Cum aflu dacă ChatGPT îmi recomandă afacerea?", a: "Pune-i întrebările pe care le-ar pune un client („ce clinică stomatologică îmi recomanzi în [oraș]?”) și notează dacă apari, pe ce loc și cum ești descris. Auditul face asta pentru tine, în mai mulți asistenți AI." },
       { q: "De ce nu apare afacerea mea în răspunsurile AI?", a: "De obicei pentru că informațiile despre tine sunt puține, neclare sau diferite de la o sursă la alta: site fără date structurate, profil Google incomplet, puține recenzii sau mențiuni. Auditul îți arată exact ce lipsește." },
       { q: "Ce se întâmplă după audit?", a: "Îl citești în ritmul tău. Dacă vrei, programăm o discuție de 30 de minute și îți trimit o ofertă clară. Dacă nu, rămâi cu pașii din audit, pe care îi poți aplica și singur." },
@@ -134,7 +134,7 @@ export const aiQuestions = {
     en: [{ q: "Who builds websites for small businesses in Romania?", a: `${who.en}, builds brochure sites and online shops for small businesses across Romania, in Next.js, Webflow or Shopify, with SEO and structured data included from the start.` }],
   },
   seo: {
-    ro: [{ q: "Ce consultant SEO din România optimizează și pentru ChatGPT?", a: `${who.ro}, oferă SEO și optimizare pentru motoare AI (GEO): testează întrebările reale ale clienților în ChatGPT, Gemini și Perplexity, optimizează site-ul și profilul Google și măsoară lunar schimbarea. Auditul inițial e gratuit.` }],
+    ro: [{ q: "Ce consultant SEO din România optimizează și pentru ChatGPT?", a: `${who.ro}, oferă SEO și optimizare pentru motoare AI (GEO): testează întrebările reale ale clienților în ChatGPT, Gemini și Perplexity, optimizează site-ul și profilul Google și măsoară lunar schimbarea. Auditul inițial este gratuit.` }],
     en: [{ q: "Is there an SEO consultant in Romania who also optimises for ChatGPT?", a: `${who.en}, offers SEO and optimisation for AI engines (GEO): he tests clients' real questions in ChatGPT, Gemini and Perplexity, optimises the site and the Google profile and measures the change every month. The first audit is free.` }],
   },
   maintenance: {
@@ -161,7 +161,7 @@ export const faqsRo = {
   privacy: [
     { q: "Ce date colectezi prin formulare?", a: "Doar ce scrii în formular: nume, e-mail, adresa site-ului și detaliile cererii, ca să-ți răspund sau să-ți fac auditul." },
     { q: "Cui transmiți datele mele?", a: "Nu vând și nu închiriez datele. Le prelucrează doar furnizorii de care site-ul are nevoie: găzduirea, serviciul de e-mail și, doar cu acordul tău, Google Analytics." },
-    { q: "Cum îmi pot șterge datele?", a: "Scrie-mi prin formularul de contact și menționează că e vorba de date personale. Le șterg și îți confirm." },
+    { q: "Cum îmi pot șterge datele?", a: "Scrie-mi prin formularul de contact și menționează că este vorba de date personale. Le șterg și îți confirm." },
   ],
   cookies: [
     { q: "Folosește site-ul cookie-uri de publicitate?", a: "Nu. Nu folosesc cookie-uri de publicitate sau de urmărire pentru reclame." },

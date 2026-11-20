@@ -19,7 +19,7 @@ const workCopy = {
     title: "Portofoliu web design și studii de caz",
     description: "Proiecte de redesign și creare de website-uri, cu rezultate măsurate. Începe cu Cheesy Media, o agenție foto-video din Cluj-Napoca.",
     h1: "Proiecte, cu rezultate pe care le poți verifica.",
-    lead: "Public doar ce e real și măsurabil. Pe măsură ce apar proiecte noi, le adaug aici.",
+    lead: "Public doar ce este real și măsurabil. Pe măsură ce apar proiecte noi, le adaug aici.",
     desktopAlt: "Noul site Cheesy Media pe desktop", phoneAlt: "Noul site Cheesy Media pe telefon",
     kicker: "Redesign · Cluj-Napoca",
     text: "Agenție foto-video și social media. De la o pagină lungă la un site complet: design nou, o pagină pentru fiecare serviciu și o bază tehnică pregătită pentru Google și AI.",
@@ -97,7 +97,7 @@ const servicesCopy: Record<Lang, ServicesCopy> = {
     details: "Detalii →",
     needH2: "De ce ai nevoie?", tableCaption: "Ghid pentru alegerea serviciului", colSituation: "Situația ta", colService: "Serviciul potrivit",
     rows: [
-      ["Am un site, dar e vechi sau lent", "redesign"],
+      ["Am un site, dar este vechi sau lent", "redesign"],
       ["Nu am site sau am doar o pagină de social media", "newSite"],
       ["Am site, dar nu mă găsește nimeni, nici AI-ul", "seo"],
       ["Am un site bun, dar nu am timp să am grijă de el", "maintenance"],

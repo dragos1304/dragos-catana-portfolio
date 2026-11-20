@@ -24,7 +24,7 @@ const copy: Record<Lang, Copy> = {
     description: "Student la Economie (media 4,0) la UBB, cu schimburi la Paris și în SUA, antreprenor din adolescență. Povestea din spatele serviciilor de web design și SEO.",
     eyebrow: "Despre mine",
     h1: "Sunt Dragoș, un economist care construiește site-uri și te ajută să fii găsit.",
-    lead: "Locuiesc în Cluj-Napoca. Studiez Economia la Universitatea Babeș-Bolyai (în limba engleză), cu media 4,0, și construiesc afaceri de la 16 ani. Combin rigoarea academică cu spiritul practic al antreprenorului, iar asta se vede în felul în care lucrez la un site: începem de la ce are nevoie afacerea ta, nu de la ce e la modă.",
+    lead: "Locuiesc în Cluj-Napoca. Studiez Economia la Universitatea Babeș-Bolyai (în limba engleză), cu media 4,0, și construiesc afaceri de la 16 ani. Combin rigoarea academică cu spiritul practic al antreprenorului, iar asta se vede în felul în care lucrez la un site: începem de la ce are nevoie afacerea ta, nu de la ce este la modă.",
     whyEyebrow: "De ce fac asta", whyH2: "Fiecare afacere de care m-am ocupat avea nevoie să fie găsită.",
     why: "După peste 5 ani de antreprenoriat, în două incubatoare, am văzut același lucru: un produs sau un serviciu bun nu ajunge nicăieri dacă oamenii nu îl găsesc și nu au încredere în el. De aceea mă ocup de website-uri, SEO și, acum, de felul în care asistenții AI îți recomandă afacerea.",
     venturesEyebrow: "Antreprenoriat", venturesH2: "Peste 5 ani de antreprenoriat, de la 16 ani.",
