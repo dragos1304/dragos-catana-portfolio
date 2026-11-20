@@ -38,9 +38,9 @@ const pagesAfter = proof.cheesy.sitemapPages.after;
 
 const copy: Record<Lang, Copy> = {
   ro: {
-    title: "Studiu de caz: redesign website Cheesy Media",
-    description: `Redesign pentru o agenție foto-video din Cluj: design nou, ${pagesAfter} pagini, date structurate, pregătit pentru Google și AI. Performanță mobil ${perf.before} → ${perf.after}.`,
-    ldHeadline: "Studiu de caz: redesign website Cheesy Media",
+    title: "Studiu de caz: redesignul site-ului Cheesy Media",
+    description: `Redesign pentru o agenție foto-video din Cluj: design nou, ${pagesAfter} pagini, date structurate, pregătit pentru Google și AI. Performanță pe mobil ${perf.before} → ${perf.after}.`,
+    ldHeadline: "Studiu de caz: redesignul site-ului Cheesy Media",
     ldDescription: "Redesign pentru o agenție foto-video din Cluj-Napoca: design, structură, pregătire pentru Google și AI, rezultate măsurate în Lighthouse.",
     ldLang: "ro-RO",
     published: "2026-11-18",
@@ -62,7 +62,7 @@ const copy: Record<Lang, Copy> = {
     phoneBeforeAlt: "Vechiul site Cheesy Media pe telefon", phoneAfterAlt: "Noul site Cheesy Media pe telefon",
     phoneBefore: "Telefon, înainte", phoneAfter: "Telefon, după",
     designEyebrow: "Designul", designH2a: "Un brand jucăuș,", designH2b: "pus în ordine.",
-    designLead: "Am păstrat tonul jucăuș al mascotei, dar i-am dat site-ului ordinea unei agenții serioase. Culorile și fonturile de mai jos sunt cele măsurate pe site-ul live.",
+    designLead: "Am păstrat tonul jucăuș al mascotei, dar i-am dat site-ului ordinea unei agenții serioase. Culorile și fonturile de mai jos sunt cele măsurate pe site-ul publicat.",
     palette: [
       { hex: "#121016", name: "Negru cald", use: "fundal pentru titluri mari și meniu", ink: false },
       { hex: "#FBF7EF", name: "Crem", use: "fundalul paginilor, mai cald decât albul", ink: true },
@@ -77,7 +77,7 @@ const copy: Record<Lang, Copy> = {
       ["Contrast în loc de violet peste tot", "Vechiul site era violet de sus până jos. Noul folosește benzi negre și crem, iar violetul a rămas doar ca accent, ca brandul să fie recognoscibil."],
       ["Mascota rămâne vedeta", "Brânza cu difuzoare apare în logo și pe pagini. Nu am inventat o identitate nouă, am pus-o în valoare."],
       ["Imagini mari, în cadre", "Serviciile au imagini mari, cu margini groase și colțuri rotunjite, în loc de blocuri de text."],
-      ["Un singur pas următor, mereu vizibil", "Butonul galben „Cere ofertă” e în meniu pe fiecare pagină, iar WhatsApp e la un deget distanță pe telefon."],
+      ["Un singur pas următor, mereu vizibil", "Butonul galben „Cere ofertă” e în meniu pe fiecare pagină, iar pe telefon WhatsApp se deschide dintr-o atingere."],
     ],
     pagesEyebrow: "Paginile noi", pagesH2: "Fiecare serviciu are pagina lui.",
     pagesLead: "Din aceeași pagină lungă au ieșit pagini separate pentru servicii, fiecare serviciu în parte, proces, portofoliu, despre și contact. Același sistem vizual, pe toate.",
@@ -99,7 +99,7 @@ const copy: Record<Lang, Copy> = {
       { t: "O pagină pentru fiecare întrebare", before: "O singură pagină lungă cu toate serviciile.", after: `${pagesAfter} adrese în sitemap, inclusiv câte o pagină pentru foto, video, social media și web design. Un asistent AI poate cita exact pagina potrivită.` },
       { t: "Date structurate", before: "Niciun bloc de date structurate.", after: "ProfessionalService pe fiecare pagină, FAQPage pe prima pagină și BreadcrumbList pe paginile interioare." },
       { t: "Titluri cu serviciu și oraș", before: "Un titlu general: „Agenție Modernă de Marketing în Cluj-Napoca”.", after: "Titlu și descriere proprii pe fiecare pagină, de exemplu „Agenție marketing Cluj: foto, video, social”." },
-      { t: "Acces deschis pentru roboți", before: "Fără robots.txt și fără sitemap.", after: "robots.txt permite toți roboții (inclusiv cei ai asistenților AI) și indică sitemap-ul. Doar pagina de mulțumire e exclusă." },
+      { t: "Acces deschis pentru roboți", before: "Fără robots.txt și fără sitemap.", after: "robots.txt permite toți roboții (inclusiv cei ai asistenților AI) și indică sitemapul. Doar pagina de mulțumire e exclusă." },
       { t: "Răspunsuri directe", before: "Formulări generale despre servicii.", after: "Întrebări frecvente cu răspunsuri scurte și un proces în 4 pași: formatul pe care AI-ul îl poate prelua ușor." },
       { t: "Previzualizare la distribuire", before: "Nicio imagine pentru distribuire.", after: "Imagine de previzualizare (og:image) pe fiecare pagină, pentru WhatsApp, Facebook și LinkedIn." },
       { t: "Viteză pe mobil", before: `Performanță ${perf.before} în Lighthouse.`, after: "100 la toate cele patru categorii Lighthouse." },
@@ -112,7 +112,7 @@ const copy: Record<Lang, Copy> = {
     lhBeforeCaption: `Înainte: performanță ${perf.before}, accesibilitate ${a11y.before}.`,
     lhAfterAlt: "Raport Lighthouse pentru site-ul nou: 100 la performanță, accesibilitate, bune practici și SEO",
     lhAfterCaption: "După: 100 la toate cele patru categorii.",
-    noTraffic: "Nu public cifre de trafic sau de cereri, pentru că nu am date confirmate de client. Stack: Next.js, găzduit pe Netlify.",
+    noTraffic: "Nu public cifre de trafic sau de cereri, pentru că nu am date confirmate de client. Tehnologie: Next.js, găzduit pe Netlify.",
     redesignCta: "Vezi serviciul de redesign", auditCta: "Audit gratuit pentru site-ul tău",
   },
   en: {

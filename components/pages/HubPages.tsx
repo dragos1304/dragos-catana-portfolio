@@ -95,7 +95,7 @@ const servicesCopy: Record<Lang, ServicesCopy> = {
     h1: "Un website modern, găsit în Google și recomandat de AI.",
     lead: "Fiecare redesign și fiecare website nou pe care îl livrez este „pregătit pentru AI” din start: conținut clar, date structurate și o bază tehnică curată. Prețurile depind de proiect, așa că primești o ofertă după o discuție scurtă.",
     details: "Detalii →",
-    needH2: "Ce ai nevoie?", tableCaption: "Ghid pentru alegerea serviciului", colSituation: "Situația ta", colService: "Serviciul potrivit",
+    needH2: "De ce ai nevoie?", tableCaption: "Ghid pentru alegerea serviciului", colSituation: "Situația ta", colService: "Serviciul potrivit",
     rows: [
       ["Am un site, dar e vechi sau lent", "redesign"],
       ["Nu am site sau am doar o pagină de social media", "newSite"],
@@ -110,7 +110,7 @@ const servicesCopy: Record<Lang, ServicesCopy> = {
     packsH3: "Pachete combinate",
     packs: [
       ["Redesign + pregătit pentru AI.", "Site nou, migrare sigură, conținut și date structurate gândite pentru motoare AI."],
-      ["Website nou + pregătit pentru AI.", "De la zero, cu SEO, schema și analiză încă din prima zi."],
+      ["Website nou + pregătit pentru AI.", "De la zero, cu SEO, date structurate și analiză încă din prima zi."],
     ],
     langsH3: "Alte limbi",
     langs: "Site-urile pot fi livrate și în engleză, franceză sau germană, ca opțiune suplimentară, cu aceeași atenție pentru SEO în fiecare limbă.",

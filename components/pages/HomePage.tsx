@@ -85,11 +85,11 @@ const copy: Record<Lang, Copy> = {
       </>
     ),
     heroPrimary: "Cere auditul gratuit",
-    heroSecondary: "Vezi cum lucrăm",
+    heroSecondary: "Vezi cum lucrez",
     badgeTop: "Răspund personal",
     badgeBottom: `în ${site.reply.ro}`,
     facts: [
-      ["AI-ready & instant", "rapid pentru oameni, clar pentru ChatGPT, ușor de găsit în Google", "col-span-2"],
+      ["Pregătit pentru AI", "rapid pentru oameni, clar pentru ChatGPT, ușor de găsit în Google", "col-span-2"],
       ["Încredere", "un design care îi convinge pe pacienți și clienți înainte să te sune", ""],
       ["Clar", "vizitatorul înțelege în 5 secunde ce faci și cum te contactează", ""],
     ],
@@ -108,7 +108,7 @@ const copy: Record<Lang, Copy> = {
     workEyebrow: "Lucrare recentă",
     workH2: <>Cheesy Media: de la o pagină lungă la un <Accent className="text-orange">site complet.</Accent></>,
     workLead: "Am refăcut site-ul unei agenții foto-video din Cluj-Napoca: design nou, o pagină pentru fiecare serviciu și bază tehnică pentru Google și AI.",
-    statPerformance: "Performanță mobil",
+    statPerformance: "Performanță pe mobil",
     statSitemap: "Adrese în sitemap",
     workCaseCta: "Vezi studiul de caz",
     workAllCta: "Toate lucrările",
@@ -117,10 +117,10 @@ const copy: Record<Lang, Copy> = {
     workCards: [
       { shot: "before-home", alt: "Vechiul site Cheesy Media: o singură pagină violetă", tag: "Înainte", accent: false, text: "O singură pagină violetă, fără date structurate, declarată în engleză." },
       { shot: "after-servicii", alt: "Pagina Servicii a noului site Cheesy Media", tag: "Design", accent: true, text: "Titluri mari, negru, crem și galben. Mascota păstrată, „Cere ofertă” mereu vizibil." },
-      { shot: "after-proces", alt: "Pagina Proces a noului site Cheesy Media", tag: "Google și AI", accent: true, text: "Limba română, date structurate pe fiecare pagină, FAQ, sitemap și acces pentru roboții AI." },
+      { shot: "after-proces", alt: "Pagina Proces a noului site Cheesy Media", tag: "Google și AI", accent: true, text: "Limba română, date structurate pe fiecare pagină, întrebări frecvente, sitemap și acces pentru roboții AI." },
     ],
     whoEyebrow: "Pentru cine lucrez",
-    whoH2: <>Antreprenori și practici locale unde <Accent>încrederea decide.</Accent></>,
+    whoH2: <>Antreprenori și cabinete locale, unde <Accent>încrederea decide.</Accent></>,
     audiences: [
       { icon: "clinic", t: "Clinici și cabinete medicale", d: "Pacienții compară înainte să sune. Site-ul trebuie să inspire calm, să arate echipa și să facă programarea ușoară.", page: "clinics" },
       { icon: "law", t: "Cabinete de avocatură", d: "Clienții caută un specialist pe o problemă concretă. Pagini clare pe domenii de practică și un profil Google complet fac diferența.", page: "lawFirms" },
@@ -151,7 +151,7 @@ const copy: Record<Lang, Copy> = {
       "Lucrez direct cu fiecare client. Omul cu care vorbești la prima discuție este cel care îți face auditul, îți construiește site-ul și îți răspunde la mesaje, așa că nimic din ce mi-ai spus nu se pierde pe drum.",
     ],
     quote: "„He was one of the few students I have worked with who managed to engage the majority of the audience… making him the person his peers would turn to when they felt stuck.”",
-    quoteBy: "Dan C. Lungescu, PhD, lector, Universitatea Babeș-Bolyai (citat original în engleză)",
+    quoteBy: "Lect. univ. dr. Dan C. Lungescu, Universitatea Babeș-Bolyai (citat original în engleză)",
     storyCta: "Citește povestea completă",
     faq: [
       { q: "Ce înseamnă să fii „recomandat de AI”?", a: "Mulți clienți întreabă acum ChatGPT, Gemini sau Perplexity „cine e un bun avocat sau o bună clinică în orașul meu?”. Asistentul alege dintre sursele pe care le înțelege și în care are încredere. Optimizarea pentru AI (GEO) înseamnă că site-ul și prezența ta online sunt clare, consecvente și ușor de citat." },

@@ -16,7 +16,7 @@ type Page = {
 const PAGES = {
   home: { ro: "/", en: "/en/", name: { ro: "Acasă", en: "Home" } },
   services: { ro: "/servicii/", en: "/en/services/", name: { ro: "Servicii", en: "Services" }, summary: { ro: "prezentare generală", en: "overview" } },
-  redesign: { ro: "/servicii/redesign-website/", en: "/en/services/website-redesign/", name: { ro: "Redesign de website", en: "Website redesign" }, summary: { ro: "redesign modern cu migrare sigură, redirecturi 301 și conținut pregătit pentru AI", en: "modern redesign with a safe migration and AI-ready content" } },
+  redesign: { ro: "/servicii/redesign-website/", en: "/en/services/website-redesign/", name: { ro: "Redesign de website", en: "Website redesign" }, summary: { ro: "redesign modern cu migrare sigură, redirecționări 301 și conținut pregătit pentru AI", en: "modern redesign with a safe migration and AI-ready content" } },
   newSite: { ro: "/servicii/creare-website/", en: "/en/services/website-design/", name: { ro: "Creare de website", en: "New website" }, summary: { ro: "website nou în Next.js, Webflow, Shopify sau Medusa", en: "a new website in Next.js, Webflow, Shopify or Medusa" } },
   seo: { ro: "/servicii/seo-vizibilitate-ai/", en: "/en/services/seo-ai-visibility/", name: { ro: "SEO și vizibilitate în AI", en: "SEO and AI visibility" }, summary: { ro: "audit, optimizare GEO/SEO, colaborare lunară", en: "audit, GEO/SEO optimisation, monthly work" } },
   maintenance: { ro: "/servicii/mentenanta-site/", en: "/en/services/website-maintenance/", name: { ro: "Mentenanță site", en: "Website maintenance" }, summary: { ro: "actualizări, backup, verificări lunare (viteză, formulare, Google) și modificări mici de conținut", en: "updates, backups, monthly checks and small content edits" } },
@@ -93,7 +93,7 @@ type ServiceCopy = { title: string; short: string; points: readonly string[] };
 const SERVICES: readonly { key: PageKey; flagship?: boolean; ro: ServiceCopy; en: ServiceCopy; formLabel: { ro: string; en: string } }[] = [
   {
     key: "redesign",
-    ro: { title: "Redesign de website", short: "Site-ul tău arată și se simte ca în 2015? Îl reconstruiesc modern, rapid și fără să pierzi pozițiile din Google.", points: ["Design nou și coerent", "Migrare sigură, cu redirecturi 301", "Conținut structurat ca AI-ul să te citeze"] },
+    ro: { title: "Redesign de website", short: "Site-ul tău arată ca în 2015? Îl reconstruiesc modern, rapid și fără să pierzi pozițiile din Google.", points: ["Design nou și coerent", "Migrare sigură, cu redirecționări 301", "Conținut structurat ca AI-ul să te citeze"] },
     en: { title: "Website redesign", short: "Does your site look and feel like 2015? I rebuild it modern and fast, without losing your Google rankings.", points: ["A new, consistent design", "Safe migration with 301 redirects", "Content structured so AI can cite you"] },
     formLabel: { ro: "Redesign de website", en: "Website redesign" },
   },

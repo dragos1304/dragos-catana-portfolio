@@ -11,13 +11,13 @@ const inputCls =
 const text = {
   ro: {
     thanks: "Mulțumesc, am primit mesajul.",
-    auditDone: `Îți trimit auditul pe email în maximum ${site.reply.ro}.`,
+    auditDone: `Îți trimit auditul pe e-mail în maximum ${site.reply.ro}.`,
     contactDone: `Îți răspund în maximum ${site.reply.ro}.`,
     orTalk: "Dacă preferi să vorbim direct, poți și",
     book: "programa o discuție",
     honeypot: "Nu completa:",
     name: "Nume",
-    email: "Email",
+    email: "E-mail",
     website: "Adresa website-ului",
     ifAny: "(dacă ai unul)",
     business: "Tipul afacerii",

@@ -27,7 +27,7 @@ export const leadForm = {
       subject: "Cerere audit gratuit AI",
       fields: [
         { name: "name", label: "Nume", max: 120 },
-        { name: "email", label: "Email", max: 160 },
+        { name: "email", label: "E-mail", max: 160 },
         { name: "website", label: "Website", max: 3000 },
         { name: "business", label: "Tip afacere", max: 3000 },
         { name: "city", label: "Oraș", max: 3000 },
@@ -38,7 +38,7 @@ export const leadForm = {
       subject: "Mesaj nou din contact",
       fields: [
         { name: "name", label: "Nume", max: 120 },
-        { name: "email", label: "Email", max: 160 },
+        { name: "email", label: "E-mail", max: 160 },
         { name: "website", label: "Website", max: 3000 },
         { name: "need", label: "Nevoie", max: 200, options: needLabels },
         { name: "message", label: "Mesaj", max: 3000 },

@@ -17,7 +17,7 @@ export default function Page() {
       <h2>Statistici (doar cu acordul tău)</h2>
       <p>Folosesc Google Tag Manager și Google Analytics 4 pentru a înțelege ce pagini sunt vizitate și cum ajung oamenii la formulare. Dacă accepți, Google poate seta cookie-uri precum <code>_ga</code> și <code>_ga_*</code>. Dacă refuzi, Analytics nu stochează date de identificare în browser.</p>
       <h2>Publicitate</h2>
-      <p>Nu folosesc cookie-uri de publicitate sau de remarketing. Semnalele de consimțământ pentru publicitate sunt setate pe „refuzat”.</p>
+      <p>Nu folosesc cookie-uri de publicitate sau de urmărire pentru reclame. Semnalele de consimțământ pentru publicitate sunt setate pe „refuzat”.</p>
       <h2>Cum îți schimbi alegerea</h2>
       <p>Folosește linkul „Setări cookie-uri” din subsolul site-ului, sau șterge datele site-ului din setările browserului.</p>
     </LegalPage>

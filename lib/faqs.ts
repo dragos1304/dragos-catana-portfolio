@@ -38,7 +38,7 @@ export const faqs = {
   work: {
     ro: [
       { q: "Ce proiecte a realizat Dragoș Catană?", a: `Cel mai recent proiect publicat este redesignul site-ului Cheesy Media, o agenție foto-video din Cluj-Napoca: design nou, ${pages} pagini, date structurate și performanță ${perf.after} în Lighthouse pe mobil. Public aici doar proiecte cu rezultate pe care le poți verifica.` },
-      { q: "Pot vedea site-urile live?", a: "Da. Atât site-ul vechi, cât și cel nou al Cheesy Media sunt online, iar linkurile sunt în studiul de caz, alături de rapoartele Lighthouse înainte și după." },
+      { q: "Pot vedea site-urile publicate?", a: "Da. Atât site-ul vechi, cât și cel nou al Cheesy Media sunt online, iar linkurile sunt în studiul de caz, alături de rapoartele Lighthouse înainte și după." },
       { q: "De ce sunt puține proiecte în portofoliu?", a: "Public doar lucrări reale, cu acordul clientului și cu rezultate măsurate. Nu adaug proiecte de test prezentate drept lucrări pentru clienți." },
       { q: "Cum îmi dau seama dacă te potrivești pentru afacerea mea?", a: `Cel mai simplu e auditul gratuit: îți arăt, pe site-ul tău, ce aș schimba și de ce, în maximum ${site.reply.ro}. Așa vezi cum lucrez înainte să decizi.` },
     ],
@@ -68,7 +68,7 @@ export const faqs = {
   about: {
     ro: [
       { q: "Cine este Dragoș Catană?", a: `${who.ro}. Face creare și redesign de site-uri, SEO și optimizare pentru asistenții AI pentru clinici, cabinete de avocatură și afaceri locale din România, prin dragoscatana.com.` },
-      { q: "Ce pregătire are Dragoș Catană?", a: "Studiază Economia la Universitatea Babeș-Bolyai din Cluj-Napoca, în limba engleză, cu media 4.0, cu un an de schimb la Paris și un semestru la SUNY Cortland, în SUA. Construiește afaceri de la 16 ani." },
+      { q: "Ce pregătire are Dragoș Catană?", a: "Studiază Economia la Universitatea Babeș-Bolyai din Cluj-Napoca, în limba engleză, cu media 4,0, cu un an de schimb la Paris și un semestru la SUNY Cortland, în SUA. Construiește afaceri de la 16 ani." },
       { q: "Cine se ocupă de proiectul meu?", a: "Eu, personal, de la audit la lansare. Pentru tine asta înseamnă un singur om care îți cunoaște afacerea, răspunsuri rapide și atenție la fiecare detaliu." },
       { q: "De ce să aleg un web designer independent în loc de o agenție?", a: "Vorbești direct cu omul care face munca, fără intermediari, iar deciziile se iau repede. Proiectul rămâne clar, discutat direct cu cel care îl construiește." },
       { q: "În ce limbi lucrezi?", a: "Română și engleză; franceză și germană ca opțiune suplimentară pentru site-uri în mai multe limbi." },
@@ -159,12 +159,12 @@ export const faqsRo = {
     { q: "Cu ce articol să încep?", a: "Dacă abia începi, cu „Ce este SEO?”. Dacă vrei să știi cum apari în AI, cu „Cum verifici dacă ChatGPT, Gemini sau Perplexity îți menționează afacerea”." },
   ],
   privacy: [
-    { q: "Ce date colectezi prin formulare?", a: "Doar ce scrii în formular: nume, email, adresa site-ului și detaliile cererii, ca să-ți răspund sau să-ți fac auditul." },
-    { q: "Cui transmiți datele mele?", a: "Nu vând și nu închiriez datele. Le prelucrează doar furnizorii de care site-ul are nevoie: găzduirea, serviciul de email și, doar cu acordul tău, Google Analytics." },
+    { q: "Ce date colectezi prin formulare?", a: "Doar ce scrii în formular: nume, e-mail, adresa site-ului și detaliile cererii, ca să-ți răspund sau să-ți fac auditul." },
+    { q: "Cui transmiți datele mele?", a: "Nu vând și nu închiriez datele. Le prelucrează doar furnizorii de care site-ul are nevoie: găzduirea, serviciul de e-mail și, doar cu acordul tău, Google Analytics." },
     { q: "Cum îmi pot șterge datele?", a: "Scrie-mi prin formularul de contact și menționează că e vorba de date personale. Le șterg și îți confirm." },
   ],
   cookies: [
-    { q: "Folosește site-ul cookie-uri de publicitate?", a: "Nu. Nu folosesc cookie-uri de publicitate sau de remarketing." },
+    { q: "Folosește site-ul cookie-uri de publicitate?", a: "Nu. Nu folosesc cookie-uri de publicitate sau de urmărire pentru reclame." },
     { q: "Ce se întâmplă dacă refuz cookie-urile?", a: "Site-ul funcționează la fel. Doar statisticile Google Analytics nu se activează." },
     { q: "Cum îmi schimb alegerea?", a: "Din linkul „Setări cookie-uri” din subsolul site-ului, oricând." },
   ],

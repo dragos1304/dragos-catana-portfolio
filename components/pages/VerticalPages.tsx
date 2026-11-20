@@ -18,7 +18,7 @@ type Copy = {
 };
 
 const text = {
-  ro: { home: "Acasă", services: "Servicii", audit: "Audit gratuit AI", quote: "Cere o ofertă", needs: "Ce caută clienții tăi înainte să te contacteze", structure: "Cum structurez site-ul", vis: "Vizibilitate în Google și în AI", visA: "Fiecare pagină are date structurate potrivite", visB: "titluri formulate ca întrebări reale și răspunsuri scurte, ușor de citat. Informațiile de contact și identitatea rămân identice pe site, în profilul Google al afacerii și în directoare, ca asistenții AI să te poată verifica. Detalii în", visLink: "serviciul de SEO și vizibilitate în AI" },
+  ro: { home: "Acasă", services: "Servicii", audit: "Audit gratuit AI", quote: "Cere o ofertă", needs: "Ce caută clienții tăi înainte să te contacteze", structure: "Cum structurez site-ul", vis: "Vizibilitate în Google și în AI", visA: "Fiecare pagină are date structurate potrivite", visB: "titluri formulate ca întrebări reale și răspunsuri scurte, ușor de citat. Informațiile de contact și identitatea rămân identice pe site, în profilul Google al afacerii și în cataloagele online de firme, ca asistenții AI să te poată verifica. Detalii în", visLink: "serviciul de SEO și vizibilitate în AI" },
   en: { home: "Home", services: "Services", audit: "Free AI audit", quote: "Get a quote", needs: "What your clients look for before they contact you", structure: "How I structure the site", vis: "Visibility on Google and in AI", visA: "Every page has the right structured data", visB: "headings phrased as real questions and short answers that are easy to quote. Your contact details and identity stay identical on the site, in your Google Business Profile and in directories, so AI assistants can verify you. More in the", visLink: "SEO and AI visibility service" },
 } as const;
 
@@ -52,7 +52,7 @@ const verticals: Record<Vertical, Record<Lang, Copy>> = {
       faq: [
         { q: "Pot să primesc programări direct din site?", a: "Da. Putem adăuga un formular de cerere de programare sau o integrare cu un sistem de programări, în funcție de ce folosești deja. Stabilim soluția după o discuție scurtă." },
         { q: "Cum apare clinica mea în răspunsurile ChatGPT sau Gemini?", a: "Prin informații clare și consecvente despre clinică, date structurate, pagini care răspund la întrebările pacienților și recenzii reale. Nu pot garanta o poziție anume, dar măsurăm înainte și după și îți arăt schimbarea." },
-        { q: "Pot păstra adresa actuală a site-ului?", a: "De obicei da. Dacă schimbăm adrese, folosim redirecturi 301 ca să nu pierzi poziții în Google." },
+        { q: "Pot păstra adresa actuală a site-ului?", a: "De obicei da. Dacă schimbăm adrese, folosim redirecționări 301 ca să nu pierzi poziții în Google." },
         { q: "Cât costă?", a: "Depinde de numărul de pagini și de funcționalități. Primești o ofertă clară după o discuție scurtă. Auditul inițial e gratuit." },
       ],
       ctaTitle: "Vrei să vezi cum apare clinica ta acum în Google și în AI?",
@@ -122,7 +122,7 @@ const verticals: Record<Vertical, Record<Lang, Copy>> = {
       faq: [
         { q: "Pot apărea în răspunsurile ChatGPT când cineva caută un avocat?", a: "Pot crește șansele prin informații clare și consecvente, pagini pe domenii de practică, articole utile, date structurate și recenzii reale. Nu pot garanta o poziție anume, dar măsurăm înainte și după." },
         { q: "Cine scrie conținutul juridic?", a: "Tu sau echipa ta. Eu structurez, editez pentru claritate și optimizez pentru căutare, iar tu aprobi tot ce se publică." },
-        { q: "Pot păstra adresele paginilor actuale?", a: "De obicei da. Dacă schimbăm adrese, folosim redirecturi 301 ca să nu pierzi poziții în Google." },
+        { q: "Pot păstra adresele paginilor actuale?", a: "De obicei da. Dacă schimbăm adrese, folosim redirecționări 301 ca să nu pierzi poziții în Google." },
         { q: "Cât costă?", a: "Depinde de numărul de pagini și de funcționalități. Primești o ofertă clară după o discuție scurtă. Auditul inițial e gratuit." },
       ],
       ctaTitle: "Vrei să vezi cum apare cabinetul tău acum în Google și în AI?",

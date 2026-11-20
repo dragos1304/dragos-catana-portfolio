@@ -209,10 +209,10 @@ if ($smtp) {
                 'Bună, ' . $name . ',',
                 '',
                 $kind === 'audit'
-                    ? 'Am primit cererea ta pentru auditul gratuit de vizibilitate AI. Îl pregătesc manual și ți-l trimit în maximum ' . $contract['replyHours'] . ' de ore.'
+                    ? 'Am primit cererea ta pentru auditul gratuit de vizibilitate în AI. Îl pregătesc manual și ți-l trimit în maximum ' . $contract['replyHours'] . ' de ore.'
                     : 'Am primit mesajul tău și îți răspund personal în maximum ' . $contract['replyHours'] . ' de ore.',
                 '',
-                'Dacă nu ai trimis tu acest formular, poți ignora acest email.',
+                'Dacă nu ai trimis tu acest formular, poți ignora acest e-mail.',
                 '',
                 'Dragoș Catană',
                 'https://dragoscatana.com',
