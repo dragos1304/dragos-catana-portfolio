@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { brand } from "@/lib/site-config";
 import "./globals.css";
 import { fontClasses } from "@/lib/fonts";
 import { Button, Section } from "@/components/ui";
 
-export const metadata: Metadata = { title: "Pagina nu a fost găsită · Page not found", robots: { index: false } };
+export const metadata: Metadata = { title: "Pagina nu a fost găsită · Page not found", robots: { index: false }, icons: brand.icons };
 
 /** One 404 for both languages (the site has two root layouts: Romanian and /en/). */
 export default function GlobalNotFound() {

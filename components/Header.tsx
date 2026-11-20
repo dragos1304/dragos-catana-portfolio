@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { ui } from "@/lib/i18n";
+import { brand, site } from "@/lib/site-config";
 import { href, nav, twinOf, type Lang } from "@/lib/site-map";
 
 export function Header({ lang }: { lang: Lang }) {
@@ -29,8 +30,9 @@ export function Header({ lang }: { lang: Lang }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-        <Link href={href("home", lang)} className="font-serif text-xl font-extrabold text-ink" onClick={close}>
-          Dragoș Catană<span aria-hidden className="text-orange">.</span>
+        <Link href={href("home", lang)} className="inline-flex shrink-0 items-center" onClick={close}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
+          <img src={brand.wordmark.src} width={brand.wordmark.width} height={brand.wordmark.height} alt={site.name} className="h-10 w-auto sm:h-11" />
         </Link>
         <nav aria-label={t.navLabel} className="hidden items-center gap-7 md:flex">
           {links.map((n) => (

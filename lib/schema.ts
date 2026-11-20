@@ -1,4 +1,4 @@
-import { phone, sameAs, site } from "./site-config";
+import { brand, phone, sameAs, site } from "./site-config";
 import { services } from "./site-map";
 
 export const abs = (path: string) => `${site.url}${path === "/" ? "/" : path.replace(/\/?$/, "/")}`;
@@ -31,6 +31,7 @@ export const siteSchema = {
       url: site.url,
       description: site.description,
       image: `${site.url}/og.png`,
+      logo: `${site.url}${brand.logo}`,
       serviceType: ["Creare site web", "Redesign website", "Optimizare SEO", "SEO local", "Optimizare pentru motoare AI (GEO)"],
       hasOfferCatalog: {
         "@type": "OfferCatalog",

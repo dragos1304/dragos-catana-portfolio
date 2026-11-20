@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import "../globals.css";
 import { Shell } from "@/components/Shell";
-import { site } from "@/lib/site-config";
+import { brand, site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  icons: brand.icons,
+  manifest: brand.manifest,
   title: {
     default: `${site.name} | Web design și SEO pentru căutare AI`,
     template: `%s | ${site.name}`,

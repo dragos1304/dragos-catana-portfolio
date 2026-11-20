@@ -1,13 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import "../../globals.css";
 import { Shell } from "@/components/Shell";
-import { site } from "@/lib/site-config";
+import { brand, site } from "@/lib/site-config";
 
 const description =
   "Website redesign, new websites and SEO focused on visibility in ChatGPT, Gemini and Perplexity. For clinics, law firms and local businesses in Romania.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  icons: brand.icons,
+  manifest: brand.manifest,
   title: {
     default: `${site.name} | Web design and SEO for AI search`,
     template: `%s | ${site.name}`,

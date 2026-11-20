@@ -14,6 +14,7 @@ The hand-drawn orange ring from the website's headings, around "DC" (the mark) a
 | English logo, light background (Clutch, GoodFirms, DesignRush, Crunchbase) | `svg/logo-en.svg` · `png/logo-en.png` |
 | English logo, dark background | `svg/logo-en-white.svg` · `png/logo-en-white.png` |
 | Mark without background (stickers, overlays, presentations) | `svg/mark-transparent.svg` · `png/mark-transparent-1024.png`, white: `*-white` |
+| Website header and footer (name only) | `svg/wordmark.svg` · `svg/wordmark-white.svg` |
 | Website favicon and app icons | `svg/mark-small.svg`, `png/favicon-16/32/48.png`, `png/apple-touch-icon-180.png`, `png/icon-192.png`, `png/icon-512.png` |
 
 Rules: keep clear space around the logo of at least the height of the letter "C"; do not stretch, recolour or redraw the ring; on photos, use the mark on its paper or ink square.
@@ -27,3 +28,7 @@ python build.py <fonts-dir> svg
 ```
 
 `options-ro.html` / `options-ro.png` are the four options presented on 20 Nov 2026; option 3 was chosen.
+
+## On the website
+
+Copies live in `public/` (`favicon.ico`, `icon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest`) and `public/brand/` (wordmarks, `logo-ro.png` for the schema `logo`). Links are set in `brand` in `lib/site-config.ts`. Images are cached for a year, so after replacing any of these files, bump `brandVersion` there.

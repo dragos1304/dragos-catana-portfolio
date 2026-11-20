@@ -110,6 +110,23 @@ def lockup(lang, name_color, sub_color):
     return svg(round(width), round(height), body)
 
 
+def wordmark(color):
+    """Name only, for the website header and footer: Dragoș [Catană in the ring], tight margins."""
+    size, margin = 120, 8
+    first, b1, _, end1 = run(DISPLAY, "Dragoș ", size, margin, 0, tracking=-0.03)
+    last, b2, _, _ = run(DISPLAY, "Catană", size, end1 + 0.40 * size, 0, tracking=-0.03)
+    cap_h = b2[3] - b2[1]
+    pad_x, pad_y = 0.62 * cap_h, 0.42 * cap_h
+    top = margin + pad_y - b2[1]
+    bottom = max(top + b1[3], top + b2[3] + pad_y)    # the ș comma or the ring, whichever is lower
+    width = b2[2] + pad_x + 12 + margin
+    height = bottom + 6 + margin
+    ringed = (b2[0], b2[1] + top, b2[2], b2[3] + top)
+    body = (ring(ringed, pad_x, pad_y, 11)
+            + f'<path transform="translate(0 {top:.1f})" d="{first} {last}" fill="{color}"/>')
+    return svg(round(width), round(height), body)
+
+
 os.makedirs(OUT, exist_ok=True)
 files = {
     "mark-light.svg": mark(INK, PAPER),            # profile photo, light
@@ -117,6 +134,8 @@ files = {
     "mark-transparent.svg": mark(INK),             # on light surfaces
     "mark-transparent-white.svg": mark(PAPER),     # on dark surfaces
     "mark-small.svg": mark(INK, PAPER, small=True),  # favicon and icons under 64 px
+    "wordmark.svg": wordmark(INK),                 # website header
+    "wordmark-white.svg": wordmark(PAPER),         # website footer (dark)
 }
 for lang in ("ro", "en"):
     files[f"logo-{lang}.svg"] = lockup(lang, INK, MUTED)               # for light backgrounds

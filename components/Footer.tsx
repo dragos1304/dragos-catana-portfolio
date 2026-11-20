@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, social } from "@/lib/site-config";
+import { brand, site, social } from "@/lib/site-config";
 import { ui } from "@/lib/i18n";
 import { href, nav, type Lang } from "@/lib/site-map";
 import { CookieSettingsButton } from "./CookieBanner";
@@ -16,7 +16,8 @@ export function Footer({ lang }: { lang: Lang }) {
       </div>
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-3">
         <div>
-          <p className="font-serif text-xl font-extrabold text-paper">{site.name}<span aria-hidden className="text-orange">.</span></p>
+          {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
+          <img src={brand.wordmarkWhite.src} width={brand.wordmarkWhite.width} height={brand.wordmarkWhite.height} alt={site.name} className="h-10 w-auto" />
           <p className="mt-3 max-w-xs text-[15px] leading-relaxed">{t.footerAbout}</p>
           <p className="mt-3 text-[15px]">{t.footerWhere}</p>
           <ul className="mt-5 flex flex-wrap gap-2" aria-label={t.socialLabel}>

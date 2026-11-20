@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 export const site = {
   name: "Dragoș Catană",
   legalName: "Dragoș-Mihai Catană",
@@ -42,3 +43,25 @@ export const proof = {
     sitemapPages: { before: 0, after: 11 },
   },
 } as const;
+
+/**
+ * Logo and icons (sources in brand/logo, copied to public/). Images are cached for a year under the
+ * same URL, so every link carries `?v=`: bump `brandVersion` whenever a logo or icon file changes.
+ */
+export const brandVersion = "1";
+const v = (path: string) => `${path}?v=${brandVersion}`;
+const icons: NonNullable<Metadata["icons"]> = {
+  icon: [
+    { url: v("/favicon.ico"), sizes: "16x16 32x32 48x48" },
+    { url: v("/icon.svg"), type: "image/svg+xml" },
+    { url: v("/icon-192.png"), sizes: "192x192", type: "image/png" },
+  ],
+  apple: [{ url: v("/apple-touch-icon.png"), sizes: "180x180" }],
+};
+export const brand = {
+  wordmark: { src: v("/brand/wordmark.svg"), width: 868, height: 179 },
+  wordmarkWhite: { src: v("/brand/wordmark-white.svg"), width: 868, height: 179 },
+  logo: "/brand/logo-ro.png",
+  icons,
+  manifest: "/site.webmanifest",
+};
