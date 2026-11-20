@@ -7,7 +7,7 @@ import { alternates } from "@/lib/i18n";
 
 const path = "/servicii/redesign-website";
 export const metadata: Metadata = {
-  title: "Redesign de website fără să pierzi pozițiile din Google",
+  title: "Redesign website fără pierderi în Google",
   description:
     "Redesign modern pentru clinici, cabinete și afaceri locale: design nou, viteză, migrare sigură cu redirecturi 301 și conținut pregătit pentru AI. Cere o ofertă.",
   alternates: alternates(`${path}/`, "ro"),

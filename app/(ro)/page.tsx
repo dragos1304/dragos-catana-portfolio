@@ -72,7 +72,7 @@ export default function Home() {
               <Link href="/servicii/creare-website" className="font-semibold underline decoration-orange decoration-2 underline-offset-4 hover:decoration-ink">creare de site-uri</Link> și{" "}
               <Link href="/servicii/seo-vizibilitate-ai" className="font-semibold underline decoration-orange decoration-2 underline-offset-4 hover:decoration-ink">optimizare SEO</Link>{" "}
               pentru clinici, cabinete de avocatură și afaceri locale, ca să apari în Google și în răspunsurile ChatGPT.
-              {" "}Lucrez singur: eu fac auditul, eu construiesc și tot eu îți răspund.
+              {" "}Mă ocup personal de fiecare proiect: înțeleg ce caută clienții tăi și am grijă de fiecare detaliu.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button href="/audit-gratuit-vizibilitate-ai" arrow>Cere auditul gratuit</Button>
@@ -261,7 +261,7 @@ export default function Home() {
             <div className="space-y-5 text-xl leading-relaxed text-ink">
               <p>Am început să construiesc afaceri la 16 ani: magazine online, apoi marketing pentru alții. Am învățat repede un lucru incomod: un produs bun nu ajunge nicăieri dacă oamenii nu îl găsesc și nu au încredere în el.</p>
               <p>Studiez Economia la Universitatea Babeș-Bolyai din Cluj, cu schimburi la Paris și în statul New York. Gândesc în costuri, riscuri și rezultate, așa că judec un site după ce aduce afacerii tale, nu după cât de spectaculos arată.</p>
-              <p>Lucrez singur, cu bună știință. Omul cu care vorbești la prima discuție este cel care îți face auditul, îți construiește site-ul și îți răspunde la mesaje.</p>
+              <p>Lucrez direct cu fiecare client. Omul cu care vorbești la prima discuție este cel care îți face auditul, îți construiește site-ul și îți răspunde la mesaje, așa că nimic din ce mi-ai spus nu se pierde pe drum.</p>
               <p className="font-accent text-3xl italic">— Dragoș</p>
             </div>
             <figure className="mt-10 rounded-3xl bg-paper p-6 sm:p-8">

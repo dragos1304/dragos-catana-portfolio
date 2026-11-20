@@ -10,7 +10,7 @@ import { servicesEn } from "@/lib/site-config-en";
 import { alternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: { absolute: "Web designer in Romania: websites, SEO & AI visibility | Dragoș Cătană" },
+  title: { absolute: "Web designer in Romania: websites & SEO | Dragoș Cătană" },
   description:
     "Web designer in Cluj-Napoca, Romania: websites, redesign and SEO for clinics, law firms and local businesses, so ChatGPT and Google can find you. Free audit in 24h.",
   alternates: alternates("/en/", "en"),
@@ -70,7 +70,7 @@ export default function HomeEn() {
               <Link href="/en/services/website-design" className="font-semibold underline decoration-orange decoration-2 underline-offset-4 hover:decoration-ink">websites</Link> and do{" "}
               <Link href="/en/services/seo-ai-visibility" className="font-semibold underline decoration-orange decoration-2 underline-offset-4 hover:decoration-ink">SEO</Link>{" "}
               for clinics, law firms and local businesses in Romania, so you show up on Google and in ChatGPT&apos;s answers.
-              {" "}I work alone: I do the audit, I build the site and I&apos;m the one who replies.
+              {" "}I look after every project personally: I learn what your clients are looking for and take care of every detail.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button href="/en/free-ai-visibility-audit" arrow>Get the free audit</Button>
@@ -250,7 +250,7 @@ export default function HomeEn() {
             <div className="space-y-5 text-xl leading-relaxed text-ink">
               <p>I started building businesses at 16: online shops, then marketing for others. I learned one uncomfortable thing early: a good product goes nowhere if people can&apos;t find it and don&apos;t trust it.</p>
               <p>I study Economics at Babeș-Bolyai University in Cluj, with exchanges in Paris and New York State. I think in costs, risk and results, so I judge a website by what it brings your business, not by how flashy it looks.</p>
-              <p>I work alone, on purpose. The person you speak to on the first call is the one who does your audit, builds your site and answers your messages.</p>
+              <p>I work directly with every client. The person you speak to on the first call is the one who does your audit, builds your site and answers your messages, so nothing you tell me gets lost along the way.</p>
               <p className="font-accent text-3xl italic">— Dragoș</p>
             </div>
             <figure className="mt-10 rounded-3xl bg-paper p-6 sm:p-8">

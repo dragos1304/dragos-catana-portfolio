@@ -41,7 +41,7 @@ export const siteSchema = {
       knowsLanguage: ["ro", "en", "fr", "de"],
       sameAs: [site.github, site.linkedin],
     },
-    { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, inLanguage: "ro-RO", publisher: { "@id": `${site.url}/#person` } },
+    { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, inLanguage: ["ro-RO", "en"], publisher: { "@id": `${site.url}/#person` } },
   ],
 };
 

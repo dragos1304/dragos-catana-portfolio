@@ -4,7 +4,7 @@ import { alternates } from "@/lib/i18n";
 
 const path = "/en/services/clinic-websites";
 export const metadata: Metadata = {
-  title: "Websites for clinics and medical practices in Romania",
+  title: "Websites for clinics in Romania",
   description:
     "Websites for clinics and medical practices: fast, credible, with online booking, specialty pages and visibility on Google and in AI. Get a quote.",
   alternates: alternates(`${path}/`, "en"),

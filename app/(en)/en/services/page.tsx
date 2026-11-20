@@ -7,7 +7,7 @@ import { servicesEn } from "@/lib/site-config-en";
 import { alternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Services: new website, redesign, SEO and maintenance",
+  title: "Services: websites, redesign and SEO",
   description:
     "Website redesign, new websites and SEO focused on visibility in ChatGPT, Gemini and Perplexity, for businesses in Romania. Get a quote or a free audit.",
   alternates: alternates("/en/services/", "en"),

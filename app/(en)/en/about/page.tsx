@@ -5,9 +5,9 @@ import { breadcrumb, personSchema } from "@/lib/schema";
 import { alternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "About Dragoș Cătană: economist, entrepreneur, web designer",
+  title: "About me: economist and web designer",
   description:
-    "Economics student (4.0 GPA) at Babeș-Bolyai University, with exchanges in Paris and the US, building businesses since 16. The story behind the web design and SEO work.",
+    "Economics student (4.0 GPA) at Babeș-Bolyai University, with exchanges in Paris and the US, building businesses since 16. The story behind my work.",
   alternates: alternates("/en/about/", "en"),
 };
 

@@ -11,7 +11,7 @@ const path = "/en/work/cheesy-media";
 export const metadata: Metadata = {
   title: "Case study: Cheesy Media website redesign",
   description:
-    "Redesign for a photo and video agency in Cluj-Napoca: a new design, 11 pages, structured data and a site ready for Google and AI. Mobile Lighthouse performance 82 → 100.",
+    "Redesign for a photo and video agency in Cluj: new design, 11 pages, structured data, ready for Google and AI. Mobile performance 82 → 100.",
   alternates: alternates(`${path}/`, "en"),
 };
 

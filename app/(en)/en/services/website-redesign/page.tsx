@@ -6,7 +6,7 @@ import { alternates } from "@/lib/i18n";
 
 const path = "/en/services/website-redesign";
 export const metadata: Metadata = {
-  title: "Website redesign without losing your Google rankings",
+  title: "Website redesign without losing rankings",
   description:
     "Modern redesign for clinics, law firms and local businesses in Romania: new design, speed, safe migration with 301 redirects and AI-ready content. Get a quote.",
   alternates: alternates(`${path}/`, "en"),

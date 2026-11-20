@@ -7,7 +7,7 @@ import { services } from "@/lib/site-config";
 import { alternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Servicii: creare site, redesign, SEO și mentenanță",
+  title: "Servicii: creare site, redesign și SEO",
   description:
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Cere o ofertă sau un audit gratuit.",
   alternates: alternates("/servicii/", "ro"),
