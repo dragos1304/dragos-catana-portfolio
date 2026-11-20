@@ -37,7 +37,7 @@ Source plan: `PORTFOLIO_STRUCTURE.md`. Status as of 18 Nov 2026.
 - [x] **FAQ on every page** (RO + EN, except the 404): `lib/faqs.ts`. Real client questions plus AI-style prompts ("Cine face site-uri pentru clinici în România?"). Each page emits exactly one FAQPage (tested).
 - [x] **Social links in one place:** `social` and `phone` in `lib/site-config.ts`. Footer, contact pages, llms.txt and schema `sameAs`/`telephone` all read from it. To add or change a profile, edit that one entry; `sameAs: true` puts it in the schema.
 - [x] Privacy page: processors corrected (Network Solutions, Cloudflare, iCloud Mail, Calendly, Google with consent). **Still needs the legal review.**
-- [ ] **Profiles to create, then add to `social`** (priority order): Google Business Profile Maps URL (after verification), Facebook page, Clutch, DesignRush/GoodFirms, Bing Places, YouTube (short audit walk-throughs), Behance or Dribbble, Crunchbase. Use the same name, photo and one-line description everywhere.
+- [ ] **Profiles to create, then add to `social`** (copy-paste kit: `PROFILES.md`; priority order): Google Business Profile Maps URL (after verification), Facebook page, Clutch, DesignRush/GoodFirms, Bing Places, YouTube (short audit walk-throughs), Behance or Dribbble, Crunchbase. Use the same name, photo and one-line description everywhere.
 - [ ] **Community presence:** answer real questions on Reddit (r/Romania, r/cluj, r/webdev) and Quora under your name, no link spam.
 
 ## Redesign, journey and SEO (18 Nov 2026)
