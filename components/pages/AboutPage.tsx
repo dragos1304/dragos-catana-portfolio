@@ -165,7 +165,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
             <p>{c.q[0]}I would place him as the top student, not only in his class, but also across the entire set of English-taught programs of our school.{c.q[1]}</p>
             <p className="mt-4">{c.q[0]}He was one of the few students I have worked with who managed to engage the majority of the audience… making him the person his peers would turn to when they felt stuck.{c.q[1]}</p>
           </blockquote>
-          <figcaption className="mt-5 text-slate-ink">{c.quoteBy}{c.quoteNote && <span className="text-sm">{c.quoteNote}</span>}</figcaption>
+          <figcaption className="mt-5 text-slate-ink">{c.quoteBy}<span className="text-sm">{c.quoteNote}</span></figcaption>
         </figure>
       </Section>
       <CtaBand lang={lang} title={c.cta} />
