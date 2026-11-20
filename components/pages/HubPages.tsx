@@ -11,7 +11,7 @@ import { alternates, href, pageName, services, type Lang, type PageKey } from "@
 
 const perf = proof.cheesy.lighthouse[0];
 const pagesAfter = proof.cheesy.sitemapPages.after;
-const link = "font-semibold text-brass-dark underline underline-offset-4";
+const link = "font-semibold text-orange-ink underline underline-offset-4";
 
 const workCopy = {
   ro: {
@@ -54,7 +54,7 @@ export function WorkPage({ lang }: { lang: Lang }) {
         <Breadcrumbs lang={lang} items={[{ name: home.name, href: home.path }, { name: pageName("work", lang) }]} />
         <Eyebrow>{pageName("work", lang)}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{c.lead}</p>
         <div className="mt-10">
           <Link href={href("cheesy", lang)} className="group grid overflow-hidden rounded-3xl border-2 border-ink bg-canvas transition-shadow duration-200 hover:shadow-[8px_8px_0_0_var(--color-ink)] lg:grid-cols-[1.3fr_1fr]">
             <div className="relative bg-ink p-5 pb-8 pr-10 sm:p-8 sm:pb-10 sm:pr-16">
@@ -62,9 +62,9 @@ export function WorkPage({ lang }: { lang: Lang }) {
               <Shot name="site-mobile" phone alt={c.phoneAlt} sizes="140px" className="absolute bottom-3 right-3 w-[24%] max-w-[140px]" />
             </div>
             <div className="flex flex-col p-7 sm:p-9">
-              <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">{c.kicker}</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-orange-ink">{c.kicker}</p>
               <h2 className="mt-2 font-serif text-3xl font-extrabold">Cheesy Media</h2>
-              <p className="mt-3 text-[17px] leading-relaxed text-slate-ink">{c.text}</p>
+              <p className="mt-3 text-[17px] leading-relaxed text-muted">{c.text}</p>
               <ul className="mt-5 flex flex-wrap gap-2 text-sm font-semibold">
                 {c.chips.map((t) => <li key={t} className="rounded-full bg-paper px-3 py-1">{t}</li>)}
               </ul>
@@ -159,13 +159,13 @@ export function ServicesPage({ lang }: { lang: Lang }) {
         <Breadcrumbs lang={lang} items={[{ name: home.name, href: home.path }, { name: pageName("services", lang) }]} />
         <Eyebrow>{pageName("services", lang)}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{c.lead}</p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {list.map((s) => (
-            <Link key={s.key} href={s.href} className={`rounded-md border p-7 hover:shadow-lg ${s.flagship ? "border-brass-dark" : "border-line"}`}>
+            <Link key={s.key} href={s.href} className={`rounded-md border p-7 hover:shadow-lg ${s.flagship ? "border-orange-ink" : "border-line"}`}>
               <h2 className="font-serif text-2xl font-bold">{s.title}</h2>
-              <p className="mt-3 leading-relaxed text-slate-ink">{s.short}</p>
-              <span className="mt-5 inline-block font-semibold text-brass-dark">{c.details}</span>
+              <p className="mt-3 leading-relaxed text-muted">{s.short}</p>
+              <span className="mt-5 inline-block font-semibold text-orange-ink">{c.details}</span>
             </Link>
           ))}
         </div>
@@ -177,7 +177,7 @@ export function ServicesPage({ lang }: { lang: Lang }) {
           <table className="w-full min-w-[520px] border-collapse text-left">
             <caption className="sr-only">{c.tableCaption}</caption>
             <thead>
-              <tr className="border-b border-navy/20 text-sm uppercase tracking-wider text-slate-ink">
+              <tr className="border-b border-ink/20 text-sm uppercase tracking-wider text-muted">
                 <th scope="col" className="py-3 pr-4">{c.colSituation}</th>
                 <th scope="col" className="py-3">{c.colService}</th>
               </tr>
@@ -192,7 +192,7 @@ export function ServicesPage({ lang }: { lang: Lang }) {
         <h3 className="mt-12 font-serif text-2xl font-bold">{c.fieldH3}</h3>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">
           {c.fields.map(([key, name, d]) => (
-            <li key={key} className="rounded-md border border-line bg-white p-6"><Link className={link} href={href(key, lang)}>{name}</Link><p className="mt-2 text-slate-ink">{d}</p></li>
+            <li key={key} className="rounded-md border border-line bg-white p-6"><Link className={link} href={href(key, lang)}>{name}</Link><p className="mt-2 text-muted">{d}</p></li>
           ))}
         </ul>
         <h3 className="mt-12 font-serif text-2xl font-bold">{c.packsH3}</h3>
@@ -200,7 +200,7 @@ export function ServicesPage({ lang }: { lang: Lang }) {
           {c.packs.map(([t, d]) => <li key={t} className="rounded-md border border-line bg-white p-6"><strong>{t}</strong> {d}</li>)}
         </ul>
         <h3 className="mt-12 font-serif text-2xl font-bold">{c.langsH3}</h3>
-        <p className="mt-3 max-w-2xl text-slate-ink leading-relaxed">{c.langs}</p>
+        <p className="mt-3 max-w-2xl text-muted leading-relaxed">{c.langs}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={href("contact", lang)}>{c.quote}</Button>
           <Button href={href("audit", lang)} variant="ghost">{c.audit}</Button>

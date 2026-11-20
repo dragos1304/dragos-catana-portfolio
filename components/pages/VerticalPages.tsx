@@ -182,7 +182,7 @@ export function VerticalPage({ k, lang }: { k: Vertical; lang: Lang }) {
         <Breadcrumbs lang={lang} items={[{ name: t.home, href: href("home", lang) }, { name: t.services, href: href("services", lang) }, { name: crumb }]} />
         <Eyebrow>{p.eyebrow}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{p.h1}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{p.lead}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{p.lead}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={href("audit", lang)}>{t.audit}</Button>
           <Button href={href("contact", lang)} variant="ghost">{t.quote}</Button>
@@ -193,7 +193,7 @@ export function VerticalPage({ k, lang }: { k: Vertical; lang: Lang }) {
         <H2>{t.needs}</H2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {p.needs.map((n) => (
-            <div key={n.t} className="rounded-md border border-line bg-white p-6"><h3 className="font-serif text-xl font-bold">{n.t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{n.d}</p></div>
+            <div key={n.t} className="rounded-md border border-line bg-white p-6"><h3 className="font-serif text-xl font-bold">{n.t}</h3><p className="mt-2 leading-relaxed text-muted">{n.d}</p></div>
           ))}
         </div>
       </Section>
@@ -203,8 +203,8 @@ export function VerticalPage({ k, lang }: { k: Vertical; lang: Lang }) {
         <ol className="mt-8 grid gap-x-10 gap-y-6 md:grid-cols-2">
           {p.structure.map((n, i) => (
             <li key={n.t} className="flex gap-4">
-              <span className="font-serif text-3xl font-bold text-brass-dark" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
-              <div><h3 className="text-lg font-semibold">{n.t}</h3><p className="mt-1 leading-relaxed text-slate-ink">{n.d}</p></div>
+              <span className="font-serif text-3xl font-bold text-orange-ink" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
+              <div><h3 className="text-lg font-semibold">{n.t}</h3><p className="mt-1 leading-relaxed text-muted">{n.d}</p></div>
             </li>
           ))}
         </ol>
@@ -212,16 +212,16 @@ export function VerticalPage({ k, lang }: { k: Vertical; lang: Lang }) {
 
       <Section id="vizibilitate" tint>
         <H2>{t.vis}</H2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
           {t.visA} ({p.schemaTypes}), {t.visB}{" "}
-          <Link className="font-semibold text-brass-dark underline underline-offset-4" href={href("seo", lang)}>{t.visLink}</Link>.
+          <Link className="font-semibold text-orange-ink underline underline-offset-4" href={href("seo", lang)}>{t.visLink}</Link>.
         </p>
       </Section>
 
       <Section id="de-retinut">
-        <div className="max-w-3xl rounded-md border border-brass-dark bg-canvas p-7">
+        <div className="max-w-3xl rounded-md border border-orange-ink bg-canvas p-7">
           <h2 className="font-serif text-2xl font-bold">{p.caution.title}</h2>
-          <p className="mt-3 leading-relaxed text-slate-ink">{p.caution.text}</p>
+          <p className="mt-3 leading-relaxed text-muted">{p.caution.text}</p>
         </div>
       </Section>
 

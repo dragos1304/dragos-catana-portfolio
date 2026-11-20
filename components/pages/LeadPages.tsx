@@ -9,7 +9,7 @@ import { alternates, href, pageName, type Lang } from "@/lib/site-map";
 
 /** The two pages that end in the lead form: Contact and the free audit. Once each, in either language. */
 
-const linkCls = "font-semibold text-brass-dark underline underline-offset-4";
+const linkCls = "font-semibold text-orange-ink underline underline-offset-4";
 
 const contactCopy = {
   ro: {
@@ -48,14 +48,14 @@ export function ContactPage({ lang }: { lang: Lang }) {
           <div>
             <Eyebrow>Contact</Eyebrow>
             <h1 className="font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-slate-ink">{c.lead}</p>
-            <ul className="mt-8 space-y-4 text-slate-ink">
-              <li><strong className="text-navy">{c.book}</strong>{" "}
+            <p className="mt-5 text-lg leading-relaxed text-muted">{c.lead}</p>
+            <ul className="mt-8 space-y-4 text-muted">
+              <li><strong className="text-ink">{c.book}</strong>{" "}
                 <a className={linkCls} href={site.calendly} target="_blank" rel="noopener noreferrer">Calendly</a></li>
-              <li><strong className="text-navy">{c.auditQ}</strong>{" "}
+              <li><strong className="text-ink">{c.auditQ}</strong>{" "}
                 <Link className={linkCls} href={href("audit", lang)}>{c.auditLink}</Link></li>
-              <li><strong className="text-navy">{c.where}</strong> {c.whereText}</li>
-              <li><strong className="text-navy">{c.langs}</strong> {c.langsText}</li>
+              <li><strong className="text-ink">{c.where}</strong> {c.whereText}</li>
+              <li><strong className="text-ink">{c.langs}</strong> {c.langsText}</li>
             </ul>
           </div>
           <div className="rounded-md border border-line bg-white p-6 shadow-sm sm:p-8">
@@ -115,14 +115,14 @@ export function AuditPage({ lang }: { lang: Lang }) {
             <h1 className="font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">
               {c.h1a}<em className="font-accent font-normal tracking-normal text-orange-ink">{c.h1b}</em>{c.h1c}
             </h1>
-            <p className="mt-5 text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+            <p className="mt-5 text-lg leading-relaxed text-muted">{c.lead}</p>
             <H2 className="mt-10 !text-3xl">{c.h2}</H2>
-            <ul className="mt-4 space-y-3 text-slate-ink leading-relaxed">
+            <ul className="mt-4 space-y-3 text-muted leading-relaxed">
               {c.items.map((i) => <li key={i}>✓ {i}</li>)}
             </ul>
-            <p className="mt-6 text-sm text-slate-ink">
+            <p className="mt-6 text-sm text-muted">
               {c.note}{" "}
-              <a className="font-semibold text-navy underline underline-offset-4" href={site.calendly} target="_blank" rel="noopener noreferrer">{c.book}</a>.
+              <a className="font-semibold text-ink underline underline-offset-4" href={site.calendly} target="_blank" rel="noopener noreferrer">{c.book}</a>.
             </p>
           </div>
           <div className="rounded-md border border-line bg-white p-6 shadow-sm sm:p-8">

@@ -23,9 +23,9 @@ export default function Articole() {
           {articles.map((a) => (
             <li key={a.slug}>
               <Link href={`/articole/${a.slug}`} className="block h-full rounded-md border border-line p-6 hover:shadow-lg">
-                <p className="text-sm font-semibold uppercase tracking-wider text-brass-dark">{a.category} · {a.readMin} min</p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-orange-ink">{a.category} · {a.readMin} min</p>
                 <h2 className="mt-2 font-serif text-xl font-bold leading-snug">{a.title}</h2>
-                <p className="mt-3 leading-relaxed text-slate-ink">{a.description}</p>
+                <p className="mt-3 leading-relaxed text-muted">{a.description}</p>
               </Link>
             </li>
           ))}

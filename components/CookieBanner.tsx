@@ -54,15 +54,15 @@ export function CookieBanner({ lang = "ro" }: { lang?: Lang }) {
     <div role="dialog" aria-modal="false" aria-labelledby="cookie-title"
       className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-md border border-line bg-white p-5 shadow-2xl sm:inset-x-6 sm:p-6">
       <p id="cookie-title" className="font-serif text-lg font-bold">{t.title}</p>
-      <p className="mt-2 text-sm leading-relaxed text-slate-ink">
+      <p className="mt-2 text-sm leading-relaxed text-muted">
         {t.body}{" "}
-        <Link href="/cookie" hrefLang="ro" className="font-medium text-navy underline underline-offset-4">{t.link}</Link>.
+        <Link href="/cookie" hrefLang="ro" className="font-medium text-ink underline underline-offset-4">{t.link}</Link>.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <button type="button" onClick={() => choose("granted")}
-          className="min-h-11 rounded-sm bg-navy px-5 font-semibold text-white hover:bg-brass-dark">{t.accept}</button>
+          className="min-h-11 rounded-sm bg-ink px-5 font-semibold text-white hover:bg-orange-ink">{t.accept}</button>
         <button type="button" onClick={() => choose("denied")}
-          className="min-h-11 rounded-sm border border-navy/40 px-5 font-semibold text-navy hover:bg-navy hover:text-white">{t.reject}</button>
+          className="min-h-11 rounded-sm border border-ink/40 px-5 font-semibold text-ink hover:bg-ink hover:text-white">{t.reject}</button>
       </div>
     </div>
   );

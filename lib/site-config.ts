@@ -2,7 +2,6 @@ export const site = {
   name: "Dragoș Cătană",
   legalName: "Dragoș-Mihai Cătană",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dragoscatana.com",
-  tagline: "Web design și optimizare pentru căutare AI",
   description:
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Pentru clinici, cabinete de avocatură și afaceri locale din România.",
   city: "Cluj-Napoca",
@@ -12,8 +11,6 @@ export const site = {
   gtmId: "GTM-K7RPGZSV",
   /** The reply promise, phrased per language. Change it here and every page, email and band follows. */
   reply: { hours: 24, ro: "24 de ore", en: "24 hours" },
-  /** Kept for older call sites: the Romanian phrasing of the reply promise. */
-  responseTime: "24 de ore",
 } as const;
 
 /** Measured proof. Only numbers we can show evidence for (Lighthouse reports in public/lucrari/cheesy-media). */

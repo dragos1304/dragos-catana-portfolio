@@ -13,7 +13,7 @@ import { alternates, href, pageName, type Lang, type PageKey } from "@/lib/site-
  * Article guides and article links are Romanian-only, because the articles are.
  */
 
-const linkCls = "font-semibold text-brass-dark underline underline-offset-4";
+const linkCls = "font-semibold text-orange-ink underline underline-offset-4";
 const ui = {
   ro: { quote: "Cere o ofertă", audit: "Audit gratuit AI", auditLong: "Cere auditul gratuit" },
   en: { quote: "Get a quote", audit: "Free AI audit", auditLong: "Get the free audit" },
@@ -39,12 +39,12 @@ function ServiceHead({ k, lang, schemaName, schemaDescription }: { k: PageKey; l
 
 const Check = ({ items }: { items: readonly string[] }) => (
   <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-    {items.map((t) => <li key={t} className="flex gap-3 rounded-md border border-line bg-white p-4"><span aria-hidden className="text-brass-dark">✓</span>{t}</li>)}
+    {items.map((t) => <li key={t} className="flex gap-3 rounded-md border border-line bg-white p-4"><span aria-hidden className="text-orange-ink">✓</span>{t}</li>)}
   </ul>
 );
 const Cards = ({ items, cols = "md:grid-cols-2" }: { items: readonly (readonly [string, string])[]; cols?: string }) => (
   <div className={`mt-8 grid gap-6 ${cols}`}>
-    {items.map(([t, d]) => <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>)}
+    {items.map(([t, d]) => <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-muted">{d}</p></div>)}
   </div>
 );
 
@@ -127,7 +127,7 @@ export function RedesignPage({ lang }: { lang: Lang }) {
         <ServiceHead k="redesign" lang={lang} schemaName={c.schemaName} schemaDescription={c.schemaDescription} />
         <Eyebrow>{pageName("redesign", lang)}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{c.lead}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={href("contact", lang)}>{ui[lang].quote}</Button>
           <Button href={href("audit", lang)} variant="ghost">{ui[lang].audit}</Button>
@@ -136,7 +136,7 @@ export function RedesignPage({ lang }: { lang: Lang }) {
       <Section id="semne-ca-site-ul" tint>
         <H2>{c.signsH2}</H2>
         <Check items={c.signs} />
-        {c.signsMore && <p className="mt-6 text-slate-ink">{c.signsMore}</p>}
+        {c.signsMore && <p className="mt-6 text-muted">{c.signsMore}</p>}
       </Section>
       <Section id="ce-include">
         <H2>{c.includedH2}</H2>
@@ -144,12 +144,12 @@ export function RedesignPage({ lang }: { lang: Lang }) {
       </Section>
       <Section id="fara-pierderi-seo" tint>
         <H2>{c.seoH2}</H2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.seo}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{c.seo}</p>
         {c.seoMore && <p className="mt-4">{c.seoMore}</p>}
       </Section>
       <Section id="un-exemplu-real">
         <H2>{c.exampleH2}</H2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.example}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{c.example}</p>
         <div className="mt-6"><Button href={href("cheesy", lang)} variant="ghost">{c.exampleCta}</Button></div>
       </Section>
       <Section id="intrebari" tint><FAQ items={c.faq} lang={lang} /></Section>
@@ -179,7 +179,7 @@ const newSite = {
     shops: "Dacă ai un magazin online, stabilim din start ce ține de piața din România: procesatorul de plăți, programul de facturare, curierii, consimțământul pentru cookie-uri și paginile de informare cerute consumatorilor. Verific fiecare punct cu tine, nu presupun.",
     costH2: "Cât costă un site? Ce influențează prețul",
     cost1: "Nu afișez un preț fix, pentru că un site de prezentare cu cinci pagini și un magazin online cu plăți și facturare sunt proiecte diferite. Prețul depinde de trei lucruri: numărul de pagini și cât conținut scriem împreună, funcționalitățile (programări online, formulare, mai multe limbi) și platforma aleasă.",
-    cost2: (l: Lang) => <>Primești o ofertă clară după o discuție de 30 de minute. Dacă ai deja un site și vrei doar să-l modernizezi, vezi <a href={href("redesign", l)} className="font-semibold text-brass-dark underline-offset-4 hover:underline">redesign de website</a>. Dacă vrei să știi întâi unde ești acum, începe cu <a href={href("audit", l)} className="font-semibold text-brass-dark underline-offset-4 hover:underline">auditul SEO gratuit</a>. Iar ca să vezi un proiect real, citește <a href={href("cheesy", l)} className="font-semibold text-brass-dark underline-offset-4 hover:underline">studiul de caz Cheesy Media</a>.</>,
+    cost2: (l: Lang) => <>Primești o ofertă clară după o discuție de 30 de minute. Dacă ai deja un site și vrei doar să-l modernizezi, vezi <a href={href("redesign", l)} className="font-semibold text-orange-ink underline-offset-4 hover:underline">redesign de website</a>. Dacă vrei să știi întâi unde ești acum, începe cu <a href={href("audit", l)} className="font-semibold text-orange-ink underline-offset-4 hover:underline">auditul SEO gratuit</a>. Iar ca să vezi un proiect real, citește <a href={href("cheesy", l)} className="font-semibold text-orange-ink underline-offset-4 hover:underline">studiul de caz Cheesy Media</a>.</>,
     guides: ["ce-este-seo", "10-semne-ca-site-ul-tau-este-depasit", "redesign-site-fara-sa-pierzi-pozitiile-din-google", "google-business-profile-ghid"] as string[] | null,
     faq: [
       { q: "Ce platformă să aleg?", a: "Pentru clinici, cabinete și servicii locale recomand de regulă un site în Next.js, pentru viteză și control. Dacă vrei să editezi singur vizual, Webflow. Pentru un magazin standard, Shopify. Alegem împreună, după nevoile tale." },
@@ -209,7 +209,7 @@ const newSite = {
     shops: "If you run an online shop, we settle the Romanian market specifics from the start: the payment processor, the invoicing software, couriers, cookie consent and the information pages consumers are entitled to. I check each point with you rather than assume.",
     costH2: "How much does a website cost? What shapes the price",
     cost1: "I don't publish a fixed price, because a five-page brochure site and an online shop with payments and invoicing are different projects. The price depends on three things: the number of pages and how much copy we write together, the features (online booking, forms, several languages) and the platform.",
-    cost2: (l: Lang) => <>You get a clear offer after a 30-minute call. If you already have a site and only want to modernise it, see <a href={href("redesign", l)} className="font-semibold text-brass-dark underline-offset-4 hover:underline">website redesign</a>. To know where you stand first, start with the <a href={href("audit", l)} className="font-semibold text-brass-dark underline-offset-4 hover:underline">free audit</a>. And to see a real project, read the <a href={href("cheesy", l)} className="font-semibold text-brass-dark underline-offset-4 hover:underline">Cheesy Media case study</a>.</>,
+    cost2: (l: Lang) => <>You get a clear offer after a 30-minute call. If you already have a site and only want to modernise it, see <a href={href("redesign", l)} className="font-semibold text-orange-ink underline-offset-4 hover:underline">website redesign</a>. To know where you stand first, start with the <a href={href("audit", l)} className="font-semibold text-orange-ink underline-offset-4 hover:underline">free audit</a>. And to see a real project, read the <a href={href("cheesy", l)} className="font-semibold text-orange-ink underline-offset-4 hover:underline">Cheesy Media case study</a>.</>,
     guides: null as string[] | null,
     faq: [
       { q: "Which platform should I choose?", a: "For clinics, law firms and local services I usually recommend a Next.js site, for speed and control. If you want to edit visually yourself, Webflow. For a standard shop, Shopify. We choose together, based on what you need." },
@@ -233,7 +233,7 @@ export function NewSitePage({ lang }: { lang: Lang }) {
         <ServiceHead k="newSite" lang={lang} schemaName={c.schemaName} schemaDescription={c.schemaDescription} />
         <Eyebrow>{pageName("newSite", lang)}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{c.lead}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={href("contact", lang)}>{ui[lang].quote}</Button>
           <Button href={href("audit", lang)} variant="ghost">{ui[lang].audit}</Button>
@@ -245,24 +245,24 @@ export function NewSitePage({ lang }: { lang: Lang }) {
       </Section>
       <Section id="platforme-ce-aleg-si">
         <H2>{c.platformsH2}</H2>
-        <p className="mt-4 max-w-3xl text-slate-ink leading-relaxed">{c.platformsLead}</p>
+        <p className="mt-4 max-w-3xl text-muted leading-relaxed">{c.platformsLead}</p>
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-left align-top">
             <caption className="sr-only">{c.tableCaption}</caption>
-            <thead><tr className="border-b border-navy/20 text-sm uppercase tracking-wider text-slate-ink">
+            <thead><tr className="border-b border-ink/20 text-sm uppercase tracking-wider text-muted">
               {c.cols.map((col, i) => <th key={col} scope="col" className={i < 2 ? "py-3 pr-4" : "py-3"}>{col}</th>)}</tr></thead>
             <tbody className="divide-y divide-line">
               {c.platforms.map(([a, b, d]) => (
-                <tr key={a}><th scope="row" className="py-4 pr-4 font-semibold">{a}</th><td className="py-4 pr-4 text-slate-ink">{b}</td><td className="py-4 text-slate-ink">{d}</td></tr>
+                <tr key={a}><th scope="row" className="py-4 pr-4 font-semibold">{a}</th><td className="py-4 pr-4 text-muted">{b}</td><td className="py-4 text-muted">{d}</td></tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-6 max-w-3xl text-slate-ink leading-relaxed">{c.shops}</p>
+        <p className="mt-6 max-w-3xl text-muted leading-relaxed">{c.shops}</p>
       </Section>
       <Section id="cat-costa-un-site" tint>
         <H2>{c.costH2}</H2>
-        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-ink">
+        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-muted">
           <p>{c.cost1}</p>
           <p>{c.cost2(lang)}</p>
         </div>
@@ -285,7 +285,7 @@ const seo = {
     lead: "Tot mai mulți clienți întreabă un asistent AI „cui să mă adresez?”. Ca consultant SEO, te ajut să apari în acele răspunsuri și în Google, cu un proces pe care îl poți măsura, de la optimizarea site-ului la SEO local.",
     changedH2: "Ce s-a schimbat",
     changed1: "Până acum, un client căuta în Google și compara zece rezultate. Acum poate întreba direct ChatGPT, Gemini sau Perplexity și primi câteva nume, cu explicații. Dacă afacerea ta nu e înțeleasă și citată de acele sisteme, e invizibilă exact când se ia decizia.",
-    changed2: <><strong className="text-navy">GEO / AEO</strong> (Generative / Answer Engine Optimization) înseamnă să faci afacerea ușor de înțeles și de citat pentru asistenții AI. Se sprijină pe SEO clasic, dar adaugă claritate, date structurate și consecvență a informațiilor despre tine.</> as ReactNode,
+    changed2: <><strong className="text-ink">GEO / AEO</strong> (Generative / Answer Engine Optimization) înseamnă să faci afacerea ușor de înțeles și de citat pentru asistenții AI. Se sprijină pe SEO clasic, dar adaugă claritate, date structurate și consecvență a informațiilor despre tine.</> as ReactNode,
     vsH2: "SEO clasic și vizibilitate în AI", vsCaption: "Diferențe între SEO clasic și optimizarea pentru AI", vsCols: ["SEO clasic", "Vizibilitate în AI (GEO)"],
     vs: [
       ["Ce urmărește", "Poziții în lista de rezultate", "Să fii menționat și descris corect în răspuns"],
@@ -342,7 +342,7 @@ const seo = {
     lead: "More and more clients ask an AI assistant “who should I go to?”. As an SEO consultant in Romania, I help you show up in those answers and on Google, with a process you can measure, from site optimisation to local SEO.",
     changedH2: "What has changed",
     changed1: "Until recently, a client searched on Google and compared ten results. Now they can ask ChatGPT, Gemini or Perplexity directly and get a few names, with reasons. If those systems don't understand and cite your business, you're invisible at the exact moment the decision is made.",
-    changed2: <><strong className="text-navy">GEO / AEO</strong> (Generative / Answer Engine Optimization) means making your business easy for AI assistants to understand and quote. It builds on classic SEO and adds clarity, structured data and consistent information about you.</> as ReactNode,
+    changed2: <><strong className="text-ink">GEO / AEO</strong> (Generative / Answer Engine Optimization) means making your business easy for AI assistants to understand and quote. It builds on classic SEO and adds clarity, structured data and consistent information about you.</> as ReactNode,
     vsH2: "Classic SEO and AI visibility", vsCaption: "Differences between classic SEO and AI optimisation", vsCols: ["Classic SEO", "AI visibility (GEO)"],
     vs: [
       ["The goal", "Rankings in the results list", "Being mentioned, and described correctly, in the answer"],
@@ -399,12 +399,12 @@ export function SeoPage({ lang }: { lang: Lang }) {
   const c = seo[lang];
   return (
     <>
-      <section className="border-b border-line bg-mist">
+      <section className="border-b border-line bg-paper">
         <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
           <ServiceHead k="seo" lang={lang} schemaName={c.schemaName} schemaDescription={c.schemaDescription} />
           <Eyebrow>{c.eyebrow}</Eyebrow>
           <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{c.lead}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={href("audit", lang)}>{ui[lang].auditLong}</Button>
             <Button href={href("contact", lang)} variant="ghost">{ui[lang].quote}</Button>
@@ -414,7 +414,7 @@ export function SeoPage({ lang }: { lang: Lang }) {
 
       <Section id="ce-s-a-schimbat">
         <H2>{c.changedH2}</H2>
-        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-ink">
+        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-muted">
           <p>{c.changed1}</p>
           <p>{c.changed2}</p>
         </div>
@@ -425,10 +425,10 @@ export function SeoPage({ lang }: { lang: Lang }) {
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-left align-top">
             <caption className="sr-only">{c.vsCaption}</caption>
-            <thead><tr className="border-b border-navy/20 text-sm uppercase tracking-wider text-slate-ink">
+            <thead><tr className="border-b border-ink/20 text-sm uppercase tracking-wider text-muted">
               <th scope="col" className="py-3 pr-4"> </th><th scope="col" className="py-3 pr-4">{c.vsCols[0]}</th><th scope="col" className="py-3">{c.vsCols[1]}</th></tr></thead>
-            <tbody className="divide-y divide-line text-slate-ink">
-              {c.vs.map(([h, a, b]) => <tr key={h}><th scope="row" className="py-4 pr-4 text-navy">{h}</th><td className="py-4 pr-4">{a}</td><td className="py-4">{b}</td></tr>)}
+            <tbody className="divide-y divide-line text-muted">
+              {c.vs.map(([h, a, b]) => <tr key={h}><th scope="row" className="py-4 pr-4 text-ink">{h}</th><td className="py-4 pr-4">{a}</td><td className="py-4">{b}</td></tr>)}
             </tbody>
           </table>
         </div>
@@ -441,7 +441,7 @@ export function SeoPage({ lang }: { lang: Lang }) {
 
       <Section id="asteptari-realiste" tint>
         <H2>{c.realH2}</H2>
-        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-ink">
+        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-muted">
           <p>{c.real1}</p>
           <p>{c.real2}</p>
         </div>
@@ -450,19 +450,19 @@ export function SeoPage({ lang }: { lang: Lang }) {
       <Section id="cum-putem-lucra-impreuna">
         <H2>{c.togetherH2}</H2>
         <Cards items={c.together} cols="md:grid-cols-3" />
-        <p className="mt-6 text-slate-ink">{c.togetherNote} <Link className={linkCls} href={href("contact", lang)}>{ui[lang].quote}</Link>.</p>
+        <p className="mt-6 text-muted">{c.togetherNote} <Link className={linkCls} href={href("contact", lang)}>{ui[lang].quote}</Link>.</p>
       </Section>
 
       <Section id="cum-arata-un-audit" tint>
         <H2>{c.auditH2}</H2>
-        <p className="mt-3 max-w-3xl text-slate-ink">{c.auditLead}</p>
+        <p className="mt-3 max-w-3xl text-muted">{c.auditLead}</p>
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-left">
             <caption className="sr-only">{c.auditCaption}</caption>
-            <thead><tr className="border-b border-navy/20 text-sm uppercase tracking-wider text-slate-ink">
+            <thead><tr className="border-b border-ink/20 text-sm uppercase tracking-wider text-muted">
               {c.auditCols.map((h) => (<th key={h} scope="col" className="py-3 pr-4">{h}</th>))}</tr></thead>
-            <tbody className="divide-y divide-line text-slate-ink">
-              {c.auditRows.map((r) => (<tr key={r[0]}>{r.map((cell, i) => (i === 0 ? <th key={i} scope="row" className="py-4 pr-4 font-medium text-navy">{cell}</th> : <td key={i} className="py-4 pr-4">{cell}</td>))}</tr>))}
+            <tbody className="divide-y divide-line text-muted">
+              {c.auditRows.map((r) => (<tr key={r[0]}>{r.map((cell, i) => (i === 0 ? <th key={i} scope="row" className="py-4 pr-4 font-medium text-ink">{cell}</th> : <td key={i} className="py-4 pr-4">{cell}</td>))}</tr>))}
             </tbody>
           </table>
         </div>
@@ -472,7 +472,7 @@ export function SeoPage({ lang }: { lang: Lang }) {
 
       <Section id="intrebari" tint>
         <FAQ items={c.faq} lang={lang} />
-        {c.faqMore && <p className="mt-8 text-slate-ink">{c.faqMore}</p>}
+        {c.faqMore && <p className="mt-8 text-muted">{c.faqMore}</p>}
       </Section>
       <CtaBand lang={lang} />
     </>
@@ -552,7 +552,7 @@ export function MaintenancePage({ lang }: { lang: Lang }) {
         <ServiceHead k="maintenance" lang={lang} schemaName={c.schemaName} schemaDescription={c.schemaDescription} />
         <Eyebrow>{pageName("maintenance", lang)}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{c.lead}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={href("contact", lang)} arrow>{ui[lang].quote}</Button>
           <Button href={href("audit", lang)} variant="ghost">{c.secondary}</Button>
@@ -564,14 +564,14 @@ export function MaintenancePage({ lang }: { lang: Lang }) {
           {c.includes.map(([t, d]) => (
             <div key={t} className="rounded-3xl border-2 border-ink bg-canvas p-6">
               <h3 className="font-serif text-xl font-extrabold">{t}</h3>
-              <p className="mt-2 text-[17px] leading-relaxed text-slate-ink">{d}</p>
+              <p className="mt-2 text-[17px] leading-relaxed text-muted">{d}</p>
             </div>
           ))}
         </div>
       </Section>
       <Section id="de-ce-conteaza">
         <H2>{c.whyH2}</H2>
-        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-ink">
+        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-muted">
           <p>{c.why1}</p>
           <p>{c.why2}</p>
           <p>{c.why3(lang)}</p>

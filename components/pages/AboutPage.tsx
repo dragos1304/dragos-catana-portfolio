@@ -107,22 +107,22 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <Breadcrumbs lang={lang} items={[{ name: home.name, href: home.path }, { name: pageName("about", lang) }]} />
         <Eyebrow>{c.eyebrow}</Eyebrow>
         <h1 className="max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted">{c.lead}</p>
       </Section>
 
       <Section id="de-ce-fac-asta" tint>
         <Eyebrow>{c.whyEyebrow}</Eyebrow>
         <H2>{c.whyH2}</H2>
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.why}</p>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted">{c.why}</p>
       </Section>
 
       <Section id="antreprenoriat">
         <Eyebrow>{c.venturesEyebrow}</Eyebrow>
         <H2>{c.venturesH2}</H2>
-        <p className="mt-4 max-w-3xl text-slate-ink leading-relaxed">{c.venturesLead}</p>
+        <p className="mt-4 max-w-3xl text-muted leading-relaxed">{c.venturesLead}</p>
         <div className="mt-8 grid gap-5 sm:grid-cols-2">
           {c.ventures.map(([t, d]) => (
-            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></div>
+            <div key={t} className="rounded-md border border-line p-6"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-muted">{d}</p></div>
           ))}
         </div>
       </Section>
@@ -132,7 +132,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <H2>{c.eduH2}</H2>
         <ul className="mt-8 space-y-6">
           {c.edu.map(([t, d]) => (
-            <li key={t} className="max-w-3xl"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-slate-ink">{d}</p></li>
+            <li key={t} className="max-w-3xl"><h3 className="font-serif text-xl font-bold">{t}</h3><p className="mt-2 leading-relaxed text-muted">{d}</p></li>
           ))}
         </ul>
       </Section>
@@ -140,7 +140,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
       <Section id="cum-lucrez">
         <Eyebrow>{c.howEyebrow}</Eyebrow>
         <H2>{c.howH2}</H2>
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.how}</p>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted">{c.how}</p>
       </Section>
 
       <Section id="incotro-merg" dark>
@@ -152,7 +152,7 @@ export function AboutPage({ lang }: { lang: Lang }) {
       <Section id="dincolo-de-munca">
         <Eyebrow>{c.beyondEyebrow}</Eyebrow>
         <H2>{c.beyondH2}</H2>
-        <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-lg leading-relaxed text-slate-ink">
+        <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-lg leading-relaxed text-muted">
           {c.beyond.map((b) => <li key={b}>{b}</li>)}
         </ul>
       </Section>
@@ -161,11 +161,11 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <Eyebrow>{c.recEyebrow}</Eyebrow>
         <H2>{c.recH2}</H2>
         <figure className="mt-8 max-w-3xl">
-          <blockquote lang="en" className="font-serif text-2xl leading-relaxed text-navy">
+          <blockquote lang="en" className="font-serif text-2xl leading-relaxed text-ink">
             <p>{c.q[0]}I would place him as the top student, not only in his class, but also across the entire set of English-taught programs of our school.{c.q[1]}</p>
             <p className="mt-4">{c.q[0]}He was one of the few students I have worked with who managed to engage the majority of the audience… making him the person his peers would turn to when they felt stuck.{c.q[1]}</p>
           </blockquote>
-          <figcaption className="mt-5 text-slate-ink">{c.quoteBy}<span className="text-sm">{c.quoteNote}</span></figcaption>
+          <figcaption className="mt-5 text-muted">{c.quoteBy}<span className="text-sm">{c.quoteNote}</span></figcaption>
         </figure>
       </Section>
       <CtaBand lang={lang} title={c.cta} />

@@ -26,7 +26,7 @@ rounded:
   card: 24px
 ---
 
-> The source of truth is the code (`app/globals.css`, `components/ui.tsx`). Old token names in the code (`navy`, `mist`, `brass`, `brass-dark`, `slate-ink`) are aliases of `ink`, `paper`, `orange`, `orange-ink` and `muted`.
+> The source of truth is the code (`app/globals.css`, `components/ui.tsx`). Each colour has one name: `paper`, `ink`, `muted`, `orange`, `orange-ink`, `teal`, `canvas`, `line` (the old aliases were removed on 19 Nov 2026).
 
 ## Why this direction
 Dragoș chose direction A from three Awwwards mood boards (19 Nov 2026; `moodboards/moodboards.html`, local only). The brief was creative and engaging, very easy to understand, premium, modern and simple, with no long animations. It replaced the previous warm-editorial design, which he found hard to read, bland and without pictures.

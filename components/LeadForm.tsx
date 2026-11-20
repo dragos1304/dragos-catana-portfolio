@@ -6,7 +6,7 @@ import { leadForm, type LeadKind } from "@/lib/lead-form";
 import { site } from "@/lib/site-config";
 
 const inputCls =
-  "mt-1.5 block w-full rounded-md border border-navy/25 bg-white px-4 py-3 text-base text-navy placeholder:text-slate-ink/60 focus:border-navy";
+  "mt-1.5 block w-full rounded-md border border-ink/25 bg-white px-4 py-3 text-base text-ink placeholder:text-muted/60 focus:border-ink";
 
 const text = {
   ro: {
@@ -92,9 +92,9 @@ export function LeadForm({ kind, lang = "ro" }: { kind: LeadKind; lang?: Lang })
 
   if (state === "done") {
     return (
-      <div role="status" className="rounded-md border border-line bg-mist p-6">
+      <div role="status" className="rounded-md border border-line bg-paper p-6">
         <p className="font-serif text-xl font-bold">{t.thanks}</p>
-        <p className="mt-2 text-slate-ink">
+        <p className="mt-2 text-muted">
           {isAudit ? t.auditDone : t.contactDone}{" "}
           {t.orTalk}{" "}
           <a className="font-medium underline underline-offset-4" href={site.calendly} target="_blank" rel="noopener noreferrer">{t.book}</a>.
@@ -146,15 +146,15 @@ export function LeadForm({ kind, lang = "ro" }: { kind: LeadKind; lang?: Lang })
           </label>
         </>
       )}
-      <label className="flex items-start gap-3 text-sm leading-relaxed text-slate-ink">
-        <input type="checkbox" name={leadForm.meta.consent} value={leadForm.consentToken} required className="mt-0.5 h-6 w-6 shrink-0 accent-brass-dark" />
+      <label className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+        <input type="checkbox" name={leadForm.meta.consent} value={leadForm.consentToken} required className="mt-0.5 h-6 w-6 shrink-0 accent-orange-ink" />
         <span>
           {t.consentA}{" "}
-          <Link href="/confidentialitate" hrefLang="ro" className="font-medium text-navy underline underline-offset-4">{t.consentLink}</Link>.
+          <Link href="/confidentialitate" hrefLang="ro" className="font-medium text-ink underline underline-offset-4">{t.consentLink}</Link>.
         </span>
       </label>
       <button type="submit" disabled={state === "sending"}
-        className="inline-flex min-h-12 items-center justify-center rounded-sm bg-navy px-7 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white hover:bg-brass-dark disabled:opacity-60">
+        className="inline-flex min-h-12 items-center justify-center rounded-sm bg-ink px-7 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white hover:bg-orange-ink disabled:opacity-60">
         {state === "sending" ? t.sending : isAudit ? t.sendAudit : t.sendContact}
       </button>
       {state === "error" && (

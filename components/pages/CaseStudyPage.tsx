@@ -211,7 +211,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
         <Breadcrumbs lang={lang} items={[{ name: crumbs[0].name, href: crumbs[0].path }, { name: crumbs[1].name, href: crumbs[1].path }, { name: "Cheesy Media" }]} />
         <Eyebrow>{c.eyebrow}</Eyebrow>
         <h1 className="max-w-4xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-ink">{c.lead}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{c.lead}</p>
         <ul className="mt-6 flex flex-wrap gap-2 text-sm font-semibold">
           {c.tags.map((t) => <li key={t} className="rounded-full border-2 border-ink px-3 py-1">{t}</li>)}
         </ul>
@@ -219,7 +219,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
           <Shot name="site-desktop" alt={c.desktopAlt} sizes="(min-width: 1152px) 1000px, 92vw" eager />
           <Shot name="site-mobile" phone alt={c.phoneAlt} sizes="200px" className="absolute bottom-0 right-0 w-[26%] max-w-[200px]" />
         </div>
-        <p className="mt-6 text-sm text-slate-ink">
+        <p className="mt-6 text-sm text-muted">
           {c.before}: <a className="underline underline-offset-4" href="https://cheesymedia.netlify.app" target="_blank" rel="noopener noreferrer">cheesymedia.netlify.app</a> · {c.after}:{" "}
           <a className="underline underline-offset-4" href="https://cheesy-media.netlify.app" target="_blank" rel="noopener noreferrer">cheesy-media.netlify.app</a>{c.liveNote}
         </p>
@@ -228,25 +228,25 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
       <Section id="inainte-si-dupa" white>
         <Eyebrow>{c.baEyebrow}</Eyebrow>
         <H2>{c.baH2}</H2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.baLead}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{c.baLead}</p>
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <figure>
             <Shot name="before-home" alt={c.beforeAlt} sizes="(min-width: 1024px) 540px, 92vw" />
-            <figcaption className="mt-4 flex items-center gap-2 text-[15px] text-slate-ink"><span className="rounded-full bg-ink/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-ink">{c.beforeTag}</span> {c.beforeCaption}</figcaption>
+            <figcaption className="mt-4 flex items-center gap-2 text-[15px] text-muted"><span className="rounded-full bg-ink/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-ink">{c.beforeTag}</span> {c.beforeCaption}</figcaption>
           </figure>
           <figure>
             <Shot name="site-desktop" alt={c.afterAlt} sizes="(min-width: 1024px) 540px, 92vw" />
-            <figcaption className="mt-4 flex items-center gap-2 text-[15px] text-slate-ink"><span className="rounded-full bg-orange px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-ink">{c.afterTag}</span> {c.afterCaption}</figcaption>
+            <figcaption className="mt-4 flex items-center gap-2 text-[15px] text-muted"><span className="rounded-full bg-orange px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-ink">{c.afterTag}</span> {c.afterCaption}</figcaption>
           </figure>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-5 sm:gap-8 md:mx-auto md:max-w-xl">
           <figure>
             <Shot name="m-before-home" phone alt={c.phoneBeforeAlt} sizes="(min-width: 768px) 260px, 45vw" />
-            <figcaption className="mt-3 text-center text-sm font-semibold text-slate-ink">{c.phoneBefore}</figcaption>
+            <figcaption className="mt-3 text-center text-sm font-semibold text-muted">{c.phoneBefore}</figcaption>
           </figure>
           <figure>
             <Shot name="site-mobile" phone alt={c.phoneAfterAlt} sizes="(min-width: 768px) 260px, 45vw" />
-            <figcaption className="mt-3 text-center text-sm font-semibold text-slate-ink">{c.phoneAfter}</figcaption>
+            <figcaption className="mt-3 text-center text-sm font-semibold text-muted">{c.phoneAfter}</figcaption>
           </figure>
         </div>
       </Section>
@@ -296,7 +296,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
       <Section id="pagini">
         <Eyebrow>{c.pagesEyebrow}</Eyebrow>
         <H2>{c.pagesH2}</H2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.pagesLead}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{c.pagesLead}</p>
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           {c.pages.map((p) => (
             <figure key={p.name}>
@@ -309,7 +309,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
           {c.phones.map((p, i) => (
             <figure key={p.name} className={i === 2 ? "col-span-2 mx-auto w-1/2 sm:col-span-1 sm:w-full" : undefined}>
               <Shot name={p.name} phone alt={p.alt} sizes="(min-width: 640px) 30vw, 45vw" />
-              <figcaption className="mt-3 text-center text-sm font-semibold text-slate-ink">{p.label}</figcaption>
+              <figcaption className="mt-3 text-center text-sm font-semibold text-muted">{p.label}</figcaption>
             </figure>
           ))}
         </div>
@@ -318,7 +318,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
       <Section id="google-si-ai" white>
         <Eyebrow>{c.aiEyebrow}</Eyebrow>
         <H2>{c.aiH2}</H2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-ink">{c.aiLead}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{c.aiLead}</p>
         <ol className="mt-10 grid gap-4 md:grid-cols-2">
           {c.aiSteps.map((s, i) => (
             <li key={s.t} className="flex flex-col rounded-3xl border-2 border-ink bg-paper p-6">
@@ -327,13 +327,13 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
                 <h3 className="font-serif text-xl font-extrabold">{s.t}</h3>
               </div>
               <dl className="mt-4 space-y-3 text-[16px] leading-relaxed">
-                <div><dt className="text-xs font-bold uppercase tracking-wider text-muted">{c.beforeTag}</dt><dd className="text-slate-ink">{s.before}</dd></div>
+                <div><dt className="text-xs font-bold uppercase tracking-wider text-muted">{c.beforeTag}</dt><dd className="text-muted">{s.before}</dd></div>
                 <div className="flex gap-2"><Check aria-hidden className="mt-1 h-5 w-5 shrink-0 text-orange-ink" /><div><dt className="text-xs font-bold uppercase tracking-wider text-orange-ink">{c.afterTag}</dt><dd className="text-ink">{s.after}</dd></div></div>
               </dl>
             </li>
           ))}
         </ol>
-        <p className="mt-8 max-w-3xl rounded-2xl bg-paper p-5 text-[16px] leading-relaxed text-slate-ink">
+        <p className="mt-8 max-w-3xl rounded-2xl bg-paper p-5 text-[16px] leading-relaxed text-muted">
           <strong className="text-ink">{c.dontClaimLabel}</strong> {c.dontClaim}
         </p>
       </Section>
@@ -341,11 +341,11 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
       <Section id="rezultat-masurat">
         <Eyebrow>{c.resultEyebrow}</Eyebrow>
         <H2>{c.resultH2}</H2>
-        <p className="mt-3 max-w-3xl text-slate-ink">{c.resultLead}</p>
+        <p className="mt-3 max-w-3xl text-muted">{c.resultLead}</p>
         <dl className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {proof.cheesy.lighthouse.map((s) => (
             <div key={s.name.en} className="rounded-2xl border-2 border-ink bg-canvas p-5">
-              <dt className="text-[15px] font-semibold text-slate-ink">{s.name[lang]}</dt>
+              <dt className="text-[15px] font-semibold text-muted">{s.name[lang]}</dt>
               <dd className="mt-1 font-serif text-4xl font-extrabold">{s.before === s.after ? <>{s.after}</> : <><span className="text-muted">{s.before}</span> <span className="text-orange-ink">→ {s.after}</span></>}</dd>
             </div>
           ))}
@@ -354,7 +354,7 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
           <LighthouseReport which="inainte" alt={c.lhBeforeAlt} caption={c.lhBeforeCaption} />
           <LighthouseReport which="dupa" alt={c.lhAfterAlt} caption={c.lhAfterCaption} />
         </div>
-        <p className="mt-6 max-w-3xl text-slate-ink">{c.noTraffic}</p>
+        <p className="mt-6 max-w-3xl text-muted">{c.noTraffic}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={href("redesign", lang)} arrow>{c.redesignCta}</Button>
           <Button href={href("audit", lang)} variant="ghost">{c.auditCta}</Button>
