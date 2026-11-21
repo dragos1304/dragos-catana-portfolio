@@ -64,7 +64,7 @@ export default function Links() {
         </span>
         <h1 className="mt-5 font-serif text-4xl font-extrabold">{site.name}</h1>
         <p className="mt-2 text-[15px] font-semibold">Web design și SEO pentru căutare AI · <span className="whitespace-nowrap">📍 {site.city}</span></p>
-        <p className="mt-1 font-accent text-xl italic text-orange-ink">{brand.tagline.ro}</p>
+        <p className="mx-auto mt-4 max-w-xs text-balance text-[17px] font-semibold leading-relaxed text-ink"><span className="box-decoration-clone rounded-md bg-orange/20 px-2 py-0.5">{brand.tagline.ro}</span></p>
       </header>
 
       <PocketHeading emoji="🚀">Începe de aici</PocketHeading>
