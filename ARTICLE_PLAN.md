@@ -31,3 +31,4 @@ After publishing, each run re-checks the existing article with the oldest `updat
 
 ## Run log
 <!-- The task appends one line per run: date, item, action (published / updated / merged / skipped + reason), commit hash. -->
+- 2026-11-21 (manual, outside the task): refresh queue #1, GBP guide updated with „Compania mea pe Google” (old Romanian name, ~1,090 searches/month across variants); sources: Google Ads Ajutor, business.google.com/ro, Google Business Profile Community.

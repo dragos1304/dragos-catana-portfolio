@@ -443,15 +443,17 @@ export const articles: Article[] = [
   {
     slug: "google-business-profile-ghid",
     title: "Google Business Profile: ghid pas cu pas pentru afaceri locale",
-    seoTitle: "Google Business Profile: ghid pas cu pas",
+    seoTitle: "Google Business Profile (Compania mea pe Google)",
     description:
-      "Cum creezi și optimizezi profilul Google al afacerii, cum obții recenzii Google corect și ce greșeli să eviți. Ghid practic pentru clinici, cabinete și firme locale.",
+      "Cum creezi și optimizezi Google Business Profile (fostul Compania mea pe Google), cum obții recenzii Google corect și ce greșeli să eviți. Ghid pas cu pas.",
     tags: ["Google Business Profile", "SEO local", "Recenzii"],
     date: "2026-11-19",
     updated: "2026-11-21",
     readMin: 8,
     blocks: [
-      { t: "p", text: "Când cineva caută „clinică stomatologică lângă mine” sau „avocat Cluj”, primul lucru pe care îl vede de multe ori nu este un site, ci harta cu trei afaceri și profilurile lor Google. Profilul acela vine din Google Business Profile (fostul Google My Business): un instrument gratuit de la Google. Pentru multe afaceri locale este cea mai importantă pagină pe care o au, chiar înaintea site-ului." },
+      { t: "p", text: "Când cineva caută „clinică stomatologică lângă mine” sau „avocat Cluj”, primul lucru pe care îl vede de multe ori nu este un site, ci harta cu trei afaceri și profilurile lor Google. Profilul acela vine din Google Business Profile (fostul Google My Business, în română „Compania mea pe Google”): un instrument gratuit de la Google. Pentru multe afaceri locale este cea mai importantă pagină pe care o au, chiar înaintea site-ului." },
+      { t: "h2", text: "Compania mea pe Google, Google My Business sau Profilul Companiei?" },
+      { t: "p", text: "Sunt numele aceluiași serviciu, din perioade diferite. În 2021, Google a [redenumit Google My Business în Google Business Profile](https://support.google.com/business/thread/133876833/introducing-new-updates-to-business-profile?hl=en). În română, serviciul se numea „Compania mea pe Google”; Google spune acum că [Profilul Companiei Google era cunoscut anterior drept Compania mea pe Google](https://support.google.com/google-ads/answer/2382892?hl=ro) și că [Profilul Companiei a înlocuit Compania mea pe Google](https://business.google.com/ro/support/). Dacă ai creat un profil cu ani în urmă, sub vechiul nume, profilul există în continuare: îl administrezi acum direct din Căutarea Google și din Google Maps." },
       { t: "h2", text: "De ce contează profilul Google al afacerii" },
       { t: "ul", items: [
         "Apari pe Google Maps și în harta din rezultatele de căutare locală.",
@@ -459,7 +461,7 @@ export const articles: Article[] = [
         "Recenziile Google sunt printre primele lucruri pe care le citește un client nou.",
         "Asistenții AI folosesc și ei informații publice despre afaceri, iar un profil complet și consecvent te face ușor de verificat.",
       ] },
-      { t: "h2", text: "Pasul 1: creezi sau revendici profilul" },
+      { t: "h2", text: "Pasul 1: cum adaugi firma pe Google Maps (creezi sau revendici profilul)" },
       { t: "p", text: "Intră pe google.com/business și urmează [pașii oficiali pentru creare sau revendicare](https://support.google.com/business/answer/2911778), cu un cont Google pe care îl controlezi tu (nu contul personal al unui fost angajat sau al firmei care ți-a făcut site-ul). Caută numele afacerii: dacă există deja un profil, îl revendici; dacă nu, îl creezi." },
       { t: "p", text: "Dacă lucrezi la clienți acasă sau doar online, dar ai o zonă deservită, poți ascunde adresa și seta în schimb [zona de servicii](https://support.google.com/business/answer/9157481)." },
       { t: "p", text: "Pentru clinici și cabinete: medicii, stomatologii și avocații care lucrează direct cu publicul pot avea și un profil propriu, de [practician individual](https://support.google.com/business/answer/3038177), separat de profilul clinicii sau al cabinetului. Nu crea însă mai multe profiluri pentru aceeași locație a afacerii." },
@@ -513,6 +515,7 @@ export const articles: Article[] = [
       ] },
     ],
     faq: [
+      { q: "Compania mea pe Google mai există?", a: "Da, sub alt nume. „Compania mea pe Google” (Google My Business) se numește acum Google Business Profile, în română Profilul Companiei Google. Profilurile vechi au rămas active și le administrezi din Căutarea Google și din Google Maps." },
       { q: "Google Business Profile este gratuit?", a: "Da. Crearea și administrarea profilului sunt gratuite. Plătești doar dacă alegi separat reclame Google." },
       { q: "Cât durează verificarea?", a: "Depinde de metoda aleasă de Google: uneori câteva minute (telefon, e-mail, video), alteori câteva zile, dacă se trimite o carte poștală." },
       { q: "Pot șterge o recenzie negativă?", a: "Nu poți șterge singur o recenzie. Poți raporta recenziile care încalcă regulile Google. Pentru celelalte, cel mai bun lucru este un răspuns calm și profesionist, pe care îl citesc și viitorii clienți." },
@@ -531,6 +534,9 @@ export const articles: Article[] = [
       { href: "/audit-gratuit-vizibilitate-ai", label: "Audit SEO gratuit" },
     ],
     sources: [
+      { label: "Introducing new updates to Business Profile (Google My Business devine Google Business Profile)", publisher: "Google Business Profile Community", url: "https://support.google.com/business/thread/133876833/introducing-new-updates-to-business-profile?hl=en" },
+      { label: "Profilul companiei: definiție", publisher: "Google Ads Ajutor", url: "https://support.google.com/google-ads/answer/2382892?hl=ro" },
+      { label: "Îndrumare pentru a începe să folosiți Google", publisher: "Google Business (România)", url: "https://business.google.com/ro/support/" },
       { label: "Add or claim your Business Profile", publisher: "Google Business Profile Help", url: "https://support.google.com/business/answer/2911778" },
       { label: "Verify your business on Google", publisher: "Google Business Profile Help", url: "https://support.google.com/business/answer/7107242" },
       { label: "Guidelines for representing your business on Google", publisher: "Google Business Profile Help", url: "https://support.google.com/business/answer/3038177" },

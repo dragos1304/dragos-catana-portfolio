@@ -19,7 +19,7 @@ Navigational searches (people looking for a tool's login, such as „google sear
 | `/servicii/seo-vizibilitate-ai` | servicii seo (2,900), optimizare seo (1,900), optimizare site (720), consultant seo (140), ai seo (140), geo seo (70), servicii optimizare seo (590), promovare seo (170) | keep |
 | `/servicii/mentenanta-site` | mentenanta site (260) | keep |
 | `/audit-gratuit-vizibilitate-ai` | audit seo (260), audit seo gratuit (110), seo checker / check seo (590, tool intent) | keep; mention „verificare SEO” in copy |
-| `/articole/google-business-profile-ghid` | **google business profile (6,600, ↑ from 4,400)**, google my business (4,400, KD 87), **compania mea pe google (590), google compania mea (320), compania mea google (140), compania mea pe google maps (40)**: the old Romanian name owners still type | **refresh first** (volume grew most) |
+| `/articole/google-business-profile-ghid` | **google business profile (6,600, ↑ from 4,400)**, google my business (4,400, KD 87), **compania mea pe google (590), google compania mea (320), compania mea google (140), compania mea pe google maps (40)**: the old Romanian name owners still type | refreshed 2026-11-21: old name in title tag, intro, new H2 and FAQ |
 | `/articole/ce-este-seo` | ce inseamna seo (260), ce este seo (170) | keep, refresh yearly |
 | `/articole/ce-este-geo-optimizare-pentru-motoare-ai` | geo seo (70), ai seo (shared, informational side) | keep |
 | `/articole/schema-markup-pentru-clinici-si-cabinete` | schema markup (90), date structurate (10) | keep |
@@ -52,7 +52,7 @@ Navigational searches (people looking for a tool's login, such as „google sear
 | – | ~~Cât costă un site~~ | cat costa un site (210), pret site web (170) | — | — | **Merged:** owned by `/servicii/creare-website` (no prices, factors only) |
 | – | ~~Core updates~~ | core update google (10) | — | — | **Merged into #4** |
 
-**Refresh queue** (run when a refresh is due or before a new article if its owner page lost ground): 1) GBP guide (volume up 50%; add the phrasing „Compania mea pe Google”, its old Romanian name, ~1,090 searches a month across variants), 2) ce-este-seo, 3) GEO article (AI Mode facts), 4) schema guide.
+**Refresh queue** (run when a refresh is due or before a new article if its owner page lost ground): ~~1) GBP guide~~ done 2026-11-21 („Compania mea pe Google” added), 1) ce-este-seo, 2) GEO article (AI Mode facts), 3) schema guide.
 
 ## 5. How the scheduled task uses this file
 1. Re-pull volumes for the top 3 open items (DataForSEO through Firecrawl/Alexandria `dataforseo` `keywords/search-volume`, Romania, Romanian) and check the news for each; recompute their scores.
