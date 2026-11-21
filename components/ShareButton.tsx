@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 /** Opens the phone's share sheet; where there is none (most desktops), copies the link instead. */
-export function ShareButton({ url, title, text, className }: { url: string; title: string; text: string; className?: string }) {
+export function ShareButton({ url, title, text, label, className }: { url: string; title: string; text: string; label: string; className?: string }) {
   const [copied, setCopied] = useState(false);
 
   async function share() {
@@ -25,7 +25,8 @@ export function ShareButton({ url, title, text, className }: { url: string; titl
 
   return (
     <button type="button" onClick={share} className={className}>
-      <span aria-live="polite">{copied ? "Link copiat" : "Trimite cartea de vizită"}</span>
+      <span aria-hidden="true" className="text-xl">{copied ? "✅" : "🔗"}</span>
+      <span aria-live="polite">{copied ? "Link copiat" : label}</span>
     </button>
   );
 }

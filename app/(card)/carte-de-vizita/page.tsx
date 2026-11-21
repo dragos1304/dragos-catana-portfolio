@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { PocketHeading, PocketRow, type PocketItem } from "@/components/PocketRow";
+import { SaveContactBar } from "@/components/SaveContactBar";
 import { ShareButton } from "@/components/ShareButton";
 import { abs, personSchema } from "@/lib/schema";
 import { brand, phone, place, site, social } from "@/lib/site-config";
@@ -16,80 +18,79 @@ export const metadata: Metadata = {
   openGraph: { type: "profile", locale: "ro_RO", siteName: site.name, url: "/carte-de-vizita/", title, description, images: [{ url: brand.og.ro, width: 1200, height: 630 }] },
 };
 
-const action =
-  "flex min-h-14 items-center justify-center gap-2 rounded-xl border-2 border-ink bg-white px-4 text-[15px] font-semibold text-ink transition-colors hover:bg-ink hover:text-paper";
+const talk: PocketItem[] = [
+  { emoji: "📞", label: "Sună-mă", note: phone.display, href: `tel:${phone.e164}` },
+  { emoji: "💬", label: "Scrie-mi pe WhatsApp", note: "Un mesaj, când îți este comod", href: social.whatsapp.url, external: true },
+  { emoji: "✉️", label: "Trimite-mi un e-mail", note: site.email, href: `mailto:${site.email}` },
+  { emoji: "📅", label: "Programează o discuție", note: "30 de minute online, gratuit. Alegi tu ora.", href: site.calendly, external: true },
+];
 
-function Icon({ d }: { d: string }) {
-  return (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d={d} />
-    </svg>
-  );
-}
-const icons = {
-  addContact: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6",
-  phone: "M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z",
-  chat: "M21 11.5a8.4 8.4 0 0 1-12.5 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z",
-  calendar: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z",
-  globe: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20",
-  mail: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6l-10 7L2 6",
-  pin: "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
-};
+const more: PocketItem[] = [
+  { emoji: "🔍", label: "Cere un audit gratuit", note: "Îți spun ce lipsește ca să te găsească Google și AI. Scris de mine, în 24 de ore.", href: "/audit-gratuit-vizibilitate-ai/", primary: true, badge: "Gratuit" },
+  { emoji: "🌐", label: "Vezi site-ul meu", note: "Servicii, lucrări și articole", href: "/" },
+  { emoji: "📍", label: "Unde lucrez", note: `${site.city}, pe Google Maps`, href: place.mapsUrl, external: true },
+];
 
 export default function BusinessCard() {
   const host = site.url.replace(/^https?:\/\//, "");
   return (
-    <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col px-4 py-8 sm:py-14">
-      <JsonLd data={{
-        "@context": "https://schema.org",
-        "@graph": [
-          { "@type": "ContactPage", "@id": `${abs("/carte-de-vizita/")}#page`, url: abs("/carte-de-vizita/"), name: title, description, inLanguage: "ro-RO", isPartOf: { "@id": `${site.url}/#website` }, mainEntity: { "@id": `${site.url}/#person` } },
-          personSchema,
-        ],
-      }} />
-      {/* The card face */}
-      <section aria-label="Carte de vizită" className="relative overflow-hidden rounded-2xl bg-ink p-6 text-paper shadow-xl sm:p-8">
-        <span aria-hidden="true" className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-orange" />
-        {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
-        <img src={brand.wordmarkWhite.src} width={brand.wordmarkWhite.width} height={brand.wordmarkWhite.height} alt="" className="relative h-7 w-auto" />
-        <h1 className="relative mt-10 font-serif text-[2.4rem] font-extrabold leading-none">{site.name}</h1>
-        <p className="relative mt-3 text-[15px] font-semibold text-paper/85">Web design și SEO pentru căutare AI</p>
-        <p className="relative mt-1 font-accent text-xl italic text-orange">{brand.tagline.ro}</p>
-        <dl className="relative mt-8 space-y-1.5 text-[15px] text-paper/85">
-          <div className="flex gap-3"><dt className="sr-only">Telefon</dt><dd><a href={`tel:${phone.e164}`} className="hover:text-orange">{phone.display}</a></dd></div>
-          <div className="flex gap-3"><dt className="sr-only">E-mail</dt><dd><a href={`mailto:${site.email}`} className="hover:text-orange">{site.email}</a></dd></div>
-          <div className="flex gap-3"><dt className="sr-only">Site</dt><dd><Link href="/" className="hover:text-orange">{host}</Link></dd></div>
-          <div className="flex gap-3"><dt className="sr-only">Adresă</dt><dd>{site.city}, România</dd></div>
-        </dl>
-      </section>
+    <>
+      {/* pb leaves room for the pinned save button */}
+      <main className="mx-auto w-full max-w-md px-4 pb-44 pt-8 sm:pt-14">
+        <JsonLd data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            { "@type": "ContactPage", "@id": `${abs("/carte-de-vizita/")}#page`, url: abs("/carte-de-vizita/"), name: title, description, inLanguage: "ro-RO", isPartOf: { "@id": `${site.url}/#website` }, mainEntity: { "@id": `${site.url}/#person` } },
+            personSchema,
+          ],
+        }} />
 
-      {/* The main action */}
-      <a href={vcardPath} className="mt-6 flex min-h-16 items-center justify-center gap-3 rounded-xl bg-orange px-5 text-lg font-bold text-ink shadow-md transition-transform hover:-translate-y-0.5">
-        <Icon d={icons.addContact} /> Salvează contactul în telefon
-      </a>
-      <p className="mt-2 text-center text-sm text-muted">Pe iPhone se deschide direct în Contacte. Pe Android, deschide fișierul descărcat și alege Contacte.</p>
+        {/* The card face */}
+        <section aria-label="Carte de vizită" className="relative overflow-hidden rounded-3xl border-2 border-ink bg-ink p-6 text-paper shadow-[6px_6px_0_#f1501b] sm:p-8">
+          <span aria-hidden="true" className="absolute -right-14 -top-14 h-40 w-40 rounded-full bg-orange" />
+          <span aria-hidden="true" className="absolute right-5 top-5 text-4xl">👋</span>
+          {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
+          <img src={brand.wordmarkWhite.src} width={brand.wordmarkWhite.width} height={brand.wordmarkWhite.height} alt="" className="relative h-7 w-auto" />
+          <p className="relative mt-8 text-[15px] text-paper/75">Salut, eu sunt</p>
+          <h1 className="relative font-serif text-[2.4rem] font-extrabold leading-none">{site.name}</h1>
+          <p className="relative mt-3 text-[15px] font-semibold text-paper/90">Web design și SEO pentru căutare AI</p>
+          <p className="relative mt-1 font-accent text-xl italic text-orange">{brand.tagline.ro}</p>
+          <ul className="relative mt-6 flex flex-wrap gap-2 text-[13px] font-semibold">
+            <li className="rounded-full bg-paper/10 px-3 py-1">📍 {site.city}</li>
+            <li className="rounded-full bg-paper/10 px-3 py-1">🏥 Clinici</li>
+            <li className="rounded-full bg-paper/10 px-3 py-1">⚖️ Avocați</li>
+            <li className="rounded-full bg-paper/10 px-3 py-1">🏪 Afaceri locale</li>
+          </ul>
+        </section>
 
-      <div className="mt-6 grid grid-cols-2 gap-3">
-        <a href={`tel:${phone.e164}`} className={action}><Icon d={icons.phone} /> Sună</a>
-        <a href={social.whatsapp.url} target="_blank" rel="noopener noreferrer" className={action}><Icon d={icons.chat} /> WhatsApp</a>
-        <a href={site.calendly} target="_blank" rel="noopener noreferrer" className={action}><Icon d={icons.calendar} /> Programează</a>
-        <a href={`mailto:${site.email}`} className={action}><Icon d={icons.mail} /> E-mail</a>
-        <a href={place.mapsUrl} target="_blank" rel="noopener noreferrer" className={action}><Icon d={icons.pin} /> Pe hartă</a>
-        <Link href="/audit-gratuit-vizibilitate-ai/" className={action}><Icon d={icons.globe} /> Audit gratuit</Link>
-      </div>
+        {/* What to do here, in one line */}
+        <p className="mt-6 rounded-2xl bg-white p-4 text-[15px] leading-relaxed">
+          <span aria-hidden="true">👇 </span>
+          Apasă butonul portocaliu de jos ca să-mi <strong>salvezi numărul în telefon</strong>. Sau alege mai jos cum vrei să vorbim.
+        </p>
 
-      <ShareButton
-        url={`${site.url}/carte-de-vizita/`}
-        title={title}
-        text={`${site.name}, web design și SEO pentru căutare AI`}
-        className="mt-3 flex min-h-14 w-full items-center justify-center rounded-xl border-2 border-dashed border-ink/30 px-4 text-[15px] font-semibold text-ink hover:border-ink"
-      />
+        <PocketHeading emoji="🤝">Cum vrei să vorbim?</PocketHeading>
+        <ul className="space-y-3">{talk.map((i) => <li key={i.label}><PocketRow item={i} /></li>)}</ul>
 
-      <p className="mt-auto pt-10 text-center text-sm text-muted">
-        <Link href="/linkuri/" className="font-semibold text-orange-ink underline underline-offset-4">Toate linkurile</Link>
-        <span aria-hidden="true"> · </span>
-        <Link href="/" className="font-semibold text-orange-ink underline underline-offset-4">{host}</Link>
-      </p>
-    </main>
+        <PocketHeading emoji="🚀">Vrei mai mulți clienți din Google și AI?</PocketHeading>
+        <ul className="space-y-3">{more.map((i) => <li key={i.label}><PocketRow item={i} /></li>)}</ul>
+
+        <ShareButton
+          url={`${site.url}/carte-de-vizita/`}
+          title={title}
+          text={`${site.name}, web design și SEO pentru căutare AI`}
+          label="Trimite cartea de vizită cuiva"
+          className="mt-8 flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-ink/40 px-4 text-[15px] font-semibold text-ink hover:border-ink"
+        />
+
+        <p className="mt-8 text-center text-sm text-muted">
+          <Link href="/linkuri/" className="font-semibold text-orange-ink underline underline-offset-4">Toate linkurile</Link>
+          <span aria-hidden="true"> · </span>
+          <Link href="/" className="font-semibold text-orange-ink underline underline-offset-4">{host}</Link>
+        </p>
+      </main>
+
+      <SaveContactBar href={vcardPath} />
+    </>
   );
 }
