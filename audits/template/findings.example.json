@@ -1,0 +1,78 @@
+{
+  "client": {
+    "name": "Numele afacerii (exact ca pe Google)",
+    "contact": "Numele persoanei din formular",
+    "city": "Cluj-Napoca",
+    "type": "Clinică stomatologică / Cabinet de avocatură / …",
+    "url": "https://site-client.ro/",
+    "lang": "ro",
+    "competitors": ["din câmpul Concurenți al formularului, dacă există"]
+  },
+  "reportDate": "AAAA-LL-ZZ",
+  "dryRun": true,
+
+  "google": {
+    "source": "DataForSEO, Google live, locația <oraș>, limba română, desktop",
+    "checkedAt": "AAAA-LL-ZZ",
+    "brandKeyword": "numele afacerii",
+    "brandHomepageRank": null,
+    "brandNote": "Ce apare la căutarea numelui: cine e primul, pe ce loc e site-ul și cu ce pagină.",
+    "keywords": [
+      { "kw": "serviciu oras", "localPack": null, "organic": null, "aiOverviewMentions": false, "leaders": ["Cine e #1 pe hartă", "domeniu.ro (organic #1)"] }
+    ],
+    "notes": []
+  },
+
+  "ai": {
+    "checkedAt": "AAAA-LL-ZZ",
+    "method": "Întrebări puse ca un client obișnuit, fără cont, fără istoric. Răspunsurile AI variază de la o zi la alta; acesta este un instantaneu.",
+    "prompts": [
+      { "engine": "ChatGPT", "prompt": "Ce … îmi recomanzi în <oraș>?", "mentioned": false, "position": null, "recommended": ["…"], "excerpt": "o frază scurtă din răspuns, doar dacă afacerea apare" },
+      { "engine": "Gemini", "prompt": "…", "mentioned": false, "position": null, "recommended": [] },
+      { "engine": "Perplexity", "prompt": "…", "mentioned": false, "position": null, "recommended": [] },
+      { "engine": "Google AI Overviews", "prompt": "serviciu oras", "mentioned": false, "position": null, "recommended": [] }
+    ],
+    "notChecked": [],
+    "notCheckedReason": ""
+  },
+
+  "gbp": {
+    "source": "Google Maps (prin Firecrawl Maps), ZZ.LL.AAAA",
+    "name": "…",
+    "rating": 4.8,
+    "reviews": 120,
+    "address": "Strada …, cod, Oraș",
+    "phone": "07xx xxx xxx",
+    "websiteLinked": true,
+    "categories": 3,
+    "primaryCategory": "…",
+    "ownerResponseRate": 0.5,
+    "responseSample": 60,
+    "reviewsPerMonth": 2,
+    "lastReviewMonth": "AAAA-LL",
+    "competitorsSource": "primele 20 de rezultate Google Maps pentru „<tip afacere> <oraș>”",
+    "competitors": [
+      { "name": "toate afacerile din căutare, fără clientul însuși", "rating": 4.9, "reviews": 300 }
+    ],
+    "notes": []
+  },
+
+  "summary": {
+    "headline": "O frază: ce merge și ce nu.",
+    "intro": "3–5 fraze, doar cu cifre care apar și în secțiuni."
+  },
+
+  "top3": ["speed", "localbusiness-schema", "h1"],
+
+  "extraIssues": [
+    {
+      "id": "id-scurt",
+      "section": "google | ai | gbp | technical | onpage | schema | mobile",
+      "severity": "critic | important | minor",
+      "effort": "quick | big",
+      "title": "Problema, spusă simplu",
+      "detail": "De ce contează pentru client, verificat în data.json.",
+      "fix": "Ce facem concret."
+    }
+  ]
+}

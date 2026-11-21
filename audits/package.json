@@ -1,0 +1,16 @@
+{
+  "name": "dragoscatana-audits",
+  "private": true,
+  "type": "module",
+  "description": "Free SEO / AI-visibility audit: collect data, render the branded PDF report.",
+  "scripts": {
+    "collect": "node scripts/collect.mjs",
+    "render": "node scripts/render.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "lighthouse": "^12.8.2",
+    "pdf-lib": "^1.17.1",
+    "puppeteer-core": "^23.11.1"
+  }
+}

@@ -44,3 +44,7 @@ next-env.d.ts
 /public/api/config.php
 site-deploy.zip
 moodboards/
+
+# audits: client data and outputs stay local (personal and business data)
+/audits/clients/
+/audits/node_modules/
