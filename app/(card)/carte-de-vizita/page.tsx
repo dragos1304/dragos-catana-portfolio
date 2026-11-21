@@ -55,19 +55,7 @@ export default function BusinessCard() {
           <h1 className="relative font-serif text-[2.4rem] font-extrabold leading-none">{site.name}</h1>
           <p className="relative mt-3 text-[15px] font-semibold text-paper/90">Web design și SEO pentru căutare AI</p>
           <p className="relative mt-1 font-accent text-xl italic text-orange">{brand.tagline.ro}</p>
-          <ul className="relative mt-6 flex flex-wrap gap-2 text-[13px] font-semibold">
-            <li className="rounded-full bg-paper/10 px-3 py-1">📍 {site.city}</li>
-            <li className="rounded-full bg-paper/10 px-3 py-1">🏥 Clinici</li>
-            <li className="rounded-full bg-paper/10 px-3 py-1">⚖️ Avocați</li>
-            <li className="rounded-full bg-paper/10 px-3 py-1">🏪 Afaceri locale</li>
-          </ul>
         </section>
-
-        {/* What to do here, in one line */}
-        <p className="mt-6 rounded-2xl bg-white p-4 text-[15px] leading-relaxed">
-          <span aria-hidden="true">👇 </span>
-          Apasă butonul portocaliu de jos ca să-mi <strong>salvezi numărul în telefon</strong>. Sau alege mai jos cum vrei să vorbim.
-        </p>
 
         <PocketHeading emoji="🤝">Cum vrei să vorbim?</PocketHeading>
         <ul className="space-y-3">{talk.map((i) => <li key={i.label}><PocketRow item={i} /></li>)}</ul>

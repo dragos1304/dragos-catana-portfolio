@@ -65,9 +65,6 @@ export default function Links() {
         <h1 className="mt-5 font-serif text-4xl font-extrabold">{site.name}</h1>
         <p className="mt-2 text-[15px] font-semibold">Web design și SEO pentru căutare AI · <span className="whitespace-nowrap">📍 {site.city}</span></p>
         <p className="mt-1 font-accent text-xl italic text-orange-ink">{brand.tagline.ro}</p>
-        <p className="mx-auto mt-5 max-w-xs rounded-2xl bg-white px-4 py-3 text-[15px] leading-relaxed">
-          Ajut clinicile, avocații și afacerile locale să fie găsite pe Google și recomandate de ChatGPT. <strong>Alege mai jos ce ai nevoie.</strong> 👇
-        </p>
       </header>
 
       <PocketHeading emoji="🚀">Începe de aici</PocketHeading>
