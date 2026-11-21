@@ -1,0 +1,1 @@
+Source: https://github.com/balgev/rankenstein (MIT), v2.2.1, commit 27a5beb, installed 21 Nov 2026.
