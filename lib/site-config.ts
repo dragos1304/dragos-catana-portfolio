@@ -40,8 +40,22 @@ export const place = {
   geo: { latitude: 46.7427653, longitude: 23.6546004 },
 } as const;
 
-/** Profile URLs for schema.org `sameAs`. */
-export const sameAs = Object.values(social).filter((s) => s.sameAs).map((s) => s.url);
+/**
+ * Directory and marketplace listings: they confirm name, address and phone for Google and AI assistants,
+ * so they go into `sameAs` and llms.txt, but not into the footer buttons (those are for people).
+ */
+export const directories = {
+  cylex: { name: "Cylex", url: "https://cluj-napoca.cylex.ro/firma/dragos+catana-1506422.html" },
+  deschis: { name: "Deschis.ro", url: "https://deschis.ro/cluj-napoca/dragos-catana-356623" },
+  firmania: { name: "Firmania", url: "https://firmania.ro/cluj-napoca/dragos-catana-473838" },
+  sortlist: { name: "Sortlist", url: "https://www.sortlist.com/agency/dragos-catana" },
+} as const;
+
+/** Profile URLs for schema.org `sameAs`: social profiles plus directory listings. */
+export const sameAs = [
+  ...Object.values(social).filter((s) => s.sameAs).map((s) => s.url),
+  ...Object.values(directories).map((d) => d.url),
+];
 
 /** Measured proof. Only numbers we can show evidence for (Lighthouse reports in public/lucrari/cheesy-media). */
 export const proof = {

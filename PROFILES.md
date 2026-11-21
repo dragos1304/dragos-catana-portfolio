@@ -379,6 +379,39 @@ Links, in this order, with descriptive titles (AI reads the link text, so "Site-
 
 Social icons: LinkedIn, Instagram, Behance, Dribbble, GitHub. Remove links to old or unrelated projects: mixed signals make AI describe you less precisely. Put the Linktree link in your Instagram bio, and send me its URL so the site lists it too.
 
+### Linktree: setup checklist (new account)
+
+- **Username:** `dragoscatana` → `linktr.ee/dragoscatana` (same handle as Behance; one handle everywhere).
+- **Title, bio, image and links:** as in the Linktree table above.
+- **Look:** background `#f6f5f1`, buttons `#131313` with white text, rounded buttons, font close to Inter. It then matches the site and the logo.
+- **Settings → SEO** (paid plans): title `Dragoș Catană | Web designer și SEO, Cluj-Napoca`, description = the Romanian short description from §10.
+- **Do not** add tracking parameters to the website link; keep it `https://dragoscatana.com`.
+- Put the Linktree in the Instagram, TikTok or YouTube bio, and send me the URL for the site's profile list.
+
+### Similar pages that rank for your name (pick two or three, not all)
+
+| Service | What it gives you | Note |
+|---|---|---|
+| Linktree | Link hub that already ranks for your name | main one |
+| Gravatar (gravatar.com) | Public profile tied to your e-mail; shows on WordPress sites and comments you post | free; use the same photo and bio |
+| about.me | One-page personal profile, indexed by Google | free tier |
+| Medium / Substack profile | Profile plus republished articles with a link to the original | per article |
+| Beacons, bio.link | Linktree alternatives | only if you drop Linktree: duplicate hubs add nothing |
+
+There is no widely used Romanian link-in-bio service. The Romanian equivalent that helps most is a page on your own domain (for example `dragoscatana.com/linkuri`), which ranks with your site instead of someone else's.
+
+### Romanian listings: done and next
+
+Done: Cylex, Deschis.ro, Firmania (same network as Cylex), Sortlist. They are now in the site's `sameAs` and llms.txt.
+
+Next:
+| Platform | Note |
+|---|---|
+| PaginiAurii.ro | free basic listing; same texts as §10 |
+| OnTop.ro | free website listing in a Romanian business directory |
+| ListaFirme.ro (platform.listafirme.ro) | free account, but only for a registered business (SRL/SA/PFA) |
+| Termene.ro, TotalFirme.ro, InfoCompanii.ro, Targetare.ro | fill in automatically from the trade register after you register a PFA or SRL |
+
 ### Global (in priority order)
 
 | Platform | Why it matters for AI | Effort |

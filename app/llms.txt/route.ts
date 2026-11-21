@@ -1,5 +1,5 @@
 import { articles } from "@/lib/articles";
-import { place, phone, proof, site, social } from "@/lib/site-config";
+import { directories, place, phone, proof, site, social } from "@/lib/site-config";
 import { llmsLinks, type PageKey } from "@/lib/site-map";
 
 export const dynamic = "force-static";
@@ -32,6 +32,9 @@ ${list("ro", ["about", "contact"])}
 
 ## Profiluri
 ${Object.values(social).filter((p) => p.sameAs).map((p) => `- [${p.name}](${p.url})`).join("\n")}
+
+## Listări în directoare
+${Object.values(directories).map((d) => `- [${d.name}](${d.url})`).join("\n")}
 
 ## English version
 The main pages are also available in English, for English-speaking business owners in Romania:
