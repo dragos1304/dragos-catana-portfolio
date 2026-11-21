@@ -1,0 +1,1 @@
+HTML drafts written by the rankenstein skill during the scheduled article task. Kept for the record; the published version is the one in lib/articles.ts. Not part of the build or the deploy.
