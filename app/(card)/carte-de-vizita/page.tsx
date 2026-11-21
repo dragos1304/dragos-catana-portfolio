@@ -49,12 +49,10 @@ export default function BusinessCard() {
         <section aria-label="Carte de vizită" className="relative overflow-hidden rounded-3xl border-2 border-ink bg-ink p-6 text-paper shadow-[6px_6px_0_#f1501b] sm:p-8">
           <span aria-hidden="true" className="absolute -right-14 -top-14 h-40 w-40 rounded-full bg-orange" />
           <span aria-hidden="true" className="absolute right-5 top-5 text-4xl">👋</span>
-          {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
-          <img src={brand.wordmarkWhite.src} width={brand.wordmarkWhite.width} height={brand.wordmarkWhite.height} alt="" className="relative h-7 w-auto" />
-          <p className="relative mt-8 text-[15px] text-paper/75">Salut, eu sunt</p>
+          <p className="relative mt-12 text-[15px] text-paper/75">Salut, eu sunt</p>
           <h1 className="relative font-serif text-[2.4rem] font-extrabold leading-none">{site.name}</h1>
           <p className="relative mt-3 text-[15px] font-semibold text-paper/90">Web design și SEO pentru căutare AI</p>
-          <p className="relative mt-1 font-accent text-xl italic text-orange">{brand.tagline.ro}</p>
+          <p className="relative mt-4 border-l-4 border-orange pl-3 text-[17px] font-semibold leading-snug text-paper">{brand.tagline.ro}</p>
         </section>
 
         <PocketHeading emoji="🤝">Cum vrei să vorbim?</PocketHeading>
