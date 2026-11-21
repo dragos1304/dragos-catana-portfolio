@@ -4,8 +4,9 @@ import { alternates, href, nav, serviceOptions, services, sitemapEntries, twinOf
 
 /** A path in the site map must be a real route file in the matching root layout. */
 function routeFileExists(path: string) {
-  const dir = path.startsWith("/en/") || path === "/en/" ? `app/(en)${path}` : `app/(ro)${path}`;
-  return existsSync(`${dir}page.tsx`);
+  // Romanian pages live in app/(ro); the standalone pocket pages (links, business card) in app/(card).
+  const groups = path.startsWith("/en/") ? ["(en)"] : ["(ro)", "(card)"];
+  return groups.some((g) => existsSync(`app/${g}${path}page.tsx`));
 }
 
 describe("site map", () => {

@@ -16,6 +16,7 @@ export const personSchema = {
   knowsAbout: ["Web design", "Creare site web", "Optimizare SEO", "SEO local", "Generative Engine Optimization (GEO)", "Date structurate (schema.org)", "Next.js"],
   sameAs,
   telephone: phone.e164,
+  email: site.email,
 };
 
 export const ogImage = `${site.url}/og.png`;
@@ -45,7 +46,8 @@ export const siteSchema = {
       founder: { "@id": `${site.url}/#person` },
       knowsLanguage: ["ro", "en", "fr", "de"],
       sameAs,
-  telephone: phone.e164,
+      telephone: phone.e164,
+      email: site.email,
     },
     { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, inLanguage: ["ro-RO", "en"], publisher: { "@id": `${site.url}/#person` } },
   ],

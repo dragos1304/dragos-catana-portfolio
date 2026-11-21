@@ -52,3 +52,13 @@ ErrorDocument 404 /404.html
 
 # Web app manifest (favicons / home-screen icons)
 AddType application/manifest+json .webmanifest
+
+# Contact card: iPhone opens it straight in Contacts, Android offers to import it. Kept fresh like HTML.
+AddType text/vcard .vcf
+AddCharset utf-8 .vcf
+<IfModule mod_headers.c>
+  <FilesMatch "\.vcf$">
+    Header set Content-Disposition "inline; filename=\"dragos-catana.vcf\""
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>

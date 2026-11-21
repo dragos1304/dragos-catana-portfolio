@@ -7,6 +7,8 @@ export const site = {
     "Redesign de website, creare de website-uri și SEO cu accent pe vizibilitate în ChatGPT, Gemini și Perplexity. Pentru clinici, cabinete de avocatură și afaceri locale din România.",
   city: "Cluj-Napoca",
   calendly: "https://calendly.com/dragoscatana/consultanta-1-la-1",
+  /** Public e-mail: business card, contact file (vCard) and schema. */
+  email: "me@dragoscatana.com",
   gtmId: "GTM-K7RPGZSV",
   /** The reply promise, phrased per language. Change it here and every page, email and band follows. */
   reply: { hours: 24, ro: "24 de ore", en: "24 hours" },
@@ -30,6 +32,8 @@ export const social = {
   googleMaps: { name: "Google Maps", url: "https://maps.app.goo.gl/fuxxrpWDCVRRpt578", sameAs: true },
   /** A link hub that points back here: in `sameAs`, llms.txt and the contact page, not a footer button. */
   linktree: { name: "Linktree", url: "https://linktr.ee/dragoscatana", sameAs: true, footer: false },
+  /** Reviews profile. Never quote a rating or review count on the site unless it is real and current. */
+  trustpilot: { name: "Trustpilot", url: "https://www.trustpilot.com/review/dragoscatana.com", sameAs: true, footer: false },
 } as const;
 
 /** The Google Business Profile: map embed (by its Google place ID, shows the business card), share link and pin. */

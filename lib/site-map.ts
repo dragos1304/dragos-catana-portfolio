@@ -31,6 +31,8 @@ const PAGES = {
   privacy: { ro: "/confidentialitate/", name: { ro: "Politica de confidențialitate" } },
   cookies: { ro: "/cookie/", name: { ro: "Politica de cookie-uri" } },
   terms: { ro: "/termeni/", name: { ro: "Termeni și condiții" } },
+  links: { ro: "/linkuri/", name: { ro: "Linkuri" }, summary: { ro: "toate linkurile: audit, programare, WhatsApp, e-mail, profiluri" } },
+  card: { ro: "/carte-de-vizita/", name: { ro: "Carte de vizită" }, summary: { ro: "date de contact și buton care salvează contactul în telefon" } },
 } as const satisfies Record<string, Page>;
 
 export type PageKey = keyof typeof PAGES;
