@@ -1,4 +1,4 @@
-import { brand, phone, sameAs, site } from "./site-config";
+import { brand, phone, place, sameAs, site } from "./site-config";
 import { services } from "./site-map";
 
 export const abs = (path: string) => `${site.url}${path === "/" ? "/" : path.replace(/\/?$/, "/")}`;
@@ -41,6 +41,8 @@ export const siteSchema = {
       },
       areaServed: { "@type": "Country", name: "România" },
       address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "RO" },
+      geo: { "@type": "GeoCoordinates", ...place.geo },
+      hasMap: place.mapsUrl,
       founder: { "@id": `${site.url}/#person` },
       knowsLanguage: ["ro", "en", "fr", "de"],
       sameAs,

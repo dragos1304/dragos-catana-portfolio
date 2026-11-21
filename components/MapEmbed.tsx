@@ -2,18 +2,17 @@
 import { useState } from "react";
 import { MapPin } from "lucide-react";
 import type { Lang } from "@/lib/site-map";
+import { place } from "@/lib/site-config";
 
 /**
- * Google Maps for Cluj-Napoca, loaded only after a click: the embed sets Google cookies, so it stays
- * off until the visitor asks for it (see the cookie policy). City level only, no street address.
+ * The Google Business Profile on Google Maps, loaded only after a click: the embed sets Google cookies,
+ * so it stays off until the visitor asks for it (see the cookie policy). Source: `place` in lib/site-config.ts.
  */
 const text = {
-  ro: { place: "Cluj-Napoca, România", note: "Harta se încarcă de la Google Maps, care poate folosi cookie-uri.", show: "Afișează harta", open: "Deschide în Google Maps", title: "Harta: Cluj-Napoca, România" },
-  en: { place: "Cluj-Napoca, Romania", note: "The map loads from Google Maps, which may use cookies.", show: "Show the map", open: "Open in Google Maps", title: "Map: Cluj-Napoca, Romania" },
+  ro: { place: "Dragoș Catană · Cluj-Napoca", note: "Harta se încarcă de la Google Maps, care poate folosi cookie-uri.", show: "Afișează harta", open: "Deschide în Google Maps", title: "Harta: Dragoș Catană pe Google Maps" },
+  en: { place: "Dragoș Catană · Cluj-Napoca", note: "The map loads from Google Maps, which may use cookies.", show: "Show the map", open: "Open in Google Maps", title: "Map: Dragoș Catană on Google Maps" },
 } as const;
 
-const EMBED = "https://maps.google.com/maps?q=Cluj-Napoca%2C%20Romania&z=12&output=embed";
-const LINK = "https://www.google.com/maps/search/?api=1&query=Cluj-Napoca%2C%20Romania";
 
 export function MapEmbed({ lang }: { lang: Lang }) {
   const t = text[lang];
@@ -21,7 +20,7 @@ export function MapEmbed({ lang }: { lang: Lang }) {
   return (
     <div className="overflow-hidden rounded-3xl border-2 border-ink bg-canvas">
       {on ? (
-        <iframe title={t.title} src={EMBED} className="block h-[320px] w-full sm:h-[380px]" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />
+        <iframe title={t.title} src={place.embed} className="block h-[320px] w-full sm:h-[380px]" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />
       ) : (
         <div className="grid h-[320px] place-items-center bg-[radial-gradient(circle_at_center,var(--color-line)_1px,transparent_1px)] bg-[size:18px_18px] p-6 text-center sm:h-[380px]">
           <div>
@@ -34,7 +33,7 @@ export function MapEmbed({ lang }: { lang: Lang }) {
           </div>
         </div>
       )}
-      <a href={LINK} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center justify-between border-t-2 border-ink px-5 text-[15px] font-semibold text-ink hover:bg-paper">
+      <a href={place.mapsUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center justify-between border-t-2 border-ink px-5 text-[15px] font-semibold text-ink hover:bg-paper">
         {t.open} <span aria-hidden>↗</span>
       </a>
     </div>

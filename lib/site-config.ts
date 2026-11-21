@@ -27,6 +27,14 @@ export const social = {
   github: { name: "GitHub", url: "https://github.com/dragos1304", sameAs: true },
   behance: { name: "Behance", url: "https://www.behance.net/dragoscatana", sameAs: true },
   dribbble: { name: "Dribbble", url: "https://dribbble.com/DragosCatana", sameAs: true },
+  googleMaps: { name: "Google Maps", url: "https://maps.app.goo.gl/fuxxrpWDCVRRpt578", sameAs: true },
+} as const;
+
+/** The Google Business Profile: map embed (by its Google place ID, shows the business card), share link and pin. */
+export const place = {
+  mapsUrl: "https://maps.app.goo.gl/fuxxrpWDCVRRpt578",
+  embed: "https://maps.google.com/maps?cid=6256844995488708042&z=15&output=embed",
+  geo: { latitude: 46.7427653, longitude: 23.6546004 },
 } as const;
 
 /** Profile URLs for schema.org `sameAs`. */
