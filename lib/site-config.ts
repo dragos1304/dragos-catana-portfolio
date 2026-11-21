@@ -23,7 +23,7 @@ export const phone = { e164: "+40740939472", display: "+40 740 939 472" } as con
 export const social = {
   linkedin: { name: "LinkedIn", url: "https://www.linkedin.com/in/dragos-catana/", sameAs: true },
   instagram: { name: "Instagram", url: "https://www.instagram.com/dragos_catana", sameAs: true },
-  whatsapp: { name: "WhatsApp", url: `https://wa.me/${phone.e164.replace("+", "")}`, sameAs: false },
+  whatsapp: { name: "WhatsApp", url: `https://api.whatsapp.com/send?phone=${phone.e164.replace("+", "")}`, sameAs: false },
   github: { name: "GitHub", url: "https://github.com/dragos1304", sameAs: true },
   behance: { name: "Behance", url: "https://www.behance.net/dragoscatana", sameAs: true },
   dribbble: { name: "Dribbble", url: "https://dribbble.com/DragosCatana", sameAs: true },

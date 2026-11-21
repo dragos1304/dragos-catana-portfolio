@@ -14,7 +14,7 @@ describe("social links (one source)", () => {
   });
 
   it("builds the WhatsApp link from the one phone number", () => {
-    expect(social.whatsapp.url).toBe(`https://wa.me/${phone.e164.slice(1)}`);
+    expect(social.whatsapp.url).toBe(`https://api.whatsapp.com/send?phone=${phone.e164.slice(1)}`);
   });
 });
 

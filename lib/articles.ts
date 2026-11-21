@@ -29,6 +29,7 @@ export const articles: Article[] = [
   {
     slug: "ce-este-geo-optimizare-pentru-motoare-ai",
     title: "Ce este GEO (optimizarea pentru motoare AI) și cum diferă de SEO",
+    seoTitle: "Ce este GEO și cum diferă de SEO",
     description:
       "GEO sau AEO înseamnă să fii înțeles și citat de ChatGPT, Gemini, Claude și Perplexity. Ce este, cum diferă de SEO și ce poți face concret.",
     category: "Căutare AI",
@@ -153,6 +154,7 @@ export const articles: Article[] = [
   {
     slug: "10-semne-ca-site-ul-tau-este-depasit",
     title: "10 semne că site-ul tău este depășit (și ce să faci)",
+    seoTitle: "Site depășit? 10 semne că ai nevoie de redesign",
     description:
       "Un site vechi costă încredere și clienți. Iată 10 semne clare că este timpul pentru un redesign și ce poți verifica singur, în 15 minute.",
     category: "Redesign",
@@ -205,6 +207,7 @@ export const articles: Article[] = [
   {
     slug: "redesign-site-fara-sa-pierzi-pozitiile-din-google",
     title: "Cum faci redesign la site fără să pierzi pozițiile din Google",
+    seoTitle: "Redesign de site fără să pierzi pozițiile în Google",
     description:
       "Redesign sigur pentru SEO, pas cu pas: inventarul paginilor, redirecționări 301, testare înainte de lansare și monitorizare după.",
     category: "Redesign",
@@ -345,6 +348,7 @@ export const articles: Article[] = [
   {
     slug: "ce-este-seo",
     title: "Ce este SEO? Ghid simplu pentru afaceri locale",
+    seoTitle: "Ce este SEO? Ce înseamnă, explicat simplu",
     description:
       "Ce înseamnă SEO, cum funcționează Google și ce poate face concret o clinică, un cabinet sau o afacere locală ca să fie găsită. Explicat simplu, fără jargon.",
     category: "Ghid SEO",
@@ -434,6 +438,7 @@ export const articles: Article[] = [
   {
     slug: "google-business-profile-ghid",
     title: "Google Business Profile: ghid pas cu pas pentru afaceri locale",
+    seoTitle: "Google Business Profile: ghid pas cu pas",
     description:
       "Cum creezi și optimizezi profilul Google al afacerii, cum obții recenzii Google corect și ce greșeli să eviți. Ghid practic pentru clinici, cabinete și firme locale.",
     category: "SEO local",
