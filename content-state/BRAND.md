@@ -45,7 +45,7 @@ voice_hard_rules:
   em_dashes: false
   emojis_in_headings: false
 
-state_dir: "content-state/"  # rankenstein_history.csv + drafts/ (HTML drafts kept for the record, never deployed)
+state_dir:          # left empty on purpose: duplicates are checked against lib/articles.ts and KEYWORD_PLAN.md §2 (one source of truth), so rankenstein skips its Phase 1 history. Drafts go to content-state/drafts/.
 
 notify: none                 # the scheduled task's own end-of-run report is the notification
 ---
