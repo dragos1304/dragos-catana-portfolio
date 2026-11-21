@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <h1 className="mt-3 max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{a.title}</h1>
         <p className="mt-4 text-sm text-muted">
           De <Link href="/despre" className="underline underline-offset-4">{site.name}</Link> · actualizat la{" "}
-          <time dateTime={a.updated ?? a.date}>{new Date(a.updated ?? a.date).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" })}</time>
+          <time dateTime={a.updated ?? a.date}>{new Date(a.updated ?? a.date).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time>
         </p>
         <article className="prose prose-lg prose-slate mt-10 max-w-3xl prose-headings:font-serif prose-headings:text-ink prose-a:text-orange-ink prose-th:text-left">
           {a.blocks.map(render)}
