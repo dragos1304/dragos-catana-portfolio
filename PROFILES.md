@@ -410,3 +410,73 @@ Social icons: LinkedIn, Instagram, Behance, Dribbble, GitHub. Remove links to ol
 ### How to check progress (once a month)
 
 Ask ChatGPT, Gemini and Perplexity: „Cine este Dragoș Catană?", „Web designer în Cluj pentru clinici", „Cine face SEO pentru avocați în România?". Note which sources they cite; the ones that keep appearing are worth updating first.
+
+## 10. Romanian directories kit (Cylex.ro, PaginiAurii.ro, Facebook, Bing Places)
+
+Written with the `romana` skill. Keep name, address and phone **exactly** as on your Google Business Profile: directories that disagree with Google weaken all of them.
+
+| Câmp | Text |
+|---|---|
+| Denumire | `Dragoș Catană` (dacă formularul nu acceptă diacritice: `Dragos Catana`, ca pe Google) |
+| Subtitlu / descriere scurtă de o linie (dacă există câmpul) | `Web design și SEO în Cluj-Napoca` |
+| Slogan | `Fă-ți afacerea ușor de recomandat de AI` |
+| Categorie principală | `Web design` (sau `Creare site-uri web`, după lista directorului) |
+| Categorii secundare | `Optimizare SEO` · `Marketing online` · `Servicii IT` (doar cele care există în listă) |
+| Adresă | `Strada Jorj Voicu 2-4, 400482 Cluj-Napoca, județul Cluj` |
+| Telefon / WhatsApp | `+40 740 939 472` |
+| Site | `https://dragoscatana.com` |
+| E-mail | `[adresa ta de contact]` |
+| Program | `[de completat: zilele și orele în care răspunzi la telefon]` (aceleași ca pe Google) |
+| Zonă deservită | `Cluj-Napoca și toată România (online)` |
+| Logo | `brand/logo/png/profile-1024.png` |
+| Imagine de copertă | `public/og-ro.png` |
+
+**Descriere scurtă (maximum 160 de caractere, 149 acum):**
+```
+Web designer în Cluj-Napoca: site-uri, SEO și vizibilitate în AI pentru clinici, cabinete de avocatură și afaceri locale. Audit gratuit în 24 de ore.
+```
+
+**Descriere medie (în jur de 400 de caractere, 386 acum; potrivită pentru Facebook → „Despre”):**
+```
+Sunt Dragoș Catană, web designer și specialist SEO în Cluj-Napoca. Fac site-uri noi și redesign pentru clinici, cabinete de avocatură și afaceri locale din România și mă ocup ca ele să fie găsite în Google și în asistenții AI, precum ChatGPT, Gemini și Perplexity. Lucrezi direct cu mine, de la audit până la lansare și mentenanță. Primul audit este gratuit, făcut manual, în 24 de ore.
+```
+
+**Descriere lungă (1225 de caractere; pentru câmpurile mari din Cylex și Pagini Aurii):**
+```
+Sunt Dragoș Catană, web designer și specialist SEO din Cluj-Napoca. Ajut clinicile, cabinetele de avocatură și afacerile locale din România să fie găsite: în Google și în răspunsurile asistenților AI, precum ChatGPT, Gemini și Perplexity.
+
+Ce fac:
+• Redesign de site: un site mai rapid și mai clar, care își păstrează pozițiile din Google (redirecționări 301, adrese curate).
+• Site-uri noi: gândite întâi pentru telefon, cu date structurate pe fiecare pagină.
+• SEO și vizibilitate în AI: SEO tehnic și local, profilul Google al afacerii și conținut pe care asistenții AI îl pot cita.
+• Mentenanță: actualizări, modificări mici și un raport scurt, în limbaj simplu.
+
+Cum lucrez: vorbești direct cu omul care face munca. Începem cu un audit gratuit, făcut manual, în 24 de ore, apoi cu o discuție de 30 de minute. După discuție primești o ofertă clară. Nu public prețuri fixe și nu promit locul 1 în Google, pentru că nimeni nu îl poate garanta.
+
+Proiect recent: redesignul site-ului Cheesy Media, o agenție foto-video din Cluj-Napoca. Pe mobil, performanța în Lighthouse a crescut de la 82 la 100, iar accesibilitatea, de la 96 la 100.
+
+Studiez economie la Universitatea Babeș-Bolyai și pun pe picioare afaceri de la 16 ani.
+```
+
+**Servicii (câte unul pe rând, unde directorul are listă de servicii):**
+```
+Creare site web
+Redesign site
+Optimizare SEO
+SEO local
+Vizibilitate în ChatGPT și asistenți AI (GEO)
+Mentenanță site
+Site pentru clinici medicale
+Site pentru cabinete de avocatură
+Audit SEO gratuit
+```
+
+**Cuvinte-cheie (unde se cer, separate prin virgulă):**
+```
+web design Cluj, creare site Cluj, web designer Cluj-Napoca, optimizare SEO, SEO local, redesign site, site clinică, site avocat, vizibilitate în AI, ChatGPT
+```
+
+Note:
+- Nu adăuga cuvinte-cheie în denumire (de exemplu „Dragoș Catană Web Design Cluj SEO”): pe Google încalcă regulile, iar în directoare face numele diferit de cel de pe Google.
+- Dacă un director cere CUI sau denumirea firmei, completează după ce ai PFA sau SRL și folosește atunci aceeași denumire peste tot.
+- Trimite-mi linkul fiecărui profil publicat: îl adaug în lista de profiluri a site-ului.
