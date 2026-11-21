@@ -135,12 +135,20 @@ export function LeadForm({ kind, lang = "ro" }: { kind: LeadKind; lang?: Lang })
         </>
       ) : (
         <>
-          <label className="block text-sm font-medium">{t.need}
-            <select className={inputCls} name="need" defaultValue="" required>
-              <option value="" disabled>{t.choose}</option>
-              {serviceOptions(lang).map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-            </select>
-          </label>
+          {/* Need: pill buttons in the site's style instead of a native dropdown (same look on every device). */}
+          <fieldset>
+            <legend className="text-sm font-medium">{t.need}</legend>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {serviceOptions(lang).map((o, i) => (
+                <label key={o.value} className="cursor-pointer">
+                  <input type="radio" name="need" value={o.value} required={i === 0} className="peer sr-only" />
+                  <span className="inline-flex min-h-11 items-center rounded-full border-2 border-ink/20 bg-white px-4 py-2 text-[15px] font-medium leading-snug text-ink transition-colors duration-150 hover:border-ink peer-checked:border-ink peer-checked:bg-ink peer-checked:text-paper peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-orange">
+                    {o.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
           <label className="block text-sm font-medium">{t.message}
             <textarea className={inputCls} name="message" rows={5} required />
           </label>

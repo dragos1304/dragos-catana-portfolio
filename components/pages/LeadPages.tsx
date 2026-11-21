@@ -19,7 +19,7 @@ const contactCopy = {
   ro: {
     title: "Contact: cere o ofertă pentru site sau SEO",
     description: `Scrie-mi despre site-ul sau proiectul tău SEO: răspund personal în maximum ${site.reply.ro}. Web designer în Cluj-Napoca, cu clienți din toată România.`,
-    h1: "Hai să vorbim despre proiectul tău.",
+    h1: "Hai să-ți facem site-ul ușor de recomandat de AI.",
     lead: `Spune-mi pe scurt ce ai nevoie. Îți răspund personal în maximum ${site.reply.ro}.`,
     quick: "Preferi WhatsApp?",
     waysH2: "Alte moduri de a vorbi cu mine",
@@ -36,7 +36,7 @@ const contactCopy = {
   en: {
     title: "Contact: get a quote for a website or SEO",
     description: `Tell me about your website or SEO project and I reply personally within ${site.reply.en}. Web designer in Cluj-Napoca, working with clients across Romania.`,
-    h1: "Let's talk about your project.",
+    h1: "Let's make your website easy for AI to recommend.",
     lead: `Tell me briefly what you need. I reply personally within ${site.reply.en}.`,
     quick: "Prefer WhatsApp?",
     waysH2: "Other ways to reach me",

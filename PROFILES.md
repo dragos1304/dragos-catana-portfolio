@@ -350,3 +350,62 @@ Clutch asks for percentages that add up to 100. The split below is a suggestion;
 - [ ] Ask Cheesy Media for one review on Clutch and one on GoodFirms, and on Google once the Business Profile is verified.
 - [ ] Use the same portrait on every profile once you have it.
 - [ ] Re-check in 4–6 weeks. Ask ChatGPT, Gemini and Perplexity: "Cine face site-uri pentru clinici în Cluj?" and "Who is Dragoș Catană?". Note whether the profiles are cited.
+
+## 9. More places AI reads (Linktree, global, Romanian)
+
+AI assistants describe you from what independent pages agree on. Every new profile should repeat the same four things: **Dragoș Catană**, **web designer și specialist SEO**, **Cluj-Napoca, România**, **https://dragoscatana.com**, plus the tagline. Send me each new URL and I add it to the site (`social` in `lib/site-config.ts`).
+
+### Linktree (already shows up in Google's AI answers for your name)
+
+Google picks it because it is a page titled with your name that links to everything else. Make it say exactly what the site says:
+
+| Field | Paste |
+|---|---|
+| Profile title | `Dragoș Catană \| Web designer și SEO, Cluj-Napoca` |
+| Bio (max. 80 characters) | `Site-uri și SEO în Cluj-Napoca. Fă-ți afacerea ușor de recomandat de AI.` |
+| Profile image | `brand/logo/png/profile-1024.png` (the same mark as everywhere; swap for the portrait later, everywhere at once) |
+| SEO title / description (Settings → SEO, if your plan has it) | Title as above · Description: the short description from §1 |
+
+Links, in this order, with descriptive titles (AI reads the link text, so "Site-ul meu" says less than what the page is):
+
+1. `dragoscatana.com: web design și SEO pentru afaceri locale` → https://dragoscatana.com
+2. `Audit gratuit de vizibilitate în AI, în 24 de ore` → https://dragoscatana.com/audit-gratuit-vizibilitate-ai/
+3. `Programează o discuție de 30 de minute` → https://calendly.com/dragoscatana/consultanta-1-la-1
+4. `WhatsApp: +40 740 939 472` → https://wa.me/40740939472
+5. `Studiu de caz: redesignul site-ului Cheesy Media` → https://dragoscatana.com/lucrari/cheesy-media/
+6. `Ghid: ce este GEO (SEO pentru asistenții AI)` → https://dragoscatana.com/articole/ce-este-geo-optimizare-pentru-motoare-ai/
+7. `English website` → https://dragoscatana.com/en/
+
+Social icons: LinkedIn, Instagram, Behance, Dribbble, GitHub. Remove links to old or unrelated projects: mixed signals make AI describe you less precisely. Put the Linktree link in your Instagram bio, and send me its URL so the site lists it too.
+
+### Global (in priority order)
+
+| Platform | Why it matters for AI | Effort |
+|---|---|---|
+| Google Business Profile | Source for Google's AI answers and Maps; finish verification | in progress |
+| Bing Places | ChatGPT's web search uses Bing; import it from Google Business Profile | 10 min |
+| Apple Business Connect | Apple Maps and Siri; free | 15 min |
+| Reviews on Google (then Clutch, GoodFirms) | AI quotes reviews when it recommends; ask Cheesy Media first | ask the client |
+| LinkedIn articles | Republish your guides (link back to the original); LinkedIn is heavily cited by AI | per article |
+| Medium or Substack | Same: republish the English versions with a link to the original | per article |
+| YouTube | Short screen recordings (e.g. „cum verifici dacă ChatGPT te recomandă”); transcripts are read by Google | 1 h per video |
+| Reddit, Quora | Genuine answers under your own name (r/Romania, r/cluj, r/webdev); no link spam | ongoing |
+| Sortlist | European marketplace for agencies and freelancers, covers Romania | 20 min |
+| Wikidata | Strongest "entity" signal for AI, but needs independent sources (press, university); do it after a press mention | later |
+
+### Romanian
+
+| Platform | Why | Note |
+|---|---|---|
+| Facebook page (RO) | Romanian clients check it and leave reviews; AI reads public pages | same texts as §1 in Romanian |
+| Cylex.ro and PaginiAurii.ro | Romanian business directories AI cites for "în Cluj" questions | free basic listings |
+| ListaFirme.ro, Termene.ro, Risco.ro | Fill in automatically from the trade register once you have a PFA or SRL | nothing to do until you register a business |
+| UBB / FSEGA, UBB i-Lab | Ask them to mention your 2nd place at i-Lab with a link to dragoscatana.com: a university (.ro) link is a strong trust signal | one e-mail |
+| Cluj local press (e.g. Ziua de Cluj, Monitorul de Cluj, Actual de Cluj) | A short story ("student UBB care…") gives independent coverage, which AI trusts more than profiles | pitch once you have a client result |
+| Startarium.ro and Romanian business blogs | Guest articles in Romanian on SEO/AI for small businesses, with a link to your site | check each site's guest-post rules |
+| Romanian Facebook / LinkedIn groups for entrepreneurs (Cluj, clinici, avocați) | Helpful answers under your name; groups are where owners ask "cine îmi face un site?" | ongoing |
+| OLX.ro (Servicii) | Leads more than AI visibility; optional | optional |
+
+### How to check progress (once a month)
+
+Ask ChatGPT, Gemini and Perplexity: „Cine este Dragoș Catană?", „Web designer în Cluj pentru clinici", „Cine face SEO pentru avocați în România?". Note which sources they cite; the ones that keep appearing are worth updating first.

@@ -21,7 +21,8 @@ describe("lead form contract", () => {
 
   it("contact form need options all map to a Romanian label for the email", () => {
     const html = renderToStaticMarkup(<LeadForm kind="contact" lang="en" />);
-    const options = [...html.matchAll(/<option value="([^"]+)"/g)].map((m) => m[1]).filter(Boolean);
+    // The need field is a group of radio "pills" (name="need").
+    const options = [...html.matchAll(/<input[^>]*name="need"[^>]*value="([^"]+)"/g)].map((m) => m[1]);
     const need = leadForm.kinds.contact.fields.find((f) => f.name === "need")!;
     expect(options.length).toBeGreaterThan(0);
     for (const o of options) expect(need.options?.[o], o).toBeTruthy();
