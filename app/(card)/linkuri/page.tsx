@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
+import { abs, personSchema } from "@/lib/schema";
 import { brand, phone, site, social } from "@/lib/site-config";
 import { vcardPath } from "@/lib/vcard";
 
 const title = `Linkuri: ${site.name}`;
-const description = "Audit gratuit, programare, WhatsApp, articole și profilurile lui Dragoș Catană, într-un singur loc.";
+const description = "Toate linkurile lui Dragoș Catană, web designer și specialist SEO din Cluj-Napoca: audit gratuit, programare, WhatsApp, e-mail și profiluri.";
 
 export const metadata: Metadata = {
   title,
@@ -20,6 +22,7 @@ const main: Item[] = [
   { label: "Audit gratuit de vizibilitate", note: "Scris de mine, în 24 de ore", href: "/audit-gratuit-vizibilitate-ai/", primary: true },
   { label: "Programează o discuție de 30 de minute", href: site.calendly, external: true },
   { label: "Scrie-mi pe WhatsApp", note: phone.display, href: social.whatsapp.url, external: true },
+  { label: "Trimite-mi un e-mail", note: site.email, href: `mailto:${site.email}` },
   { label: "Salvează contactul în telefon", href: vcardPath },
   { label: "Site-ul meu", note: "Servicii, lucrări și contact", href: "/" },
   { label: "Articole", note: "SEO, Google și căutare AI, explicate simplu", href: "/articole/" },
@@ -42,13 +45,20 @@ function Row({ item }: { item: Item }) {
     </>
   );
   if (item.external) return <a href={item.href} target="_blank" rel="noopener noreferrer" className={cls}>{body}</a>;
-  if (item.href.endsWith(".vcf")) return <a href={item.href} className={cls}>{body}</a>;
+  if (item.href.endsWith(".vcf") || item.href.startsWith("mailto:")) return <a href={item.href} className={cls}>{body}</a>;
   return <Link href={item.href} className={cls}>{body}</Link>;
 }
 
 export default function Links() {
   return (
     <main className="mx-auto w-full max-w-md px-4 py-10 sm:py-14">
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "ProfilePage", "@id": `${abs("/linkuri/")}#page`, url: abs("/linkuri/"), name: title, description, inLanguage: "ro-RO", isPartOf: { "@id": `${site.url}/#website` }, mainEntity: { "@id": `${site.url}/#person` } },
+          personSchema,
+        ],
+      }} />
       <header className="text-center">
         <span className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-ink shadow-lg">
           {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG mark */}

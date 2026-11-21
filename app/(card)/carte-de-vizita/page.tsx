@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
 import { ShareButton } from "@/components/ShareButton";
+import { abs, personSchema } from "@/lib/schema";
 import { brand, phone, place, site, social } from "@/lib/site-config";
 import { vcardPath } from "@/lib/vcard";
 
 const title = `Carte de vizită: ${site.name}`;
-const description = "Web design și SEO pentru căutare AI, în Cluj-Napoca. Salvează contactul în telefon cu un singur buton.";
+const description = "Cartea de vizită a lui Dragoș Catană, web design și SEO pentru căutare AI în Cluj-Napoca: telefon, e-mail, WhatsApp și contactul salvat în telefon dintr-un buton.";
 
 export const metadata: Metadata = {
   title,
@@ -30,6 +32,7 @@ const icons = {
   chat: "M21 11.5a8.4 8.4 0 0 1-12.5 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z",
   calendar: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z",
   globe: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20",
+  mail: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6l-10 7L2 6",
   pin: "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
 };
 
@@ -37,6 +40,13 @@ export default function BusinessCard() {
   const host = site.url.replace(/^https?:\/\//, "");
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col px-4 py-8 sm:py-14">
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "ContactPage", "@id": `${abs("/carte-de-vizita/")}#page`, url: abs("/carte-de-vizita/"), name: title, description, inLanguage: "ro-RO", isPartOf: { "@id": `${site.url}/#website` }, mainEntity: { "@id": `${site.url}/#person` } },
+          personSchema,
+        ],
+      }} />
       {/* The card face */}
       <section aria-label="Carte de vizită" className="relative overflow-hidden rounded-2xl bg-ink p-6 text-paper shadow-xl sm:p-8">
         <span aria-hidden="true" className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-orange" />
@@ -47,6 +57,7 @@ export default function BusinessCard() {
         <p className="relative mt-1 font-accent text-xl italic text-orange">{brand.tagline.ro}</p>
         <dl className="relative mt-8 space-y-1.5 text-[15px] text-paper/85">
           <div className="flex gap-3"><dt className="sr-only">Telefon</dt><dd><a href={`tel:${phone.e164}`} className="hover:text-orange">{phone.display}</a></dd></div>
+          <div className="flex gap-3"><dt className="sr-only">E-mail</dt><dd><a href={`mailto:${site.email}`} className="hover:text-orange">{site.email}</a></dd></div>
           <div className="flex gap-3"><dt className="sr-only">Site</dt><dd><Link href="/" className="hover:text-orange">{host}</Link></dd></div>
           <div className="flex gap-3"><dt className="sr-only">Adresă</dt><dd>{site.city}, România</dd></div>
         </dl>
@@ -62,8 +73,9 @@ export default function BusinessCard() {
         <a href={`tel:${phone.e164}`} className={action}><Icon d={icons.phone} /> Sună</a>
         <a href={social.whatsapp.url} target="_blank" rel="noopener noreferrer" className={action}><Icon d={icons.chat} /> WhatsApp</a>
         <a href={site.calendly} target="_blank" rel="noopener noreferrer" className={action}><Icon d={icons.calendar} /> Programează</a>
+        <a href={`mailto:${site.email}`} className={action}><Icon d={icons.mail} /> E-mail</a>
         <a href={place.mapsUrl} target="_blank" rel="noopener noreferrer" className={action}><Icon d={icons.pin} /> Pe hartă</a>
-        <Link href="/audit-gratuit-vizibilitate-ai/" className={`${action} col-span-2`}><Icon d={icons.globe} /> Audit gratuit în 24 de ore</Link>
+        <Link href="/audit-gratuit-vizibilitate-ai/" className={action}><Icon d={icons.globe} /> Audit gratuit</Link>
       </div>
 
       <ShareButton

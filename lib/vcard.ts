@@ -44,6 +44,7 @@ export function vcard(): string {
     `FN:${esc(site.name)}`,
     `TITLE:${esc("Web design și SEO pentru căutare AI")}`,
     `TEL;TYPE=CELL,VOICE:${phone.e164}`,
+    `EMAIL;TYPE=INTERNET,WORK:${site.email}`,
     `URL:${site.url}`,
     `ADR;TYPE=WORK:;;${esc(a.street)};${esc(a.city)};${esc(a.region)};${a.postalCode};România`,
     ...profiles.map((p) => `X-SOCIALPROFILE;TYPE=${p.name.toLowerCase()}:${p.url}`),

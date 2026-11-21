@@ -26,7 +26,8 @@ ${list("ro", ["cheesy"])}: redesign cu scoruri Lighthouse pe mobil: performanț�
 ${articles.map((a) => `- [${a.title}](${site.url}/articole/${a.slug}/): ${a.description}`).join("\n")}
 
 ## Despre și contact
-${list("ro", ["about", "contact"])}
+${list("ro", ["about", "contact", "links", "card"])}
+- E-mail: ${site.email}
 - [Programare discuție](${site.calendly})
 - WhatsApp: ${phone.display} (${social.whatsapp.url})
 
