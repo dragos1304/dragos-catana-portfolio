@@ -15,7 +15,7 @@ export function Guides({ slugs, title = "Ghiduri utile" }: { slugs: string[]; ti
         {items.map((a) => (
           <li key={a.slug}>
             <Link href={`/articole/${a.slug}`} className="group flex h-full flex-col rounded-3xl border-2 border-ink bg-canvas p-6 transition-shadow duration-200 hover:shadow-[6px_6px_0_0_var(--color-ink)]">
-              <span className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">{a.category} · {a.readMin} min</span>
+              <span className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">{a.tags[0]} · {a.readMin} min</span>
               <span className="mt-2 font-serif text-xl font-extrabold leading-snug text-ink">{a.title}</span>
               <span className="mt-2 text-[16px] leading-relaxed text-muted">{a.description}</span>
               <span className="mt-auto inline-flex items-center gap-1 pt-4 font-semibold text-ink underline decoration-orange decoration-2 underline-offset-4">

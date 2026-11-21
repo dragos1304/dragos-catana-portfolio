@@ -76,11 +76,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <JsonLd data={[
         breadcrumb([{ name: "Acasă", path: "/" }, { name: "Articole", path: "/articole" }, { name: a.title, path }]),
         { "@context": "https://schema.org", "@type": "Article", headline: a.title, description: a.description, url: abs(path), inLanguage: "ro-RO", image: ogImage,
-          datePublished: a.date, dateModified: a.updated ?? a.date, citation: a.sources.map((s) => s.url), author: { "@id": `${site.url}/#person` }, publisher: { "@id": `${site.url}/#service` }, mainEntityOfPage: abs(path) },
+          datePublished: a.date, dateModified: a.updated ?? a.date, citation: a.sources.map((s) => s.url), author: { "@id": `${site.url}/#person` }, publisher: { "@id": `${site.url}/#service` }, mainEntityOfPage: abs(path), keywords: a.tags.join(", ") },
       ]} />
       <Section>
-        <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Articole", href: "/articole" }, { name: a.category }]} />
-        <p className="text-sm font-semibold uppercase tracking-wider text-orange-ink">{a.category} · {a.readMin} min de citit</p>
+        <Breadcrumbs items={[{ name: "Acasă", href: "/" }, { name: "Articole", href: "/articole" }, { name: a.tags[0] }]} />
+        <div className="flex flex-wrap items-center gap-2">
+          {a.tags.map((t) => (
+            <Link key={t} href={`/articole/?eticheta=${encodeURIComponent(t)}`} className="rounded-full border border-ink/20 bg-white px-3 py-1 text-sm font-semibold text-ink hover:border-ink">{t}</Link>
+          ))}
+          <span className="text-sm text-muted">{a.readMin} min de citit</span>
+        </div>
         <h1 className="mt-3 max-w-3xl font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{a.title}</h1>
         <p className="mt-4 text-sm text-muted">
           De <Link href="/despre" className="underline underline-offset-4">{site.name}</Link> · actualizat la{" "}

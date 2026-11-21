@@ -4,13 +4,18 @@ export type Block =
   | { t: "code"; text: string }
   | { t: "table"; head: string[]; rows: string[][] };
 
+/** Fixed tag list for the /articole filters. Add a tag only when at least two articles use it. */
+export const tags = ["Căutare AI", "SEO", "SEO local", "SEO tehnic", "Google Business Profile", "Recenzii", "Date structurate", "Redesign", "Clinici și cabinete", "Legislație"] as const;
+export type Tag = (typeof tags)[number];
+
 export type Article = {
   slug: string;
   title: string;
   /** Shorter title for the <title> tag when the headline runs past ~60 characters. */
   seoTitle?: string;
   description: string;
-  category: "Căutare AI" | "Redesign" | "SEO tehnic" | "Ghid SEO" | "SEO local";
+  /** 1–3 tags from `tags`; the first one is the main tag (breadcrumb, card label). See KEYWORD_PLAN.md §6. */
+  tags: Tag[];
   date: string; // ISO
   /** Last content update (ISO); shown as "actualizat la" and used as dateModified. */
   updated?: string;
@@ -32,7 +37,7 @@ export const articles: Article[] = [
     seoTitle: "Ce este GEO și cum diferă de SEO",
     description:
       "GEO sau AEO înseamnă să fii înțeles și citat de ChatGPT, Gemini, Claude și Perplexity. Ce este, cum diferă de SEO și ce poți face concret.",
-    category: "Căutare AI",
+    tags: ["Căutare AI", "SEO"],
     date: "2026-11-18",
     updated: "2026-11-21",
     readMin: 6,
@@ -96,7 +101,7 @@ export const articles: Article[] = [
     seoTitle: "Cum verifici dacă ChatGPT îți menționează afacerea",
     description:
       "Un test simplu, în 30 de minute, ca să afli dacă asistenții AI îți recomandă afacerea. Ce întrebări să pui, cum notezi rezultatele și cum interpretezi răspunsurile.",
-    category: "Căutare AI",
+    tags: ["Căutare AI"],
     date: "2026-11-18",
     updated: "2026-11-21",
     readMin: 5,
@@ -157,7 +162,7 @@ export const articles: Article[] = [
     seoTitle: "Site depășit? 10 semne că ai nevoie de redesign",
     description:
       "Un site vechi costă încredere și clienți. Iată 10 semne clare că este timpul pentru un redesign și ce poți verifica singur, în 15 minute.",
-    category: "Redesign",
+    tags: ["Redesign", "SEO tehnic"],
     date: "2026-11-18",
     updated: "2026-11-21",
     readMin: 5,
@@ -210,7 +215,7 @@ export const articles: Article[] = [
     seoTitle: "Redesign de site fără să pierzi pozițiile în Google",
     description:
       "Redesign sigur pentru SEO, pas cu pas: inventarul paginilor, redirecționări 301, testare înainte de lansare și monitorizare după.",
-    category: "Redesign",
+    tags: ["Redesign", "SEO tehnic"],
     date: "2026-11-18",
     updated: "2026-11-21",
     readMin: 6,
@@ -273,7 +278,7 @@ export const articles: Article[] = [
     seoTitle: "Schema markup pentru clinici și cabinete: ghid",
     description:
       "Ce este schema markup, ce tipuri se potrivesc unei clinici sau unui cabinet de avocatură, un exemplu JSON-LD și cum îl testezi.",
-    category: "SEO tehnic",
+    tags: ["Date structurate", "SEO tehnic", "Clinici și cabinete"],
     date: "2026-11-18",
     updated: "2026-11-21",
     readMin: 6,
@@ -351,7 +356,7 @@ export const articles: Article[] = [
     seoTitle: "Ce este SEO? Ce înseamnă, explicat simplu",
     description:
       "Ce înseamnă SEO, cum funcționează Google și ce poate face concret o clinică, un cabinet sau o afacere locală ca să fie găsită. Explicat simplu, fără jargon.",
-    category: "Ghid SEO",
+    tags: ["SEO", "SEO local"],
     date: "2026-11-19",
     updated: "2026-11-21",
     readMin: 8,
@@ -441,7 +446,7 @@ export const articles: Article[] = [
     seoTitle: "Google Business Profile: ghid pas cu pas",
     description:
       "Cum creezi și optimizezi profilul Google al afacerii, cum obții recenzii Google corect și ce greșeli să eviți. Ghid practic pentru clinici, cabinete și firme locale.",
-    category: "SEO local",
+    tags: ["Google Business Profile", "SEO local", "Recenzii"],
     date: "2026-11-19",
     updated: "2026-11-21",
     readMin: 8,
@@ -536,5 +541,8 @@ export const articles: Article[] = [
     ],
   },
 ];
+
+/** Tags in use, in the fixed order, with how many articles carry each. */
+export const usedTags = tags.map((t) => ({ tag: t, count: articles.filter((a) => a.tags.includes(t)).length })).filter((t) => t.count > 0);
 
 export const getArticle = (slug: string) => articles.find((a) => a.slug === slug);
