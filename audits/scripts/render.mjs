@@ -9,7 +9,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { runChecks, sectionScores, shortUrl } from "./checks.mjs";
+import { runChecks, sectionScores, shortUrl, schemaTypeFor } from "./checks.mjs";
 import { STRINGS } from "./strings.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -123,7 +123,7 @@ const html = `<!doctype html><html lang="${L}"><head><meta charset="utf-8"><titl
   </div>
   ${f.gbp.competitors?.length ? `<h3 class="sub">${T.vsCompetitors}</h3><div class="hbars">${[...[...f.gbp.competitors].sort((a, b) => b.reviews - a.reviews).slice(0, 7), { name: f.gbp.name, rating: f.gbp.rating, reviews: f.gbp.reviews, me: true }].sort((a, b) => b.reviews - a.reviews).map((c, _, arr) => `<div class="hbar ${c.me ? "me" : ""}"><span>${esc(c.name)}</span><div class="t"><i style="width:${(100 * c.reviews) / arr[0].reviews}%"></i></div><span class="r">${num(c.reviews)} · ${num(c.rating, 1)}★</span></div>`).join("")}</div>` : ""}
   <p class="note">${T.source}: ${esc(f.gbp.source)}${f.gbp.competitorsSource ? `; ${T.compSrc}: ${esc(f.gbp.competitorsSource)}` : ""}. ${(f.gbp.notes ?? []).map(esc).join(" ")}</p>
-  ${goods([f.gbp.rating >= 4.6 && T.goods.rating(num(f.gbp.rating, 1)), f.gbp.ownerResponseRate >= 0.9 && T.goods.replies, f.gbp.websiteLinked && T.goods.site, f.gbp.categories > 3 && T.goods.categories(f.gbp.categories)])}` : `<p class="muted">${T.notChecked}</p>`}
+  ${goods([f.gbp.rating >= 4.6 && T.goods.rating(num(f.gbp.rating, 1)), f.gbp.ownerResponseRate >= 0.9 && T.goods.replies, f.gbp.websiteLinked && T.goods.site, f.gbp.categories > 3 && T.goods.categories(f.gbp.categories)])}` : f.gbp?.exists === false ? `<p class="note">${T.source}: ${esc(f.gbp.source ?? "")}. ${(f.gbp.notes ?? []).map(esc).join(" ")}</p>` : `<p class="muted">${T.notChecked}</p>`}
   ${issues("gbp")}
 </section>
 
@@ -230,12 +230,14 @@ function kpi(label, v, unit, good, ok, hint, d = 1) {
 }
 function schemaExample() {
   const g = f.gbp ?? {};
-  const type = /stomat|dent/i.test(f.client.type ?? "") ? "Dentist" : /avoc|jurid|law/i.test(f.client.type ?? "") ? "LegalService" : /clinic|medic/i.test(f.client.type ?? "") ? "MedicalClinic" : "LocalBusiness";
+  const type = schemaTypeFor(f.client.type);
   const o = { "@context": "https://schema.org", "@type": type, name: g.name ?? f.client.name, url: data.finalUrl };
+  if (type === "ProfessionalService" && f.client.contact) o.founder = { "@type": "Person", name: f.client.contact, jobTitle: f.client.type };
   if (g.phone) o.telephone = g.phone;
   if (g.address) o.address = { "@type": "PostalAddress", streetAddress: g.address.split(",")[0], addressLocality: f.client.city, addressCountry: "RO" };
-  o.openingHoursSpecification = "…";
-  o.sameAs = ["…Google Maps", "…Facebook", "…Instagram"];
+  else o.areaServed = [f.client.city, "Online"].filter(Boolean);
+  if (g.address) o.openingHoursSpecification = "…";
+  o.sameAs = f.gbp?.exists === false ? ["…Instagram", "…YouTube", "…LinkedIn"] : ["…Google Maps", "…Facebook", "…Instagram"];
   return JSON.stringify(o, null, 2);
 }
 async function readContact() {

@@ -14,7 +14,12 @@ const pct = (n, d) => (d ? n / d : null);
 const clamp = (x) => Math.max(0, Math.min(1, x));
 const fmtS = (ms) => (ms / 1000).toLocaleString("ro-RO", { maximumFractionDigits: 1 });
 
+export function schemaTypeFor(type = "") {
+  return /stomat|dent/i.test(type) ? "Dentist" : /avoc|jurid|law|lege/i.test(type) ? "LegalService" : /clinic|medic/i.test(type) ? "MedicalClinic" : /coach|consult|mentor|train|agen/i.test(type) ? "ProfessionalService" : "LocalBusiness";
+}
+
 export function runChecks(data, f) {
+  const noPlace = f.gbp?.exists === false || (f.gbp && !f.gbp.address && f.gbp.rating == null);
   const P = data.pages.filter((p) => p.status === 200);
   const n = P.length;
   const lh = data.lighthouse;
@@ -62,7 +67,7 @@ export function runChecks(data, f) {
     en: { title: "No sitemap.xml found", detail: "Google discovers new pages more slowly.", fix: "Generate sitemap.xml automatically and submit it in Google Search Console." } });
   if (lh) {
     add({ id: "speed", section: "technical", weight: 3, value: lh.scores.performance / 100, severity: lh.scores.performance < 50 ? "critic" : "important", effort: "big",
-      ro: { title: `Site-ul se încarcă greu pe telefon (scor ${lh.scores.performance}/100)`, detail: `Conținutul principal apare după ${fmtS(lh.metrics.lcpMs)} s pe un telefon obișnuit (Google recomandă sub 2,5 s). Mulți pacienți închid pagina înainte.`, fix: "Imagini comprimate și la dimensiunea potrivită, scripturi amânate, fonturi optimizate, cache." },
+      ro: { title: `Site-ul se încarcă greu pe telefon (scor ${lh.scores.performance}/100)`, detail: `Conținutul principal apare după ${fmtS(lh.metrics.lcpMs)} s pe un telefon obișnuit (Google recomandă sub 2,5 s). Mulți vizitatori închid pagina înainte.`, fix: "Imagini comprimate și la dimensiunea potrivită, scripturi amânate, fonturi optimizate, cache." },
       en: { title: `The site loads slowly on phones (score ${lh.scores.performance}/100)`, detail: `The main content appears after ${(lh.metrics.lcpMs / 1000).toFixed(1)} s on a typical phone (Google recommends under 2.5 s).`, fix: "Compressed, right-sized images, deferred scripts, optimised fonts, caching." } });
     add({ id: "lcp", section: "technical", weight: 2, value: lh.metrics.lcpMs <= 2500 ? 1 : lh.metrics.lcpMs <= 4000 ? 0.5 : 0, severity: "important", effort: "big", hidden: true,
       ro: { title: "LCP peste pragul Google", detail: "", fix: "" }, en: { title: "LCP above Google's threshold", detail: "", fix: "" } });
@@ -88,7 +93,7 @@ export function runChecks(data, f) {
 
   // ---------------- On-page ----------------
   add({ id: "titles", section: "onpage", weight: 2, value: pct(goodTitle, n), severity: "important", effort: "quick",
-    ro: { title: `${n - goodTitle} din ${n} pagini au titlul lipsă, prea scurt sau prea lung`, detail: "Titlul e primul lucru pe care îl vede pacientul în Google.", fix: "Titluri de 30–65 de caractere: serviciu + oraș + nume." },
+    ro: { title: `${n - goodTitle} din ${n} pagini au titlul lipsă, prea scurt sau prea lung`, detail: "Titlul e primul lucru pe care îl vede omul în Google.", fix: "Titluri de 30–65 de caractere: serviciu + oraș + nume." },
     en: { title: `${n - goodTitle} of ${n} pages have a missing, too short or too long title`, detail: "The title is the first thing people see in Google.", fix: "30–65 character titles: service + city + name." } });
   add({ id: "dup-titles", section: "onpage", weight: 2, value: n ? clamp(1 - dupTitles / Math.max(1, n - 1)) : null, severity: "important", effort: "quick",
     ro: { title: `${dupTitles} pagini repetă titlul altei pagini`, detail: "Google nu știe ce pagină să arate pentru ce căutare.", fix: "Un titlu unic pentru fiecare pagină." },
@@ -114,7 +119,7 @@ export function runChecks(data, f) {
     ro: { title: "Site-ul nu are date structurate (schema.org)", detail: "Google și AI-ul trebuie să ghicească cine sunteți.", fix: "JSON-LD pentru afacere, servicii și întrebări frecvente." },
     en: { title: "No structured data (schema.org)", detail: "Google and AI have to guess who you are.", fix: "JSON-LD for the business, services and FAQ." } });
   add({ id: "localbusiness-schema", section: "schema", weight: 3, value: local.length ? 1 : 0, severity: "critic", effort: "quick",
-    ro: { title: "Site-ul nu spune în cod că e o afacere locală", detail: `Am găsit doar tipurile ${[...new Set(allSchema.map((s) => s.type))].join(", ") || "—"}. Lipsește descrierea de tip ${f.client.type?.match(/stomat|dent/i) ? "Dentist" : f.client.type?.match(/avoc|juri|lege/i) ? "LegalService" : "LocalBusiness"} cu adresă, telefon, program și coordonate, exact ce citesc Google Maps și asistenții AI.`, fix: "Bloc JSON-LD LocalBusiness (subtip potrivit) cu nume, adresă, telefon, program, coordonate și profiluri sociale, identic cu profilul de Google." },
+    ro: { title: "Site-ul nu spune în cod ce afacere e și unde lucrează", detail: `${allSchema.length ? `Am găsit doar tipurile ${[...new Set(allSchema.map((s) => s.type))].join(", ")}.` : "Nu am găsit niciun bloc de date structurate."} Lipsește descrierea de tip ${schemaTypeFor(f.client.type)}${noPlace ? ", cu numele, orașul, serviciile și profilurile oficiale," : " cu adresă, telefon, program și coordonate,"} exact ce citesc Google și asistenții AI.`, fix: noPlace ? `Bloc JSON-LD ${schemaTypeFor(f.client.type)} cu nume, oraș, servicii, e-mail și profilurile oficiale (sameAs).` : "Bloc JSON-LD LocalBusiness (subtip potrivit) cu nume, adresă, telefon, program, coordonate și profiluri sociale, identic cu profilul de Google." },
     en: { title: "The site doesn't declare itself a local business", detail: `Only ${[...new Set(allSchema.map((s) => s.type))].join(", ") || "—"} found. No LocalBusiness markup with address, phone, hours and coordinates.`, fix: "A LocalBusiness JSON-LD block matching the Google profile." } });
   add({ id: "nap-schema", section: "schema", weight: 1.5, value: local.length ? (localFull ? 1 : 0) : 0, severity: "important", effort: "quick", hidden: !local.length,
     ro: { title: "Datele de afacere din cod nu au adresă și telefon", detail: "", fix: "Adresă și telefon identice cu Google Business Profile." },
@@ -141,7 +146,7 @@ export function runChecks(data, f) {
       ro: { title: `${mob.smallTapTargets} butoane sau linkuri sunt prea mici pentru deget`, detail: "Elemente mai mici de 24×24px, greu de apăsat pe telefon.", fix: "Zone de atingere de cel puțin 44×44px pentru butoane și iconițe." },
       en: { title: `${mob.smallTapTargets} tap targets are too small`, detail: "Under 24×24px.", fix: "44×44px touch areas." } });
     add({ id: "tel", section: "mobile", weight: 1, value: mob.hasTelLinkVisible ? 1 : 0, severity: "important", effort: "quick",
-      ro: { title: "Pe telefon nu se poate suna direct din primul ecran", detail: "Pacientul trebuie să caute și să copieze numărul.", fix: "Buton „Sună” vizibil sus, cu link tel:." }, en: { title: "No click-to-call near the top on mobile", detail: "", fix: "A visible call button with a tel: link." } });
+      ro: { title: "Pe telefon nu se poate suna direct din primul ecran", detail: "Omul trebuie să caute și să copieze numărul.", fix: "Buton „Sună” vizibil sus, cu link tel:." }, en: { title: "No click-to-call near the top on mobile", detail: "", fix: "A visible call button with a tel: link." } });
   }
   if (lh) add({ id: "a11y", section: "mobile", weight: 3, value: lh.scores.accessibility / 100, severity: lh.scores.accessibility < 70 ? "important" : "minor", effort: "quick",
     ro: { title: `Accesibilitate ${lh.scores.accessibility}/100`, detail: accessibilityDetail(lh, "ro"), fix: "Contrast suficient, texte pentru linkuri și imagini, ordinea corectă a titlurilor." },
@@ -160,7 +165,7 @@ export function runChecks(data, f) {
   if (prompts.length) {
     const m = prompts.filter((p) => p.mentioned).length;
     add({ id: "ai-mentions", section: "ai", weight: 6, value: m / prompts.length, severity: m / prompts.length < 0.5 ? "critic" : "important", effort: "big",
-      ro: { title: `Apăreți în ${m} din ${prompts.length} răspunsuri AI verificate`, detail: "Când un pacient întreabă un asistent AI, acesta recomandă 3–7 clinici. Dacă nu sunteți printre ele, nu existați pentru acel pacient.", fix: "Pagini de servicii clare, date structurate, recenzii și mențiuni pe site-uri locale de încredere." },
+      ro: { title: `Apăreți în ${m} din ${prompts.length} răspunsuri AI verificate`, detail: "Când cineva cere o recomandare unui asistent AI, primește 3–7 nume. Dacă nu sunteți printre ele, nu existați pentru acel om.", fix: "Pagini de servicii clare, date structurate, recenzii și mențiuni pe site-uri locale de încredere." },
       en: { title: `You appear in ${m} of ${prompts.length} AI answers checked`, detail: "AI assistants recommend 3–7 businesses. If you're not listed, you don't exist for that customer.", fix: "Clear service pages, structured data, reviews and local mentions." } });
   }
 
@@ -173,13 +178,18 @@ export function runChecks(data, f) {
     add({ id: "rankings", section: "google", weight: 4, value: avg, severity: avg < 0.5 ? "critic" : "important", effort: "big",
       ro: { title: `Pe primele locuri în ${top} din ${kws.length} căutări importante`, detail: "Am verificat căutările pe care le face un client din oraș: harta Google și rezultatele obișnuite.", fix: "Pagini dedicate pe servicii, profil Google optimizat, linkuri din surse locale." },
       en: { title: `Top-3 for ${top} of ${kws.length} key searches`, detail: "Checked the local map pack and organic results.", fix: "Dedicated service pages, an optimised Google profile, local links." } });
+    const fold = (x = "") => x.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+    const brandInTitle = fold(data.pages?.[0]?.title).includes(fold(f.google.brandKeyword));
     if (f.google.brandKeyword) add({ id: "brand", section: "google", weight: 2, value: f.google.brandHomepageRank === 1 ? 1 : f.google.brandHomepageRank ? 0.5 : 0, severity: "important", effort: "quick",
-      ro: { title: `Când cineva caută „${f.google.brandKeyword}”, site-ul nu apare primul`, detail: f.google.brandNote ?? "", fix: "Pagina principală cu numele afacerii în titlu și H1, date structurate de afacere și linkuri de pe profilurile oficiale." },
+      ro: { title: `Când cineva caută „${f.google.brandKeyword}”, site-ul nu apare primul`, detail: f.google.brandNote ?? "", fix: brandInTitle ? "Titlul are deja numele; lipsesc semnalele din jur: date structurate cu numele complet și profilurile oficiale, linkuri de pe acele profiluri către site și mențiuni pe alte site-uri." : "Pagina principală cu numele afacerii în titlu și H1, date structurate de afacere și linkuri de pe profilurile oficiale." },
       en: { title: `Searching "${f.google.brandKeyword}" doesn't show your site first`, detail: f.google.brandNote ?? "", fix: "Brand name in the homepage title and H1, business markup, links from official profiles." } });
   }
 
   // ---------------- Google Business Profile ----------------
   const g = f.gbp;
+  if (g?.exists === false) add({ id: "gbp-missing", section: "gbp", weight: 6, value: 0, severity: "critic", effort: "quick",
+    ro: { title: "Nu am găsit un profil Google Business pentru afacere", detail: g.missingNote ?? "Fără profil, afacerea nu poate apărea pe harta Google și are mai puține șanse să fie recomandată de AI.", fix: "Crearea și verificarea profilului, cu categoria potrivită, link spre site, fotografii și primele recenzii de la clienți reali." },
+    en: { title: "No Google Business Profile found", detail: g.missingNote_en ?? g.missingNote ?? "Without one, the business can't appear on Google Maps.", fix: "Create and verify the profile, with the right category, website link, photos and first reviews from real clients." } });
   if (g?.rating != null) {
     const comp = (g.competitors ?? []).map((c) => c.reviews).sort((a, b) => a - b);
     const median = comp.length ? comp[Math.floor(comp.length / 2)] : null;
