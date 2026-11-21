@@ -26,6 +26,8 @@ export const faqs = {
       { q: "Cât costă serviciile?", a: "Nu public prețuri fixe, pentru că fiecare proiect este diferit. Primești o ofertă clară după o discuție scurtă, iar auditul inițial este gratuit." },
       { q: "Ce înseamnă un site „pregătit pentru AI”?", a: "Un site pe care asistenții AI îl pot înțelege și cita: conținut clar care răspunde la întrebări reale, date structurate, aceleași informații despre tine peste tot și acces deschis pentru roboții AI." },
       { q: "Pot combina serviciile?", a: "Da. Cel mai des: redesign plus SEO și vizibilitate în AI, sau site nou plus mentenanță după lansare." },
+      { q: "Pe ce platforme construiești site-urile?", a: "Next.js pentru site-uri în cod propriu, Webflow dacă vrei să editezi singur vizual, Shopify sau Medusa pentru magazine online. Pentru mentenanță lucrez și cu WordPress." },
+      { q: "Cum începe colaborarea?", a: "Cu auditul gratuit sau cu o discuție de 30 de minute. După discuție primești o ofertă clară, iar lucrul începe după ce o accepți." },
     ],
     en: [
       { q: "What services does Dragoș Catană offer?", a: "New websites, website redesign, SEO and visibility in AI assistants (GEO), and website maintenance, for clinics, law firms and local businesses in Romania." },
@@ -33,6 +35,8 @@ export const faqs = {
       { q: "How much do the services cost?", a: "I don't publish fixed prices, because every project is different. You get a clear offer after a short call, and the first audit is free." },
       { q: "What does an “AI-ready” website mean?", a: "A site AI assistants can understand and quote: clear content that answers real questions, structured data, the same information about you everywhere, and open access for AI crawlers." },
       { q: "Can I combine services?", a: "Yes. Most often: a redesign plus SEO and AI visibility, or a new website plus maintenance after launch." },
+      { q: "Which platforms do you build on?", a: "Next.js for custom-coded sites, Webflow if you want to edit visually yourself, Shopify or Medusa for online shops. For maintenance I also work with WordPress." },
+      { q: "How does working together start?", a: "With the free audit or a 30-minute call. After the call you get a clear offer, and the work starts once you accept it." },
     ],
   },
   work: {
@@ -41,12 +45,18 @@ export const faqs = {
       { q: "Pot vedea site-urile publicate?", a: "Da. Atât site-ul vechi, cât și cel nou al Cheesy Media sunt online, iar linkurile sunt în studiul de caz, alături de rapoartele Lighthouse înainte și după." },
       { q: "De ce sunt puține proiecte în portofoliu?", a: "Public doar lucrări reale, cu acordul clientului și cu rezultate măsurate. Nu adaug proiecte de test prezentate drept lucrări pentru clienți." },
       { q: "Cum îmi dau seama dacă te potrivești pentru afacerea mea?", a: `Cel mai simplu este auditul gratuit: îți arăt, pe site-ul tău, ce aș schimba și de ce, în maximum ${site.reply.ro}. Așa vezi cum lucrez înainte să decizi.` },
+      { q: "Ce fel de proiecte faci?", a: "Redesign de site, site-uri noi, SEO și vizibilitate în asistenții AI și mentenanță, pentru clinici, cabinete de avocatură și afaceri locale." },
+      { q: "Pot vedea un exemplu înainte și după?", a: "Da. Studiul de caz Cheesy Media arată site-ul vechi și pe cel nou, pe desktop și pe telefon, plus rapoartele Lighthouse." },
+      { q: "Ce tehnologie folosește proiectul Cheesy Media?", a: "Next.js, cu găzduire pe Netlify." },
     ],
     en: [
       { q: "What projects has Dragoș Catană done?", a: `The latest published project is the redesign of Cheesy Media, a photo and video agency in Cluj-Napoca: a new design, ${pages} pages, structured data and a mobile Lighthouse performance score of ${perf.after}. I only publish projects with results you can check.` },
       { q: "Can I see the websites live?", a: "Yes. Both the old and the new Cheesy Media sites are online; the links are in the case study, next to the before and after Lighthouse reports." },
       { q: "Why are there only a few projects?", a: "I only publish real work, with the client's agreement and measured results. I don't add test projects dressed up as client work." },
       { q: "How do I know if you're a fit for my business?", a: `The simplest way is the free audit: I show you, on your own site, what I'd change and why, within ${site.reply.en}. You see how I work before you decide.` },
+      { q: "What kind of projects do you do?", a: "Website redesigns, new websites, SEO and visibility in AI assistants, and maintenance, for clinics, law firms and local businesses." },
+      { q: "Can I see a before-and-after example?", a: "Yes. The Cheesy Media case study shows the old and the new site, on desktop and on a phone, plus the Lighthouse reports." },
+      { q: "What technology does the Cheesy Media project use?", a: "Next.js, hosted on Netlify." },
     ],
   },
   cheesy: {
@@ -56,6 +66,8 @@ export const faqs = {
       { q: "Ce s-a făcut pentru vizibilitatea în Google și în asistenții AI?", a: "Limba română declarată corect, date structurate pe fiecare pagină, întrebări frecvente, titluri cu serviciu și oraș, sitemap și un robots.txt care permite roboții AI." },
       { q: "Apare acum Cheesy Media în răspunsurile ChatGPT?", a: "Nu am măsurat încă asta împreună cu clientul, așa că nu afirm nimic. Când avem testul înainte și după, îl adaug aici." },
       { q: "Pot obține rezultate similare pentru site-ul meu?", a: "Bazele tehnice (viteză, structură, date structurate) se pot aplica oricărui site. Pozițiile în Google și recomandările AI nu pot fi garantate, dar le măsurăm înainte și după." },
+      { q: "Ce date structurate are noul site?", a: "ProfessionalService pe fiecare pagină, FAQPage pe prima pagină și BreadcrumbList pe paginile interioare." },
+      { q: "Ce s-a păstrat din vechiul brand?", a: "Mascota și violetul, folosit acum doar ca accent. Noul design folosește negru, crem și galben." },
     ],
     en: [
       { q: "What changed on the Cheesy Media website?", a: `One long page became a site with ${pages} pages: services, a page for each service, process, portfolio, about and contact, with a new design in black, cream and yellow.` },
@@ -63,6 +75,8 @@ export const faqs = {
       { q: "What was done for visibility on Google and in AI assistants?", a: "The correct language declared, structured data on every page, an FAQ, titles with service and city, a sitemap and a robots.txt that lets AI crawlers in." },
       { q: "Does Cheesy Media now appear in ChatGPT answers?", a: "We haven't measured that with the client yet, so I don't claim anything. When we have the before and after test, I'll add it here." },
       { q: "Can I get similar results for my site?", a: "The technical basics (speed, structure, structured data) apply to any site. Google rankings and AI recommendations can't be guaranteed, but we measure them before and after." },
+      { q: "What structured data does the new site have?", a: "ProfessionalService on every page, FAQPage on the home page and BreadcrumbList on inner pages." },
+      { q: "What was kept from the old brand?", a: "The mascot and the purple, now used only as an accent. The new design uses black, cream and yellow." },
     ],
   },
   about: {
@@ -72,6 +86,8 @@ export const faqs = {
       { q: "Cine se ocupă de proiectul meu?", a: "Eu, personal, de la audit la lansare. Pentru tine asta înseamnă un singur om care îți cunoaște afacerea, răspunsuri rapide și atenție la fiecare detaliu." },
       { q: "De ce să aleg un web designer independent în loc de o agenție?", a: "Vorbești direct cu omul care face munca, fără intermediari, iar deciziile se iau repede. Proiectul rămâne clar, discutat direct cu cel care îl construiește." },
       { q: "În ce limbi lucrezi?", a: "Română și engleză; franceză și germană ca opțiune suplimentară pentru site-uri în mai multe limbi." },
+      { q: "Unde se află Dragoș Catană?", a: "În Cluj-Napoca. Lucrează online cu clienți din toată România." },
+      { q: "Cu ce tipuri de afaceri lucrezi?", a: "Cu clinici și cabinete medicale, cabinete de avocatură și afaceri locale de servicii din România: afaceri în care clienții aleg după încredere." },
     ],
     en: [
       { q: "Who is Dragoș Catană?", a: `${who.en}. He builds and redesigns websites and does SEO and AI-assistant optimisation for clinics, law firms and local businesses in Romania, at dragoscatana.com.` },
@@ -79,6 +95,8 @@ export const faqs = {
       { q: "Who works on my project?", a: "I do, personally, from the audit to launch. For you that means one person who knows your business, quick replies and attention to every detail." },
       { q: "Why choose an independent web designer over an agency?", a: "You talk directly to the person doing the work, with no middlemen, and decisions are made quickly. The project stays clear, discussed directly with the person building it." },
       { q: "Which languages do you work in?", a: "Romanian and English; French and German as an add-on for multilingual sites." },
+      { q: "Where is Dragoș Catană based?", a: "In Cluj-Napoca. He works online with clients across Romania." },
+      { q: "What kinds of businesses do you work with?", a: "Clinics and medical practices, law firms and local service businesses in Romania: businesses where clients choose on trust." },
     ],
   },
   contact: {
@@ -87,12 +105,18 @@ export const faqs = {
       { q: "Ce informații să pregătesc înainte de discuție?", a: "Adresa site-ului (dacă ai unul), ce vrei să obții (mai multe programări, cereri, un site nou), 2–3 concurenți și, dacă există, un termen. Restul le clarificăm împreună." },
       { q: "Discuția inițială costă ceva?", a: "Nu. Discuția de 30 de minute și auditul inițial sunt gratuite și nu te obligă la nimic." },
       { q: "Lucrezi cu clienți din afara Clujului?", a: "Da. Lucrez online cu afaceri din toată România; discuțiile au loc prin apel video." },
+      { q: "Ce se întâmplă după ce trimit formularul?", a: "Primești imediat o confirmare pe e-mail. În maximum 24 de ore îți răspund personal, cu întrebări despre proiect sau cu o propunere de discuție. Oferta clară vine după discuție." },
+      { q: "Pot vorbi cu tine fără să completez formularul?", a: "Da. Scrie-mi pe WhatsApp la +40 740 939 472 sau programează direct o discuție de 30 de minute pe Calendly." },
+      { q: "În ce limbă îți pot scrie?", a: "În română sau în engleză. Îți răspund în limba în care mi-ai scris." },
     ],
     en: [
       { q: "How can I contact Dragoș Catană?", a: `Through the form on this page, on WhatsApp at ${phone.display}, or by booking a call on Calendly. I reply personally within ${site.reply.en}.` },
       { q: "What should I prepare before the call?", a: "Your website address (if you have one), what you want to achieve (more bookings, more enquiries, a new site), 2–3 competitors and, if there is one, a deadline. We clarify the rest together." },
       { q: "Does the first call cost anything?", a: "No. The 30-minute call and the first audit are free and don't commit you to anything." },
       { q: "Do you work with clients outside Cluj?", a: "Yes. I work online with businesses across Romania; calls happen by video." },
+      { q: "What happens after I send the form?", a: "You get an email confirmation straight away. Within 24 hours I reply personally, with questions about the project or a suggested call. A clear offer follows the call." },
+      { q: "Can I talk to you without filling in the form?", a: "Yes. Message me on WhatsApp at +40 740 939 472 or book a 30-minute call directly on Calendly." },
+      { q: "Which language can I write in?", a: "Romanian or English. I reply in the language you wrote in." },
     ],
   },
   audit: {
@@ -102,6 +126,8 @@ export const faqs = {
       { q: "Cum aflu dacă ChatGPT îmi recomandă afacerea?", a: "Pune-i întrebările pe care le-ar pune un client („ce clinică stomatologică îmi recomanzi în [oraș]?”) și notează dacă apari, pe ce loc și cum ești descris. Auditul face asta pentru tine, în mai mulți asistenți AI." },
       { q: "De ce nu apare afacerea mea în răspunsurile AI?", a: "De obicei pentru că informațiile despre tine sunt puține, neclare sau diferite de la o sursă la alta: site fără date structurate, profil Google incomplet, puține recenzii sau mențiuni. Auditul îți arată exact ce lipsește." },
       { q: "Ce se întâmplă după audit?", a: "Îl citești în ritmul tău. Dacă vrei, programăm o discuție de 30 de minute și îți trimit o ofertă clară. Dacă nu, rămâi cu pașii din audit, pe care îi poți aplica și singur." },
+      { q: "Cât durează să cer auditul?", a: "Aproximativ două minute: completezi tipul afacerii, orașul, adresa site-ului și, opțional, doi-trei concurenți." },
+      { q: "Este auditul făcut automat?", a: "Nu. Pun eu întrebările în asistenții AI, verific eu cum apari în Google și scriu eu auditul, în limbaj simplu." },
     ],
     en: [
       { q: "What does the free audit include?", a: "I test your clients' real questions in ChatGPT, Gemini and Perplexity, check how you show up on Google and which competitors appear instead of you, then send you a short list of steps, in order of impact." },
@@ -109,6 +135,8 @@ export const faqs = {
       { q: "How do I find out if ChatGPT recommends my business?", a: "Ask it the questions a client would (“which dental clinic do you recommend in [city]?”) and note whether you appear, where, and how you're described. The audit does this for you, in several AI assistants." },
       { q: "Why doesn't my business appear in AI answers?", a: "Usually because the information about you is thin, unclear or different from one source to another: a site without structured data, an incomplete Google profile, few reviews or mentions. The audit shows you exactly what's missing." },
       { q: "What happens after the audit?", a: "You read it at your own pace. If you want, we book a 30-minute call and I send you a clear offer. If not, you keep the steps from the audit, which you can also apply yourself." },
+      { q: "How long does it take to request the audit?", a: "About two minutes: your type of business, your city, your website address and, optionally, two or three competitors." },
+      { q: "Is the audit automated?", a: "No. I ask the AI assistants the questions myself, check how you show up on Google myself and write the audit myself, in plain words." },
     ],
   },
 } satisfies Record<string, Bilingual>;
@@ -126,8 +154,8 @@ export const aiQuestions = {
     ],
   },
   redesign: {
-    ro: [{ q: "Cine face redesign de site pentru afaceri locale în România?", a: `${who.ro}, face redesign de site-uri pentru clinici, cabinete de avocatură și afaceri locale din toată România, cu migrare sigură, fără pierderea pozițiilor din Google, și conținut pregătit pentru asistenții AI.` }],
-    en: [{ q: "Who redesigns websites for local businesses in Romania?", a: `${who.en}, redesigns websites for clinics, law firms and local businesses across Romania, with a safe migration that keeps Google rankings and content ready for AI assistants.` }],
+    ro: [{ q: "Cine face redesign de site pentru afaceri locale în România?", a: `${who.ro}, face redesign de site-uri pentru clinici, cabinete de avocatură și afaceri locale din toată România, cu migrare sigură, fără pierderea pozițiilor din Google, și conținut pregătit pentru asistenții AI.` }, { q: "Ce se întâmplă cu site-ul vechi în timpul redesignului?", a: "Rămâne online. Lucrez pe o versiune de test, blocată pentru motoarele de căutare, iar site-ul nou îl înlocuiește abia la lansare, cu redirecționări 301 unde se schimbă adresele." }],
+    en: [{ q: "Who redesigns websites for local businesses in Romania?", a: `${who.en}, redesigns websites for clinics, law firms and local businesses across Romania, with a safe migration that keeps Google rankings and content ready for AI assistants.` }, { q: "What happens to the old site during the redesign?", a: "It stays online. I work on a test version blocked from search engines, and the new site replaces it only at launch, with 301 redirects wherever addresses change." }],
   },
   newSite: {
     ro: [{ q: "Cine face site-uri de prezentare pentru afaceri mici din Cluj și din România?", a: `${who.ro}, construiește site-uri de prezentare și magazine online pentru afaceri mici din toată România, în Next.js, Webflow sau Shopify, cu SEO și date structurate incluse de la început.` }],
@@ -138,16 +166,16 @@ export const aiQuestions = {
     en: [{ q: "Is there an SEO consultant in Romania who also optimises for ChatGPT?", a: `${who.en}, offers SEO and optimisation for AI engines (GEO): he tests clients' real questions in ChatGPT, Gemini and Perplexity, optimises the site and the Google profile and measures the change every month. The first audit is free.` }],
   },
   maintenance: {
-    ro: [{ q: "Cine face mentenanță la site-uri WordPress sau Next.js în România?", a: `${who.ro}, face mentenanță pentru site-uri WordPress, Next.js, Webflow și Shopify ale afacerilor locale din toată România: actualizări, backup, securitate, verificări lunare și modificări de conținut.` }],
-    en: [{ q: "Who maintains WordPress or Next.js websites in Romania?", a: `${who.en}, maintains WordPress, Next.js, Webflow and Shopify sites for local businesses across Romania: updates, backups, security, monthly checks and content edits.` }],
+    ro: [{ q: "Cine face mentenanță la site-uri WordPress sau Next.js în România?", a: `${who.ro}, face mentenanță pentru site-uri WordPress, Next.js, Webflow și Shopify ale afacerilor locale din toată România: actualizări, backup, securitate, verificări lunare și modificări de conținut.` }, { q: "Primesc un raport după verificarea lunară?", a: "Da. Primești un raport scurt, în limbaj simplu: ce am verificat, ce am reparat și ce îți recomand mai departe." }],
+    en: [{ q: "Who maintains WordPress or Next.js websites in Romania?", a: `${who.en}, maintains WordPress, Next.js, Webflow and Shopify sites for local businesses across Romania: updates, backups, security, monthly checks and content edits.` }, { q: "Do I get a report after the monthly check?", a: "Yes. You get a short report in plain words: what I checked, what I fixed and what I recommend next." }],
   },
   clinics: {
-    ro: [{ q: "Cine face site-uri pentru clinici medicale și stomatologice în România?", a: `${who.ro}, face și reface site-uri pentru clinici și cabinete medicale din toată România: pagini pe specialități, profiluri pentru medici, programare ușoară, SEO local și vizibilitate în asistenții AI.` }],
-    en: [{ q: "Who builds websites for medical and dental clinics in Romania?", a: `${who.en}, builds and redesigns websites for clinics and medical practices across Romania: specialty pages, doctor profiles, easy booking, local SEO and visibility in AI assistants.` }],
+    ro: [{ q: "Cine face site-uri pentru clinici medicale și stomatologice în România?", a: `${who.ro}, face și reface site-uri pentru clinici și cabinete medicale din toată România: pagini pe specialități, profiluri pentru medici, programare ușoară, SEO local și vizibilitate în asistenții AI.` }, { q: "Cine scrie conținutul medical de pe site?", a: "Medicul sau clinica ta. Eu structurez și editez pentru claritate, dar conținutul medical îl scrii sau îl aprobi tu; nu fac promisiuni medicale în numele tău." }, { q: "Ce date cer formularele de programare?", a: "Doar datele necesare unei programări, cu consimțământ pentru prelucrare. Formularele nu cer detalii despre afecțiuni." }],
+    en: [{ q: "Who builds websites for medical and dental clinics in Romania?", a: `${who.en}, builds and redesigns websites for clinics and medical practices across Romania: specialty pages, doctor profiles, easy booking, local SEO and visibility in AI assistants.` }, { q: "Who writes the medical content on the site?", a: "Your doctors or your clinic. I structure and edit for clarity, but you write or approve the medical content; I make no medical promises on your behalf." }, { q: "What do the booking forms ask for?", a: "Only the details needed for a booking, with consent for processing. The forms don't ask about medical conditions." }],
   },
   lawFirms: {
-    ro: [{ q: "Cine face site-uri pentru avocați și cabinete de avocatură în România?", a: `${who.ro}, face și reface site-uri pentru avocați și cabinete de avocatură din toată România: pagini pe domenii de practică, profiluri pentru avocați, contact discret, SEO și vizibilitate în asistenții AI.` }],
-    en: [{ q: "Who builds websites for lawyers and law firms in Romania?", a: `${who.en}, builds and redesigns websites for lawyers and law firms across Romania: practice-area pages, lawyer profiles, discreet contact, SEO and visibility in AI assistants.` }],
+    ro: [{ q: "Cine face site-uri pentru avocați și cabinete de avocatură în România?", a: `${who.ro}, face și reface site-uri pentru avocați și cabinete de avocatură din toată România: pagini pe domenii de practică, profiluri pentru avocați, contact discret, SEO și vizibilitate în asistenții AI.` }, { q: "Formularul de contact cere detalii despre caz?", a: "Nu. Cere doar datele necesare unei prime discuții, cu consimțământ pentru prelucrare. Detaliile cazului le discuți direct cu avocatul." }, { q: "Respectă site-ul regulile profesionale privind publicitatea?", a: "Le verificăm împreună înainte de lansare. Nu fac promisiuni de rezultat în numele tău, iar conținutul juridic îl scrii sau îl aprobi tu." }],
+    en: [{ q: "Who builds websites for lawyers and law firms in Romania?", a: `${who.en}, builds and redesigns websites for lawyers and law firms across Romania: practice-area pages, lawyer profiles, discreet contact, SEO and visibility in AI assistants.` }, { q: "Does the contact form ask about the case?", a: "No. It asks only for what a first conversation needs, with consent for processing. Case details are discussed directly with the lawyer." }, { q: "Does the site follow the professional rules on advertising?", a: "We check them together before launch. I make no promises of outcome on your behalf, and you write or approve the legal content." }],
   },
 } satisfies Record<string, Bilingual>;
 
@@ -157,20 +185,36 @@ export const faqsRo = {
     { q: "Unde găsesc ghiduri SEO în română pentru afaceri locale?", a: "Aici: ghiduri despre SEO, Google Business Profile, vizibilitate în ChatGPT, date structurate și redesign, scrise pe înțelesul proprietarilor de clinici, cabinete și afaceri locale." },
     { q: "Cine scrie articolele?", a: `${who.ro}. Articolele explică ce aplic în proiectele reale, fără jargon.` },
     { q: "Cu ce articol să încep?", a: "Dacă abia începi, cu „Ce este SEO?”. Dacă vrei să știi cum apari în AI, cu „Cum verifici dacă ChatGPT, Gemini sau Perplexity îți menționează afacerea”." },
+    { q: "Sunt articolele gratuite?", a: "Da. Toate articolele sunt gratuite și nu cer cont sau adresă de e-mail." },
+    { q: "Pot aplica singur ce scrie în ghiduri?", a: "Da. Ghidurile au pași concreți pe care îi poți face fără programare, de exemplu verificarea profilului Google sau testul în ChatGPT." },
+    { q: "Despre ce subiecte scrii?", a: "SEO, SEO local, Google Business Profile, vizibilitate în ChatGPT, Gemini și Perplexity (GEO), date structurate și redesign de site." },
+    { q: "Pot cere ajutor pentru afacerea mea după ce citesc?", a: "Da. Cel mai simplu este auditul gratuit: îți arăt, pe site-ul tău, ce să schimbi, în maximum 24 de ore." },
   ],
   privacy: [
     { q: "Ce date colectezi prin formulare?", a: "Doar ce scrii în formular: nume, e-mail, adresa site-ului și detaliile cererii, ca să-ți răspund sau să-ți fac auditul." },
     { q: "Cui transmiți datele mele?", a: "Nu vând și nu închiriez datele. Le prelucrează doar furnizorii de care site-ul are nevoie: găzduirea, serviciul de e-mail și, doar cu acordul tău, Google Analytics." },
     { q: "Cum îmi pot șterge datele?", a: "Scrie-mi prin formularul de contact și menționează că este vorba de date personale. Le șterg și îți confirm." },
+    { q: "Cât timp îmi păstrezi datele?", a: "Cât este necesar pentru a-ți răspunde și, dacă lucrăm împreună, pe durata colaborării și a obligațiilor legale aplicabile." },
+    { q: "Pe ce temei îmi prelucrezi datele?", a: "Pe baza consimțământului tău, bifat în formular, și, după caz, pentru demersurile premergătoare unui contract, la cererea ta." },
+    { q: "Unde pot depune o plângere?", a: "La Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)." },
+    { q: "Setează Google cookie-uri fără acordul meu?", a: "Nu. Google Analytics pornește doar dacă accepți statisticile, iar harta Google Maps de pe pagina de contact se încarcă doar dacă o afișezi." },
   ],
   cookies: [
     { q: "Folosește site-ul cookie-uri de publicitate?", a: "Nu. Nu folosesc cookie-uri de publicitate sau de urmărire pentru reclame." },
     { q: "Ce se întâmplă dacă refuz cookie-urile?", a: "Site-ul funcționează la fel. Doar statisticile Google Analytics nu se activează." },
     { q: "Cum îmi schimb alegerea?", a: "Din linkul „Setări cookie-uri” din subsolul site-ului, oricând." },
+    { q: "Ce cookie-uri setează Google Analytics?", a: "Cookie-uri precum _ga și _ga_*, doar dacă accepți statisticile." },
+    { q: "Unde este salvată alegerea mea?", a: "În browserul tău (stocare locală), ca să nu te întreb la fiecare vizită. Nu conține date personale." },
+    { q: "Folosește harta de pe pagina de contact cookie-uri?", a: "Doar dacă o afișezi. Harta Google Maps se încarcă numai după ce apeși „Afișează harta”." },
+    { q: "Pot șterge cookie-urile deja setate?", a: "Da. Șterge datele site-ului din setările browserului sau folosește linkul „Setări cookie-uri” din subsol." },
   ],
   terms: [
     { q: "Garantezi locul 1 în Google sau o recomandare în ChatGPT?", a: "Nu. Pozițiile în Google și mențiunile în asistenții AI depind de factori care nu pot fi controlați. Promit un proces măsurabil și transparent." },
     { q: "Mă obligă auditul gratuit la ceva?", a: "Nu. Auditul gratuit nu creează obligația de a comanda alte servicii." },
     { q: "Ce lege se aplică?", a: "Legea română." },
+    { q: "Pot folosi conținutul site-ului?", a: "Nu fără acordul scris. Textele, designul și codul aparțin autorului, dacă nu este indicat altfel." },
+    { q: "Cum se stabilesc serviciile?", a: "Pe baza unei oferte personalizate, acceptate de ambele părți." },
+    { q: "Răspunzi de site-urile externe din linkuri?", a: "Nu. Site-ul poate conține linkuri către site-uri terțe, dar nu răspund de conținutul sau politicile lor." },
+    { q: "Informațiile de pe site sunt sfaturi personalizate?", a: "Nu. Au caracter general. Pentru afacerea ta, auditul gratuit îți dă recomandări concrete." },
   ],
 } satisfies Record<string, Faq[]>;

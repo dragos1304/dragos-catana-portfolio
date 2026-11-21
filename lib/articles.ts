@@ -57,6 +57,10 @@ export const articles: Article[] = [
       { q: "GEO și AEO sunt același lucru?", a: "În practică, da. Ambele descriu optimizarea pentru răspunsurile generate de AI. Termenii nu sunt standardizați și se folosesc des interschimbabil." },
       { q: "Trebuie să renunț la SEO clasic?", a: "Nu. GEO se sprijină pe SEO. Un site bine construit, rapid și clar ajută și în Google, și în răspunsurile AI." },
       { q: "Cât durează până se văd rezultate?", a: "De obicei săptămâni sau luni. Corecturile tehnice se văd mai repede, iar autoritatea se construiește în timp." },
+      { q: "Ce asistenți AI contează pentru o afacere locală?", a: "ChatGPT, Gemini, Claude și Perplexity, plus răspunsurile AI din Google. Merită testați toți, pentru că răspund diferit." },
+      { q: "Ajută datele structurate la GEO?", a: "Da. Spun explicit cine ești, ce faci și unde, așa că asistenții AI te înțeleg mai ușor. Nu garantează însă o mențiune." },
+      { q: "Trebuie să permit roboții AI pe site?", a: "Dacă vrei să fii citat, da: îi permiți în robots.txt și verifici să nu fie blocați de paravanul de protecție sau de rețeaua de livrare." },
+      { q: "Cum văd dacă GEO funcționează?", a: "Pui lunar aceleași întrebări reale în asistenții AI și notezi dacă apari, pe ce loc și cum ești descris." },
     ],
     related: [
       { href: "/servicii/seo-vizibilitate-ai", label: "SEO și vizibilitate în AI" },
@@ -106,6 +110,11 @@ export const articles: Article[] = [
     faq: [
       { q: "Trebuie să plătesc ca să testez?", a: "Nu. Poți folosi versiunile gratuite ale asistenților. Unele funcții de căutare web pot avea limite în planurile gratuite." },
       { q: "De ce diferă răspunsul de la o încercare la alta?", a: "Modelele generează răspunsul de fiecare dată, iar sursele și formulările pot varia. De aceea repetăm întrebările." },
+      { q: "Câte întrebări ar trebui să testez?", a: "Între 6 și 10 întrebări reale, de mai multe tipuri: căutare generală, problemă concretă, comparație și numele direct." },
+      { q: "În ce asistenți AI să testez?", a: "ChatGPT, Gemini, Claude și Perplexity, plus răspunsurile AI din Google, acolo unde apar." },
+      { q: "Cât de des să repet testul?", a: "O dată pe lună este suficient pentru o afacere locală. Păstrează aceleași întrebări, ca să poți compara în timp." },
+      { q: "Ce fac dacă nu apar deloc?", a: "Problema este de prezență: lipsesc informații clare despre tine. Începe cu site-ul, profilul Google și aceleași date peste tot, apoi testează din nou." },
+      { q: "De ce să folosesc o conversație nouă pentru fiecare întrebare?", a: "Ca răspunsul să nu fie influențat de discuțiile anterioare. Ideal, fără istoric." },
     ],
     related: [
       { href: "/audit-gratuit-vizibilitate-ai", label: "Cere auditul gratuit" },
@@ -146,6 +155,11 @@ export const articles: Article[] = [
     faq: [
       { q: "Cât de des ar trebui refăcut un site?", a: "Nu există o regulă fixă. Mai important este să verifici periodic viteza, claritatea ofertei, accesibilitatea și cum apari în Google și în AI. Când problemele se adună, este timpul pentru redesign." },
       { q: "Pot face un redesign fără să-mi pierd clienții actuali?", a: "Da. Cu o migrare atentă, adresele importante se păstrează sau se redirecționează, iar clienții găsesc aceleași informații, mai clar prezentate." },
+      { q: "De unde încep dacă am mai multe semne?", a: "De la telefon și viteză: dacă site-ul nu arată bine pe mobil sau se încarcă greu, pierzi vizitatori din primele secunde." },
+      { q: "Cum testez viteza site-ului?", a: "Cu Google PageSpeed Insights, gratuit. Notează scorurile pe mobil." },
+      { q: "Este suficient să schimb designul?", a: "Nu întotdeauna. Un site depășit are adesea și probleme de viteză, conținut, accesibilitate sau date structurate, nu doar un aspect vechi." },
+      { q: "Când ajung doar câteva corecturi?", a: "Dacă ai una sau două probleme punctuale, de obicei ajung corecturi. Dacă ai mai multe dintre cele zece semne, un redesign complet iese de regulă mai eficient." },
+      { q: "Ce înseamnă un site accesibil?", a: "Un site pe care îl pot folosi toți vizitatorii: contrast suficient, imagini cu descriere și navigare de la tastatură." },
     ],
     related: [
       { href: "/servicii/redesign-website", label: "Redesign de website" },
@@ -195,6 +209,11 @@ export const articles: Article[] = [
     faq: [
       { q: "Pot pierde poziții chiar dacă fac totul corect?", a: "Mici fluctuații pot apărea, pentru că Google reprocesează site-ul. Cu o migrare atentă, de obicei se stabilizează. Dacă scăderea persistă, se investighează cauza." },
       { q: "Trebuie să-mi păstrez exact aceleași adrese?", a: "Nu neapărat, dar este mai sigur. Când le schimbi, folosește redirecționări 301 către paginile corespunzătoare." },
+      { q: "Ce este o redirecționare 301?", a: "O redirecționare permanentă: trimite vizitatorii și motoarele de căutare de la adresa veche la cea nouă și le spune că pagina s-a mutat definitiv." },
+      { q: "Unde redirecționez paginile vechi?", a: "Către cea mai apropiată pagină nouă ca subiect, nu către prima pagină." },
+      { q: "Ce verific înainte de lansare?", a: "Redirecționările, titlurile, descrierile, linkurile și datele structurate, plus faptul că ai scos blocajul de indexare („noindex”)." },
+      { q: "Cât timp urmăresc site-ul după lansare?", a: "În primele săptămâni: erorile 404, indexarea și clickurile din Search Console." },
+      { q: "Care sunt cele mai frecvente greșeli?", a: "Redirecționarea tuturor paginilor vechi către prima pagină, ștergerea paginilor care aduceau trafic și blocajul de indexare lăsat activ după lansare." },
     ],
     related: [
       { href: "/servicii/redesign-website", label: "Redesign de website" },
@@ -256,6 +275,11 @@ export const articles: Article[] = [
     faq: [
       { q: "Trebuie să știu să programez ca să adaug date structurate?", a: "Nu neapărat. Multe platforme au module pentru asta, dar rezultatul corect depinde de datele pe care le introduci. Eu o includ în fiecare site pe care îl livrez." },
       { q: "Datele structurate îmi garantează o poziție mai bună?", a: "Nu. Ajută motoarele să te înțeleagă corect, dar pozițiile depind de mulți alți factori." },
+      { q: "Ce tip de date structurate folosește o clinică?", a: "MedicalClinic pentru clinică și Physician pentru medici; pentru cabinetele stomatologice, Dentist." },
+      { q: "Ce tip folosește un cabinet de avocatură?", a: "LegalService sau Attorney, plus Service pentru paginile de servicii și FAQPage pentru întrebări frecvente." },
+      { q: "Cum testez datele structurate?", a: "Cu Rich Results Test de la Google și Schema Markup Validator de la schema.org. Retestezi după fiecare modificare." },
+      { q: "Pot adăuga recenzii în datele structurate?", a: "Doar recenzii reale, care se văd pe pagină. Nu inventa recenzii sau evaluări." },
+      { q: "În ce format scriu datele structurate?", a: "În JSON-LD: un bloc de cod în pagină, pe care vizitatorii nu îl văd, dar motoarele de căutare îl citesc." },
     ],
     related: [
       { href: "/servicii/website-clinici-medicale", label: "Site pentru clinici și cabinete medicale" },
@@ -328,6 +352,9 @@ export const articles: Article[] = [
       { q: "Pot face SEO singur?", a: "Bazele, da: profilul Google, pagini clare pe servicii, recenzii. Partea tehnică (viteză, indexare, date structurate, migrări) cere de obicei pe cineva care lucrează zilnic cu ele." },
       { q: "Cât costă optimizarea SEO?", a: "Depinde de cât de mult este de reparat și de concurența din domeniul și orașul tău. Eu nu afișez prețuri fixe: încep cu un audit gratuit și trimit apoi o ofertă clară." },
       { q: "Poate cineva să-mi garanteze locul 1 în Google?", a: "Nu. Google își schimbă algoritmii și nimeni din afară nu controlează rezultatele. Un specialist serios promite un proces măsurabil, nu o poziție." },
+      { q: "Cât durează până văd rezultate din SEO?", a: "Corecturile tehnice se pot vedea în câteva săptămâni, iar pozițiile pe căutări cu concurență se construiesc de obicei în câteva luni." },
+      { q: "Ce aleg: SEO sau reclame Google?", a: "Nu sunt în competiție. Reclamele aduc vizibilitate din prima zi, cât plătești; SEO-ul construiește în timp un activ care rămâne. Pentru o afacere locală mică recomand de obicei să începi cu bazele SEO și cu profilul Google." },
+      { q: "Ce este SEO-ul local?", a: "Optimizarea pentru căutările dintr-un oraș sau o zonă: profilul Google al afacerii, recenzii, același nume, adresă și telefon peste tot și pagini care menționează orașul." },
     ],
     related: [
       { href: "/articole/google-business-profile-ghid", label: "Google Business Profile: ghid pas cu pas" },
@@ -407,6 +434,9 @@ export const articles: Article[] = [
       { q: "Cât durează verificarea?", a: "Depinde de metoda aleasă de Google: uneori câteva minute (telefon, e-mail, video), alteori câteva zile, dacă se trimite o carte poștală." },
       { q: "Pot șterge o recenzie negativă?", a: "Nu poți șterge singur o recenzie. Poți raporta recenziile care încalcă regulile Google. Pentru celelalte, cel mai bun lucru este un răspuns calm și profesionist, pe care îl citesc și viitorii clienți." },
       { q: "Ajută profilul Google și la ChatGPT sau Gemini?", a: "Informațiile publice, consecvente și verificabile despre afacerea ta te fac mai ușor de înțeles pentru asistenții AI. Profilul Google este una dintre cele mai importante astfel de surse, alături de site." },
+      { q: "Pot avea profil Google fără adresă fizică?", a: "Da. Dacă lucrezi la clienți acasă sau doar online, poți ascunde adresa și seta în schimb zona de servicii." },
+      { q: "Pot adăuga cuvinte-cheie în numele afacerii?", a: "Nu. Numele trebuie să fie exact cel real; cuvintele-cheie adăugate încalcă regulile Google și pot duce la suspendarea profilului." },
+      { q: "Am voie să ofer reduceri în schimbul recenziilor?", a: "Nu. Regulile Google interzic recompensele pentru recenzii. Poți cere o recenzie tuturor clienților, fără să oferi ceva în schimb." },
     ],
     related: [
       { href: "/articole/ce-este-seo", label: "Ce este SEO? Ghid simplu" },

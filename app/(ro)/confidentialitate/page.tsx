@@ -28,7 +28,7 @@ export default function Page() {
       <h2>Temeiul legal</h2>
       <p>Consimțământul tău (bifat în formular) și, după caz, demersurile premergătoare unui contract, la cererea ta. Pentru statistici, temeiul este consimțământul exprimat prin banner.</p>
       <h2>Cine mai are acces la date</h2>
-      <p>Folosesc servicii care prelucrează date în numele meu: Network Solutions (găzduirea site-ului și primirea formularelor), Cloudflare (rețeaua prin care se livrează site-ul), Apple iCloud Mail (trimiterea e-mailurilor din formulare), Calendly (programări) și, doar cu consimțământul tău, Google (Tag Manager și Analytics). Nu vând și nu închiriez datele tale. Unii dintre acești furnizori pot prelucra date și în afara Spațiului Economic European; în acest caz se aplică garanțiile prevăzute de GDPR.</p>
+      <p>Folosesc servicii care prelucrează date în numele meu: Network Solutions (găzduirea site-ului și primirea formularelor), Cloudflare (rețeaua prin care se livrează site-ul), Apple iCloud Mail (trimiterea e-mailurilor din formulare), Calendly (programări), Google Maps (doar dacă afișezi harta de pe pagina de contact) și, doar cu consimțământul tău, Google (Tag Manager și Analytics). Nu vând și nu închiriez datele tale. Unii dintre acești furnizori pot prelucra date și în afara Spațiului Economic European; în acest caz se aplică garanțiile prevăzute de GDPR.</p>
       <h2>Cât păstrez datele</h2>
       <p>Cât este necesar pentru a-ți răspunde și, dacă lucrăm împreună, pe durata colaborării și a obligațiilor legale aplicabile. Poți cere oricând ștergerea datelor.</p>
       <h2>Drepturile tale</h2>

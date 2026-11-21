@@ -3,7 +3,9 @@ import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { faqs } from "@/lib/faqs";
+import { CalendarDays, MessageCircle, Search } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
+import { MapEmbed } from "@/components/MapEmbed";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { phone, site, social } from "@/lib/site-config";
@@ -18,21 +20,35 @@ const contactCopy = {
     title: "Contact: cere o ofertă pentru site sau SEO",
     description: `Scrie-mi despre site-ul sau proiectul tău SEO: răspund personal în maximum ${site.reply.ro}. Web designer în Cluj-Napoca, cu clienți din toată România.`,
     h1: "Hai să vorbim despre proiectul tău.",
-    lead: `Completează formularul sau programează direct o discuție. Răspund la orice mesaj în maximum ${site.reply.ro}.`,
-    book: "Programează o discuție:", auditQ: "Doar vrei un audit?", auditLink: "Cere auditul gratuit",
-    whatsapp: "WhatsApp:", profiles: "Mă găsești și pe:",
-    where: "Unde:", whereText: `${site.city}, România. Lucrez online cu clienți din toată țara.`,
-    langs: "Limbi:", langsText: "română. Engleză, franceză și germană ca opțiune suplimentară.",
+    lead: `Spune-mi pe scurt ce ai nevoie. Îți răspund personal în maximum ${site.reply.ro}.`,
+    quick: "Preferi WhatsApp?",
+    waysH2: "Alte moduri de a vorbi cu mine",
+    ways: [
+      { k: "call", t: "Programează o discuție", d: "30 de minute online, gratuit. Alegi singur ora în calendar.", cta: "Deschide Calendly" },
+      { k: "wa", t: "Scrie-mi pe WhatsApp", d: "Pentru o întrebare scurtă sau ca să trimiți rapid adresa site-ului.", cta: phone.display },
+      { k: "audit", t: "Cere doar auditul", d: `Vezi cum apari în Google și în ChatGPT. Gratuit, făcut manual, în ${site.reply.ro}.`, cta: "Cere auditul gratuit" },
+    ],
+    whereH2: "Unde lucrez",
+    where: `Locuiesc în ${site.city} și lucrez online cu clienți din toată România. Discuțiile au loc prin apel video.`,
+    langs: "Lucrez în română și în engleză. Pot livra site-ul și în franceză sau germană, ca opțiune suplimentară.",
+    profiles: "Mă găsești și pe",
   },
   en: {
     title: "Contact: get a quote for a website or SEO",
     description: `Tell me about your website or SEO project and I reply personally within ${site.reply.en}. Web designer in Cluj-Napoca, working with clients across Romania.`,
     h1: "Let's talk about your project.",
-    lead: `Fill in the form or book a call directly. I reply to every message within ${site.reply.en}.`,
-    book: "Book a call:", auditQ: "Just want an audit?", auditLink: "Get the free audit",
-    whatsapp: "WhatsApp:", profiles: "Also find me on:",
-    where: "Where:", whereText: `${site.city}, Romania. I work online with clients across the country.`,
-    langs: "Languages:", langsText: "English and Romanian. French and German as an add-on.",
+    lead: `Tell me briefly what you need. I reply personally within ${site.reply.en}.`,
+    quick: "Prefer WhatsApp?",
+    waysH2: "Other ways to reach me",
+    ways: [
+      { k: "call", t: "Book a call", d: "30 minutes online, free. Pick the time yourself in the calendar.", cta: "Open Calendly" },
+      { k: "wa", t: "Message me on WhatsApp", d: "For a quick question or to send your website address.", cta: phone.display },
+      { k: "audit", t: "Just get the audit", d: `See how you show up on Google and in ChatGPT. Free, done by hand, within ${site.reply.en}.`, cta: "Get the free audit" },
+    ],
+    whereH2: "Where I work",
+    where: `I live in ${site.city} and work online with clients across Romania. Calls happen over video.`,
+    langs: "I work in English and Romanian. Sites can also be delivered in French or German as an add-on.",
+    profiles: "Also find me on",
   },
 } as const;
 
@@ -40,9 +56,12 @@ export function contactMetadata(lang: Lang): Metadata {
   return pageMeta("contact", lang, contactCopy[lang]);
 }
 
+const wayIcon = { call: CalendarDays, wa: MessageCircle, audit: Search } as const;
+
 export function ContactPage({ lang }: { lang: Lang }) {
   const c = contactCopy[lang];
   const home = { name: pageName("home", lang), path: href("home", lang) };
+  const wayHref = { call: site.calendly, wa: social.whatsapp.url, audit: href("audit", lang) };
   return (
     <>
       <JsonLd data={breadcrumb([home, { name: pageName("contact", lang), path: href("contact", lang) }])} />
@@ -53,26 +72,56 @@ export function ContactPage({ lang }: { lang: Lang }) {
             <Eyebrow>Contact</Eyebrow>
             <h1 className="font-serif text-[2.5rem] font-extrabold leading-[1] sm:text-6xl">{c.h1}</h1>
             <p className="mt-5 text-lg leading-relaxed text-muted">{c.lead}</p>
-            <ul className="mt-8 space-y-4 text-muted">
-              <li><strong className="text-ink">{c.book}</strong>{" "}
-                <a className={linkCls} href={site.calendly} target="_blank" rel="noopener noreferrer">Calendly</a></li>
-              <li><strong className="text-ink">{c.auditQ}</strong>{" "}
-                <Link className={linkCls} href={href("audit", lang)}>{c.auditLink}</Link></li>
-              <li><strong className="text-ink">{c.whatsapp}</strong>{" "}
-                <a className={linkCls} href={social.whatsapp.url} target="_blank" rel="noopener noreferrer">{phone.display}</a></li>
-              <li><strong className="text-ink">{c.profiles}</strong>{" "}
-                {Object.values(social).filter((p) => p.sameAs).map((p, i) => (
-                  <span key={p.name}>{i > 0 && " · "}<a className={linkCls} href={p.url} target="_blank" rel="me noopener noreferrer">{p.name}</a></span>
-                ))}</li>
-              <li><strong className="text-ink">{c.where}</strong> {c.whereText}</li>
-              <li><strong className="text-ink">{c.langs}</strong> {c.langsText}</li>
-            </ul>
+            <p className="mt-6 text-muted">
+              <strong className="text-ink">{c.quick}</strong>{" "}
+              <a className={linkCls} href={social.whatsapp.url} target="_blank" rel="noopener noreferrer">{phone.display}</a>
+            </p>
           </div>
           <div className="rounded-md border border-line bg-white p-6 shadow-sm sm:p-8">
             <LeadForm kind="contact" lang={lang} />
           </div>
         </div>
       </Section>
+
+      <Section white>
+        <H2>{c.waysH2}</H2>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {c.ways.map((w) => {
+            const Icon = wayIcon[w.k];
+            const external = w.k !== "audit";
+            const cls = "group flex h-full flex-col rounded-3xl border-2 border-ink bg-paper p-6 transition-shadow duration-200 hover:shadow-[6px_6px_0_0_var(--color-ink)]";
+            const inner = (
+              <>
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-orange"><Icon aria-hidden className="h-6 w-6 text-ink" /></span>
+                <h3 className="mt-5 font-serif text-2xl font-extrabold text-ink">{w.t}</h3>
+                <p className="mt-2 text-[17px] leading-relaxed text-muted">{w.d}</p>
+                <span className="mt-auto pt-5 font-semibold text-ink underline decoration-orange decoration-2 underline-offset-4">{w.cta}</span>
+              </>
+            );
+            return external
+              ? <a key={w.k} href={wayHref[w.k]} target="_blank" rel="noopener noreferrer" className={cls}>{inner}</a>
+              : <Link key={w.k} href={wayHref[w.k]} className={cls}>{inner}</Link>;
+          })}
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div>
+            <H2>{c.whereH2}</H2>
+            <p className="mt-5 text-lg leading-relaxed text-ink">{c.where}</p>
+            <p className="mt-4 text-lg leading-relaxed text-muted">{c.langs}</p>
+            <p className="mt-6 text-muted">
+              <strong className="text-ink">{c.profiles}:</strong>{" "}
+              {Object.values(social).filter((p) => p.sameAs).map((p, i) => (
+                <span key={p.name}>{i > 0 && " · "}<a className={linkCls} href={p.url} target="_blank" rel="me noopener noreferrer">{p.name}</a></span>
+              ))}
+            </p>
+          </div>
+          <MapEmbed lang={lang} />
+        </div>
+      </Section>
+
       <Section id="intrebari" tint><FAQ items={faqs.contact[lang]} lang={lang} /></Section>
     </>
   );
