@@ -28,6 +28,8 @@ export const social = {
   behance: { name: "Behance", url: "https://www.behance.net/dragoscatana", sameAs: true },
   dribbble: { name: "Dribbble", url: "https://dribbble.com/DragosCatana", sameAs: true },
   googleMaps: { name: "Google Maps", url: "https://maps.app.goo.gl/fuxxrpWDCVRRpt578", sameAs: true },
+  /** A link hub that points back here: in `sameAs`, llms.txt and the contact page, not a footer button. */
+  linktree: { name: "Linktree", url: "https://linktr.ee/dragoscatana", sameAs: true, footer: false },
 } as const;
 
 /** The Google Business Profile: map embed (by its Google place ID, shows the business card), share link and pin. */

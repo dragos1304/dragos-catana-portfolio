@@ -113,20 +113,22 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
 - **Validation:** all JSON-LD blocks parse, and Article has every required property.
 - **Not used:**
   - **HowTo:** Google retired the rich result.
+  - **FAQ rich results:** Google stopped showing them in May 2026 and removed the documentation in June 2026 ([changelog](https://developers.google.com/search/updates)). The site keeps its `FAQPage` markup because it matches the visible FAQs and costs nothing, but it no longer earns a special display in Google.
   - **Review / AggregateRating:** there are no real reviews yet, and we never invent them.
 - **sameAs:** GitHub and LinkedIn (added 19 Nov 2026). Add the Google Business Profile Maps URL once it is verified and public.
 - **Testing:** use https://search.google.com/test/rich-results after deploy.
 
 ## 7. AI visibility (ai-visibility)
 - **Crawlers:** robots and Cloudflare allow GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and the rest. Cloudflare (19 Nov 2026): Browser Integrity Check off, Crawler Hints (IndexNow) on, Bot Fight Mode and AI Labyrinth off.
-- **llms.txt:** lists the services, the case study (now with both Lighthouse results) and every article, generated from the site data.
+- **llms.txt:** lists the services, the case study (now with both Lighthouse results) and every article, generated from the site data. Google says its Search and AI features [do not use llms.txt](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide); we keep it for other assistants and agents only, and expect nothing from it in Google.
 - **Entity consistency:** the same name, city, services and languages appear on the site, in schema and in llms.txt.
 - **Biggest gaps:** off-site signals.
   - Google Business Profile: updated 19 Nov 2026, verification pending.
   - LinkedIn: headline, About and website aligned with the site (19 Nov 2026).
   - Get listed in 2–3 Romanian business directories.
   - Ask Cheesy Media for a public mention or review.
-- **Tracking:** the Semrush AI prompt tracking needs an Enterprise subscription your account doesn't have, so test manually once a month. Use the method in `/articole/cum-verifici-daca-ai-iti-mentioneaza-afacerea`. Ask the same prompts in ChatGPT, Gemini, Claude and Perplexity, and log whether you're mentioned, where, how you're described, and which sources are cited. Baseline prompts:
+- **Tracking in Google:** Search Console's [Generative AI performance report](https://support.google.com/webmasters/answer/16984139) (all sites since 31 Aug 2026) shows impressions in AI Overviews and AI Mode. Check it monthly with the regular performance report.
+- **Tracking elsewhere:** the Semrush AI prompt tracking needs an Enterprise subscription your account doesn't have, so test manually once a month. Use the method in `/articole/cum-verifici-daca-ai-iti-mentioneaza-afacerea`. Ask the same prompts in ChatGPT, Gemini, Claude and Perplexity, and log whether you're mentioned, where, how you're described, and which sources are cited. Baseline prompts:
   1. „Cine face site-uri pentru clinici în Cluj?”
   2. „Recomandă un web designer freelancer în România pentru un cabinet de avocatură.”
   3. „Cum apare o afacere locală în răspunsurile ChatGPT? Cine oferă servicii de GEO în România?”
@@ -167,4 +169,49 @@ Pillar **"Ce este SEO"** (live in code) links to the clusters below. Cadence: 2 
 ## 10. AI visibility: FAQs and entity profiles (20 Nov 2026)
 - **FAQs:** every page has a FAQ (`lib/faqs.ts`) mixing real client questions with the prompts people type into ChatGPT, Gemini and Perplexity. Answers are short, factual and name Dragoș Catană, Cluj-Napoca and Romania so assistants can quote them.
 - **Entity consistency:** one source for profiles (`social` in `lib/site-config.ts`) feeds the footer, contact page, llms.txt and the Person/ProfessionalService `sameAs`. AI models trust an entity more when the same name, description and links appear on several independent sites.
+- **Live since 20–21 Nov 2026:** Behance, Dribbble, Linktree (`https://linktr.ee/dragoscatana`, in `sameAs`, llms.txt and the contact page, not a footer button), Cylex, Deschis.ro, Firmania, Sortlist.
 - **Next profiles:** Google Business Profile, Facebook, Clutch, DesignRush/GoodFirms, Bing Places, YouTube, Behance/Dribbble, Crunchbase; plus genuine answers on Reddit and Quora. Add each one to `social` as it goes live.
+
+## 11. Checked against two practitioner guides (21 Nov 2026)
+
+Sources reviewed: borja (@borjafat), "AI Visibility with Claude" (X thread, 20 Nov 2026, a tiered list of 232 tactics from Distribb), and BowTiedBills, "The Most Valuable SEO Article Ever Written (Part 2)" (X article, 7 Nov 2026, local SEO for US law firms). Both are written by people selling SEO services, so every claim below was checked against Google's own documentation before it went into this plan.
+
+### 11.1 Fact-check
+| Claim in the articles | Verdict | Primary source |
+|---|---|---|
+| Since 2026 Google forbids asking staff to collect a set number of reviews, or asking for reviews with specific content such as a staff member's name (BowTiedBills). | **True.** Also: no pressuring customers to review on the premises. | [Maps content policy](https://support.google.com/contributionpolicy/answer/7400114) |
+| Incentives and review gating are banned. | **True.** | same |
+| Local results depend on relevance, distance and prominence; more reviews help. | **True.** Google: "More reviews and positive ratings can help your business's local ranking." Replying to reviews is recommended. | [Local ranking tips](https://support.google.com/business/answer/7091) |
+| Review *velocity* (last 90 days) matters more than total count. | **Unverified.** Practitioner observation; Google mentions count and rating, not recency. We still ask after every job, which costs nothing. | none from Google |
+| Primary category is the most important profile field; pick the most specific one. | **Partly true.** Google asks for the most specific categories that complete "this business IS a…". "Most important field" is practitioner opinion. | [GBP guidelines](https://support.google.com/business/answer/3038177) |
+| A second legitimate profile for a separate floor or practice area. | **Risky as written.** Google allows departments with a distinct name, entrance and category, and individual practitioners (doctors, lawyers). It forbids more than one profile per location. | same |
+| Map pack takes ~61% of clicks; each spot up doubles leads. | **Unverified** industry estimates; we will not quote them. | none |
+| Business hours ("openness") are a ranking signal. | **Unverified** by Google; a widely reported practitioner observation. Keep hours accurate anyway. | none |
+| Buy backlinks through outreach. | **False / against policy.** Paying or trading for links that pass ranking credit, and excessive link exchanges, are link spam. Paid links must carry `rel="sponsored"` or `nofollow`. | [Spam policies](https://developers.google.com/search/docs/essentials/spam-policies) |
+| "Parasite SEO" and editorial link exchanges (borjafat B/A tier). | **Policy risk.** Publishing on third-party sites to exploit their ranking is site reputation abuse; link swaps are link spam. Publishing your own genuine articles on LinkedIn or Medium is fine. | same |
+| AI search runs on SEO. | **True for Google:** "optimizing for generative AI search is … still SEO"; no llms.txt, chunking or special markup needed; inauthentic mentions don't help. | [AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) |
+| `&num=100` stopped working in 2025 and only affected rank-tracking tools. | **Mostly true.** It also changed how impressions appear in some Search Console data, not real users' results. | — |
+| Run the Rich Results Test; match schema to visible facts. | **True.** | [Structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies) |
+| Yelp feeds ChatGPT answers. | **Not relevant** in Romania; we don't act on it. | — |
+
+### 11.2 Adopted (verified, fits a solo Romanian business)
+1. **Evidence beside every claim (borjafat, "Add information gain"):** done 21 Nov 2026. All seven articles now link the official source next to each factual claim, list "Surse" at the end, carry `citation` in Article schema and show "actualizat la 21 noiembrie 2026". Two facts were corrected on the way: schema.org marks `Attorney` as deprecated (use `LegalService`), and FAQ rich results no longer exist.
+2. **Citation gap audit (BowTiedBills §4):** monthly, search `"Dragoș Catană"` in quotes and the exact names of 2–3 competing Cluj freelancers or agencies; note the result counts as a rough guide only (Google's counts are estimates). Fix any listing with a different name, address or phone.
+3. **Consistent listings, Romania-sized:** keep building listings with identical details (§10 of PROFILES.md). The 80–100 directory target is for US law firms; for Romania, aim for the reputable ones that exist (Cylex network done, Sortlist done; PaginiAurii.ro and OnTop.ro next).
+4. **Reviews as a routine:** after each finished project, send the direct Google review link, with up to two polite reminders; reply to every review within 1–2 days. Never ask for specific wording, never offer anything in return.
+5. **Booking on the page (BowTiedBills §7):** the Calendly link is already on contact and audit pages; next, put a "Programează o discuție" button on each service page too.
+6. **Pages per service and per niche:** already the structure (clinics, law firms, maintenance). City pages stay on hold until there is real local proof, as decided in §4.
+7. **Find gaps in AI recommendations (borjafat B tier):** the 5-prompt monthly log in §7, now also recording which sources each answer cites, plus the Search Console Generative AI report.
+8. **Roundups and unlinked mentions (borjafat A tier):** quarterly, search Romanian "best web designers Cluj / agenții web design Cluj" lists and ask authors to consider a listing, sending one concrete fact (the Cheesy Media Lighthouse results). Search for mentions of "Dragoș Catană" without a link and ask for one. Earned links only.
+9. **LinkedIn articles (borjafat C tier):** republish a shortened version of each guide on LinkedIn, linking back to the original.
+10. **Show who is behind the content:** byline and About page exist; the portrait photo is still open in `TODO.md`.
+
+### 11.3 Not adopted, and why
+- Buying links, link exchanges, parasite SEO: against Google's spam policies.
+- Review quotas, asking clients to name someone, incentives: against Google's review policy.
+- Pricing pages and discount terms (borjafat S tier): your standing decision is never to publish prices.
+- Programmatic city pages without local proof: thin or doorway pages.
+- Extra profiles per practice area: one business, one location, one profile.
+
+### 11.4 Open options for you to decide
+- **A free tool that earns links (borjafat A tier):** for example a free schema generator for clinics and law firms (MedicalClinic / LegalService JSON-LD). Useful, linkable, and on-topic; not started.

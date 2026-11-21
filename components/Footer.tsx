@@ -21,7 +21,7 @@ export function Footer({ lang }: { lang: Lang }) {
           <p className="mt-3 max-w-xs text-[15px] leading-relaxed">{t.footerAbout}</p>
           <p className="mt-3 text-[15px]">{t.footerWhere}</p>
           <ul className="mt-5 flex flex-wrap gap-2" aria-label={t.socialLabel}>
-            {Object.values(social).map((s) => (
+            {Object.values(social).filter((s) => !("footer" in s)).map((s) => (
               <li key={s.name}>
                 <a href={s.url} target="_blank" rel="me noopener noreferrer"
                   className="inline-flex min-h-10 items-center rounded-full border border-paper/25 px-4 text-sm font-semibold text-paper hover:border-orange hover:text-orange">{s.name}</a>
