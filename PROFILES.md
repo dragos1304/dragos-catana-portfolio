@@ -76,6 +76,7 @@ The sitemap is live and valid. On 20 Nov 2026 it returned 200 with 37 URLs, it i
 | Business / profile name | Dragoș Catană – Web Design & SEO |
 | Website | https://dragoscatana.com |
 | English site | https://dragoscatana.com/en/ |
+| Address (as on Google Business Profile) | Strada Jorj Voicu 2-4, 400482 Cluj-Napoca, Romania |
 | Location | Cluj-Napoca, Cluj County, Romania |
 | Service area | Romania (works online with clients across the country) |
 | Phone / WhatsApp | +40 740 939 472 |

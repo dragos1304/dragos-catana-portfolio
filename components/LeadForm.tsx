@@ -1,4 +1,5 @@
 "use client";
+import { NeedSelect } from "./NeedSelect";
 import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { serviceOptions, type Lang } from "@/lib/site-map";
@@ -27,6 +28,7 @@ const text = {
     competitorsPh: "Adresele site-urilor sau numele lor",
     need: "De ce ai nevoie?",
     choose: "Alege o opțiune",
+    chooseError: "Alege o opțiune.",
     message: "Spune-mi pe scurt despre proiect",
     consentA: "Sunt de acord ca datele mele să fie folosite pentru a-mi răspunde, conform",
     consentLink: "politicii de confidențialitate",
@@ -53,6 +55,7 @@ const text = {
     competitorsPh: "Their websites or names",
     need: "What do you need?",
     choose: "Choose an option",
+    chooseError: "Choose an option.",
     message: "Tell me briefly about the project",
     consentA: "I agree that my data is used to reply to me, as described in the",
     consentLink: "privacy policy (Romanian)",
@@ -65,14 +68,20 @@ const text = {
 
 export function LeadForm({ kind, lang = "ro" }: { kind: LeadKind; lang?: Lang }) {
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [needMissing, setNeedMissing] = useState(false);
   const isAudit = kind === "audit";
   const openedAt = useRef(Date.now());
   const t = text[lang];
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setState("sending");
     const data = new FormData(e.currentTarget);
+    if (!isAudit && !data.get("need")) {
+      setNeedMissing(true);
+      e.currentTarget.querySelector<HTMLButtonElement>("[aria-haspopup=listbox]")?.focus();
+      return;
+    }
+    setState("sending");
     data.set(leadForm.meta.openedAt, String(openedAt.current)); // milliseconds, see lib/lead-form.ts
     try {
       const res = await fetch(process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "/api/contact.php", {
@@ -135,20 +144,8 @@ export function LeadForm({ kind, lang = "ro" }: { kind: LeadKind; lang?: Lang })
         </>
       ) : (
         <>
-          {/* Need: pill buttons in the site's style instead of a native dropdown (same look on every device). */}
-          <fieldset>
-            <legend className="text-sm font-medium">{t.need}</legend>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {serviceOptions(lang).map((o, i) => (
-                <label key={o.value} className="cursor-pointer">
-                  <input type="radio" name="need" value={o.value} required={i === 0} className="peer sr-only" />
-                  <span className="inline-flex min-h-11 items-center rounded-full border-2 border-ink/20 bg-white px-4 py-2 text-[15px] font-medium leading-snug text-ink transition-colors duration-150 hover:border-ink peer-checked:border-ink peer-checked:bg-ink peer-checked:text-paper peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-orange">
-                    {o.label}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
+          <NeedSelect name="need" label={t.need} placeholder={t.choose} options={serviceOptions(lang)} invalid={needMissing} onChange={() => setNeedMissing(false)} />
+          {needMissing && <p role="alert" className="-mt-3 text-sm text-orange-ink">{t.chooseError}</p>}
           <label className="block text-sm font-medium">{t.message}
             <textarea className={inputCls} name="message" rows={5} required />
           </label>

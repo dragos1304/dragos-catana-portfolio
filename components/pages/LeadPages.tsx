@@ -8,7 +8,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { MapEmbed } from "@/components/MapEmbed";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { phone, site, social } from "@/lib/site-config";
+import { phone, place, site, social } from "@/lib/site-config";
 import { href, pageName, type Lang } from "@/lib/site-map";
 
 /** The two pages that end in the lead form: Contact and the free audit. Once each, in either language. */
@@ -29,7 +29,7 @@ const contactCopy = {
       { k: "audit", t: "Cere doar auditul", d: `Vezi cum apari în Google și în ChatGPT. Gratuit, făcut manual, în ${site.reply.ro}.`, cta: "Cere auditul gratuit" },
     ],
     whereH2: "Unde lucrez",
-    where: `Locuiesc în ${site.city} și lucrez online cu clienți din toată România. Discuțiile au loc prin apel video.`,
+    where: `Adresa mea: ${place.addressLine.ro}. Lucrez online cu clienți din toată țara, iar discuțiile au loc prin apel video.`,
     langs: "Lucrez în română și în engleză. Pot livra site-ul și în franceză sau germană, ca opțiune suplimentară.",
     profiles: "Mă găsești și pe",
   },
@@ -46,7 +46,7 @@ const contactCopy = {
       { k: "audit", t: "Just get the audit", d: `See how you show up on Google and in ChatGPT. Free, done by hand, within ${site.reply.en}.`, cta: "Get the free audit" },
     ],
     whereH2: "Where I work",
-    where: `I live in ${site.city} and work online with clients across Romania. Calls happen over video.`,
+    where: `My address: ${place.addressLine.en}. I work online with clients across the country, and calls happen over video.`,
     langs: "I work in English and Romanian. Sites can also be delivered in French or German as an add-on.",
     profiles: "Also find me on",
   },

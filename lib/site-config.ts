@@ -32,6 +32,9 @@ export const social = {
 
 /** The Google Business Profile: map embed (by its Google place ID, shows the business card), share link and pin. */
 export const place = {
+  /** Exactly as on the Google Business Profile: keep name, address and phone identical everywhere. */
+  address: { street: "Strada Jorj Voicu 2-4", postalCode: "400482", city: "Cluj-Napoca", region: "Cluj", country: "RO" },
+  addressLine: { ro: "Strada Jorj Voicu 2-4, 400482 Cluj-Napoca, România", en: "Strada Jorj Voicu 2-4, 400482 Cluj-Napoca, Romania" },
   mapsUrl: "https://maps.app.goo.gl/fuxxrpWDCVRRpt578",
   embed: "https://maps.google.com/maps?cid=6256844995488708042&z=15&output=embed",
   geo: { latitude: 46.7427653, longitude: 23.6546004 },

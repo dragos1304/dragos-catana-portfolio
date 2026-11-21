@@ -1,3 +1,4 @@
+import { serviceOptions } from "@/lib/site-map";
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { LeadForm } from "@/components/LeadForm";
@@ -20,9 +21,10 @@ describe("lead form contract", () => {
   }
 
   it("contact form need options all map to a Romanian label for the email", () => {
+    // The dropdown renders its options only when open; the form posts a hidden input named "need".
     const html = renderToStaticMarkup(<LeadForm kind="contact" lang="en" />);
-    // The need field is a group of radio "pills" (name="need").
-    const options = [...html.matchAll(/<input[^>]*name="need"[^>]*value="([^"]+)"/g)].map((m) => m[1]);
+    expect(html).toMatch(/<input type="hidden" name="need"/);
+    const options = serviceOptions("en").map((o) => o.value);
     const need = leadForm.kinds.contact.fields.find((f) => f.name === "need")!;
     expect(options.length).toBeGreaterThan(0);
     for (const o of options) expect(need.options?.[o], o).toBeTruthy();

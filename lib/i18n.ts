@@ -1,5 +1,5 @@
 /** Interface strings for shared modules. Pages, paths and twins live in lib/site-map.ts; facts in lib/site-config.ts. */
-import { site } from "./site-config";
+import { place, site } from "./site-config";
 export type { Lang } from "./site-map";
 
 /** Strings used by shared components (header, footer, form, banner, bands). */
@@ -16,7 +16,7 @@ export const ui = {
     footerLine1: "Hai să te facem",
     footerLine2: "ușor de găsit.",
     footerAbout: "Web design și optimizare pentru căutare AI. Pentru clinici, cabinete de avocatură și afaceri locale din România.",
-    footerWhere: `${site.city}, România · răspuns în ${site.reply.ro}`,
+    footerWhere: `${place.addressLine.ro} · răspuns în ${site.reply.ro}`,
     footerLabel: "Subsol site",
     socialLabel: "Profiluri sociale",
     footerNav: "Subsol",
@@ -46,7 +46,7 @@ export const ui = {
     footerLine1: "Let's make you",
     footerLine2: "easy to find.",
     footerAbout: "Web design and AI search optimisation for clinics, law firms and local businesses in Romania.",
-    footerWhere: `${site.city}, Romania · reply within ${site.reply.en}`,
+    footerWhere: `${place.addressLine.en} · reply within ${site.reply.en}`,
     footerLabel: "Site footer",
     socialLabel: "Social profiles",
     footerNav: "Footer",

@@ -1,5 +1,5 @@
 import { articles } from "@/lib/articles";
-import { phone, proof, site, social } from "@/lib/site-config";
+import { place, phone, proof, site, social } from "@/lib/site-config";
 import { llmsLinks, type PageKey } from "@/lib/site-map";
 
 export const dynamic = "force-static";
@@ -14,7 +14,7 @@ export function GET() {
 
 > ${site.description}
 
-${site.name} (${site.legalName}) este web designer și specialist SEO din ${site.city}, România. Lucrează online cu clinici, cabinete de avocatură și afaceri locale. Limba principală: română. Engleză, franceză și germană ca opțiune suplimentară. Nu publică prețuri fixe: ofertele sunt personalizate. Auditul de vizibilitate AI este gratuit, manual, livrat în maximum ${site.reply.ro}.
+${site.name} (${site.legalName}) este web designer și specialist SEO din ${site.city}, România (${place.addressLine.ro}). Lucrează online cu clinici, cabinete de avocatură și afaceri locale. Limba principală: română. Engleză, franceză și germană ca opțiune suplimentară. Nu publică prețuri fixe: ofertele sunt personalizate. Auditul de vizibilitate AI este gratuit, manual, livrat în maximum ${site.reply.ro}.
 
 ## Servicii
 ${list("ro", serviceKeys)}
