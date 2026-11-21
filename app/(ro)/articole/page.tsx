@@ -1,16 +1,18 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { seo } from "@/lib/meta";
 import { Breadcrumbs, CtaBand, Eyebrow, Section, FAQ } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 import { articles } from "@/lib/articles";
 import { faqsRo } from "@/lib/faqs";
 
-export const metadata: Metadata = {
-  title: "Blog: SEO, AI și web design pentru afaceri locale",
+export const metadata: Metadata = seo({
+  title: "Articole despre SEO, AI și web design",
   description: "Ghiduri practice despre SEO, optimizare pentru ChatGPT, Gemini și Perplexity, redesign și date structurate, pe înțelesul proprietarilor de afaceri.",
-  alternates: { canonical: "/articole/" },
-};
+  lang: "ro",
+  canonical: "/articole/",
+});
 
 export default function Articole() {
   return (

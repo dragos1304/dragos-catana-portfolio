@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { faqs } from "@/lib/faqs";
@@ -6,7 +7,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { phone, site, social } from "@/lib/site-config";
-import { alternates, href, pageName, type Lang } from "@/lib/site-map";
+import { href, pageName, type Lang } from "@/lib/site-map";
 
 /** The two pages that end in the lead form: Contact and the free audit. Once each, in either language. */
 
@@ -15,7 +16,7 @@ const linkCls = "font-semibold text-orange-ink underline underline-offset-4";
 const contactCopy = {
   ro: {
     title: "Contact: cere o ofertă pentru site sau SEO",
-    description: `Spune-mi despre proiectul tău. Răspund în maximum ${site.reply.ro}. Poți programa și o discuție pe Calendly.`,
+    description: `Scrie-mi despre site-ul sau proiectul tău SEO: răspund personal în maximum ${site.reply.ro}. Web designer în Cluj-Napoca, cu clienți din toată România.`,
     h1: "Hai să vorbim despre proiectul tău.",
     lead: `Completează formularul sau programează direct o discuție. Răspund la orice mesaj în maximum ${site.reply.ro}.`,
     book: "Programează o discuție:", auditQ: "Doar vrei un audit?", auditLink: "Cere auditul gratuit",
@@ -25,7 +26,7 @@ const contactCopy = {
   },
   en: {
     title: "Contact: get a quote for a website or SEO",
-    description: `Tell me about your project. I reply within ${site.reply.en}. You can also book a call on Calendly.`,
+    description: `Tell me about your website or SEO project and I reply personally within ${site.reply.en}. Web designer in Cluj-Napoca, working with clients across Romania.`,
     h1: "Let's talk about your project.",
     lead: `Fill in the form or book a call directly. I reply to every message within ${site.reply.en}.`,
     book: "Book a call:", auditQ: "Just want an audit?", auditLink: "Get the free audit",
@@ -36,7 +37,7 @@ const contactCopy = {
 } as const;
 
 export function contactMetadata(lang: Lang): Metadata {
-  return { title: contactCopy[lang].title, description: contactCopy[lang].description, alternates: alternates("contact", lang) };
+  return pageMeta("contact", lang, contactCopy[lang]);
 }
 
 export function ContactPage({ lang }: { lang: Lang }) {
@@ -79,7 +80,7 @@ export function ContactPage({ lang }: { lang: Lang }) {
 
 const auditCopy = {
   ro: {
-    title: "Audit SEO gratuit și audit de vizibilitate în AI",
+    title: "Audit SEO gratuit și vizibilitate în AI",
     description: `Audit SEO gratuit, făcut manual: vezi cum apari în Google și dacă te recomandă ChatGPT, Gemini și Perplexity. Rezultatul îl primești în ${site.reply.ro}.`,
     schemaName: "Audit gratuit de vizibilitate în AI și SEO",
     schemaDescription: "Audit manual al modului în care apari în Google și în răspunsurile asistenților AI.",
@@ -107,7 +108,7 @@ const auditCopy = {
 } as const;
 
 export function auditMetadata(lang: Lang): Metadata {
-  return { title: auditCopy[lang].title, description: auditCopy[lang].description, alternates: alternates("audit", lang) };
+  return pageMeta("audit", lang, auditCopy[lang]);
 }
 
 export function AuditPage({ lang }: { lang: Lang }) {

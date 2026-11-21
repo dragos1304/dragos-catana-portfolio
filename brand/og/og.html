@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- Social preview image (1200 x 630). Rendered to public/og-ro.png and public/og-en.png by brand/og/render.mjs: ?lang=ro|en -->
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#f6f5f1; --ink:#131313; --orange:#f1501b; --teal:#07bcb4; --muted:#59594f; }
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; background: var(--paper); font-family: Inter, sans-serif; color: var(--ink); position: relative; overflow: hidden; }
+  .logo { position: absolute; left: 72px; top: 56px; height: 70px; }
+  .mark { position: absolute; right: -70px; bottom: -70px; width: 420px; height: 420px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; }
+  .mark img { width: 330px; }
+  .dot { position: absolute; right: 300px; bottom: 250px; width: 70px; height: 70px; border-radius: 50%; background: var(--teal); }
+  h1 { position: absolute; left: 72px; top: 178px; width: 760px; font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 76px; line-height: 1.0; letter-spacing: -0.03em; }
+  h1 .u { color: var(--orange); }
+  p { position: absolute; left: 72px; top: 452px; width: 740px; white-space: pre-line; font-size: 27px; line-height: 1.35; color: var(--muted); font-weight: 500; }
+  .url { position: absolute; left: 72px; bottom: 52px; font-weight: 600; font-size: 24px; letter-spacing: .02em; }
+</style>
+</head>
+<body>
+  <img class="logo" src="../logo/svg/wordmark.svg" alt="">
+  <h1 id="h"></h1>
+  <p id="p"></p>
+  <div class="url">dragoscatana.com</div>
+  <div class="dot"></div>
+  <div class="mark"><img src="../logo/svg/mark-transparent-white.svg" alt=""></div>
+<script>
+  const T = {
+    ro: { h: 'Fă-ți afacerea ușor de recomandat de <span class="u">AI</span>', p: "Site-uri și SEO pentru afaceri locale din România.\nAudit gratuit, făcut manual, în 24 de ore." },
+    en: { h: 'Make your business easy for <span class="u">AI</span> to recommend', p: "Websites and SEO for local businesses in Romania.\nA free manual audit within 24 hours." },
+  };
+  const lang = new URLSearchParams(location.search).get("lang") || "ro";
+  document.documentElement.lang = lang;
+  document.getElementById("h").innerHTML = T[lang].h;
+  document.getElementById("p").textContent = T[lang].p;
+</script>
+</body>
+</html>

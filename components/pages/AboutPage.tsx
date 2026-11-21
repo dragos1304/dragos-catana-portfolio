@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Breadcrumbs, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { faqs } from "@/lib/faqs";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, personSchema } from "@/lib/schema";
-import { alternates, href, pageName, type Lang } from "@/lib/site-map";
+import { href, pageName, type Lang } from "@/lib/site-map";
 
 /** The About page, once, in either language. */
 
@@ -94,7 +95,7 @@ const copy: Record<Lang, Copy> = {
 };
 
 export function aboutMetadata(lang: Lang): Metadata {
-  return { title: copy[lang].title, description: copy[lang].description, alternates: alternates("about", lang) };
+  return pageMeta("about", lang, copy[lang]);
 }
 
 export function AboutPage({ lang }: { lang: Lang }) {

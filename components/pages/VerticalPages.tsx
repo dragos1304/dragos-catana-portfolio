@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { Guides } from "@/components/Guides";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
-import { alternates, href, pageName, type Lang } from "@/lib/site-map";
+import { href, pageName, type Lang } from "@/lib/site-map";
 import { aiQuestions } from "@/lib/faqs";
 
 /** The two vertical pages (clinics, law firms), once each, in either language. Guides are Romanian-only. */
@@ -167,7 +168,7 @@ const verticals: Record<Vertical, Record<Lang, Copy>> = {
 
 export function verticalMetadata(k: Vertical, lang: Lang): Metadata {
   const m = verticals[k][lang].meta;
-  return { title: m.title, description: m.description, alternates: alternates(k, lang) };
+  return pageMeta(k, lang, m);
 }
 
 export function VerticalPage({ k, lang }: { k: Vertical; lang: Lang }) {

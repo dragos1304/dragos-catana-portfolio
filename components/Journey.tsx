@@ -1,6 +1,6 @@
 import { User } from "lucide-react";
 import type { Lang } from "@/lib/site-map";
-import { site } from "@/lib/site-config";
+import { brand, site } from "@/lib/site-config";
 
 /** The client journey told stage by stage, with Dragoș's part in each step (see USER_JOURNEY.md). */
 export const journey = [
@@ -127,7 +127,8 @@ export function Journey({ lang = "ro" }: { lang?: Lang }) {
                 </div>
                 <div className="rounded-2xl bg-ink p-4 text-paper">
                   <p className="flex items-center gap-2 text-sm font-semibold">
-                    <span aria-hidden className="flex h-6 w-6 items-center justify-center rounded-full bg-orange text-[10px] font-extrabold text-ink">DC</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
+                    <img src={brand.markSmall} alt="" aria-hidden width={24} height={24} className="h-6 w-6 rounded-full" />
                     {lang === "en" ? "Me, Dragoș" : "Eu, Dragoș"}
                   </p>
                   <p className="mt-2 text-[16px] leading-relaxed text-paper/90">{s.me}</p>

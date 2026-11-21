@@ -32,3 +32,5 @@ python build.py <fonts-dir> svg
 ## On the website
 
 Copies live in `public/` (`favicon.ico`, `icon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest`) and `public/brand/` (wordmarks, `logo-ro.png` for the schema `logo`). Links are set in `brand` in `lib/site-config.ts`. Images are cached for a year, so after replacing any of these files, bump `brandVersion` there.
+
+Social previews: `public/og-ro.png` and `public/og-en.png` (1200 × 630) come from `brand/og/og.html`; re-render them with `node brand/og/render.mjs`, then bump `brandVersion`. Page titles, descriptions, Open Graph and Twitter tags all come from `lib/meta.ts` (`pageMeta` for pages in the site map, `seo` for the rest).

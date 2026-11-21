@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Check } from "lucide-react";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { faqs } from "@/lib/faqs";
@@ -8,7 +9,7 @@ import type { ImageName } from "@/lib/images";
 import { LighthouseReport } from "@/components/LighthouseReport";
 import { abs, breadcrumb } from "@/lib/schema";
 import { proof, site } from "@/lib/site-config";
-import { alternates, href, pageName, type Lang } from "@/lib/site-map";
+import { href, pageName, type Lang } from "@/lib/site-map";
 
 /** The Cheesy Media case study, once, in either language. */
 
@@ -38,7 +39,7 @@ const pagesAfter = proof.cheesy.sitemapPages.after;
 
 const copy: Record<Lang, Copy> = {
   ro: {
-    title: "Studiu de caz: redesignul site-ului Cheesy Media",
+    title: "Studiu de caz Cheesy Media: redesign de site",
     description: `Redesign pentru o agenție foto-video din Cluj: design nou, ${pagesAfter} pagini, date structurate, pregătit pentru Google și AI. Performanță pe mobil ${perf.before} → ${perf.after}.`,
     ldHeadline: "Studiu de caz: redesignul site-ului Cheesy Media",
     ldDescription: "Redesign pentru o agenție foto-video din Cluj-Napoca: design, structură, pregătire pentru Google și AI, rezultate măsurate în Lighthouse.",
@@ -196,7 +197,7 @@ const copy: Record<Lang, Copy> = {
 };
 
 export function caseStudyMetadata(lang: Lang): Metadata {
-  return { title: copy[lang].title, description: copy[lang].description, alternates: alternates("cheesy", lang) };
+  return pageMeta("cheesy", lang, copy[lang]);
 }
 
 export function CaseStudyPage({ lang }: { lang: Lang }) {

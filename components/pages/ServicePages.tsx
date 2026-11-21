@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
@@ -6,7 +7,7 @@ import { Guides } from "@/components/Guides";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumb, serviceSchema } from "@/lib/schema";
 import { site } from "@/lib/site-config";
-import { alternates, href, pageName, type Lang, type PageKey } from "@/lib/site-map";
+import { href, pageName, type Lang, type PageKey } from "@/lib/site-map";
 import { aiQuestions } from "@/lib/faqs";
 
 /**
@@ -21,7 +22,7 @@ const ui = {
 } as const;
 
 type Meta = { title: string; description: string };
-const meta = (key: PageKey, lang: Lang, m: Meta): Metadata => ({ title: m.title, description: m.description, alternates: alternates(key, lang) });
+const meta = (key: PageKey, lang: Lang, m: Meta): Metadata => pageMeta(key, lang, m);
 
 /** Breadcrumb + Service schema + the breadcrumb trail, shared by every service page. */
 function ServiceHead({ k, lang, schemaName, schemaDescription }: { k: PageKey; lang: Lang; schemaName: string; schemaDescription: string }) {

@@ -63,6 +63,12 @@ const icons: NonNullable<Metadata["icons"]> = {
 export const brand = {
   wordmark: { src: v("/brand/wordmark.svg"), width: 868, height: 179 },
   wordmarkWhite: { src: v("/brand/wordmark-white.svg"), width: 868, height: 179 },
+  markWhite: v("/brand/mark-white.svg"),
+  markSmall: v("/icon.svg"),
+  /** Social preview images (1200 x 630), one per language; source: brand/og. */
+  og: { ro: v("/og-ro.png"), en: v("/og-en.png") },
+  /** The tagline, the same on every profile (see PROFILES.md). */
+  tagline: { ro: "Fă-ți afacerea ușor de recomandat de AI", en: "Make your business easy for AI to recommend" },
   logo: "/brand/logo-ro.png",
   icons,
   manifest: "/site.webmanifest",

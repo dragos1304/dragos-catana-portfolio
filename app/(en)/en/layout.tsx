@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "../../globals.css";
 import { Shell } from "@/components/Shell";
+import { ogImage } from "@/lib/meta";
 import { brand, site } from "@/lib/site-config";
 
 const description =
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
     url: `${site.url}/en/`,
     title: `${site.name} | Web design and SEO for AI search`,
     description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Dragoș Catană, web designer in Cluj-Napoca" }],
+    images: [ogImage("en")],
   },
-  twitter: { card: "summary_large_image", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", images: [ogImage("en").url] },
   robots: { index: true, follow: true },
   // The host overrides the Referrer-Policy header from .htaccess; the meta tag sets the policy browsers use.
   referrer: "strict-origin-when-cross-origin",

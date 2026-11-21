@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/meta";
 import type { Metadata } from "next";
 import { Breadcrumbs, Button, CtaBand, Eyebrow, FAQ, H2, Section } from "@/components/ui";
 import { faqs } from "@/lib/faqs";
@@ -6,7 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Shot } from "@/components/Shot";
 import { breadcrumb } from "@/lib/schema";
 import { proof, site } from "@/lib/site-config";
-import { alternates, href, pageName, services, type Lang, type PageKey } from "@/lib/site-map";
+import { href, pageName, services, type Lang, type PageKey } from "@/lib/site-map";
 
 /** The two index pages: Work and Services. Once each, in either language. */
 
@@ -42,7 +43,7 @@ const workCopy = {
 } as const;
 
 export function workMetadata(lang: Lang): Metadata {
-  return { title: workCopy[lang].title, description: workCopy[lang].description, alternates: alternates("work", lang) };
+  return pageMeta("work", lang, workCopy[lang]);
 }
 
 export function WorkPage({ lang }: { lang: Lang }) {
@@ -146,7 +147,7 @@ const servicesCopy: Record<Lang, ServicesCopy> = {
 };
 
 export function servicesMetadata(lang: Lang): Metadata {
-  return { title: servicesCopy[lang].title, description: servicesCopy[lang].description, alternates: alternates("services", lang) };
+  return pageMeta("services", lang, servicesCopy[lang]);
 }
 
 export function ServicesPage({ lang }: { lang: Lang }) {

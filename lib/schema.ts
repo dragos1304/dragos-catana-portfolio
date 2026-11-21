@@ -30,8 +30,9 @@ export const siteSchema = {
       name: site.name,
       url: site.url,
       description: site.description,
-      image: `${site.url}/og.png`,
+      image: `${site.url}${brand.og.ro}`,
       logo: `${site.url}${brand.logo}`,
+      slogan: brand.tagline.ro,
       serviceType: ["Creare site web", "Redesign website", "Optimizare SEO", "SEO local", "Optimizare pentru motoare AI (GEO)"],
       hasOfferCatalog: {
         "@type": "OfferCatalog",

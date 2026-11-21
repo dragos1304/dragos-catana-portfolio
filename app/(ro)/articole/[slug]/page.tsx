@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { seo } from "@/lib/meta";
 import { Breadcrumbs, CtaBand, FAQ, Section, Container } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { abs, breadcrumb, ogImage } from "@/lib/schema";
@@ -16,14 +17,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const a = getArticle(slug);
   if (!a) return {};
-  return {
-    // Keep the full title under ~60 characters: drop the " | Dragoș Catană" suffix when it would overflow.
-    title: (a.seoTitle ?? a.title).length > 44 ? { absolute: a.seoTitle ?? a.title } : (a.seoTitle ?? a.title),
+  // Keep the full title under ~60 characters: drop the " | Dragoș Catană" suffix when it would overflow.
+  const t = a.seoTitle ?? a.title;
+  return seo({
+    title: t.length > 44 ? { absolute: t } : t,
     description: a.description,
-    alternates: { canonical: `/articole/${a.slug}/` },
-    openGraph: { type: "article", url: `/articole/${a.slug}/`, title: a.title, description: a.description, publishedTime: a.date, authors: [site.legalName], images: ["/og.png"] },
-  };
-}
+    lang: "ro",
+    canonical: `/articole/${a.slug}/`,
+    article: { publishedTime: a.date, modifiedTime: a.date },
+  });}
 
 function render(b: Block, i: number) {
   switch (b.t) {

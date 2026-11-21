@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/meta";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site-config";
 import { faqsRo } from "@/lib/faqs";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Termeni și condiții",
   description: "Termenii de utilizare ai site-ului dragoscatana.com: conținutul, formularele, auditul gratuit, ofertele și limitele de răspundere, explicate simplu.",
-  alternates: { canonical: "/termeni/" },
-};
+  lang: "ro",
+  canonical: "/termeni/",
+});
 
 export default function Page() {
   return (

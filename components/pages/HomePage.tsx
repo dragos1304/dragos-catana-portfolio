@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/meta";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { ArrowUpRight, Scale, Stethoscope, Store } from "lucide-react";
@@ -7,8 +8,8 @@ import { AnswerCard } from "@/components/AnswerCard";
 import { Shot } from "@/components/Shot";
 import type { ImageName } from "@/lib/images";
 import { Journey, JourneyEnds } from "@/components/Journey";
-import { proof, site } from "@/lib/site-config";
-import { alternates, href, services, type Lang } from "@/lib/site-map";
+import { brand, proof, site } from "@/lib/site-config";
+import { href, services, type Lang } from "@/lib/site-map";
 import { aiQuestions } from "@/lib/faqs";
 
 /** The home page, once, in either language. Route files only pick the language. */
@@ -252,7 +253,7 @@ const tileStyle = ["bg-ink text-paper", "bg-teal text-ink", "bg-orange text-ink"
 
 export function homeMetadata(lang: Lang): Metadata {
   const c = copy[lang];
-  return { title: { absolute: c.title }, description: c.description, alternates: alternates("home", lang) };
+  return pageMeta("home", lang, { title: { absolute: c.title }, description: c.description });
 }
 
 export function HomePage({ lang }: { lang: Lang }) {
@@ -272,13 +273,13 @@ export function HomePage({ lang }: { lang: Lang }) {
             </div>
           </div>
 
-          {/* Portrait slot: monogram on an orange circle until a real photo exists. */}
+          {/* Portrait slot: the logo mark (DC in the drawn ring) on ink, as on the social preview, until a real photo exists. */}
           <div className="relative mx-auto aspect-square w-full max-w-[420px]">
-            <div aria-hidden className="absolute inset-[6%] rounded-full bg-orange" />
-            <div aria-hidden className="absolute right-[2%] top-[4%] h-[24%] w-[24%] rounded-full bg-teal" />
-            <div aria-hidden className="absolute inset-[16%] grid place-items-center rounded-full bg-ink">
-              <span className="font-serif text-[5.5rem] font-extrabold leading-none text-paper sm:text-[7rem]">DC</span>
+            <div aria-hidden className="absolute inset-[6%] grid place-items-center rounded-full bg-ink">
+              {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
+              <img src={brand.markWhite} alt="" width={1024} height={1024} className="w-[80%]" />
             </div>
+            <div aria-hidden className="absolute right-[2%] top-[4%] h-[20%] w-[20%] rounded-full bg-teal" />
             <div className="absolute bottom-[4%] left-0 rotate-[-4deg] rounded-2xl border-2 border-ink bg-canvas px-4 py-3 shadow-[5px_5px_0_0_var(--color-ink)]">
               <p className="text-sm font-semibold text-ink">{c.badgeTop}</p>
               <p className="font-serif text-2xl font-extrabold text-ink">{c.badgeBottom}</p>

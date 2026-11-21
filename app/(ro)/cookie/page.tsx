@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/meta";
 import { LegalPage } from "@/components/LegalPage";
 import { faqsRo } from "@/lib/faqs";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Politica de cookie-uri",
-  description: "Ce cookie-uri și date de browser folosește dragoscatana.com și cum îți poți schimba alegerea.",
-  alternates: { canonical: "/cookie/" },
-};
+  description: "Ce cookie-uri folosește dragoscatana.com: doar statistici Google Analytics, numai cu acordul tău, fără publicitate. Cum îți schimbi alegerea oricând.",
+  lang: "ro",
+  canonical: "/cookie/",
+});
 
 export default function Page() {
   return (

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { seo } from "@/lib/meta";
 import Link from "next/link";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site-config";
 import { faqsRo } from "@/lib/faqs";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seo({
   title: "Politica de confidențialitate",
-  description: "Cum sunt folosite datele personale transmise prin formularele de pe dragoscatana.com.",
-  alternates: { canonical: "/confidentialitate/" },
-};
+  description: "Cum sunt folosite datele personale transmise prin formularele de pe dragoscatana.com: ce colectez, de ce, cât timp le păstrez și ce drepturi ai.",
+  lang: "ro",
+  canonical: "/confidentialitate/",
+});
 
 export default function Page() {
   return (
