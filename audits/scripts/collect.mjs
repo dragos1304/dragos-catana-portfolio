@@ -373,12 +373,21 @@ async function browserChecks(url) {
         const cs = getComputedStyle(el);
         return r.width > 0 && r.height > 0 && cs.visibility !== "hidden" && (r.width < 24 || r.height < 24) && el.closest("p, li") === null; // WCAG 2.2 target size minimum (24px), inline text links excepted
       }).length;
-      const p = document.querySelector("main p, article p, p");
+      // Body text = the font size carrying the most characters in real paragraphs (40+ chars), so a small
+      // uppercase label above the headline doesn't count as the body text.
+      const weight = {};
+      for (const el of document.querySelectorAll("main p, article p, p")) {
+        const len = el.innerText.trim().length;
+        if (len < 40 || el.getBoundingClientRect().height === 0) continue;
+        const fs = parseFloat(getComputedStyle(el).fontSize);
+        weight[fs] = (weight[fs] ?? 0) + len;
+      }
+      const dominant = Object.entries(weight).sort((a, b) => b[1] - a[1])[0];
       return {
         viewportWidth: vw,
         scrollWidth: document.documentElement.scrollWidth,
         horizontalOverflow: document.documentElement.scrollWidth > vw + 2,
-        bodyFontPx: parseFloat(getComputedStyle(p || document.body).fontSize),
+        bodyFontPx: dominant ? parseFloat(dominant[0]) : parseFloat(getComputedStyle(document.body).fontSize),
         smallTapTargets: small,
         hasTelLinkVisible: [...document.querySelectorAll('a[href^="tel:"]')].some((a) => a.getBoundingClientRect().top < window.innerHeight * 2),
         cookieBanner: /cookie/i.test(document.body.innerText.slice(0, 5000)),

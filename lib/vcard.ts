@@ -36,7 +36,7 @@ export function vcard(): string {
   const [last, first] = ["Catană", "Dragoș"];
   const a = place.address;
   const photo = readFileSync(join(process.cwd(), "public", "apple-touch-icon.png")).toString("base64");
-  const profiles = [social.linkedin, social.instagram, social.github, social.behance, social.dribbble];
+  const profiles = [social.linkedin, social.instagram, social.github, social.behance];
   const lines = [
     "BEGIN:VCARD",
     "VERSION:3.0",

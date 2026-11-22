@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { ui } from "@/lib/i18n";
-import { brand, site } from "@/lib/site-config";
+import { brand, phone, site } from "@/lib/site-config";
 import { href, nav, twinOf, type Lang } from "@/lib/site-map";
 
 export function Header({ lang }: { lang: Lang }) {
@@ -32,7 +32,7 @@ export function Header({ lang }: { lang: Lang }) {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link href={href("home", lang)} className="inline-flex shrink-0 items-center" onClick={close}>
           {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG logo */}
-          <img src={brand.wordmark.src} width={brand.wordmark.width} height={brand.wordmark.height} alt={site.name} className="h-10 w-auto sm:h-11" />
+          <img src={brand.wordmark.src} width={brand.wordmark.width} height={brand.wordmark.height} alt={site.name} className="h-9 w-auto sm:h-11" />
         </Link>
         <nav aria-label={t.navLabel} className="hidden items-center gap-7 md:flex">
           {links.map((n) => (
@@ -48,7 +48,13 @@ export function Header({ lang }: { lang: Lang }) {
             {t.auditCta}
           </Link>
         </nav>
-        <details ref={menu} className="group md:hidden">
+        <div className="flex items-center gap-1 md:hidden">
+        {/* Click-to-call on the first screen: on a phone the number is one tap away. */}
+        <a href={`tel:${phone.e164}`} onClick={close}
+          className="inline-flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-orange px-3.5 text-[15px] font-bold text-ink">
+          <Phone className="h-4 w-4" aria-hidden />{t.call}<span className="sr-only">: {phone.display}</span>
+        </a>
+        <details ref={menu} className="group">
           <summary
             className="menu-toggle inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full"
             aria-label={t.menu}
@@ -79,6 +85,7 @@ export function Header({ lang }: { lang: Lang }) {
             <Switch big />
           </nav>
         </details>
+        </div>
       </div>
     </header>
   );

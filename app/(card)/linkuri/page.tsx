@@ -6,7 +6,7 @@ import { abs, personSchema } from "@/lib/schema";
 import { brand, phone, site, social } from "@/lib/site-config";
 import { vcardPath } from "@/lib/vcard";
 
-const title = `Linkuri: ${site.name}`;
+const title = `Linkuri ${site.name}: web design și SEO în Cluj`;
 const description = "Toate linkurile lui Dragoș Catană, web designer și specialist SEO din Cluj-Napoca: audit gratuit, programare, WhatsApp, e-mail și profiluri.";
 
 export const metadata: Metadata = {
@@ -40,7 +40,6 @@ const profiles = [
   { emoji: "📍", ...social.googleMaps },
   { emoji: "💻", ...social.github },
   { emoji: "🎨", ...social.behance },
-  { emoji: "🏀", ...social.dribbble },
 ];
 
 const group = (items: PocketItem[]) => <ul className="space-y-3">{items.map((i) => <li key={i.label}><PocketRow item={i} /></li>)}</ul>;

@@ -28,7 +28,6 @@ export const social = {
   whatsapp: { name: "WhatsApp", url: `https://api.whatsapp.com/send?phone=${phone.e164.replace("+", "")}`, sameAs: false },
   github: { name: "GitHub", url: "https://github.com/dragos1304", sameAs: true },
   behance: { name: "Behance", url: "https://www.behance.net/dragoscatana", sameAs: true },
-  dribbble: { name: "Dribbble", url: "https://dribbble.com/DragosCatana", sameAs: true },
   googleMaps: { name: "Google Maps", url: "https://maps.app.goo.gl/fuxxrpWDCVRRpt578", sameAs: true },
   /** A link hub that points back here: in `sameAs`, llms.txt and the contact page, not a footer button. */
   linktree: { name: "Linktree", url: "https://linktr.ee/dragoscatana", sameAs: true, footer: false },
