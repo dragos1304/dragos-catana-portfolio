@@ -33,6 +33,8 @@ const failing = (sec) => checks.filter((c) => c.section === sec && !c.hidden && 
 const allFailing = checks.filter((c) => !c.hidden && (c.manual || (c.value != null && c.value < 0.9)));
 const byId = Object.fromEntries(checks.map((c) => [c.id, c]));
 const top3 = (f.top3?.length ? f.top3.map((id) => byId[id]).filter(Boolean) : []).concat(allFailing.sort((a, b) => SEV[b.severity] * b.weight - SEV[a.severity] * a.weight)).filter((c, i, arr) => arr.indexOf(c) === i).slice(0, 3);
+const Q = L === "en" ? ["“", "”"] : ["„", "”"];
+const schemaDone = ["localbusiness-schema", "nap-schema"].every((id) => checks.find((c) => c.id === id)?.value === 1);
 const audience = /stomat|dent|clinic|medic|cabinet|spital|fizio|psih|veterin/i.test(f.client.type ?? "") ? T.patients : T.clients;
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -100,7 +102,7 @@ const html = `<!doctype html><html lang="${L}"><head><meta charset="utf-8"><titl
   ${f.ai.prompts.map((p) => `<tr><td><b>${esc(p.engine)}</b></td><td>${esc(p.prompt)}</td><td class="c">${p.mentioned ? `<span class="chip yes">${T.yes}${p.position ? ` · #${p.position}` : ""}</span>` : `<span class="chip no">${T.no}</span>`}</td><td class="small">${esc((p.recommended ?? []).filter((r) => !new RegExp(f.client.name, "i").test(r)).slice(0, 4).join(", ") || "–")}</td></tr>`).join("")}
   </tbody></table>
   <p class="note">${esc(f.ai.method ?? "")} ${T.checkedOn} ${dateFmt(f.ai.checkedAt)}.${f.ai.notChecked?.length ? ` ${T.notCheckedYet}: ${esc(f.ai.notChecked.join(", "))}.` : ""}</p>
-  ${f.ai.prompts.filter((p) => p.excerpt).slice(0, 1).map((p) => `<div class="quote avoid">„${esc(p.excerpt)}”<small>${esc(p.engine)}, ${T.answerTo} „${esc(p.prompt)}”</small></div>`).join("")}` : `<p class="muted">${T.notChecked}</p>`}
+  ${f.ai.prompts.filter((p) => p.excerpt).slice(0, 1).map((p) => `<div class="quote avoid">${Q[0]}${esc(p.excerpt)}${Q[1]}<small>${esc(p.engine)}, ${T.answerTo} ${Q[0]}${esc(p.prompt)}${Q[1]}</small></div>`).join("")}` : `<p class="muted">${T.notChecked}</p>`}
   <div class="avoid"><h3 class="sub">${T.aiReady}</h3>
   <table><tbody>
     ${aiRow(T.aiRows.bots, !Object.entries(data.robots.bots ?? {}).some(([b, v]) => /GPT|OAI|Claude|Perplexity|Google-Extended/.test(b) && v.blocked))}
@@ -116,8 +118,8 @@ const html = `<!doctype html><html lang="${L}"><head><meta charset="utf-8"><titl
 <!-- GBP -->
 <section class="section wrap">
   ${head("04", "gbp", T.leads.gbp(audience))}
-  ${f.gbp?.rating != null ? `<div class="kpis avoid">
-    <div class="kpi ${f.gbp.rating >= 4.6 ? "good" : "warn"}"><div class="k">${T.rating}</div><div class="v">${num(f.gbp.rating, 1)} ★</div><div class="t">${num(f.gbp.reviews)} ${T.reviews}</div></div>
+  ${f.gbp?.exists !== false && (f.gbp?.rating != null || f.gbp?.reviews != null) ? `<div class="kpis avoid">
+    <div class="kpi ${f.gbp.rating >= 4.6 ? "good" : "warn"}"><div class="k">${T.rating}</div><div class="v">${f.gbp.rating != null ? num(f.gbp.rating, 1) + " ★" : "–"}</div><div class="t">${num(f.gbp.reviews)} ${T.reviews}</div></div>
     <div class="kpi ${f.gbp.ownerResponseRate >= 0.9 ? "good" : "warn"}"><div class="k">${T.replies}</div><div class="v">${f.gbp.ownerResponseRate != null ? Math.round(f.gbp.ownerResponseRate * 100) + "%" : "–"}</div><div class="t">${f.gbp.responseSample ? T.lastN(f.gbp.responseSample) : ""}</div></div>
     <div class="kpi ${f.gbp.reviewsPerMonth >= 8 ? "good" : f.gbp.reviewsPerMonth >= 4 ? "warn" : "bad"}"><div class="k">${T.newReviews}</div><div class="v">${f.gbp.reviewsPerMonth != null ? "≈" + num(f.gbp.reviewsPerMonth, 1) : "–"}</div><div class="t">${T.perMonth}</div></div>
   </div>
@@ -154,9 +156,9 @@ const html = `<!doctype html><html lang="${L}"><head><meta charset="utf-8"><titl
 <!-- SCHEMA -->
 <section class="flow wrap">
   ${head("07", "schema", T.leads.schema(audience))}
-  <div class="two">
+  <div class="${schemaDone ? "" : "two"}">
     <div><h3 class="sub" style="margin-top:0">${T.schemaFound}</h3><table><tbody>${[...new Map(P.flatMap((p) => p.schema).map((s) => [s.type, s])).values()].map((s) => `<tr><td><b>${esc(s.type)}</b></td><td class="small muted">${esc(s.has.join(", ") || "–")}</td></tr>`).join("") || `<tr><td class="muted">${T.none}</td></tr>`}</tbody></table></div>
-    <div><h3 class="sub" style="margin-top:0">${T.schemaExample}</h3><pre class="code">${esc(schemaExample())}</pre></div>
+    ${schemaDone ? "" : `<div><h3 class="sub" style="margin-top:0">${T.schemaExample}</h3><pre class="code">${esc(schemaExample())}</pre></div>`}
   </div>
   ${issues("schema")}
 </section>

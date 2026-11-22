@@ -85,11 +85,26 @@ Pune 3 întrebări formulate ca un client obișnuit, în limba clientului:
 - „Am nevoie de [serviciul principal] în [oraș]. Unde merg?”
 - o întrebare pe un serviciu cu marjă mare sau o urgență.
 
-**ChatGPT** merge fără cont: `https://chatgpt.com/?q=<întrebarea, URL-encoded>&hints=search`, aștepți ~20 s și
-copiezi lista. **Gemini** și **Perplexity** cer cont: autentifică-te tu în panoul de browser (parola o introduci
-tu), apoi pune aceleași întrebări. Rezumatele AI din Google le ai deja de la pasul 3a.
+A treia întrebare e despre afacere, pe nume: „Ce servicii oferă <nume>, <tip afacere> din <oraș>, și merită să
+lucrez cu el?”. Nu întreba „Cine este <nume>?”: Claude tratează întrebarea ca fiind despre o persoană privată și
+nu caută nimic.
+
+Toate în browserul din aplicație (Gemini și Claude sunt deja autentificate acolo), **fiecare întrebare într-un chat
+nou și privat**, ca să nu rămână în istoric și să nu fie influențată de conversațiile tale:
+
+| Asistent | Cum | Model |
+|---|---|---|
+| ChatGPT | fără cont: `https://chatgpt.com/?temporary-chat=true&hints=search&q=<întrebarea, URL-encoded>` | cel implicit |
+| Gemini | `gemini.google.com/app` → butonul „Turn on temporary chat” (sus, dreapta), apoi întrebarea | Hydrogen („Everyday help”), nu Neon |
+| Claude | `claude.ai/new?incognito` (pictograma cu fantoma), apoi întrebarea | Sonnet, nu Opus/Fable |
+| Perplexity | cere cont separat; dacă nu e autentificat, trece la `ai.notChecked` | – |
+
+La Gemini, modul temporar se oprește la fiecare chat nou: verifică butonul „Turn off temporary chat” înainte de
+fiecare întrebare. La Claude, verifică pe buton că modelul e tot Sonnet. Așteaptă 30–60 s; Gemini poate dura
+peste un minut. Rezumatele AI din Google le ai deja de la pasul 3a.
 Pentru fiecare răspuns notezi: apare clientul? pe ce poziție? pe cine recomandă în loc? Copiezi cel mult o
-frază scurtă din răspuns la `excerpt`. Ce motor n-ai verificat trece la `ai.notChecked`.
+frază scurtă din răspuns la `excerpt`. Ce motor n-ai verificat trece la `ai.notChecked`. Notează în `ai.method`
+modurile și modelele folosite.
 
 ### 3d. Rezumatul și cele 3 priorități
 
@@ -134,7 +149,7 @@ frază, linkul de programare. Fără atașamente suplimentare, fără liste de p
 | Viteză, accesibilitate, mobil | Lighthouse local + Chrome headless (`design:accessibility-review` ca checklist) | Gratuit, reproductibil, fără limită de cereri. |
 | Poziții în Google, rezumat AI, hartă | Firecrawl → DataForSEO SERP | ~1 credit pe căutare, locație exactă (Cluj-Napoca). Semrush nu e conectat aici. |
 | Profil Google și recenzii | Firecrawl Maps | Rating, recenzii, concurenți și rata de răspuns, cu sursă și dată. |
-| Răspunsuri AI | Browserul din aplicație (ChatGPT fără cont; Gemini/Perplexity cu contul tău) | Nu există un API gratuit care să reproducă exact ce vede un client. |
+| Răspunsuri AI | Browserul din aplicație: ChatGPT fără cont, Gemini (chat temporar) și Claude (incognito, Sonnet) cu contul tău | Nu există un API gratuit care să reproducă exact ce vede un client. |
 | PDF | HTML + CSS randat cu Chrome (puppeteer) | Fonturile și culorile brandului exact ca pe site; skill-ul `pdf` (reportlab) și `docx` dau un aspect mult mai sărac. |
 | Agentul `searchfit-seo:seo-auditor` și `awwwards audit_url` | Opționale, pentru o a doua opinie | Rezultate în format liber, greu de pus într-un raport repetabil. |
 

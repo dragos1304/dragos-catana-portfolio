@@ -15,7 +15,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
 const fmtS = (ms) => (ms / 1000).toLocaleString("ro-RO", { maximumFractionDigits: 1 });
 
 export function schemaTypeFor(type = "") {
-  return /stomat|dent/i.test(type) ? "Dentist" : /avoc|jurid|law|lege/i.test(type) ? "LegalService" : /clinic|medic/i.test(type) ? "MedicalClinic" : /coach|consult|mentor|train|agen/i.test(type) ? "ProfessionalService" : "LocalBusiness";
+  return /stomat|dent/i.test(type) ? "Dentist" : /avoc|jurid|law|lege/i.test(type) ? "LegalService" : /clinic|medic/i.test(type) ? "MedicalClinic" : /coach|consult|mentor|train|agen|freelanc|web ?design|seo|marketing/i.test(type) ? "ProfessionalService" : "LocalBusiness";
 }
 
 export function runChecks(data, f) {
@@ -80,10 +80,10 @@ export function runChecks(data, f) {
   }
   add({ id: "broken-internal", section: "technical", weight: 2, value: clamp(1 - brokenInt.length / 5), severity: "important", effort: "quick",
     ro: { title: `${brokenInt.length} linkuri interne nu funcționează`, detail: "Vizitatorii și Google ajung pe pagini de eroare.", fix: "Corectarea linkurilor sau redirecționări 301 către paginile noi." },
-    en: { title: `${brokenInt.length} internal links are broken`, detail: "Visitors and Google hit error pages.", fix: "Fix the links or 301-redirect them." } });
+    en: { title: brokenInt.length === 1 ? "1 internal link is broken" : `${brokenInt.length} internal links are broken`, detail: "Visitors and Google hit error pages.", fix: "Fix the links or 301-redirect them." } });
   add({ id: "broken-external", section: "technical", weight: 0.5, value: clamp(1 - brokenExt.length / 5), severity: "minor", effort: "quick",
     ro: { title: `${brokenExt.length} linkuri către alte site-uri nu mai funcționează`, detail: brokenExt.slice(0, 2).map((l) => `${shortUrl(l.url)} (eroare ${l.status}, pe ${shortUrl(l.foundOn[0])})`).join("; "), fix: "Înlocuirea sau ștergerea lor." },
-    en: { title: `${brokenExt.length} outbound links are dead`, detail: brokenExt.slice(0, 2).map((l) => `${shortUrl(l.url)} (error ${l.status})`).join("; "), fix: "Replace or remove them." } });
+    en: { title: brokenExt.length === 1 ? "1 outbound link is dead" : `${brokenExt.length} outbound links are dead`, detail: brokenExt.slice(0, 2).map((l) => `${shortUrl(l.url)} (error ${l.status})`).join("; "), fix: "Replace or remove them." } });
   add({ id: "hsts", section: "technical", weight: 0.5, value: data.headers["strict-transport-security"] ? 1 : 0, severity: "minor", effort: "quick",
     ro: { title: "Lipsește antetul de securitate HSTS", detail: "Browserul nu e obligat să folosească mereu conexiunea securizată.", fix: "Activarea HSTS pe server." },
     en: { title: "No HSTS header", detail: "Browsers are not told to always use HTTPS.", fix: "Enable HSTS on the server." } });
@@ -94,7 +94,7 @@ export function runChecks(data, f) {
   // ---------------- On-page ----------------
   add({ id: "titles", section: "onpage", weight: 2, value: pct(goodTitle, n), severity: "important", effort: "quick",
     ro: { title: `${n - goodTitle} din ${n} pagini au titlul lipsă, prea scurt sau prea lung`, detail: "Titlul e primul lucru pe care îl vede omul în Google.", fix: "Titluri de 30–65 de caractere: serviciu + oraș + nume." },
-    en: { title: `${n - goodTitle} of ${n} pages have a missing, too short or too long title`, detail: "The title is the first thing people see in Google.", fix: "30–65 character titles: service + city + name." } });
+    en: { title: `${n - goodTitle} of ${n} pages ${n - goodTitle === 1 ? "has" : "have"} a missing, too short or too long title`, detail: "The title is the first thing people see in Google.", fix: "30–65 character titles: service + city + name." } });
   add({ id: "dup-titles", section: "onpage", weight: 2, value: n ? clamp(1 - dupTitles / Math.max(1, n - 1)) : null, severity: "important", effort: "quick",
     ro: { title: `${dupTitles} pagini repetă titlul altei pagini`, detail: "Google nu știe ce pagină să arate pentru ce căutare.", fix: "Un titlu unic pentru fiecare pagină." },
     en: { title: `${dupTitles} pages repeat another page's title`, detail: "Google can't tell which page to show for which search.", fix: "A unique title per page." } });
@@ -139,14 +139,14 @@ export function runChecks(data, f) {
   if (mob) {
     add({ id: "overflow", section: "mobile", weight: 2, value: mob.horizontalOverflow ? 0 : 1, severity: "important", effort: "quick",
       ro: { title: "Pe telefon pagina iese din ecran lateral", detail: `Conținutul are ${mob.scrollWidth}px pe un ecran de ${mob.viewportWidth}px.`, fix: "Corectarea elementelor mai late decât ecranul." },
-      en: { title: "The page scrolls sideways on phones", detail: "", fix: "Fix elements wider than the screen." } });
+      en: { title: "The page scrolls sideways on phones", detail: "Something is wider than the screen, so the page wobbles left and right.", fix: "Fix elements wider than the screen." } });
     add({ id: "font", section: "mobile", weight: 1, value: mob.bodyFontPx >= 16 ? 1 : mob.bodyFontPx >= 14 ? 0.5 : 0, severity: "minor", effort: "quick",
-      ro: { title: `Textul e mic pe telefon (${mob.bodyFontPx}px)`, detail: "Sub 16px, textul se citește greu fără zoom.", fix: "Text de bază de minimum 16px." }, en: { title: `Small text on phones (${mob.bodyFontPx}px)`, detail: "", fix: "16px minimum body text." } });
+      ro: { title: `Textul e mic pe telefon (${mob.bodyFontPx}px)`, detail: "Sub 16px, textul se citește greu fără zoom.", fix: "Text de bază de minimum 16px." }, en: { title: `Small text on phones (${mob.bodyFontPx}px)`, detail: "Below 16px, text is hard to read without zooming.", fix: "16px minimum body text." } });
     add({ id: "tap", section: "mobile", weight: 1, value: clamp(1 - mob.smallTapTargets / 15), severity: "minor", effort: "quick",
       ro: { title: `${mob.smallTapTargets} butoane sau linkuri sunt prea mici pentru deget`, detail: "Elemente mai mici de 24×24px, greu de apăsat pe telefon.", fix: "Zone de atingere de cel puțin 44×44px pentru butoane și iconițe." },
       en: { title: `${mob.smallTapTargets} tap targets are too small`, detail: "Under 24×24px.", fix: "44×44px touch areas." } });
     add({ id: "tel", section: "mobile", weight: 1, value: mob.hasTelLinkVisible ? 1 : 0, severity: "important", effort: "quick",
-      ro: { title: "Pe telefon nu se poate suna direct din primul ecran", detail: "Omul trebuie să caute și să copieze numărul.", fix: "Buton „Sună” vizibil sus, cu link tel:." }, en: { title: "No click-to-call near the top on mobile", detail: "", fix: "A visible call button with a tel: link." } });
+      ro: { title: "Pe telefon nu se poate suna direct din primul ecran", detail: "Omul trebuie să caute și să copieze numărul.", fix: "Buton „Sună” vizibil sus, cu link tel:." }, en: { title: "No click-to-call near the top on mobile", detail: "Visitors have to find and copy the number themselves.", fix: "A visible call button near the top, with a tel: link." } });
   }
   if (lh) add({ id: "a11y", section: "mobile", weight: 3, value: lh.scores.accessibility / 100, severity: lh.scores.accessibility < 70 ? "important" : "minor", effort: "quick",
     ro: { title: `Accesibilitate ${lh.scores.accessibility}/100`, detail: accessibilityDetail(lh, "ro"), fix: "Contrast suficient, texte pentru linkuri și imagini, ordinea corectă a titlurilor." },
@@ -190,14 +190,14 @@ export function runChecks(data, f) {
   if (g?.exists === false) add({ id: "gbp-missing", section: "gbp", weight: 6, value: 0, severity: "critic", effort: "quick",
     ro: { title: "Nu am găsit un profil Google Business pentru afacere", detail: g.missingNote ?? "Fără profil, afacerea nu poate apărea pe harta Google și are mai puține șanse să fie recomandată de AI.", fix: "Crearea și verificarea profilului, cu categoria potrivită, link spre site, fotografii și primele recenzii de la clienți reali." },
     en: { title: "No Google Business Profile found", detail: g.missingNote_en ?? g.missingNote ?? "Without one, the business can't appear on Google Maps.", fix: "Create and verify the profile, with the right category, website link, photos and first reviews from real clients." } });
-  if (g?.rating != null) {
+  if (g && g.exists !== false && (g.rating != null || g.reviews != null)) {
     const comp = (g.competitors ?? []).map((c) => c.reviews).sort((a, b) => a - b);
     const median = comp.length ? comp[Math.floor(comp.length / 2)] : null;
-    add({ id: "gbp-rating", section: "gbp", weight: 2, value: clamp((g.rating - 3.5) / 1.3), severity: "important", effort: "big",
-      ro: { title: `Nota pe Google: ${g.rating.toLocaleString("ro-RO")}`, detail: "", fix: "" }, en: { title: `Google rating: ${g.rating}`, detail: "", fix: "" }, hidden: g.rating >= 4.6 });
+    if (g.rating != null) add({ id: "gbp-rating", section: "gbp", weight: 2, value: clamp((g.rating - 3.5) / 1.3), severity: "important", effort: "big",
+      ro: { title: `Nota pe Google: ${g.rating?.toLocaleString("ro-RO")}`, detail: "", fix: "" }, en: { title: `Google rating: ${g.rating}`, detail: "", fix: "" }, hidden: g.rating >= 4.6 });
     if (median) add({ id: "gbp-volume", section: "gbp", weight: 2, value: clamp(g.reviews / median), severity: "important", effort: "quick",
       ro: { title: `${g.reviews} recenzii, față de ${median} la afacerea tipică din zonă`, detail: `Valoarea mediană din ${comp.length} afaceri similare de pe Google Maps. Numărul de recenzii contează pentru poziția pe hartă și pentru recomandările AI.`, fix: "Cerere de recenzie trimisă sistematic după fiecare client servit." },
-      en: { title: `${g.reviews} reviews vs a median of ${median} among nearby competitors`, detail: "", fix: "Ask for a review after every treatment." }, hidden: g.reviews >= median });
+      en: { title: `${g.reviews} reviews vs a median of ${median} among similar local businesses`, detail: `Median of ${comp.length} similar businesses on Google Maps. Review count matters for the map ranking and for AI recommendations.`, fix: "Ask every client for a review once the work is delivered, with a direct link." }, hidden: g.reviews >= median });
     if (g.ownerResponseRate != null) add({ id: "gbp-replies", section: "gbp", weight: 2, value: g.ownerResponseRate, severity: "minor", effort: "quick",
       ro: { title: `Răspundeți la ${Math.round(g.ownerResponseRate * 100)}% din recenzii`, detail: "", fix: "Răspuns la fiecare recenzie, în maximum 48 de ore." }, en: { title: `You reply to ${Math.round(g.ownerResponseRate * 100)}% of reviews`, detail: "", fix: "Reply to every review within 48 hours." }, hidden: g.ownerResponseRate >= 0.9 });
     add({ id: "gbp-site", section: "gbp", weight: 1, value: g.websiteLinked ? 1 : 0, severity: "important", effort: "quick",

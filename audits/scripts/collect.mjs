@@ -63,7 +63,7 @@ const homeParsed = parsePage(finalUrl, home);
 const candidates = new Set();
 for (const u of [...sitemap.urls, ...homeParsed.internalLinks]) {
   const clean = stripHash(u);
-  if (sameSite(clean) && !/\.(pdf|jpe?g|png|webp|gif|svg|zip|docx?|xlsx?)$/i.test(clean) && clean !== finalUrl) candidates.add(clean);
+  if (sameSite(clean) && !/\.(pdf|jpe?g|png|webp|gif|svg|zip|docx?|xlsx?)$/i.test(clean) && stripSlash(clean) !== stripSlash(finalUrl)) candidates.add(clean);
 }
 // Prefer short, top-level paths (services, contact, about) over deep blog posts.
 const picked = [...candidates].sort((a, b) => depth(a) - depth(b) || a.length - b.length).slice(0, Math.max(0, maxPages - 1));
@@ -85,8 +85,10 @@ const linkResults = await pool([...[...internal].slice(0, 150).map((u) => ({ u, 
   return { url: u, kind, ...r, foundOn: pages.filter((p) => p.internalLinks.includes(u) || p.externalLinks.includes(u)).map((p) => p.url).slice(0, 3) };
 });
 // Broken = the server answered 4xx/5xx twice. No answer at all is reported apart, as "unreachable", never as broken.
-const broken = linkResults.filter((r) => r.status >= 400 && r.status !== 429);
-const unreachable = linkResults.filter((r) => r.status === 0 || r.status === 429);
+// External 401/403 is almost always a bot wall (Trustpilot, Cloudflare), not a dead page: report it as unreachable.
+const walled = (r) => r.kind === "external" && (r.status === 401 || r.status === 403);
+const broken = linkResults.filter((r) => r.status >= 400 && r.status !== 429 && !walled(r));
+const unreachable = linkResults.filter((r) => r.status === 0 || r.status === 429 || walled(r));
 const redirected = linkResults.filter((r) => r.kind === "internal" && r.redirects > 0 && r.status < 400);
 
 // ---------- 5. Browser: screenshots + mobile checks ----------
@@ -154,6 +156,9 @@ function parseArgs(a) {
 }
 function normalizeUrl(u) {
   return /^https?:\/\//i.test(u) ? u : `https://${u}`;
+}
+function stripSlash(u) {
+  return u.replace(/\/+$/, "");
 }
 function stripHash(u) {
   try { const x = new URL(u); x.hash = ""; return x.href; } catch { return u; }
