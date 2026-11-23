@@ -23,6 +23,8 @@ type Copy = {
   palette: { hex: string; name: string; use: string; ink: boolean }[];
   headlinesLabel: string; headlinesNote: string; textLabel: string; textSample: string; textNote: string;
   design: [string, string][];
+  mapEyebrow: string; mapH2: string; mapLead: string; mapAlt: string; mapNote: string;
+  map: { at: number; t: string; d: string }[];
   pagesEyebrow: string; pagesH2: string; pagesLead: string;
   pages: { name: ImageName; label: string; alt: string }[];
   phones: { name: ImageName; label: string; alt: string }[];
@@ -79,6 +81,22 @@ const copy: Record<Lang, Copy> = {
       ["Mascota rămâne vedeta", "Brânza cu difuzoare apare în logo și pe pagini. Nu am inventat o identitate nouă, am pus-o în valoare."],
       ["Imagini mari, în cadre", "Serviciile au imagini mari, cu margini groase și colțuri rotunjite, în loc de blocuri de text."],
       ["Un singur pas următor, mereu vizibil", "Butonul galben „Cere ofertă” este în meniu pe fiecare pagină, iar pe telefon WhatsApp se deschide dintr-o atingere."],
+    ],
+    mapEyebrow: "Prima pagină, de sus până jos",
+    mapH2: "O poveste în nouă pași, nu un perete de text.",
+    mapLead: "Așa arată toată pagina principală, într-o singură imagine. Fiecare bandă răspunde la o întrebare pe care și-o pune vizitatorul, în ordinea în care și-o pune.",
+    mapAlt: "Toată pagina principală a noului site Cheesy Media, de la titlul de sus până la subsol, într-o singură captură verticală",
+    mapNote: "Captură a paginii întregi pe desktop, micșorată ca să încapă pe ecran.",
+    map: [
+      { at: 3, t: "Ce faceți?", d: "Titlul spune ce face agenția și pentru cine. Butonul galben „Cere ofertă” e chiar lângă el." },
+      { at: 11, t: "Ce servicii aveți?", d: "O bandă cu toate serviciile și patru repere scurte despre cum lucrează echipa." },
+      { at: 15, t: "Cu ce mă puteți ajuta?", d: "Foto, video, social media și web, în panouri care se deschid. Fiecare duce la pagina serviciului." },
+      { at: 29, t: "Ați mai făcut asta?", d: "Lucrări recente, cu tipul proiectului scris pe fiecare." },
+      { at: 39, t: "De ce voi?", d: "Patru motive scurte, pe banda violet păstrată din vechiul brand." },
+      { at: 50, t: "Cum e să lucrez cu voi?", d: "Fotografii din filmări și ședințe foto, ca vizitatorul să vadă oamenii, nu doar logo-ul." },
+      { at: 65, t: "Ce urmează după ce vă scriu?", d: "Procesul în 4 pași, de la analiză la administrarea conturilor." },
+      { at: 76, t: "Cât de mult pot delega?", d: "Trei pachete (Start, Growth, Full Content), fiecare cu oferta personalizată." },
+      { at: 89, t: "Mai am o întrebare.", d: "Întrebări frecvente cu răspunsuri scurte, apoi ultimul îndemn spre ofertă." },
     ],
     pagesEyebrow: "Paginile noi", pagesH2: "Fiecare serviciu are pagina lui.",
     pagesLead: "Din aceeași pagină lungă au ieșit pagini separate pentru servicii, fiecare serviciu în parte, proces, portofoliu, despre și contact. Același sistem vizual, pe toate.",
@@ -157,6 +175,22 @@ const copy: Record<Lang, Copy> = {
       ["The mascot stays the star", "The cheese with speakers appears in the logo and on the pages. I didn't invent a new identity, I made the most of the existing one."],
       ["Big images, in frames", "Services have large images with thick borders and rounded corners, instead of blocks of text."],
       ["One next step, always visible", "The yellow “Cere ofertă” (Get a quote) button is in the menu on every page, and WhatsApp is one tap away on a phone."],
+    ],
+    mapEyebrow: "The home page, top to bottom",
+    mapH2: "A story in nine steps, not a wall of text.",
+    mapLead: "This is the whole home page in a single image. Each band answers a question visitors ask, in the order they ask it.",
+    mapAlt: "The entire home page of the new Cheesy Media site, from the top headline to the footer, in one vertical screenshot",
+    mapNote: "Full-page desktop screenshot, scaled down to fit the screen. The site is in Romanian.",
+    map: [
+      { at: 3, t: "What do you do?", d: "The headline says what the agency does and for whom. The yellow “Get a quote” button sits right next to it." },
+      { at: 11, t: "Which services?", d: "A band listing every service, plus four short facts about how the team works." },
+      { at: 15, t: "How can you help me?", d: "Photo, video, social media and web, in panels that open up. Each one leads to its service page." },
+      { at: 29, t: "Have you done this before?", d: "Recent work, with the project type written on each one." },
+      { at: 39, t: "Why you?", d: "Four short reasons, on the violet band kept from the old brand." },
+      { at: 50, t: "What's it like to work with you?", d: "Photos from shoots and filming days, so visitors see the people, not just the logo." },
+      { at: 65, t: "What happens after I get in touch?", d: "The 4-step process, from analysis to managing the accounts." },
+      { at: 76, t: "How much can I hand over?", d: "Three packages (Start, Growth, Full Content), each with a tailored quote." },
+      { at: 89, t: "I still have a question.", d: "An FAQ with short answers, then a last nudge towards a quote." },
     ],
     pagesEyebrow: "The new pages", pagesH2: "Every service has its own page.",
     pagesLead: "The one long page became separate pages for services, each individual service, the process, the portfolio, about and contact. The same visual system on all of them.",
@@ -293,6 +327,36 @@ export function CaseStudyPage({ lang }: { lang: Lang }) {
             </li>
           ))}
         </ol>
+      </Section>
+
+      <Section id="pagina-principala" white>
+        <Eyebrow>{c.mapEyebrow}</Eyebrow>
+        <H2>{c.mapH2}</H2>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{c.mapLead}</p>
+        <div className="mt-10 grid items-start gap-10 md:grid-cols-[minmax(0,300px)_1fr] lg:gap-16">
+          <figure className="mx-auto w-full max-w-[300px] md:mx-0">
+            {/* Numbered markers sit at each band's height (percent of the screenshot), matching the list. */}
+            <div className="relative rounded-2xl border-2 border-ink bg-canvas shadow-[6px_6px_0_0_var(--color-ink)]">
+              <Shot name="home-full" frame={false} alt={c.mapAlt} sizes="300px" className="overflow-hidden rounded-[14px]" />
+              {c.map.map((m, i) => (
+                <span key={m.t} aria-hidden style={{ top: `${m.at}%` }}
+                  className="absolute -left-4 flex h-8 w-8 items-center justify-center rounded-full border-2 border-ink bg-orange font-serif text-sm font-extrabold text-ink">{i + 1}</span>
+              ))}
+            </div>
+            <figcaption className="mt-4 text-sm text-muted">{c.mapNote}</figcaption>
+          </figure>
+          <ol className="space-y-6 md:sticky md:top-28">
+            {c.map.map((m, i) => (
+              <li key={m.t} className="flex gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-orange font-serif text-sm font-extrabold text-ink">{i + 1}</span>
+                <div>
+                  <h3 className="font-serif text-xl font-extrabold">{m.t}</h3>
+                  <p className="mt-1 text-[16px] leading-relaxed text-muted">{m.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Section>
 
       <Section id="pagini">

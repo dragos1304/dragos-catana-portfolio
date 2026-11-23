@@ -99,6 +99,16 @@
       }
     ]
   },
+  "home-full": {
+    "dir": "/lucrari/cheesy-media",
+    "variants": [
+      {
+        "src": "/lucrari/cheesy-media/home-full-361.webp?v=7488200e",
+        "w": 361,
+        "h": 2000
+      }
+    ]
+  },
   "lighthouse-dupa": {
     "dir": "/lucrari/cheesy-media",
     "variants": [
