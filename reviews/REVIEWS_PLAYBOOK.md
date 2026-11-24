@@ -14,7 +14,7 @@ Fișierele din `reviews/`:
 | `log.md` | jurnalul: cui ai cerut, cine a lăsat recenzie, dacă ai răspuns |
 
 Linkul de recenzie (Google Business Profile → „Cere recenzii” → copiază linkul):
-**`{{LINK_RECENZIE}}`** (de completat; nu se ghicește).
+**`https://g.page/r/Ccr1yIpfx9RWEBI/review`**
 
 ---
 

@@ -4,7 +4,7 @@ Reguli scurte (detalii în `REVIEWS_PLAYBOOK.md` §1): ceri tuturor clienților,
 copiat, nu oferi nimic în schimb, cel mult o reamintire. Personalizează fiecare mesaj: numele, proiectul,
 un detaliu real. Un mesaj care sună generic primește mai rar răspuns.
 
-`{{LINK_RECENZIE}}` = linkul „Cere recenzii” din Google Business Profile (de completat).
+Linkul de recenzie (Google Business Profile → „Cere recenzii”): https://g.page/r/Ccr1yIpfx9RWEBI/review
 Câmpurile în `[paranteze]` le completezi tu (sau Claude, din ce îi spui despre proiect).
 
 Subiectele sugerate sunt **opționale și deschise**: îl ajută pe client să nu se blocheze la pagina albă,
@@ -18,7 +18,7 @@ nu îi spun ce să scrie. Nu le transforma în propoziții gata făcute.
 
 > Salut, [Prenume]! Mă bucur că [site-ul / noul site / proiectul] pentru [afacere] e live.
 > Am o rugăminte: dacă ai două minute, mi-ar fi de mare ajutor o recenzie pe Google, cu cuvintele tale.
-> Aici e linkul: {{LINK_RECENZIE}}
+> Aici e linkul: https://g.page/r/Ccr1yIpfx9RWEBI/review
 >
 > Dacă nu știi de unde să începi, poți spune pe scurt ce am făcut împreună, ce fel de afacere ai și unde,
 > cum a decurs colaborarea și, dacă s-a schimbat ceva de atunci, ce anume. Orice ai scrie e perfect, inclusiv
@@ -28,7 +28,7 @@ nu îi spun ce să scrie. Nu le transforma în propoziții gata făcute.
 
 > Bună ziua, [Prenume / Domnule/Doamnă Nume]! Mă bucur că [site-ul] pentru [afacere] este online.
 > Dacă aveți două minute, m-ar ajuta mult o recenzie pe Google, scrisă cum vi se pare potrivit:
-> {{LINK_RECENZIE}}
+> https://g.page/r/Ccr1yIpfx9RWEBI/review
 >
 > Câteva idei, dacă vă sunt de folos: ce am lucrat împreună, ce fel de afacere aveți și unde, cum a decurs
 > colaborarea, iar dacă ați observat vreo schimbare de atunci, care a fost. Orice părere sinceră contează,
@@ -38,7 +38,7 @@ nu îi spun ce să scrie. Nu le transforma în propoziții gata făcute.
 
 > Hi [First name]! Glad [the new site / the project] for [business] is live.
 > One favour: if you have two minutes, a Google review in your own words would help me a lot:
-> {{LINK_RECENZIE}}
+> https://g.page/r/Ccr1yIpfx9RWEBI/review
 >
 > If you're not sure where to start, you could mention what we worked on, what kind of business you run and
 > where, how the work went, and what changed afterwards, if anything did. Any honest feedback is welcome,
@@ -59,7 +59,7 @@ nu îi spun ce să scrie. Nu le transforma în propoziții gata făcute.
 >
 > Lucrez pe cont propriu, iar cei mai mulți clienți noi mă găsesc pe Google, așa că o recenzie de la tine
 > m-ar ajuta mult. Durează cam două minute:
-> {{LINK_RECENZIE}}
+> https://g.page/r/Ccr1yIpfx9RWEBI/review
 >
 > Scrie-o cum vrei tu. Dacă te ajută, câteva lucruri pe care le-ai putea atinge:
 > - ce am făcut împreună;
@@ -83,7 +83,7 @@ nu îi spun ce să scrie. Nu le transforma în propoziții gata făcute.
 >
 > I work on my own, and most new clients find me on Google, so a review from you would genuinely help.
 > It takes about two minutes:
-> {{LINK_RECENZIE}}
+> https://g.page/r/Ccr1yIpfx9RWEBI/review
 >
 > Write it however you like. If it helps, you could touch on:
 > - what we worked on;
@@ -112,7 +112,7 @@ Se trimite tuturor celor care au primit auditul, indiferent dacă au devenit cli
 > lui sau despre punctul care l-a interesat.]
 >
 > Dacă ai două minute, m-ar ajuta o recenzie pe Google despre audit, cu cuvintele tale, oricum ți s-a părut:
-> {{LINK_RECENZIE}}
+> https://g.page/r/Ccr1yIpfx9RWEBI/review
 >
 > Poți spune, de exemplu, ce ai primit (un audit gratuit pentru site), ce fel de afacere ai și unde,
 > ce ți s-a părut clar sau util și, dacă ai aplicat ceva din el, ce a ieșit. Și dacă ceva n-a fost util,
@@ -128,7 +128,7 @@ Se trimite tuturor celor care au primit auditul, indiferent dacă au devenit cli
 > Glad you had a chance to go through the audit for [business / site]. [Optional: one line about their question.]
 >
 > If you have two minutes, a Google review of the audit in your own words, whatever you thought of it, would help me a lot:
-> {{LINK_RECENZIE}}
+> https://g.page/r/Ccr1yIpfx9RWEBI/review
 >
 > You could mention what you received (a free audit of your site), what kind of business you run and where,
 > what was clear or useful, and, if you've applied anything from it, how it went. If something wasn't useful,
@@ -144,12 +144,12 @@ Se trimite tuturor celor care au primit auditul, indiferent dacă au devenit cli
 **RO**
 
 > Salut, [Prenume]! Revin doar o dată cu linkul pentru recenzie, în caz că s-a pierdut printre mesaje:
-> {{LINK_RECENZIE}}
+> https://g.page/r/Ccr1yIpfx9RWEBI/review
 > Dacă nu ai timp sau nu ți se potrivește, nicio problemă. Mulțumesc oricum!
 
 **EN**
 
-> Hi [First name]! Just resending the review link once, in case it got buried: {{LINK_RECENZIE}}
+> Hi [First name]! Just resending the review link once, in case it got buried: https://g.page/r/Ccr1yIpfx9RWEBI/review
 > If it's not a good time or not your thing, no problem at all. Thanks either way!
 
 ---

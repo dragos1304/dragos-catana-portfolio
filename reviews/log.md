@@ -9,4 +9,5 @@ Un rând pe fiecare cerere și pe fiecare recenzie primită. **Fără date de co
 
 | Data | Prenume | Serviciu | Platformă | Stare | Răspuns | Note |
 |---|---|---|---|---|---|---|
-| | | | | | | |
+| 2026-11-24 | Flaviu (Cheesy Media) | redesign site, agenție foto-video, Cluj | Google | primit (5★) | da (scurt) | Ai pus deja un răspuns scurt („Mulțumesc! Mi-a făcut plăcere…”); de înlocuit cu cel nou |
+| 2026-11-24 | Cheesy Media (cont firmă) | redesign site, agenție foto-video, Cluj | Google | primit (5★) | nu | Același proiect ca rândul de mai sus |
