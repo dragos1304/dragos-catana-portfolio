@@ -5,7 +5,8 @@
   "description": "Free SEO / AI-visibility audit: collect data, render the branded PDF report.",
   "scripts": {
     "collect": "node scripts/collect.mjs",
-    "render": "node scripts/render.mjs"
+    "render": "node scripts/render.mjs",
+    "preview": "node scripts/preview.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

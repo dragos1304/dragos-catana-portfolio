@@ -1,5 +1,8 @@
 # Audit gratuit de vizibilitate: ghid pas cu pas
 
+> Același flux, scris pentru Claude, e skill-ul `generate-ai-audit` din `.claude/skills/`. Scrie-i lui Claude
+> datele din formular și rulează tot, până la PDF și ciorna de e-mail.
+
 Cum transformi o cerere venită din formularul de pe
 [/audit-gratuit-vizibilitate-ai/](https://dragoscatana.com/audit-gratuit-vizibilitate-ai/) într-un raport PDF
 în brandul tău, trimis în maximum 24 de ore. Durată realistă: 60–90 de minute pe audit, din care ~15 minute
@@ -166,6 +169,7 @@ audits/
   scripts/checks.mjs           regulile de scor (o singură sursă)
   scripts/strings.mjs          toate textele fixe, RO și EN
   scripts/render.mjs           data.json + findings.json → report.html + report.pdf
+  scripts/preview.mjs          capturi ale raportului, pentru recitire (clients/<slug>/png/)
   template/report.css          designul (paper #f6f5f1, ink #131313, orange #f1501b)
   template/findings.example.json  model de completat
   clients/                     date de client, NU se comite (.gitignore)
