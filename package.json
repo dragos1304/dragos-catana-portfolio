@@ -9,7 +9,11 @@
     "lint": "next lint",
     "test": "vitest run",
     "prebuild": "node scripts/image-manifest.mjs",
-    "pretest": "node scripts/image-manifest.mjs"
+    "pretest": "node scripts/image-manifest.mjs",
+    "seo:health": "node seo/scripts/health.mjs",
+    "seo:gsc": "node seo/scripts/gsc.mjs",
+    "seo:competitors": "node seo/scripts/competitors.mjs",
+    "seo:syndicate": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON seo/scripts/syndicate.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.75.0",

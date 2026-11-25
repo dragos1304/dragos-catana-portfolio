@@ -48,3 +48,9 @@ moodboards/
 # audits: client data and outputs stay local (personal and business data)
 /audits/clients/
 /audits/node_modules/
+
+# SEO reports, drafts and Search Console exports stay local (this repo is public)
+/seo/reports/
+/seo/drafts/
+/seo/exports/
+site-deploy-*.zip
