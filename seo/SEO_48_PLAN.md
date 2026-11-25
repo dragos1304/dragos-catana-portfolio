@@ -1,7 +1,7 @@
 # 48 SEO tricks: status and plan
 
 Source: slides 02–07 of "48 SEO Tricks" (six slides of 8). Checked 25 Nov 2026 against the live site, this repo and public profiles.
-**Done** = checked. **Auto** = a script or the weekly task does it. **You** = needs your account. **Skip** = wrong for this business. **?** = could not be checked.
+**Done** = checked. **Auto** = a script or the weekly task does it. **Auto weekly** items need the weekly task, which is **not created yet** (instructions: `seo/WEEKLY_CHECK.md`). **You** = needs your account. **Skip** = wrong for this business. **?** = could not be checked.
 
 Commands: `npm run seo:health` · `npm run seo:gsc -- seo/exports/Queries.csv` · `npm run seo:competitors` · `npm run seo:syndicate -- <slug>`
 
@@ -32,12 +32,12 @@ Commands: `npm run seo:health` · `npm run seo:gsc -- seo/exports/Queries.csv` �
 ## 04 Borrowed authority
 | # | Trick | Status | Plan |
 |---|---|---|---|
-| 1 | LinkedIn article | Missing | Auto draft monthly; you post. No promise of "38 minutes". |
+| 1 | LinkedIn article | Missing | Auto weekly (monthly draft); you post. No promise of "38 minutes". |
 | 2 | Interview transcript | Missing | You: record 30 min (phone, free). Best source of things only you know. |
 | 3 | One keyword on 7 platforms | Skip | Near-duplicates with no added value. Use 2: LinkedIn and Medium. |
 | 4 | Gist / NotebookLM / Apps Script pages | Skip | Doorway-style pages, gone quickly. |
 | 5 | Expect them to fade | Noted | The site stays the main copy. |
-| 6 | Rewrite top Reddit thread | Auto find | Answer the same question with own experience and sources; never reword the thread. |
+| 6 | Rewrite top Reddit thread | Auto weekly | Answer the same question with own experience and sources; never reword the thread. |
 | 7 | Own subreddit | Later | Test demand first (idea: "does AI recommend your business?"). |
 | 8 | Link back | Auto | In every syndicated draft. |
 
@@ -45,13 +45,13 @@ Commands: `npm run seo:health` · `npm run seo:gsc -- seo/exports/Queries.csv` �
 | # | Trick | Status | Plan |
 |---|---|---|---|
 | 1 | Find ranking threads | Auto | Weekly task lists up to 5. |
-| 2 | 10k–50k+ communities | Auto shortlist | Size matters less than whether owners are there. |
-| 3 | Read the rules | Auto note, you confirm | |
+| 2 | 10k–50k+ communities | Auto weekly | Size matters less than whether owners are there. |
+| 3 | Read the rules | Auto weekly, you confirm | |
 | 4 | Warm up 1–3 weeks | You | Can't and shouldn't be automated. |
-| 5 | 4–5 helpful comments per mention | Auto outlines | You write and post. |
+| 5 | 4–5 helpful comments per mention | Auto weekly | You write and post. |
 | 6 | Say you're biased | Auto | "Fac site-uri, deci sunt subiectiv." |
 | 7 | Link in profile | You | Add dragoscatana.com to your Reddit profile. |
-| 8 | Top → All time formats | Auto if readable | |
+| 8 | Top → All time formats | Auto weekly | |
 
 ## 06 Get cited by ChatGPT
 | # | Trick | Status | Plan |
