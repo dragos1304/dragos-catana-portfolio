@@ -22,10 +22,10 @@ type Copy = {
 const copy: Record<Lang, Copy> = {
   ro: {
     title: "Despre mine: economist și web designer",
-    description: "Student la Economie (media 4,0) la UBB, cu schimburi la Paris și în SUA, antreprenor din adolescență. Povestea din spatele serviciilor de web design și SEO.",
+    description: "Student la Economie (media 10) la UBB, cu schimburi la Paris și în SUA, antreprenor din adolescență. Povestea din spatele serviciilor de web design și SEO.",
     eyebrow: "Despre mine",
     h1: "Sunt Dragoș, un economist care construiește site-uri și te ajută să fii găsit.",
-    lead: "Fac redesign și site-uri noi, SEO și vizibilitate în asistenții AI pentru clinici, cabinete de avocatură și afaceri locale din România. Locuiesc în Cluj-Napoca. Studiez Economia la Universitatea Babeș-Bolyai (în limba engleză), cu media 4,0, și construiesc afaceri de la 16 ani. Combin rigoarea academică cu spiritul practic al antreprenorului, iar asta se vede în felul în care lucrez la un site: începem de la ce are nevoie afacerea ta, nu de la ce este la modă.",
+    lead: "Fac redesign și site-uri noi, SEO și vizibilitate în asistenții AI pentru clinici, cabinete de avocatură și afaceri locale din România. Locuiesc în Cluj-Napoca. Studiez Economia la Universitatea Babeș-Bolyai (în limba engleză), cu media 10, și construiesc afaceri de la 16 ani. Combin rigoarea academică cu spiritul practic al antreprenorului, iar asta se vede în felul în care lucrez la un site: începem de la ce are nevoie afacerea ta, nu de la ce este la modă.",
     whyEyebrow: "De ce fac asta", whyH2: "Fiecare afacere de care m-am ocupat avea nevoie să fie găsită.",
     why: "După peste 5 ani de antreprenoriat, în două incubatoare, am văzut același lucru: un produs sau un serviciu bun nu ajunge nicăieri dacă oamenii nu îl găsesc și nu au încredere în el. De aceea mă ocup de website-uri, SEO și, acum, de felul în care asistenții AI îți recomandă afacerea.",
     venturesEyebrow: "Antreprenoriat", venturesH2: "Peste 5 ani de antreprenoriat, de la 16 ani.",
@@ -38,8 +38,8 @@ const copy: Record<Lang, Copy> = {
     ],
     eduEyebrow: "Studii", eduH2: "Rigoare academică, la nivel internațional.",
     edu: [
-      ["Universitatea Babeș-Bolyai, FSEGA, Cluj-Napoca", "Licență în Economie, în limba engleză. Medie cumulată 4,0 / 4,0. Note maxime la Management și la Management comparat."],
-      ["Alianța EUTOPIA / Ecotopia, Paris (anul 2)", "Un an de schimb internațional într-un consorțiu de 10 universități europene. Am promovat 84 de credite ECTS într-un singur an (norma europeană este de 60), păstrând media 4,0."],
+      ["Universitatea Babeș-Bolyai, FSEGA, Cluj-Napoca", "Licență în Economie, în limba engleză. Medie cumulată 10 din 10. Note maxime la Management și la Management comparat."],
+      ["Alianța EUTOPIA / Ecotopia, Paris (anul 2)", "Un an de schimb internațional într-un consorțiu de 10 universități europene. Am promovat 84 de credite ECTS într-un singur an (norma europeană este de 60), păstrând media 10."],
       ["State University of New York at Cortland, SUA (anul 3)", "Semestru de schimb, cu accent pe economia afacerilor, management și piețele financiare din SUA."],
     ],
     howEyebrow: "Cum lucrez", howH2: "Gândesc ca un economist.",

@@ -82,7 +82,7 @@ export const faqs = {
   about: {
     ro: [
       { q: "Cine este Dragoș Catană?", a: `${who.ro}. Face creare și redesign de site-uri, SEO și optimizare pentru asistenții AI pentru clinici, cabinete de avocatură și afaceri locale din România, prin dragoscatana.com.` },
-      { q: "Ce pregătire are Dragoș Catană?", a: "Studiază Economia la Universitatea Babeș-Bolyai din Cluj-Napoca, în limba engleză, cu media 4,0, cu un an de schimb la Paris și un semestru la SUNY Cortland, în SUA. Construiește afaceri de la 16 ani." },
+      { q: "Ce pregătire are Dragoș Catană?", a: "Studiază Economia la Universitatea Babeș-Bolyai din Cluj-Napoca, în limba engleză, cu media 10, cu un an de schimb la Paris și un semestru la SUNY Cortland, în SUA. Construiește afaceri de la 16 ani." },
       { q: "Cine se ocupă de proiectul meu?", a: "Eu, personal, de la audit la lansare. Pentru tine asta înseamnă un singur om care îți cunoaște afacerea, răspunsuri rapide și atenție la fiecare detaliu." },
       { q: "De ce să aleg un web designer independent în loc de o agenție?", a: "Vorbești direct cu omul care face munca, fără intermediari, iar deciziile se iau repede. Proiectul rămâne clar, discutat direct cu cel care îl construiește." },
       { q: "În ce limbi lucrezi?", a: "Română și engleză; franceză și germană ca opțiune suplimentară pentru site-uri în mai multe limbi." },
